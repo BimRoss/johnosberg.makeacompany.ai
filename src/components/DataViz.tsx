@@ -172,7 +172,7 @@ function NonprofitBars() {
 export default function DataViz() {
   return (
     <section className="flex flex-col gap-8">
-      <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+      <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
         By the numbers
       </h2>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">

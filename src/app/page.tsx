@@ -41,13 +41,13 @@ export default function Home() {
             </div>
           </div>
           <div className="min-w-0">
-            <p className="border-l-2 border-black/20 pl-3 font-mono text-[10px] font-medium uppercase leading-relaxed tracking-[0.22em] text-zinc-500 dark:border-white/25 dark:text-zinc-400 sm:text-xs">
+            <p className="on-photo border-l-2 border-black/20 pl-3 font-mono text-[10px] font-medium uppercase leading-relaxed tracking-[0.22em] text-zinc-500 dark:border-white/25 dark:text-zinc-400 sm:text-xs">
               {HERO_LABEL}
             </p>
-            <h1 className="mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
+            <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
               John Osberg
             </h1>
-            <p className="mt-3 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-600 dark:text-zinc-300 sm:text-xl">
+            <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-700 dark:text-zinc-300 sm:text-xl">
               VP of Partnerships, Brandlete · Head of Growth, MakeaCompany.ai
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function Home() {
 
         {/* Summary + CTA */}
         <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
-          <p className="max-w-3xl text-[15px] leading-7 text-zinc-700 dark:text-zinc-300 sm:text-lg sm:leading-8">
+          <p className="on-photo max-w-3xl text-[15px] leading-7 text-zinc-800 dark:text-zinc-300 sm:text-lg sm:leading-8">
             {HERO_SUMMARY}
           </p>
           <div className="flex flex-wrap items-center gap-3">
@@ -106,7 +106,7 @@ export default function Home() {
 
         {/* Experience */}
         <section className="flex flex-col gap-8">
-          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             Experience
           </h2>
           <div className="flex flex-col">
@@ -140,7 +140,7 @@ export default function Home() {
 
         {/* Brands */}
         <section className="flex flex-col gap-6">
-          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             Partnerships built with
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -152,7 +152,7 @@ export default function Home() {
 
         {/* In the news */}
         <section className="flex flex-col gap-6">
-          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             In the news
           </h2>
           <div className="flex flex-col">
@@ -182,7 +182,7 @@ export default function Home() {
 
         {/* Podcasts */}
         <section className="flex flex-col gap-6">
-          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             Podcasts
           </h2>
           <figure className="flex flex-col gap-2">
