@@ -7,6 +7,8 @@ import {
   brands,
   HERO_LABEL,
   HERO_SUMMARY,
+  podcasts,
+  press,
   roles,
   SITE_NAME,
   stats,
@@ -155,6 +157,68 @@ export default function Home() {
                   {b.name}
                 </span>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* In the news */}
+        <section className="flex flex-col gap-6">
+          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+            In the news
+          </h2>
+          <div className="flex flex-col">
+            {press.map((p, i) => (
+              <a
+                key={p.href}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex items-center gap-4 py-4 ${
+                  i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
+                }`}
+              >
+                <span className="w-40 shrink-0 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+                  {p.source}
+                </span>
+                <span className="flex-1 font-[family-name:var(--font-sora)] text-sm font-medium text-zinc-800 transition-colors group-hover:text-zinc-950 dark:text-zinc-200 dark:group-hover:text-white sm:text-base">
+                  {p.title}
+                </span>
+                <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5 group-hover:text-zinc-600 dark:group-hover:text-zinc-200">
+                  ↗
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Podcasts */}
+        <section className="flex flex-col gap-6">
+          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
+            Podcasts
+          </h2>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {podcasts.map((pod) => (
+              <a
+                key={pod.href}
+                href={pod.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-4 rounded-xl border border-black/10 bg-white/70 p-5 backdrop-blur-md transition-colors hover:border-black/20 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/15 text-red-500">
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">
+                    {pod.role}
+                  </span>
+                </div>
+                <span className="font-[family-name:var(--font-sora)] text-sm font-semibold leading-snug text-zinc-900 transition-colors group-hover:text-zinc-950 dark:text-white">
+                  {pod.title}
+                </span>
+              </a>
             ))}
           </div>
         </section>

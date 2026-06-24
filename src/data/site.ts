@@ -83,3 +83,53 @@ export const brands: Brand[] = [
   { name: "Audacy", mark: "A", accent: "#9b5cff" },
   { name: "Club Car", mark: "CC", accent: "#22a447" },
 ];
+
+export type PressItem = { source: string; title: string; href: string };
+
+export const press: PressItem[] = [
+  {
+    source: "PGA REACH WNY",
+    title: "John Osberg Named PGA REACH WNY Trustee",
+    href: "https://westernnewyork.pga.com/news/john-osberg-named-as-pga-reach-wny-trustee/",
+  },
+  {
+    source: "Western NY PGA",
+    title: "Osberg Named Director of Development & Foundation Operations",
+    href: "https://westernnewyork.pga.com/wp-content/uploads/sites/16/2023/07/Press-Release_Osberg.docx.pdf",
+  },
+  {
+    source: "PGA.com",
+    title: "PGA REACH Hosts Charity Pro-Am at Oak Hill Country Club",
+    href: "https://www.pga.com/story/pga-reach-recently-hosted-a-charity-pro-am-at-oak-hill-country-club",
+  },
+  {
+    source: "NYSGA",
+    title: "NYSGA Partners with Buffalo-Based OnCore Golf",
+    href: "https://nysga.org/communications-news/nysga-partners-with-buffalo-based-oncore-golf-technology",
+  },
+  {
+    source: "Buffalo Business First",
+    title: "John Osberg & Brandlete in Buffalo Business First",
+    href: "https://www.bizjournals.com/buffalo/search/results?q=John%20Osberg",
+  },
+];
+
+export type Podcast = { title: string; role: "Host" | "Guest"; href: string };
+
+export const podcasts: Podcast[] = [
+  {
+    title: "The Incept CONNECT Podcast",
+    role: "Host",
+    href: "https://www.youtube.com/playlist?list=PLWvPwqLIgvdvsFWhEAOLgHBuB_e_aAhk8",
+  },
+  {
+    title: "POWER of OZmosis Podcast Library",
+    role: "Host",
+    href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgUd-nFY-z2VXu68NbiauLm",
+  },
+  {
+    title: "John Osberg, Featured Guest",
+    role: "Guest",
+    href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgMHOYeCaDmnwcjEnzumQSn",
+  },
+];
