@@ -5,6 +5,7 @@ import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   brands,
+  FEATURED_VIDEO,
   HERO_LABEL,
   HERO_SUMMARY,
   podcasts,
@@ -196,6 +197,21 @@ export default function Home() {
           <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
             Podcasts
           </h2>
+          <figure className="flex flex-col gap-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src={`https://www.youtube-nocookie.com/embed/${FEATURED_VIDEO.id}?start=${FEATURED_VIDEO.start}`}
+                title={FEATURED_VIDEO.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+              {FEATURED_VIDEO.title}
+            </figcaption>
+          </figure>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {podcasts.map((pod) => (
               <a

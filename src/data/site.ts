@@ -114,6 +114,12 @@ export const press: PressItem[] = [
   },
 ];
 
+export const FEATURED_VIDEO = {
+  id: "03PnTookfKY",
+  start: 500,
+  title: "John Osberg on The Incept CONNECT Podcast",
+};
+
 export type Podcast = { title: string; role: "Host" | "Guest"; href: string };
 
 export const podcasts: Podcast[] = [
