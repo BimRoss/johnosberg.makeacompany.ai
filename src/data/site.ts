@@ -5,7 +5,7 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "Revenue-producing leader with 15+ years building partnerships and growth across technology, sports, nonprofit, and startup worlds. I've generated $6.5M+ in revenue, secured $1.5M+ in capital, and raised $1.5M+ for nonprofit causes. Today I run growth at MakeaCompany.ai and partnerships at Brandlete.";
+  "Revenue-producing leader with 15+ years building partnerships and growth across technology, sports, nonprofit, and startup worlds. I've generated $6.5M+ in revenue ($8.5M+ influenced), secured $1.5M+ in capital, and raised $1.5M+ for nonprofit causes. Today I run growth at MakeaCompany.ai and partnerships at Brandlete.";
 
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
@@ -13,7 +13,7 @@ export const LINK_PREVIEW_DESCRIPTION =
 export const PUBLIC_EMAIL = "john@makeacompany.ai";
 
 export const stats = [
-  { value: "$6.5M+", label: "revenue generated" },
+  { value: "$8.5M+", label: "revenue gen. / influenced" },
   { value: "$1.5M+", label: "capital secured" },
   { value: "$1.5M+", label: "nonprofit raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
