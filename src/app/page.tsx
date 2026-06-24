@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
+import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   brands,
@@ -93,6 +94,9 @@ export default function Home() {
             </div>
           ))}
         </section>
+
+        {/* Data viz */}
+        <DataViz />
 
         {/* Experience */}
         <section className="flex flex-col gap-8">

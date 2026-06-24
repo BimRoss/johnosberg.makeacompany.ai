@@ -67,6 +67,12 @@ export const socials: SocialEntry[] = [
     external: false,
   },
   {
+    label: "makeacompany.ai",
+    href: "https://makeacompany.ai",
+    Icon: GlobeIcon,
+    external: true,
+  },
+  {
     label: "brandlete.com",
     href: "https://brandlete.com",
     Icon: GlobeIcon,
