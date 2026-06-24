@@ -82,6 +82,7 @@ export const brands: Brand[] = [
   { name: "Gatorade", mark: "G", accent: "#ff7a1a", logo: "/logos/gatorade.png" },
   { name: "Audacy", mark: "A", accent: "#9b5cff", logo: "/logos/audacy.png" },
   { name: "Club Car", mark: "CC", accent: "#22a447", logo: "/logos/clubcar.png" },
+  { name: "New York State Golf Association", mark: "NYSGA", accent: "#344475", logo: "/logos/nysga.png" },
 ];
 
 export type PressItem = { source: string; title: string; href: string };
