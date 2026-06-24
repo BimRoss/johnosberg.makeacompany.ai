@@ -23,7 +23,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
         <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://logo.clearbit.com/${brand.domain}?size=80`}
+            src={brand.logo}
             alt={`${brand.name} logo`}
             width={28}
             height={28}
