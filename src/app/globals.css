@@ -95,12 +95,13 @@ body::after {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(120% 80% at 50% 18%, rgba(250, 250, 250, 0.18), transparent 62%),
+    linear-gradient(180deg, rgba(9, 9, 11, 0.12), rgba(9, 9, 11, 0.12)),
+    radial-gradient(120% 80% at 50% 18%, rgba(250, 250, 250, 0.14), transparent 62%),
     linear-gradient(
       180deg,
-      rgba(250, 250, 250, 0.42) 0%,
-      rgba(250, 250, 250, 0.32) 48%,
-      rgba(250, 250, 250, 0.72) 100%
+      rgba(250, 250, 250, 0.34) 0%,
+      rgba(250, 250, 250, 0.26) 48%,
+      rgba(250, 250, 250, 0.66) 100%
     );
 }
 
