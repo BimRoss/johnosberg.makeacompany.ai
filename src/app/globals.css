@@ -73,12 +73,12 @@ body::after {
 }
 
 .backdrop-light {
-  background-image: url("/bg-stadium-light.jpg");
+  background-image: url("/bg-golf-light.jpg");
   opacity: 1;
 }
 
 .backdrop-dark {
-  background-image: url("/bg-stadium-dark.jpg");
+  background-image: url("/bg-golf-dark.jpg");
   opacity: 0;
 }
 
@@ -95,23 +95,23 @@ body::after {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(120% 80% at 50% 18%, rgba(250, 250, 250, 0.35), transparent 60%),
+    radial-gradient(120% 80% at 50% 18%, rgba(250, 250, 250, 0.18), transparent 62%),
     linear-gradient(
       180deg,
-      rgba(250, 250, 250, 0.7) 0%,
-      rgba(250, 250, 250, 0.58) 45%,
-      rgba(250, 250, 250, 0.86) 100%
+      rgba(250, 250, 250, 0.42) 0%,
+      rgba(250, 250, 250, 0.32) 48%,
+      rgba(250, 250, 250, 0.72) 100%
     );
 }
 
 .dark .backdrop-scrim {
   background:
-    radial-gradient(120% 80% at 50% 18%, rgba(9, 9, 11, 0.2), transparent 55%),
+    radial-gradient(120% 80% at 50% 18%, rgba(9, 9, 11, 0.12), transparent 58%),
     linear-gradient(
       180deg,
-      rgba(9, 9, 11, 0.6) 0%,
-      rgba(9, 9, 11, 0.48) 40%,
-      rgba(9, 9, 11, 0.88) 100%
+      rgba(9, 9, 11, 0.5) 0%,
+      rgba(9, 9, 11, 0.4) 42%,
+      rgba(9, 9, 11, 0.82) 100%
     );
 }
 
