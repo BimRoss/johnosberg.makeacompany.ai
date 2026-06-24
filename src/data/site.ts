@@ -108,6 +108,16 @@ export const press: PressItem[] = [
     href: "https://nysga.org/communications-news/nysga-partners-with-buffalo-based-oncore-golf-technology",
   },
   {
+    source: "Empire State Entrepreneurs",
+    title: "John Osberg of WNY PGA — entrepreneur, athlete, growth strategist",
+    href: "https://empirestateentrepreneurs.transistor.fm/s2/7",
+  },
+  {
+    source: "Clark Dever",
+    title: "Bad Golf Business School: Startup Lessons from the Fairway",
+    href: "https://www.clarkdever.com/projects/bad-golf-business-school",
+  },
+  {
     source: "Buffalo Business First",
     title: "John Osberg & Brandlete in Buffalo Business First",
     href: "https://www.bizjournals.com/buffalo/search/results?q=John%20Osberg",
