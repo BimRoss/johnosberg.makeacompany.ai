@@ -5,7 +5,7 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "Revenue-producing leader with 15+ years building partnerships and growth across technology, sports, nonprofit, and startup worlds. I've generated $6.5M+ in revenue, secured $1.5M+ in capital, and raised $1.1M+ for nonprofit causes. Today I run growth at MakeaCompany.ai and partnerships at Brandlete.";
+  "Revenue-producing leader with 15+ years building partnerships and growth across technology, sports, nonprofit, and startup worlds. I've generated $6.5M+ in revenue, secured $1.5M+ in capital, and raised $1.5M+ for nonprofit causes. Today I run growth at MakeaCompany.ai and partnerships at Brandlete.";
 
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
@@ -15,14 +15,14 @@ export const PUBLIC_EMAIL = "john@makeacompany.ai";
 export const stats = [
   { value: "$6.5M+", label: "revenue generated" },
   { value: "$1.5M+", label: "capital secured" },
-  { value: "$1.1M+", label: "nonprofit raised" },
+  { value: "$1.5M+", label: "nonprofit raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
 ];
 
 export const roles = [
   {
     org: "Brandlete, Inc.",
-    title: "Head of Partnerships / Co-Founder",
+    title: "VP of Partnerships / Founding Member",
     period: "Nov 2021 – Present",
     blurb:
       "Co-founded an AI-enabled athlete development platform. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
@@ -32,7 +32,7 @@ export const roles = [
     title: "Head of Growth (Contract)",
     period: "May 2026 – Present",
     blurb:
-      "Own the growth engine end to end: positioning, messaging, demand, and founder-led sales to signed customers. Build the GTM operating system and close strategic partnerships.",
+      "Grew the active user base 9.8x in my first 6 weeks (12 to 117, +880%). Own the growth engine end to end: positioning, messaging, demand, and founder-led sales to signed customers. Build the GTM operating system and close strategic partnerships.",
   },
   {
     org: "POWER of OZmosis Consulting",
