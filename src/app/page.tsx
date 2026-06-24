@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
+import BrandLogo from "@/components/BrandLogo";
 import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
@@ -47,7 +48,7 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="mt-3 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-600 dark:text-zinc-300 sm:text-xl">
-              Head of Growth &amp; Partnerships · Buffalo, NY
+              VP of Partnerships, Brandlete · Head of Growth, MakeaCompany.ai
             </p>
           </div>
         </section>
@@ -144,20 +145,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {brands.map((b) => (
-              <div
-                key={b.name}
-                className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-4 backdrop-blur-md transition-colors hover:border-black/20 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
-              >
-                <span
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-sm font-bold"
-                  style={{ backgroundColor: `${b.accent}1f`, color: b.accent }}
-                >
-                  {b.mark}
-                </span>
-                <span className="font-[family-name:var(--font-sora)] text-[13px] font-medium leading-tight text-zinc-700 dark:text-zinc-300">
-                  {b.name}
-                </span>
-              </div>
+              <BrandLogo key={b.name} brand={b} />
             ))}
           </div>
         </section>

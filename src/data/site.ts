@@ -5,7 +5,7 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "Revenue-producing leader with 15+ years building partnerships and growth across technology, sports, nonprofit, and startup worlds. I've generated $6.5M+ in revenue ($8.5M+ influenced), secured $1.5M+ in capital, and raised $1.5M+ for nonprofit causes. Today I run growth at MakeaCompany.ai and partnerships at Brandlete.";
+  "VP of Partnerships & Founding Member at Brandlete, Inc. and Head of Growth & Founding Member at MakeaCompany.ai. For 15+ years I've built the partnership and growth engines that move real revenue: $6.5M+ generated ($8.5M+ influenced), $1.5M+ in capital secured, and $1.5M+ raised for nonprofit causes across tech, sports, and startups. I turn relationships into pipeline, and pipeline into signed deals.";
 
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
@@ -64,24 +64,24 @@ export const roles = [
   },
 ];
 
-export type Brand = { name: string; mark: string; accent: string };
+export type Brand = { name: string; mark: string; accent: string; domain: string };
 
 export const brands: Brand[] = [
-  { name: "DICK'S Sporting Goods", mark: "D", accent: "#1c8c3b" },
-  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6" },
-  { name: "Wegmans", mark: "W", accent: "#e0301e" },
-  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a" },
-  { name: "Oakley", mark: "O", accent: "#9aa0a8" },
-  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb" },
-  { name: "Tito's Handmade Vodka", mark: "T", accent: "#3aa0ff" },
-  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff" },
-  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6" },
-  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e" },
-  { name: "National Fuel", mark: "NF", accent: "#2563eb" },
-  { name: "Special Olympics", mark: "SO", accent: "#e0301e" },
-  { name: "Gatorade", mark: "G", accent: "#ff7a1a" },
-  { name: "Audacy", mark: "A", accent: "#9b5cff" },
-  { name: "Club Car", mark: "CC", accent: "#22a447" },
+  { name: "DICK'S Sporting Goods", mark: "D", accent: "#1c8c3b", domain: "dicks.com" },
+  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", domain: "golfgalaxy.com" },
+  { name: "Wegmans", mark: "W", accent: "#e0301e", domain: "wegmans.com" },
+  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", domain: "michelobultra.com" },
+  { name: "Oakley", mark: "O", accent: "#9aa0a8", domain: "oakley.com" },
+  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", domain: "ralphlauren.com" },
+  { name: "Tito's Handmade Vodka", mark: "T", accent: "#3aa0ff", domain: "titosvodka.com" },
+  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", domain: "corebridgefinancial.com" },
+  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", domain: "sandals.com" },
+  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", domain: "ajg.com" },
+  { name: "National Fuel", mark: "NF", accent: "#2563eb", domain: "nationalfuel.com" },
+  { name: "Special Olympics", mark: "SO", accent: "#e0301e", domain: "specialolympics.org" },
+  { name: "Gatorade", mark: "G", accent: "#ff7a1a", domain: "gatorade.com" },
+  { name: "Audacy", mark: "A", accent: "#9b5cff", domain: "audacy.com" },
+  { name: "Club Car", mark: "CC", accent: "#22a447", domain: "clubcar.com" },
 ];
 
 export type PressItem = { source: string; title: string; href: string };
