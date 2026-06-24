@@ -64,13 +64,22 @@ export const roles = [
   },
 ];
 
-export const brands = [
-  "DICK'S Sporting Goods",
-  "Golf Galaxy",
-  "Wegmans",
-  "Michelob Ultra",
-  "Oakley",
-  "Ralph Lauren RLX",
-  "Corebridge Financial",
-  "Sandals Resorts",
+export type Brand = { name: string; mark: string; accent: string };
+
+export const brands: Brand[] = [
+  { name: "DICK'S Sporting Goods", mark: "D", accent: "#1c8c3b" },
+  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6" },
+  { name: "Wegmans", mark: "W", accent: "#e0301e" },
+  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a" },
+  { name: "Oakley", mark: "O", accent: "#9aa0a8" },
+  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb" },
+  { name: "Tito's Handmade Vodka", mark: "T", accent: "#3aa0ff" },
+  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff" },
+  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6" },
+  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e" },
+  { name: "National Fuel", mark: "NF", accent: "#2563eb" },
+  { name: "Special Olympics", mark: "SO", accent: "#e0301e" },
+  { name: "Gatorade", mark: "G", accent: "#ff7a1a" },
+  { name: "Audacy", mark: "A", accent: "#9b5cff" },
+  { name: "Club Car", mark: "CC", accent: "#22a447" },
 ];
