@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  --bg: #fafafa;
+  --fg: #18181b;
+  --muted: #52525b;
+}
+
+.dark {
   --bg: #09090b;
   --fg: #f4f4f5;
   --muted: #a1a1aa;
@@ -14,8 +22,12 @@
 html {
   background-color: var(--bg);
   color: var(--fg);
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
@@ -25,6 +37,7 @@ body {
   color: var(--muted);
   font-family: var(--font-ibm-plex), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 * {
@@ -38,21 +51,68 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.03;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.constellation {
+/* Sports backdrop — empty-stadium plate, day/night per theme */
+.backdrop {
   position: fixed;
   inset: 0;
   z-index: 0;
-  width: 100%;
-  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.backdrop-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease;
+}
+
+.backdrop-light {
+  background-image: url("/bg-stadium-light.jpg");
+  opacity: 1;
+}
+
+.backdrop-dark {
+  background-image: url("/bg-stadium-dark.jpg");
+  opacity: 0;
+}
+
+.dark .backdrop-light {
+  opacity: 0;
+}
+
+.dark .backdrop-dark {
+  opacity: 1;
+}
+
+/* Legibility scrim — keeps the centered column readable in both themes */
+.backdrop-scrim {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.06), transparent 42%),
-    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.05), transparent 48%),
-    radial-gradient(circle at 52% 90%, rgba(255, 255, 255, 0.04), transparent 45%),
-    var(--bg);
+    radial-gradient(120% 80% at 50% 18%, rgba(250, 250, 250, 0.35), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(250, 250, 250, 0.7) 0%,
+      rgba(250, 250, 250, 0.58) 45%,
+      rgba(250, 250, 250, 0.86) 100%
+    );
+}
+
+.dark .backdrop-scrim {
+  background:
+    radial-gradient(120% 80% at 50% 18%, rgba(9, 9, 11, 0.2), transparent 55%),
+    linear-gradient(
+      180deg,
+      rgba(9, 9, 11, 0.6) 0%,
+      rgba(9, 9, 11, 0.48) 40%,
+      rgba(9, 9, 11, 0.88) 100%
+    );
 }
 
 @keyframes reveal {

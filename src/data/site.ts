@@ -10,7 +10,7 @@ export const HERO_SUMMARY =
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
 
-export const PUBLIC_EMAIL = "john@brandlete.com";
+export const PUBLIC_EMAIL = "john@makeacompany.ai";
 
 export const stats = [
   { value: "$6.5M+", label: "revenue generated" },
