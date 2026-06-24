@@ -200,28 +200,34 @@ export default function Home() {
               {FEATURED_VIDEO.title}
             </figcaption>
           </figure>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             {podcasts.map((pod) => (
               <a
                 key={pod.href}
                 href={pod.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col gap-4 rounded-xl border border-black/10 bg-white/70 p-5 backdrop-blur-md transition-colors hover:border-black/20 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
+                className="group flex flex-col justify-between gap-7 rounded-2xl border border-black/10 bg-white/70 p-6 backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:border-black/20 hover:shadow-xl hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20 dark:hover:shadow-black/40 sm:p-7"
               >
                 <div className="flex items-center justify-between">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/15 text-red-500">
-                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg shadow-red-500/25 transition-transform duration-200 group-hover:scale-105">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 translate-x-0.5" fill="currentColor" aria-hidden>
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">
+                  <span className="rounded-full border border-black/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500 dark:border-white/15">
                     {pod.role}
                   </span>
                 </div>
-                <span className="font-[family-name:var(--font-sora)] text-sm font-semibold leading-snug text-zinc-900 transition-colors group-hover:text-zinc-950 dark:text-white">
-                  {pod.title}
-                </span>
+                <div>
+                  <span className="block font-[family-name:var(--font-sora)] text-lg font-semibold leading-snug text-zinc-900 dark:text-white">
+                    {pod.title}
+                  </span>
+                  <span className="mt-2 inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 transition-colors group-hover:text-red-500">
+                    Watch the playlist
+                    <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+                  </span>
+                </div>
               </a>
             ))}
           </div>
