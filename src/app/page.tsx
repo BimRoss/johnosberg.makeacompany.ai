@@ -57,6 +57,8 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-zinc-900/80 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-zinc-900 transition-colors hover:bg-zinc-900 hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
             >
               <DownloadIcon className="h-4 w-4" />
@@ -137,14 +139,22 @@ export default function Home() {
           <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
             Partnerships built with
           </h2>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {brands.map((b) => (
-              <span
-                key={b}
-                className="font-[family-name:var(--font-sora)] text-base font-medium text-zinc-700 dark:text-zinc-300 md:text-lg"
+              <div
+                key={b.name}
+                className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-4 backdrop-blur-md transition-colors hover:border-black/20 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
               >
-                {b}
-              </span>
+                <span
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-sm font-bold"
+                  style={{ backgroundColor: `${b.accent}1f`, color: b.accent }}
+                >
+                  {b.mark}
+                </span>
+                <span className="font-[family-name:var(--font-sora)] text-[13px] font-medium leading-tight text-zinc-700 dark:text-zinc-300">
+                  {b.name}
+                </span>
+              </div>
             ))}
           </div>
         </section>
