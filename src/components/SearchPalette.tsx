@@ -17,6 +17,7 @@ function buildIndex(): Item[] {
     { label: "By the numbers", kind: "Section", href: "#numbers" },
     { label: "Experience", kind: "Section", href: "#experience" },
     { label: "Partnerships", kind: "Section", href: "#partnerships" },
+    { label: "Recommendations", kind: "Section", href: "#recommendations" },
     { label: "In the news", kind: "Section", href: "#news" },
     { label: "Podcasts", kind: "Section", href: "#podcasts" },
     { label: "Download resume", kind: "Action", href: "/resume.pdf", external: true },
