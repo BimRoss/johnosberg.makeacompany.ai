@@ -11,6 +11,7 @@ import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   brands,
+  civic,
   FEATURED_VIDEO,
   HERO_LABEL,
   HERO_SUMMARY,
@@ -189,6 +190,33 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {brands.map((b) => (
               <BrandLogo key={b.name} brand={b} />
+            ))}
+          </div>
+        </section>
+
+        {/* Civic & nonprofit */}
+        <section id="civic" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            Civic leadership & volunteer work
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {civic.map((c) => (
+              <div
+                key={c.org}
+                className="flex flex-col gap-2 rounded-2xl border border-black/10 bg-white/70 p-6 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
+              >
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
+                    {c.org}
+                  </span>
+                  <span className="shrink-0 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-emerald-800 dark:text-emerald-200">
+                    {c.role}
+                  </span>
+                </div>
+                <p className="text-[15px] leading-7 text-zinc-800 dark:text-zinc-300">
+                  {c.blurb}
+                </p>
+              </div>
             ))}
           </div>
         </section>
