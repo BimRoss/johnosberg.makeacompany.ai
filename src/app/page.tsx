@@ -35,7 +35,7 @@ export default function Home() {
       <SearchPalette />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-24 px-5 pb-24 pt-16 sm:px-8 md:gap-32 md:pt-24"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pb-24 pt-16 sm:gap-20 sm:px-8 md:gap-28 md:pt-24"
       >
         <InfoDock />
 
@@ -239,8 +239,21 @@ export default function Home() {
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
-                <span className="w-40 shrink-0 font-mono text-xs uppercase tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
-                  {p.source}
+                <span className="flex w-32 shrink-0 items-center gap-2 sm:w-44">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-black/5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.logo}
+                      alt={`${p.source} logo`}
+                      width={22}
+                      height={22}
+                      loading="lazy"
+                      className="h-[22px] w-[22px] object-contain"
+                    />
+                  </span>
+                  <span className="min-w-0 font-mono text-[10px] uppercase leading-tight tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
+                    {p.source}
+                  </span>
                 </span>
                 <span className="flex-1 font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white sm:text-lg">
                   {p.title}
