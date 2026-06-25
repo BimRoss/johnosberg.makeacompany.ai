@@ -18,7 +18,7 @@ function buildIndex(): Item[] {
     { label: "Experience", kind: "Section", href: "#experience" },
     { label: "Partnerships", kind: "Section", href: "#partnerships" },
     { label: "Civic leadership & volunteer work", kind: "Section", href: "#civic" },
-    { label: "Recommendations", kind: "Section", href: "#recommendations" },
+    { label: "Endorsements", kind: "Section", href: "#recommendations" },
     { label: "In the news", kind: "Section", href: "#news" },
     { label: "Podcasts", kind: "Section", href: "#podcasts" },
     { label: "Download resume", kind: "Action", href: "/resume.pdf", external: true },

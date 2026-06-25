@@ -211,7 +211,7 @@ export default function Home() {
         <section id="recommendations" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-1">
             <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
-              Recommendations
+              Endorsements
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
               Endorsed by 134+ top professionals and counting.
