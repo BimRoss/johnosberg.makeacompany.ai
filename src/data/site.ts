@@ -67,13 +67,13 @@ export const roles = [
 export type Brand = { name: string; mark: string; accent: string; logo: string; url: string };
 
 export const brands: Brand[] = [
-  { name: "DICK'S Sporting Goods", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png", url: "https://www.dickssportinggoods.com" },
+  { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png", url: "https://www.dickssportinggoods.com" },
   { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: "/logos/golfgalaxy.png", url: "https://www.golfgalaxy.com" },
   { name: "Wegmans", mark: "W", accent: "#e0301e", logo: "/logos/wegmans.png", url: "https://www.wegmans.com" },
   { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: "/logos/michelobultra.png", url: "https://www.michelobultra.com" },
   { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: "/logos/oakley.png", url: "https://www.oakley.com" },
   { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: "/logos/ralphlauren.png", url: "https://www.ralphlauren.com/rlx-golf" },
-  { name: "Tito's Handmade Vodka", mark: "T", accent: "#3aa0ff", logo: "/logos/titos.png", url: "https://www.titosvodka.com" },
+  { name: "Tito's", mark: "T", accent: "#3aa0ff", logo: "/logos/titos.png", url: "https://www.titosvodka.com" },
   { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: "/logos/corebridge.png", url: "https://www.corebridgefinancial.com" },
   { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: "/logos/sandals.png", url: "https://www.sandals.com" },
   { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", logo: "/logos/gallagher.png", url: "https://www.ajg.com" },
@@ -82,8 +82,8 @@ export const brands: Brand[] = [
   { name: "Gatorade", mark: "G", accent: "#ff7a1a", logo: "/logos/gatorade.png", url: "https://www.gatorade.com" },
   { name: "Audacy", mark: "A", accent: "#9b5cff", logo: "/logos/audacy.png", url: "https://www.audacy.com" },
   { name: "Club Car", mark: "CC", accent: "#22a447", logo: "/logos/clubcar.png", url: "https://www.clubcar.com" },
-  { name: "New York State Golf Association", mark: "NYSGA", accent: "#344475", logo: "/logos/nysga.png", url: "https://nysga.org" },
-  { name: "Liazon (Towers Watson)", mark: "L", accent: "#0a6ebd", logo: "/logos/liazon.png", url: "https://www.wtwco.com" },
+  { name: "NY State Golf Assn.", mark: "NYSGA", accent: "#344475", logo: "/logos/nysga.png", url: "https://nysga.org" },
+  { name: "Liazon (WTW)", mark: "L", accent: "#0a6ebd", logo: "/logos/liazon.png", url: "https://www.wtwco.com" },
   { name: "CareSource", mark: "CS", accent: "#00a0af", logo: "/logos/caresource.png", url: "https://www.caresource.com" },
   { name: "HealtheLink", mark: "HL", accent: "#1b75bc", logo: "/logos/healthelink.png", url: "https://wnyhealthelink.com" },
   { name: "HealtheConnections", mark: "HC", accent: "#6cb33f", logo: "/logos/healtheconnections.png", url: "https://www.healtheconnections.org" },
