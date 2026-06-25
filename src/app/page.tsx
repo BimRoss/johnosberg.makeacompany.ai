@@ -48,10 +48,10 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-700 dark:text-zinc-300 sm:text-xl">
-              VP of Partnerships, Brandlete · Head of Growth, MakeaCompany.ai
+              VP of Partnerships @ Brandlete, Inc. · Head of Growth @ MakeaCompany.ai (MaC)
             </p>
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
-              Get to know me before we formally connect.
+              ⚡ Get to know me before we formally connect.
             </p>
           </div>
         </section>
