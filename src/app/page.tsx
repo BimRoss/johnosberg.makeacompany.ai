@@ -325,6 +325,8 @@ export default function Home() {
             <span>© {new Date().getFullYear()} John Osberg</span>
             <a
               href="mailto:john@makeacompany.ai"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-zinc-700 dark:hover:text-zinc-300"
             >
               john@makeacompany.ai
