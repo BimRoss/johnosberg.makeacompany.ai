@@ -1,8 +1,5 @@
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
-// Initials avatar. LinkedIn's recommendation export carries no photos and
-// member headshots aren't ours to scrape, so each person gets a clean monogram
-// in a deterministic gradient keyed off their name.
 const AVATAR_GRADIENTS = [
   "from-emerald-500 to-teal-600",
   "from-sky-500 to-blue-600",
@@ -12,6 +9,27 @@ const AVATAR_GRADIENTS = [
   "from-cyan-500 to-sky-600",
   "from-indigo-500 to-violet-600",
   "from-lime-500 to-emerald-600",
+];
+
+const FEATURED: Testimonial[] = [
+  {
+    name: "Jonathan S Cummins",
+    title: "CEO & Partner",
+    company: "GuideUP Health",
+    text: "John is a stellar \"connector of humans\". He deeply understands how the worlds of social capital, recognition and motivation collide to explosively move ideas forward.",
+  },
+  {
+    name: "Holly Hubert",
+    title: "Founder & CEO",
+    company: "GlobalSecurityIQ",
+    text: "Johnny Oz is a truly gifted community-building super-connector who wakes up seeking to crush every single day. He is an extraordinary giver, humble in service to others, and a true gem.",
+  },
+  {
+    name: "Jessica Wulf",
+    title: "Chief Operating Officer",
+    company: "WNY BloodCare",
+    text: "John is driven, energetic, and empowering. He has a natural ability to motivate and engage. He is an excellent resource in making connections and does this in a way that's natural and genuine.",
+  },
 ];
 
 function initials(name: string) {
@@ -27,31 +45,81 @@ function gradientFor(name: string) {
   return AVATAR_GRADIENTS[h % AVATAR_GRADIENTS.length];
 }
 
-function Card({ t }: { t: Testimonial }) {
+function Stars() {
   return (
-    <figure className="flex w-[320px] shrink-0 flex-col gap-4 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55 sm:w-[360px]">
-      <blockquote className="line-clamp-6 text-[15px] leading-7 text-zinc-800 dark:text-zinc-300">
-        “{t.text}”
+    <div className="flex gap-0.5" aria-label="5 stars">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <svg key={i} className="h-3.5 w-3.5 fill-amber-400" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg" }) {
+  const gradient = gradientFor(name);
+  const outer = size === "lg" ? "h-16 w-16" : "h-10 w-10";
+  const inner = size === "lg" ? "h-[58px] w-[58px] text-base" : "h-9 w-9 text-xs";
+  return (
+    <div className={`${outer} shrink-0 rounded-full bg-gradient-to-br ${gradient} p-[3px] shadow-md`}>
+      <div className={`${inner} flex items-center justify-center rounded-full bg-white/15 font-[family-name:var(--font-sora)] font-bold text-white`}>
+        {initials(name)}
+      </div>
+    </div>
+  );
+}
+
+function FeaturedCard({ t }: { t: Testimonial }) {
+  return (
+    <figure className="relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-emerald-200/60 bg-white/90 p-6 shadow-lg shadow-emerald-100/40 backdrop-blur-md dark:border-emerald-500/20 dark:bg-zinc-900/70 dark:shadow-emerald-900/20">
+      <span aria-hidden className="absolute right-5 top-3 select-none font-serif text-6xl leading-none text-emerald-200/70 dark:text-emerald-700/40">&#10077;</span>
+      <Stars />
+      <blockquote className="text-[15px] leading-7 text-zinc-800 dark:text-zinc-200">
+        &ldquo;{t.text}&rdquo;
       </blockquote>
-      <figcaption className="mt-auto flex items-center gap-3">
-        <span
-          aria-hidden
-          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${gradientFor(
-            t.name
-          )} font-[family-name:var(--font-sora)] text-sm font-bold text-white shadow-sm`}
-        >
-          {initials(t.name)}
-        </span>
+      <figcaption className="mt-auto flex items-center gap-3.5">
+        <Avatar name={t.name} size="lg" />
         <span className="min-w-0">
-          <span className="block truncate font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
+          <span className="block font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
             {t.name}
           </span>
-          <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
+          <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-emerald-700 dark:text-emerald-400">
             {t.title}
-            {t.company ? ` · ${t.company}` : ""}
           </span>
+          {t.company && (
+            <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-500">
+              {t.company}
+            </span>
+          )}
         </span>
       </figcaption>
+    </figure>
+  );
+}
+
+function Card({ t }: { t: Testimonial }) {
+  return (
+    <figure className="flex w-[320px] shrink-0 flex-col gap-3 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55 sm:w-[360px]">
+      <span aria-hidden className="select-none font-serif text-2xl leading-none text-emerald-400/60 dark:text-emerald-600/50">&#10077;</span>
+      <blockquote className="line-clamp-5 text-[14px] leading-6 text-zinc-800 dark:text-zinc-300">
+        {t.text}
+      </blockquote>
+      <div className="mt-auto flex flex-col gap-2.5">
+        <Stars />
+        <figcaption className="flex items-center gap-3">
+          <Avatar name={t.name} size="md" />
+          <span className="min-w-0">
+            <span className="block truncate font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 dark:text-white">
+              {t.name}
+            </span>
+            <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+              {t.title}
+              {t.company ? ` · ${t.company}` : ""}
+            </span>
+          </span>
+        </figcaption>
+      </div>
     </figure>
   );
 }
@@ -80,9 +148,16 @@ export default function Testimonials() {
   const rowA = testimonials.slice(0, mid);
   const rowB = testimonials.slice(mid);
   return (
-    <div className="marquee-mask flex flex-col gap-5">
-      <Row items={rowA} dir="l" />
-      <Row items={rowB} dir="r" />
+    <div className="flex flex-col gap-10">
+      <div className="grid gap-5 sm:grid-cols-3">
+        {FEATURED.map((t) => (
+          <FeaturedCard key={t.name} t={t} />
+        ))}
+      </div>
+      <div className="marquee-mask flex flex-col gap-5">
+        <Row items={rowA} dir="l" />
+        <Row items={rowB} dir="r" />
+      </div>
     </div>
   );
 }
