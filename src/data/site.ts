@@ -162,7 +162,7 @@ export const podcasts: Podcast[] = [
   },
 ];
 
-export type Civic = { org: string; role: string; blurb: string };
+export type Civic = { org: string; role: string; blurb: string; logo: string };
 
 // Civic leadership & volunteer work. Descriptors drawn from John's public
 // footprint (press, fundraising, board service); refine any specifics as needed.
@@ -170,24 +170,28 @@ export const civic: Civic[] = [
   {
     org: "PGA REACH Western New York",
     role: "Board Trustee",
+    logo: "/logos/pgareach.png",
     blurb:
       "Trustee for the charitable foundation of the WNY PGA, advancing golf-for-good programming, youth access, and regional fundraising.",
   },
   {
     org: "POWER of OZmosis",
     role: "Supporter & Host",
+    logo: "/logos/powerofozmosis.png",
     blurb:
       "Host and fundraising supporter for pediatric cancer research and awareness efforts.",
   },
   {
     org: "Heritage Christian Services",
     role: "Fundraising Partner",
+    logo: "/logos/heritagechristian.png",
     blurb:
       "Helped raise funds supporting people with disabilities and their families across Western New York.",
   },
   {
     org: "Special Olympics",
     role: "Partner & Volunteer",
+    logo: "/logos/specialolympics.png",
     blurb:
       "Built brand partnerships and supported events and athletes through sponsorship activation.",
   },
