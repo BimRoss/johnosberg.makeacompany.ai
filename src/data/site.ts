@@ -162,37 +162,46 @@ export const podcasts: Podcast[] = [
   },
 ];
 
-export type Civic = { org: string; role: string; blurb: string; logo: string };
+export type Civic = { org: string; role: string; logo: string; mark: string; accent: string };
 
-// Civic leadership & volunteer work. Descriptors drawn from John's public
-// footprint (press, fundraising, board service); refine any specifics as needed.
+// John's civic leadership & volunteer roles. logo "" falls back to a monogram.
 export const civic: Civic[] = [
-  {
-    org: "PGA REACH Western New York",
-    role: "Board Trustee",
-    logo: "/logos/pgareach.png",
-    blurb:
-      "Trustee for the charitable foundation of the WNY PGA, advancing golf-for-good programming, youth access, and regional fundraising.",
-  },
-  {
-    org: "POWER of OZmosis",
-    role: "Supporter & Host",
-    logo: "/logos/powerofozmosis.png",
-    blurb:
-      "Host and fundraising supporter for pediatric cancer research and awareness efforts.",
-  },
-  {
-    org: "Heritage Christian Services",
-    role: "Fundraising Partner",
-    logo: "/logos/heritagechristian.png",
-    blurb:
-      "Helped raise funds supporting people with disabilities and their families across Western New York.",
-  },
-  {
-    org: "Special Olympics",
-    role: "Partner & Volunteer",
-    logo: "/logos/specialolympics.png",
-    blurb:
-      "Built brand partnerships and supported events and athletes through sponsorship activation.",
-  },
+  { org: "Techstars", role: "Community Organizer & Program Contributor", logo: "/logos/civ-techstars.png", mark: "T", accent: "#1f1f1f" },
+  { org: "POWER of OZmosis", role: "Mentor · Connector · Fundraiser", logo: "/logos/powerofozmosis.png", mark: "OZ", accent: "#1d4ed8" },
+  { org: "PGA REACH Western NY", role: "Board of Trustees & Advisor", logo: "/logos/pgareach.png", mark: "PGA", accent: "#0b3d2e" },
+  { org: "EforAll", role: "Lead Mentor, Buffalo NY Cohort", logo: "/logos/civ-eforall.png", mark: "Ef", accent: "#2bb3a3" },
+  { org: "OnCore Golf", role: "Fundraising Director", logo: "/logos/civ-oncoregolf.png", mark: "OC", accent: "#111827" },
+  { org: "UB CoLab · Blackstone LaunchPad", role: "Finals Judge, Student Pitches", logo: "/logos/civ-buffalo.png", mark: "UB", accent: "#005bbb" },
+  { org: "dooProcess", role: "Community Champion & Mentor", logo: "", mark: "DP", accent: "#6d28d9" },
+  { org: "Niagara University", role: "Featured Speaker", logo: "/logos/civ-niagara.png", mark: "NU", accent: "#5b2a86" },
+  { org: "Buffalo Startup Week", role: "Featured Speaker, Social Media", logo: "", mark: "BSW", accent: "#f59e0b" },
+  { org: "University at Buffalo", role: "Expert in Residence, LaunchPad", logo: "/logos/civ-buffalo.png", mark: "UB", accent: "#005bbb" },
+  { org: "Heritage Christian Services", role: "Chairperson, Heritage HERO 5K", logo: "/logos/heritagechristian.png", mark: "HC", accent: "#0e7490" },
+  { org: "Niagara Global Tourism Institute", role: "Community Advocate, TReC", logo: "", mark: "NG", accent: "#0891b2" },
+  { org: "First Tee", role: "Youth Golf Coach", logo: "/logos/civ-firsttee.png", mark: "FT", accent: "#16a34a" },
+  { org: "Police Athletic League", role: "Youth Golf Coach", logo: "/logos/civ-pal.png", mark: "PAL", accent: "#1e3a8a" },
+  { org: "NAACP", role: "Member, Buffalo NY Chapter", logo: "/logos/civ-naacp.png", mark: "NA", accent: "#111827" },
+  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-eom.png", mark: "RO", accent: "#dc2626" },
+  { org: "People Inc.", role: "Mentor", logo: "/logos/civ-peopleinc.png", mark: "PI", accent: "#16a34a" },
+  { org: "Team F.A.S.T.", role: "Board Member", logo: "/logos/civ-teamfast.png", mark: "TF", accent: "#1d4ed8" },
+  { org: "Heritage Christian Services", role: "Chair, Annual Foundation Fundraiser", logo: "/logos/heritagechristian.png", mark: "HC", accent: "#0e7490" },
+  { org: "Niagara University Marketing Assn.", role: "Business Competition Finals Judge", logo: "/logos/civ-niagara.png", mark: "NUMA", accent: "#5b2a86" },
+  { org: "Accessible Academics", role: "Mentor", logo: "", mark: "AA", accent: "#b45309" },
+  { org: "F BITES", role: "Community Champion", logo: "", mark: "FB", accent: "#65a30d" },
+  { org: "CALLSIGN 22", role: "5x4x48 Challenge Fundraiser", logo: "", mark: "C22", accent: "#475569" },
+  { org: "Niagara University", role: "Featured Speaker & Careers Connector", logo: "/logos/civ-niagara.png", mark: "NU", accent: "#5b2a86" },
+  { org: "The Essential Machine", role: "Mentor to Founder", logo: "", mark: "EM", accent: "#0ea5e9" },
+  { org: "NYBPC", role: "Regional Finals Judge", logo: "/logos/civ-nybpc.png", mark: "NY", accent: "#1f7a3f" },
+  { org: "UB School of Management", role: "Mentor / Finals Judge, Student 2 Biz", logo: "/logos/civ-buffalo.png", mark: "UB", accent: "#005bbb" },
+  { org: "vidwheel", role: "Podcast Host & Featured Speaker", logo: "/logos/civ-vidwheel.png", mark: "VW", accent: "#16a34a" },
+  { org: "Bad Golf Business School", role: "Founder / Operator", logo: "", mark: "BG", accent: "#15803d" },
+  { org: "American University", role: "Featured Speaker", logo: "/logos/civ-american.png", mark: "AU", accent: "#b91c1c" },
+  { org: "Trocaire College", role: "Featured Speaker", logo: "/logos/civ-trocaire.png", mark: "TC", accent: "#7f1d1d" },
+  { org: "American Lung Association", role: "Fight for Air Climb Fundraiser", logo: "/logos/civ-lung.png", mark: "AL", accent: "#2563eb" },
+  { org: "InfoTech WNY", role: "Board Member & Co-Director, Networking", logo: "", mark: "IT", accent: "#0d9488" },
+  { org: "Buffalo Niagara Partnership", role: "Featured Speaker, BN360", logo: "/logos/civ-bnp.png", mark: "BN", accent: "#1d4ed8" },
+  { org: "Cystic Fibrosis Foundation", role: "Rising Star Selection", logo: "/logos/civ-cff.png", mark: "CF", accent: "#2563eb" },
+  { org: "Special Olympics", role: "Event Volunteer, Fire Truck Pull", logo: "/logos/specialolympics.png", mark: "SO", accent: "#e0301e" },
+  { org: "United Way of Buffalo & Erie County", role: "Student Liaison", logo: "/logos/civ-uwbec.png", mark: "UW", accent: "#e0301e" },
+  { org: "Jericho Road Community Health Center", role: "Volunteer, Vive La Casa", logo: "/logos/civ-jericho.png", mark: "JR", accent: "#ea580c" },
 ];
