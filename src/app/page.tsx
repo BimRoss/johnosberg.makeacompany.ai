@@ -113,7 +113,7 @@ export default function Home() {
             {roles.map((r, i) => (
               <div
                 key={r.org}
-                className={`flex flex-col gap-2 py-7 md:flex-row md:gap-10 ${
+                className={`on-photo flex flex-col gap-2 py-7 md:flex-row md:gap-10 ${
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
@@ -121,15 +121,15 @@ export default function Home() {
                   <div className="font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
                     {r.org}
                   </div>
-                  <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+                  <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-500">
                     {r.period}
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <div className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                  <div className="text-sm font-semibold text-zinc-900 dark:text-zinc-200">
                     {r.title}
                   </div>
-                  <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                  <p className="mt-2 text-sm leading-6 text-zinc-900 dark:text-zinc-400">
                     {r.blurb}
                   </p>
                 </div>
@@ -162,14 +162,14 @@ export default function Home() {
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex items-center gap-4 py-4 ${
+                className={`on-photo group flex items-center gap-4 py-4 ${
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
-                <span className="w-40 shrink-0 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+                <span className="w-40 shrink-0 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-500">
                   {p.source}
                 </span>
-                <span className="flex-1 font-[family-name:var(--font-sora)] text-sm font-medium text-zinc-800 transition-colors group-hover:text-zinc-950 dark:text-zinc-200 dark:group-hover:text-white sm:text-base">
+                <span className="flex-1 font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white sm:text-base">
                   {p.title}
                 </span>
                 <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5 group-hover:text-zinc-600 dark:group-hover:text-zinc-200">
