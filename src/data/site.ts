@@ -91,48 +91,56 @@ export const brands: Brand[] = [
   { name: "BlueCross BlueShield", mark: "BCBS", accent: "#0066b3", logo: "/logos/bcbs.png", url: "https://www.bcbswny.com" },
 ];
 
-export type PressItem = { source: string; title: string; href: string };
+export type PressItem = { source: string; title: string; href: string; logo: string };
 
 export const press: PressItem[] = [
   {
     source: "PGA REACH WNY",
     title: "John Osberg Named PGA REACH WNY Trustee",
     href: "https://westernnewyork.pga.com/news/john-osberg-named-as-pga-reach-wny-trustee/",
+    logo: "/logos/pgareach.png",
   },
   {
     source: "Western NY PGA",
     title: "Osberg Named Director of Development & Foundation Operations",
     href: "https://westernnewyork.pga.com/wp-content/uploads/sites/16/2023/07/Press-Release_Osberg.docx.pdf",
+    logo: "/logos/news-pga.png",
   },
   {
     source: "PGA.com",
     title: "PGA REACH Hosts Charity Pro-Am at Oak Hill Country Club",
     href: "https://www.pga.com/story/pga-reach-recently-hosted-a-charity-pro-am-at-oak-hill-country-club",
+    logo: "/logos/news-pga.png",
   },
   {
     source: "NYSGA",
     title: "NYSGA Partners with Buffalo-Based OnCore Golf",
     href: "https://nysga.org/communications-news/nysga-partners-with-buffalo-based-oncore-golf-technology",
+    logo: "/logos/nysga.png",
   },
   {
     source: "Empire State Entrepreneurs",
     title: "John Osberg of WNY PGA — entrepreneur, athlete, growth strategist",
     href: "https://empirestateentrepreneurs.transistor.fm/s2/7",
+    logo: "/logos/news-ese.png",
   },
   {
     source: "Clark Dever",
     title: "Bad Golf Business School: Startup Lessons from the Fairway",
     href: "https://www.clarkdever.com/projects/bad-golf-business-school",
+    logo: "/logos/news-clarkdever.png",
   },
   {
     source: "Buffalo Business First",
     title: "John Osberg & Brandlete in Buffalo Business First",
     href: "https://www.bizjournals.com/buffalo/inno/stories/news/2022/09/02/brandlete-buffalo-startup-sports-social-media.html",
+    logo: "/logos/news-biz.png",
   },
   {
     source: "Buffalo Business First",
     title: "Buffalo 30 Under 30 Winner",
     href: "https://www.bizjournals.com/buffalo/news/2019/04/01/buffalo-2019-30-under-30-winners-wny.html",
+    logo: "/logos/news-biz.png",
   },
 ];
 
