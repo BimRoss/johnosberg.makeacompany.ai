@@ -60,6 +60,16 @@ export default function Home() {
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
               Get to know me before we formally connect. ⚡
             </p>
+            <a
+              href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="on-photo group mt-4 inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:text-xs"
+            >
+              <span aria-hidden>⭐</span>
+              Endorsed by 134+ top professionals and counting
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
           </div>
         </section>
 
@@ -69,6 +79,16 @@ export default function Home() {
             {HERO_SUMMARY}
           </p>
           <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://calendar.app.google/yPadngiD35aN7BWa7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-sm bg-emerald-600 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-emerald-600/25 transition-colors hover:bg-emerald-500"
+            >
+              <span aria-hidden>⚡</span>
+              Book a call
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
             <a
               href="/resume.pdf"
               target="_blank"
@@ -99,16 +119,6 @@ export default function Home() {
             >
               <span aria-hidden>🏆</span>
               <span className="hidden sm:inline">30 Under 30</span>
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-sky-500/50 bg-sky-50/80 px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-sky-900 backdrop-blur-md transition-colors hover:border-sky-500/80 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-200 dark:hover:border-sky-400/60"
-            >
-              <span aria-hidden>⭐</span>
-              <span>134 recommendations</span>
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
