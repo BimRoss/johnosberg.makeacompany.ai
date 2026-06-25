@@ -40,15 +40,16 @@ export default function ChromeFx() {
         onClick={() =>
           window.scrollTo({ top: 0, behavior: "smooth" })
         }
-        className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 transition-all duration-300 hover:bg-emerald-500 ${
+        className={`group fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-white/20 bg-emerald-600 px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-emerald-600/30 transition-all duration-300 hover:bg-emerald-500 ${
           showTop
             ? "translate-y-0 opacity-100"
             : "pointer-events-none translate-y-3 opacity-0"
         }`}
       >
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
           <path d="M12 19V5M5 12l7-7 7 7" />
         </svg>
+        Back to top
       </button>
     </>
   );
