@@ -55,8 +55,11 @@ export default function Home() {
 
         {/* Summary + CTA */}
         <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
-          <p className="on-photo max-w-3xl text-[15px] leading-7 text-zinc-800 dark:text-zinc-300 sm:text-lg sm:leading-8">
+          <p className="on-photo max-w-3xl text-[15px] font-medium leading-7 text-zinc-950 dark:font-normal dark:text-zinc-300 sm:text-lg sm:leading-8">
             {HERO_SUMMARY}
+          </p>
+          <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-950 dark:text-white sm:text-xl">
+            Get to know me before we formally connect.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a
@@ -75,7 +78,7 @@ export default function Home() {
                 {...(external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="inline-flex items-center gap-2 border border-black/15 px-4 py-3 font-mono text-xs text-zinc-600 transition-colors hover:border-black/40 hover:text-zinc-900 dark:border-white/15 dark:text-zinc-300 dark:hover:border-white/50 dark:hover:text-white"
+                className="on-photo inline-flex items-center gap-2 border border-black/25 bg-white/30 px-4 py-3 font-mono text-xs font-medium text-zinc-900 backdrop-blur-md transition-colors hover:border-black/50 hover:text-black dark:border-white/15 dark:bg-transparent dark:font-normal dark:text-zinc-300 dark:hover:border-white/50 dark:hover:text-white"
               >
                 <Icon className="h-4 w-4 shrink-0" />
                 <span className="hidden sm:inline">{label}</span>
