@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
+import ChromeFx from "@/components/ChromeFx";
+import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
 import BrandLogo from "@/components/BrandLogo";
 import DataViz from "@/components/DataViz";
@@ -24,6 +26,7 @@ export default function Home() {
       <Backdrop />
       <ThemeToggle />
       <ScrollReveal />
+      <ChromeFx />
       <main
         id="main"
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-24 px-5 pb-24 pt-16 sm:px-8 md:gap-32 md:pt-24"
@@ -107,7 +110,7 @@ export default function Home() {
               className="bg-white/70 px-5 py-7 text-center backdrop-blur-md dark:bg-zinc-950/55"
             >
               <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
-                {s.value}
+                <CountUp value={s.value} />
               </div>
               <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">
                 {s.label}
