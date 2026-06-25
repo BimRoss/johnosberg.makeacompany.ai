@@ -187,7 +187,7 @@ export default function Home() {
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Partnerships built with
           </h2>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {brands.map((b) => (
               <BrandLogo key={b.name} brand={b} />
             ))}
