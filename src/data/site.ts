@@ -123,6 +123,11 @@ export const press: PressItem[] = [
     title: "John Osberg & Brandlete in Buffalo Business First",
     href: "https://www.bizjournals.com/buffalo/search/results?q=John%20Osberg",
   },
+  {
+    source: "Buffalo Business First",
+    title: "Buffalo 30 Under 30 Winner",
+    href: "https://www.bizjournals.com/buffalo/news/2019/04/01/buffalo-2019-30-under-30-winners-wny.html",
+  },
 ];
 
 export const FEATURED_VIDEO = {
