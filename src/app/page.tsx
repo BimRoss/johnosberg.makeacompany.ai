@@ -8,6 +8,7 @@ import SearchPalette from "@/components/SearchPalette";
 import Testimonials from "@/components/Testimonials";
 import BrandLogo from "@/components/BrandLogo";
 import CivicCard from "@/components/CivicCard";
+import InfoDock from "@/components/InfoDock";
 import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
@@ -36,6 +37,8 @@ export default function Home() {
         id="main"
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-24 px-5 pb-24 pt-16 sm:px-8 md:gap-32 md:pt-24"
       >
+        <InfoDock />
+
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
           <div className="shrink-0">
