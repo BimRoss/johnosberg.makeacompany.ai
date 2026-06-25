@@ -205,10 +205,10 @@ body::after {
   to { transform: translateX(0); }
 }
 .animate-marquee-l {
-  animation: marquee-l 90s linear infinite;
+  animation: marquee-l 180s linear infinite;
 }
 .animate-marquee-r {
-  animation: marquee-r 90s linear infinite;
+  animation: marquee-r 180s linear infinite;
 }
 .marquee-mask {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
