@@ -101,6 +101,16 @@ export default function Home() {
               <span className="hidden sm:inline">30 Under 30</span>
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
+            <a
+              href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full border border-sky-500/50 bg-sky-50/80 px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-sky-900 backdrop-blur-md transition-colors hover:border-sky-500/80 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-200 dark:hover:border-sky-400/60"
+            >
+              <span aria-hidden>⭐</span>
+              <span>134 recommendations</span>
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
           </div>
         </section>
 
