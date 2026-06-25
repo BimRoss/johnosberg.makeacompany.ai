@@ -55,7 +55,7 @@ export default function Home() {
             <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
               John Osberg
             </h1>
-            <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-700 dark:text-zinc-300 sm:text-xl">
+            <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
               VP of Partnerships @ Brandlete, Inc. · Head of Growth @ MakeaCompany.ai (MaC)
             </p>
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
@@ -76,7 +76,7 @@ export default function Home() {
 
         {/* Summary + CTA */}
         <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
-          <p className="on-photo max-w-3xl text-[15px] font-medium leading-7 text-zinc-950 dark:font-normal dark:text-zinc-300 sm:text-lg sm:leading-8">
+          <p className="on-photo max-w-3xl text-base font-medium leading-7 text-zinc-950 dark:font-normal dark:text-zinc-300 sm:text-xl sm:leading-8">
             {HERO_SUMMARY}
           </p>
           <div className="flex flex-wrap items-center gap-3">
@@ -135,7 +135,7 @@ export default function Home() {
               <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
                 <CountUp value={s.value} />
               </div>
-              <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">
+              <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400">
                 {s.label}
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
-          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Experience
           </h2>
           <div className="flex flex-col">
@@ -161,18 +161,18 @@ export default function Home() {
                 }`}
               >
                 <div className="md:w-1/3 md:shrink-0">
-                  <div className="font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
+                  <div className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
                     {r.org}
                   </div>
-                  <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-500">
+                  <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
                     {r.period}
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <div className="text-sm font-semibold text-zinc-900 dark:text-zinc-200">
+                  <div className="text-base font-semibold text-zinc-900 dark:text-zinc-200">
                     {r.title}
                   </div>
-                  <p className="mt-2 text-sm leading-6 text-zinc-900 dark:text-zinc-400">
+                  <p className="mt-2 text-[15px] leading-7 text-zinc-900 dark:text-zinc-300">
                     {r.blurb}
                   </p>
                 </div>
@@ -183,7 +183,7 @@ export default function Home() {
 
         {/* Brands */}
         <section id="partnerships" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Partnerships built with
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -196,7 +196,7 @@ export default function Home() {
         {/* Recommendations */}
         <section id="recommendations" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
+            <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
               Recommendations
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
@@ -208,7 +208,7 @@ export default function Home() {
 
         {/* In the news */}
         <section id="news" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             In the news
           </h2>
           <div className="flex flex-col">
@@ -222,10 +222,10 @@ export default function Home() {
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
-                <span className="w-40 shrink-0 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-500">
+                <span className="w-40 shrink-0 font-mono text-xs uppercase tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
                   {p.source}
                 </span>
-                <span className="flex-1 font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white sm:text-base">
+                <span className="flex-1 font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white sm:text-lg">
                   {p.title}
                 </span>
                 <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5 group-hover:text-zinc-600 dark:group-hover:text-zinc-200">
@@ -238,7 +238,7 @@ export default function Home() {
 
         {/* Podcasts */}
         <section id="podcasts" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Podcasts
           </h2>
           <figure className="flex flex-col gap-2">

@@ -14,10 +14,10 @@ function Card({
   return (
     <div className="flex flex-col gap-4 rounded-xl border border-black/10 bg-white/70 p-6 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55">
       <div>
-        <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+        <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-zinc-600 dark:text-zinc-400">
           {kicker}
         </div>
-        <div className="mt-1 font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
+        <div className="mt-1 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
           {title}
         </div>
       </div>

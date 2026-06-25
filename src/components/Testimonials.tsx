@@ -2,15 +2,15 @@ import { testimonials, type Testimonial } from "@/data/testimonials";
 
 function Card({ t }: { t: Testimonial }) {
   return (
-    <figure className="flex w-[300px] shrink-0 flex-col gap-4 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55 sm:w-[340px]">
-      <blockquote className="line-clamp-6 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+    <figure className="flex w-[320px] shrink-0 flex-col gap-4 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55 sm:w-[360px]">
+      <blockquote className="line-clamp-6 text-[15px] leading-7 text-zinc-800 dark:text-zinc-300">
         “{t.text}”
       </blockquote>
       <figcaption className="mt-auto">
-        <div className="font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 dark:text-white">
+        <div className="font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
           {t.name}
         </div>
-        <div className="line-clamp-1 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
+        <div className="line-clamp-1 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
           {t.title}
           {t.company ? ` · ${t.company}` : ""}
         </div>
