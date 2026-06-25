@@ -9,7 +9,12 @@ export default function CivicCard({ c }: { c: Civic }) {
   const [failed, setFailed] = useState(!c.logo);
 
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-3.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+    <a
+      href={c.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${c.org} — open in new tab`}
+      className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-3.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-xs font-bold"
@@ -39,6 +44,6 @@ export default function CivicCard({ c }: { c: Civic }) {
           {c.org}
         </span>
       </span>
-    </div>
+    </a>
   );
 }
