@@ -35,7 +35,7 @@ export default function Home() {
       <SearchPalette />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pb-24 pt-16 sm:gap-20 sm:px-8 md:gap-28 md:pt-24"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-24 pt-16 sm:gap-20 sm:px-8 md:gap-28 md:pt-24"
       >
         <InfoDock />
 
@@ -161,7 +161,7 @@ export default function Home() {
             {roles.map((r, i) => (
               <div
                 key={r.org}
-                className={`on-photo flex flex-col gap-2 py-7 md:flex-row md:gap-10 ${
+                className={`on-photo flex flex-col gap-2 py-5 md:flex-row md:gap-10 md:py-7 ${
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
