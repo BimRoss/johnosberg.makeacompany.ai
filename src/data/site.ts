@@ -83,6 +83,12 @@ export const brands: Brand[] = [
   { name: "Audacy", mark: "A", accent: "#9b5cff", logo: "/logos/audacy.png", url: "https://www.audacy.com" },
   { name: "Club Car", mark: "CC", accent: "#22a447", logo: "/logos/clubcar.png", url: "https://www.clubcar.com" },
   { name: "New York State Golf Association", mark: "NYSGA", accent: "#344475", logo: "/logos/nysga.png", url: "https://nysga.org" },
+  { name: "Liazon (Towers Watson)", mark: "L", accent: "#0a6ebd", logo: "/logos/liazon.png", url: "https://www.wtwco.com" },
+  { name: "CareSource", mark: "CS", accent: "#00a0af", logo: "/logos/caresource.png", url: "https://www.caresource.com" },
+  { name: "HealtheLink", mark: "HL", accent: "#1b75bc", logo: "/logos/healthelink.png", url: "https://wnyhealthelink.com" },
+  { name: "HealtheConnections", mark: "HC", accent: "#6cb33f", logo: "/logos/healtheconnections.png", url: "https://www.healtheconnections.org" },
+  { name: "Fidelis Care", mark: "FC", accent: "#00529b", logo: "/logos/fideliscare.png", url: "https://www.fideliscare.org" },
+  { name: "BlueCross BlueShield", mark: "BCBS", accent: "#0066b3", logo: "/logos/bcbs.png", url: "https://www.bcbswny.com" },
 ];
 
 export type PressItem = { source: string; title: string; href: string };
@@ -153,5 +159,36 @@ export const podcasts: Podcast[] = [
     title: "John Osberg, Featured Guest",
     role: "Guest",
     href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgMHOYeCaDmnwcjEnzumQSn",
+  },
+];
+
+export type Civic = { org: string; role: string; blurb: string };
+
+// Civic leadership & volunteer work. Descriptors drawn from John's public
+// footprint (press, fundraising, board service); refine any specifics as needed.
+export const civic: Civic[] = [
+  {
+    org: "PGA REACH Western New York",
+    role: "Board Trustee",
+    blurb:
+      "Trustee for the charitable foundation of the WNY PGA, advancing golf-for-good programming, youth access, and regional fundraising.",
+  },
+  {
+    org: "POWER of OZmosis",
+    role: "Supporter & Host",
+    blurb:
+      "Host and fundraising supporter for pediatric cancer research and awareness efforts.",
+  },
+  {
+    org: "Heritage Christian Services",
+    role: "Fundraising Partner",
+    blurb:
+      "Helped raise funds supporting people with disabilities and their families across Western New York.",
+  },
+  {
+    org: "Special Olympics",
+    role: "Partner & Volunteer",
+    blurb:
+      "Built brand partnerships and supported events and athletes through sponsorship activation.",
   },
 ];
