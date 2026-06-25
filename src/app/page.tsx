@@ -1,11 +1,15 @@
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
+import BookCallBtn from "@/components/BookCallBtn";
 import ChromeFx from "@/components/ChromeFx";
 import CountUp from "@/components/CountUp";
+import CursorTrail from "@/components/CursorTrail";
 import ScrollReveal from "@/components/ScrollReveal";
 import SearchPalette from "@/components/SearchPalette";
+import StatTilt from "@/components/StatTilt";
 import Testimonials from "@/components/Testimonials";
+import TypeCycle from "@/components/TypeCycle";
 import BrandLogo from "@/components/BrandLogo";
 import CivicCard from "@/components/CivicCard";
 import InfoDock from "@/components/InfoDock";
@@ -33,6 +37,7 @@ export default function Home() {
       <ScrollReveal />
       <ChromeFx />
       <SearchPalette />
+      <CursorTrail />
       <main
         id="main"
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-24 pt-16 sm:gap-20 sm:px-8 md:gap-28 md:pt-24"
@@ -63,6 +68,7 @@ export default function Home() {
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
               VP of Partnerships @ Brandlete, Inc. · Head of Growth @ MakeaCompany.ai (MaC)
             </p>
+            <TypeCycle />
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
               Get to know me before we formally connect. ⚡
             </p>
@@ -85,16 +91,7 @@ export default function Home() {
             {HERO_SUMMARY}
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="https://calendar.app.google/yPadngiD35aN7BWa7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-sm bg-emerald-600 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-emerald-600/25 transition-colors hover:bg-emerald-500"
-            >
-              <span aria-hidden>⚡</span>
-              Book a call
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </a>
+            <BookCallBtn />
             <a
               href="/resume.pdf"
               target="_blank"
@@ -133,17 +130,16 @@ export default function Home() {
         {/* Stats */}
         <section className="reveal-3 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10 md:grid-cols-4">
           {stats.map((s) => (
-            <div
-              key={s.label}
-              className="bg-white/70 px-5 py-7 text-center backdrop-blur-md dark:bg-zinc-950/55"
-            >
-              <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
-                <CountUp value={s.value} />
+            <StatTilt key={s.label}>
+              <div className="bg-white/70 px-5 py-7 text-center backdrop-blur-md dark:bg-zinc-950/55">
+                <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
+                  <CountUp value={s.value} />
+                </div>
+                <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400">
+                  {s.label}
+                </div>
               </div>
-              <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400">
-                {s.label}
-              </div>
-            </div>
+            </StatTilt>
           ))}
         </section>
 
