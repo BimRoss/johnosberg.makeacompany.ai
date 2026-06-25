@@ -50,6 +50,9 @@ export default function Home() {
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-700 dark:text-zinc-300 sm:text-xl">
               VP of Partnerships, Brandlete · Head of Growth, MakeaCompany.ai
             </p>
+            <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
+              Get to know me before we formally connect.
+            </p>
           </div>
         </section>
 
@@ -57,9 +60,6 @@ export default function Home() {
         <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
           <p className="on-photo max-w-3xl text-[15px] font-medium leading-7 text-zinc-950 dark:font-normal dark:text-zinc-300 sm:text-lg sm:leading-8">
             {HERO_SUMMARY}
-          </p>
-          <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-950 dark:text-white sm:text-xl">
-            Get to know me before we formally connect.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a
