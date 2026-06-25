@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
+import ScrollReveal from "@/components/ScrollReveal";
 import BrandLogo from "@/components/BrandLogo";
 import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -22,6 +23,7 @@ export default function Home() {
     <>
       <Backdrop />
       <ThemeToggle />
+      <ScrollReveal />
       <main
         id="main"
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-24 px-5 pb-24 pt-16 sm:px-8 md:gap-32 md:pt-24"
@@ -41,7 +43,7 @@ export default function Home() {
             </div>
           </div>
           <div className="min-w-0">
-            <p className="on-photo border-l-2 border-black/20 pl-3 font-mono text-[10px] font-medium uppercase leading-relaxed tracking-[0.22em] text-zinc-500 dark:border-white/25 dark:text-zinc-400 sm:text-xs">
+            <p className="label-shimmer border-l-2 border-emerald-600/60 pl-3 font-mono text-[11px] font-bold uppercase leading-relaxed tracking-[0.24em] dark:border-emerald-400/60 sm:text-sm">
               {HERO_LABEL}
             </p>
             <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
@@ -115,10 +117,12 @@ export default function Home() {
         </section>
 
         {/* Data viz */}
-        <DataViz />
+        <div className="reveal-on-scroll">
+          <DataViz />
+        </div>
 
         {/* Experience */}
-        <section className="flex flex-col gap-8">
+        <section className="reveal-on-scroll flex flex-col gap-8">
           <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             Experience
           </h2>
@@ -152,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* Brands */}
-        <section className="flex flex-col gap-6">
+        <section className="reveal-on-scroll flex flex-col gap-6">
           <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             Partnerships built with
           </h2>
@@ -164,7 +168,7 @@ export default function Home() {
         </section>
 
         {/* In the news */}
-        <section className="flex flex-col gap-6">
+        <section className="reveal-on-scroll flex flex-col gap-6">
           <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             In the news
           </h2>
@@ -194,7 +198,7 @@ export default function Home() {
         </section>
 
         {/* Podcasts */}
-        <section className="flex flex-col gap-6">
+        <section className="reveal-on-scroll flex flex-col gap-6">
           <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
             Podcasts
           </h2>
