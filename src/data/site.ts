@@ -64,25 +64,25 @@ export const roles = [
   },
 ];
 
-export type Brand = { name: string; mark: string; accent: string; logo: string };
+export type Brand = { name: string; mark: string; accent: string; logo: string; url: string };
 
 export const brands: Brand[] = [
-  { name: "DICK'S Sporting Goods", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png" },
-  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: "/logos/golfgalaxy.png" },
-  { name: "Wegmans", mark: "W", accent: "#e0301e", logo: "/logos/wegmans.png" },
-  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: "/logos/michelobultra.png" },
-  { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: "/logos/oakley.png" },
-  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: "/logos/ralphlauren.png" },
-  { name: "Tito's Handmade Vodka", mark: "T", accent: "#3aa0ff", logo: "/logos/titos.png" },
-  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: "/logos/corebridge.png" },
-  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: "/logos/sandals.png" },
-  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", logo: "/logos/gallagher.png" },
-  { name: "National Fuel", mark: "NF", accent: "#2563eb", logo: "/logos/nationalfuel.png" },
-  { name: "Special Olympics", mark: "SO", accent: "#e0301e", logo: "/logos/specialolympics.png" },
-  { name: "Gatorade", mark: "G", accent: "#ff7a1a", logo: "/logos/gatorade.png" },
-  { name: "Audacy", mark: "A", accent: "#9b5cff", logo: "/logos/audacy.png" },
-  { name: "Club Car", mark: "CC", accent: "#22a447", logo: "/logos/clubcar.png" },
-  { name: "New York State Golf Association", mark: "NYSGA", accent: "#344475", logo: "/logos/nysga.png" },
+  { name: "DICK'S Sporting Goods", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png", url: "https://www.dickssportinggoods.com" },
+  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: "/logos/golfgalaxy.png", url: "https://www.golfgalaxy.com" },
+  { name: "Wegmans", mark: "W", accent: "#e0301e", logo: "/logos/wegmans.png", url: "https://www.wegmans.com" },
+  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: "/logos/michelobultra.png", url: "https://www.michelobultra.com" },
+  { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: "/logos/oakley.png", url: "https://www.oakley.com" },
+  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: "/logos/ralphlauren.png", url: "https://www.ralphlauren.com/rlx-golf" },
+  { name: "Tito's Handmade Vodka", mark: "T", accent: "#3aa0ff", logo: "/logos/titos.png", url: "https://www.titosvodka.com" },
+  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: "/logos/corebridge.png", url: "https://www.corebridgefinancial.com" },
+  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: "/logos/sandals.png", url: "https://www.sandals.com" },
+  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", logo: "/logos/gallagher.png", url: "https://www.ajg.com" },
+  { name: "National Fuel", mark: "NF", accent: "#2563eb", logo: "/logos/nationalfuel.png", url: "https://www.nationalfuel.com" },
+  { name: "Special Olympics", mark: "SO", accent: "#e0301e", logo: "/logos/specialolympics.png", url: "https://www.specialolympics.org" },
+  { name: "Gatorade", mark: "G", accent: "#ff7a1a", logo: "/logos/gatorade.png", url: "https://www.gatorade.com" },
+  { name: "Audacy", mark: "A", accent: "#9b5cff", logo: "/logos/audacy.png", url: "https://www.audacy.com" },
+  { name: "Club Car", mark: "CC", accent: "#22a447", logo: "/logos/clubcar.png", url: "https://www.clubcar.com" },
+  { name: "New York State Golf Association", mark: "NYSGA", accent: "#344475", logo: "/logos/nysga.png", url: "https://nysga.org" },
 ];
 
 export type PressItem = { source: string; title: string; href: string };

@@ -11,7 +11,12 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-4 backdrop-blur-md transition-colors hover:border-black/20 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+    <a
+      href={brand.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${brand.name} website`}
+      className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-4 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-sm font-bold"
@@ -36,6 +41,6 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
       <span className="font-[family-name:var(--font-sora)] text-[13px] font-medium leading-tight text-zinc-700 dark:text-zinc-300">
         {brand.name}
       </span>
-    </div>
+    </a>
   );
 }
