@@ -146,6 +146,55 @@ body::after {
     0 0 14px rgba(9, 9, 11, 0.5);
 }
 
+/* Animated gradient eyebrow — "growth · partnerships · revenue" */
+.label-shimmer {
+  background: linear-gradient(90deg, #047857, #0284c7, #7c3aed, #b45309, #047857);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: label-pan 7s linear infinite;
+}
+.dark .label-shimmer {
+  background: linear-gradient(90deg, #34d399, #38bdf8, #a78bfa, #fbbf24, #34d399);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: label-pan 7s linear infinite;
+}
+@keyframes label-pan {
+  to {
+    background-position: 300% 0;
+  }
+}
+
+/* Scroll-into-view fade-up, driven by ScrollReveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .label-shimmer,
+  .dark .label-shimmer {
+    animation: none;
+  }
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
