@@ -112,11 +112,13 @@ export default function SearchPalette() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search this site"
-        className="fixed left-4 top-4 z-40 flex items-center gap-2 rounded-full border border-emerald-500/50 bg-white/70 px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-800 backdrop-blur-md transition-colors hover:border-emerald-500 hover:bg-white/90 dark:border-emerald-400/40 dark:bg-zinc-900/60 dark:text-emerald-200 dark:hover:bg-zinc-900/80 sm:left-6 sm:top-6"
+        className="search-pulse group fixed left-4 top-4 z-40 flex items-center gap-2.5 rounded-full border border-amber-400/60 bg-white/85 px-5 py-3 font-mono text-sm font-bold uppercase tracking-[0.14em] text-emerald-800 shadow-lg shadow-amber-400/25 backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-amber-400 hover:bg-white/95 dark:border-amber-400/50 dark:bg-zinc-900/75 dark:text-emerald-100 dark:hover:bg-zinc-900/90 sm:left-6 sm:top-6"
       >
-        <span aria-hidden>⚡</span>
+        <svg viewBox="0 0 24 24" className="bolt-flicker h-5 w-5 fill-amber-400" aria-hidden>
+          <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+        </svg>
         <span>Search</span>
-        <span className="hidden rounded border border-current/30 px-1 text-[9px] opacity-70 sm:inline">
+        <span className="hidden rounded border border-amber-400/40 px-1.5 py-0.5 text-[10px] text-amber-600 opacity-80 dark:text-amber-300 sm:inline">
           ⌘K
         </span>
       </button>
@@ -131,7 +133,9 @@ export default function SearchPalette() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3 border-b border-black/10 px-4 dark:border-white/10">
-              <span aria-hidden className="text-emerald-500">⚡</span>
+              <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 fill-amber-400" aria-hidden>
+                <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+              </svg>
               <input
                 ref={inputRef}
                 value={query}
