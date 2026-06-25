@@ -130,38 +130,38 @@ export default function InfoDock() {
     : "";
 
   return (
-    <aside className=”z-40 -mb-4 w-full sm:-mb-8 xl:absolute xl:top-16 xl:right-[calc(50%-50vw+1.5rem)] xl:mb-0 xl:w-72”>
-      <div className=”overflow-hidden rounded-2xl border border-black/10 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55”>
+    <aside className="z-40 -mb-4 w-full sm:-mb-8 xl:absolute xl:top-16 xl:right-[calc(50%-50vw+1.5rem)] xl:mb-0 xl:w-72">
+      <div className="overflow-hidden rounded-2xl border border-black/10 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55">
         {/* header: live pulse + time */}
-        <div className=”flex items-center justify-between border-b border-black/10 px-3 py-1.5 xl:px-4 xl:py-2.5 dark:border-white/10”>
-          <span className=”flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-600 dark:text-zinc-400”>
-            <span className=”relative flex h-2 w-2”>
-              <span className=”absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/70” />
-              <span className=”relative inline-flex h-2 w-2 rounded-full bg-emerald-500” />
+        <div className="flex items-center justify-between border-b border-black/10 px-3 py-1.5 xl:px-4 xl:py-2.5 dark:border-white/10">
+          <span className="flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-600 dark:text-zinc-400">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             Live
           </span>
-          <span className=”font-mono text-[11px] tabular-nums text-zinc-700 dark:text-zinc-300”>
+          <span className="font-mono text-[11px] tabular-nums text-zinc-700 dark:text-zinc-300">
             {time}
           </span>
         </div>
 
         {/* date + weather */}
-        <div className=”flex items-center justify-between gap-2 px-3 py-2 xl:px-4 xl:py-3”>
-          <div className=”min-w-0”>
-            <div className=”font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 dark:text-white”>
+        <div className="flex items-center justify-between gap-2 px-3 py-2 xl:px-4 xl:py-3">
+          <div className="min-w-0">
+            <div className="font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 dark:text-white">
               {date}
             </div>
-            <div className=”truncate font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500”>
-              {place || “Locating…”}
+            <div className="truncate font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
+              {place || "Locating…"}
             </div>
           </div>
           {wx && (
-            <div className=”flex shrink-0 items-center gap-1.5”>
-              <span className=”text-lg leading-none” aria-hidden>
+            <div className="flex shrink-0 items-center gap-1.5">
+              <span className="text-lg leading-none" aria-hidden>
                 {wx.emoji}
               </span>
-              <span className=”font-[family-name:var(--font-sora)] text-base font-bold text-zinc-900 dark:text-white”>
+              <span className="font-[family-name:var(--font-sora)] text-base font-bold text-zinc-900 dark:text-white">
                 {wx.tempF}°
               </span>
             </div>
@@ -170,43 +170,43 @@ export default function InfoDock() {
 
         {/* quote — 2-line clamp on mobile, full on xl */}
         {quote && (
-          <div className=”border-t border-black/10 px-3 py-2 xl:px-4 xl:py-3 dark:border-white/10”>
-            <p className=”line-clamp-2 text-[12px] italic leading-snug text-zinc-700 xl:line-clamp-none xl:text-[13px] dark:text-zinc-300”>
-              “{quote.t}”
+          <div className="border-t border-black/10 px-3 py-2 xl:px-4 xl:py-3 dark:border-white/10">
+            <p className="line-clamp-2 text-[12px] italic leading-snug text-zinc-700 xl:line-clamp-none xl:text-[13px] dark:text-zinc-300">
+              "{quote.t}"
             </p>
-            <p className=”mt-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500”>
+            <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
               — {quote.a}
             </p>
           </div>
         )}
 
         {/* ways to connect — collapsed toggle on mobile, always-open on xl */}
-        <div className=”border-t border-black/10 dark:border-white/10”>
+        <div className="border-t border-black/10 dark:border-white/10">
           {/* mobile toggle header */}
           <button
             onClick={() => setConnectOpen((v) => !v)}
-            className=”flex w-full items-center justify-between px-3 py-2 xl:hidden”
+            className="flex w-full items-center justify-between px-3 py-2 xl:hidden"
             aria-expanded={connectOpen}
           >
-            <span className=”font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300”>
+            <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
               Ways we could connect
             </span>
-            <span className=”text-[10px] text-zinc-400”>{connectOpen ? “▲” : “▼”}</span>
+            <span className="text-[10px] text-zinc-400">{connectOpen ? "▲" : "▼"}</span>
           </button>
           {/* desktop label (always visible) */}
-          <div className=”hidden px-4 pt-3 xl:block”>
-            <div className=”mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300”>
+          <div className="hidden px-4 pt-3 xl:block">
+            <div className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
               Ways we could connect
             </div>
           </div>
           {/* list — hidden on mobile until toggled, always shown on xl */}
-          <ul className={`flex flex-col gap-1.5 px-3 pb-2 xl:block xl:px-4 xl:pb-3 ${connectOpen ? “block” : “hidden xl:block”}`}>
+          <ul className={`flex flex-col gap-1.5 px-3 pb-2 xl:block xl:px-4 xl:pb-3 ${connectOpen ? "block" : "hidden xl:block"}`}>
             {ideas.map((idea) => (
               <li
                 key={idea}
-                className=”flex gap-2 text-[12px] leading-snug text-zinc-700 dark:text-zinc-300”
+                className="flex gap-2 text-[12px] leading-snug text-zinc-700 dark:text-zinc-300"
               >
-                <span className=”shrink-0 text-amber-500” aria-hidden>
+                <span className="shrink-0 text-amber-500" aria-hidden>
                   ⚡
                 </span>
                 <span>{idea}</span>
