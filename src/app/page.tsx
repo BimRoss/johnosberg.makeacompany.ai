@@ -58,6 +58,16 @@ export default function Home() {
           <p className="on-photo max-w-3xl text-[15px] leading-7 text-zinc-800 dark:text-zinc-300 sm:text-lg sm:leading-8">
             {HERO_SUMMARY}
           </p>
+          <a
+            href="https://www.bizjournals.com/buffalo/news/2019/04/01/buffalo-2019-30-under-30-winners-wny.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex w-fit items-center gap-2 rounded-full border border-amber-500/40 bg-amber-50/80 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-900 backdrop-blur-md transition-colors hover:border-amber-500/70 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-200 dark:hover:border-amber-400/60"
+          >
+            <span aria-hidden>🏆</span>
+            Buffalo Business First · 30 Under 30
+            <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+          </a>
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="/resume.pdf"
