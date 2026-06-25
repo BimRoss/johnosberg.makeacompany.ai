@@ -221,6 +221,28 @@ body::after {
   }
 }
 
+/* Search button — pulsing amber ring + flickering bolt so it reads as live */
+@keyframes search-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+  50% { box-shadow: 0 0 0 9px rgba(245, 158, 11, 0); }
+}
+.search-pulse {
+  animation: search-pulse 2.4s ease-out infinite;
+}
+@keyframes bolt-flicker {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.7)); }
+  50% { transform: scale(1.18) rotate(-5deg); filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.95)); }
+}
+.bolt-flicker {
+  animation: bolt-flicker 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-pulse,
+  .bolt-flicker {
+    animation: none;
+  }
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
