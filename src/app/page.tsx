@@ -205,10 +205,23 @@ export default function Home() {
                 key={c.org}
                 className="flex flex-col gap-2 rounded-2xl border border-black/10 bg-white/70 p-6 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
               >
-                <div className="flex items-baseline justify-between gap-3">
-                  <span className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
-                    {c.org}
-                  </span>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={c.logo}
+                        alt={`${c.org} logo`}
+                        width={28}
+                        height={28}
+                        loading="lazy"
+                        className="h-7 w-7 object-contain"
+                      />
+                    </span>
+                    <span className="min-w-0 font-[family-name:var(--font-sora)] text-lg font-semibold leading-snug text-zinc-900 dark:text-white">
+                      {c.org}
+                    </span>
+                  </div>
                   <span className="shrink-0 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-emerald-800 dark:text-emerald-200">
                     {c.role}
                   </span>
