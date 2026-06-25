@@ -121,7 +121,7 @@ export const press: PressItem[] = [
   {
     source: "Buffalo Business First",
     title: "John Osberg & Brandlete in Buffalo Business First",
-    href: "https://www.bizjournals.com/buffalo/search/results?q=John%20Osberg",
+    href: "https://www.bizjournals.com/buffalo/inno/stories/news/2022/09/02/brandlete-buffalo-startup-sports-social-media.html",
   },
   {
     source: "Buffalo Business First",
