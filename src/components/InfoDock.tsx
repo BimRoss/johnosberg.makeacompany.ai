@@ -129,7 +129,7 @@ export default function InfoDock() {
     : "";
 
   return (
-    <aside className="z-40 mb-2 w-full xl:absolute xl:top-16 xl:right-[calc(50%-50vw+1.5rem)] xl:mb-0 xl:w-72">
+    <aside className="z-40 -mb-16 w-full sm:-mb-20 xl:absolute xl:top-16 xl:right-[calc(50%-50vw+1.5rem)] xl:mb-0 xl:w-72">
       <div className="overflow-hidden rounded-2xl border border-black/10 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55">
         {/* header */}
         <div className="flex items-center justify-between border-b border-black/10 px-4 py-2.5 dark:border-white/10">
