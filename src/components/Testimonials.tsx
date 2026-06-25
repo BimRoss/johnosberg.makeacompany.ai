@@ -13,22 +13,28 @@ const AVATAR_GRADIENTS = [
 
 const FEATURED: Testimonial[] = [
   {
-    name: "Jonathan S Cummins",
-    title: "CEO & Partner",
-    company: "GuideUP Health",
-    text: "John is a stellar \"connector of humans\". He deeply understands how the worlds of social capital, recognition and motivation collide to explosively move ideas forward.",
+    name: "Jay O'Brien",
+    title: "Senior Relationship Manager",
+    company: "Corebridge Financial",
+    text: "He was a tremendous partner who was willing to go the extra mile to ensure everyone was more than satisfied with the result. I will miss working with him and expect he will continue growing successful relationships throughout his career. I'd work with him again in a second.",
   },
   {
-    name: "Holly Hubert",
-    title: "Founder & CEO",
-    company: "GlobalSecurityIQ",
-    text: "Johnny Oz is a truly gifted community-building super-connector who wakes up seeking to crush every single day. He is an extraordinary giver, humble in service to others, and a true gem.",
+    name: "Del Reid",
+    title: "Founder",
+    company: "26 Shirts",
+    text: "There's no one quite like John! He keeps a mental inventory of what everyone he knows is working on so that when he meets a new person, he sees exactly how they could complement something one of his connections is already tackling. I always leave conversations with John ready to take on the world.",
   },
   {
-    name: "Jessica Wulf",
-    title: "Chief Operating Officer",
-    company: "WNY BloodCare",
-    text: "John is driven, energetic, and empowering. He has a natural ability to motivate and engage. He is an excellent resource in making connections and does this in a way that's natural and genuine.",
+    name: "Matthew Cunha",
+    title: "Sales Representative",
+    company: "Oakley",
+    text: "John is the kind of person who produces meaningful results while inspiring everyone around him. His positive outlook isn't just something he turns on for meetings — it's a fundamental part of who he is. Working with him doesn't just push projects forward; it elevates the entire environment.",
+  },
+  {
+    name: "Barbara Boese",
+    title: "Transition Coordinator",
+    company: "Accessible Academics",
+    text: "John Osberg is a force of nature. Arms wide open to help another realize a passion in education, experience or employment. That was over a year ago and the mentorship is thriving — a young man with a disability has been embraced by the world of golf and advertising. John was instrumental in a career exploration and launch.",
   },
 ];
 
@@ -149,7 +155,7 @@ export default function Testimonials() {
   const rowB = testimonials.slice(mid);
   return (
     <div className="flex flex-col gap-10">
-      <div className="grid gap-5 sm:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {FEATURED.map((t) => (
           <FeaturedCard key={t.name} t={t} />
         ))}

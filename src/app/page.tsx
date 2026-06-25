@@ -14,6 +14,7 @@ import BrandLogo from "@/components/BrandLogo";
 import CivicCard from "@/components/CivicCard";
 import InfoDock from "@/components/InfoDock";
 import DataViz from "@/components/DataViz";
+import VideoPlayer from "@/components/VideoPlayer";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   brands,
@@ -269,14 +270,7 @@ export default function Home() {
           </h2>
           <figure className="flex flex-col gap-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
-              <iframe
-                className="absolute inset-0 h-full w-full"
-                src={`https://www.youtube-nocookie.com/embed/${FEATURED_VIDEO.id}?start=${FEATURED_VIDEO.start}`}
-                title={FEATURED_VIDEO.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+              <VideoPlayer id={FEATURED_VIDEO.id} start={FEATURED_VIDEO.start} title={FEATURED_VIDEO.title} />
             </div>
             <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
               {FEATURED_VIDEO.title}
