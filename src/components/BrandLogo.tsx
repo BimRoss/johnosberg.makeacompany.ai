@@ -38,7 +38,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
           />
         </span>
       )}
-      <span className="font-[family-name:var(--font-sora)] text-[13px] font-medium leading-tight text-zinc-700 dark:text-zinc-300">
+      <span className="min-w-0 break-words font-[family-name:var(--font-sora)] text-xs font-medium leading-snug text-zinc-700 dark:text-zinc-300">
         {brand.name}
       </span>
     </a>
