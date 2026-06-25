@@ -5,6 +5,7 @@ import ChromeFx from "@/components/ChromeFx";
 import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
 import SearchPalette from "@/components/SearchPalette";
+import Testimonials from "@/components/Testimonials";
 import BrandLogo from "@/components/BrandLogo";
 import DataViz from "@/components/DataViz";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -190,6 +191,19 @@ export default function Home() {
               <BrandLogo key={b.name} brand={b} />
             ))}
           </div>
+        </section>
+
+        {/* Recommendations */}
+        <section id="recommendations" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <div className="flex flex-col gap-1">
+            <h2 className="on-photo font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-600 dark:text-zinc-400">
+              Recommendations
+            </h2>
+            <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
+              Endorsed by 134+ top professionals and counting.
+            </p>
+          </div>
+          <Testimonials />
         </section>
 
         {/* In the news */}
