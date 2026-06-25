@@ -56,7 +56,7 @@ export default function Home() {
               VP of Partnerships @ Brandlete, Inc. · Head of Growth @ MakeaCompany.ai (MaC)
             </p>
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
-              ⚡ Get to know me before we formally connect.
+              Get to know me before we formally connect. ⚡
             </p>
           </div>
         </section>
