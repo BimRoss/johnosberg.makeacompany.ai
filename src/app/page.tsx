@@ -132,7 +132,7 @@ export default function Home() {
         <section className="reveal-3 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10 md:grid-cols-4">
           {stats.map((s) => (
             <StatTilt key={s.label}>
-              <div className="bg-white/70 px-5 py-7 text-center backdrop-blur-md dark:bg-zinc-950/55">
+              <div className="bg-white px-5 py-7 text-center dark:bg-zinc-900">
                 <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
                   <CountUp value={s.value} />
                 </div>
