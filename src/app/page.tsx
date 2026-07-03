@@ -13,6 +13,7 @@ import TypeCycle from "@/components/TypeCycle";
 import BrandLogo from "@/components/BrandLogo";
 import CivicCard from "@/components/CivicCard";
 import InfoDock from "@/components/InfoDock";
+import PressLogo from "@/components/PressLogo";
 import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -237,17 +238,7 @@ export default function Home() {
                 }`}
               >
                 <span className="flex w-32 shrink-0 items-center gap-2 sm:w-44">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-black/5">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.logo}
-                      alt={`${p.source} logo`}
-                      width={22}
-                      height={22}
-                      loading="lazy"
-                      className="h-[22px] w-[22px] object-contain"
-                    />
-                  </span>
+                  <PressLogo item={p} />
                   <span className="min-w-0 font-mono text-[10px] uppercase leading-tight tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
                     {p.source}
                   </span>
