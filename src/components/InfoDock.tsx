@@ -38,7 +38,6 @@ const CONNECT_IDEAS: string[] = [
   "Co-host a founder fireside or podcast episode",
   "Build a sports-brand activation or sponsorship together",
   "Tap me for GTM, growth, or partnership advisory",
-  "Run a charity golf event for PGA REACH WNY",
   "Bring me in to speak on partnerships & revenue",
   "Open doors across my Buffalo & sports network",
   "Pilot a Brandlete athlete-development partnership",
