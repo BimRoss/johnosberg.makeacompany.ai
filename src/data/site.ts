@@ -5,12 +5,12 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "VP of Partnerships & Founding Member at Brandlete, Inc. and Head of Growth & Founding Member at MakeaCompany.ai. For 15+ years I've built the partnership and growth engines that move real revenue: $6.5M+ generated ($8.5M+ influenced), $1.5M+ in capital secured, and $1.5M+ raised for nonprofit causes across tech, sports, and startups. I turn relationships into pipeline, and pipeline into signed deals.";
+  "VP of Partnerships & Founding Member at Brandlete, Inc. For 15+ years I've built the partnership and growth engines that move real revenue: $6.5M+ generated ($8.5M+ influenced), $1.5M+ in capital secured, and $1.5M+ raised for nonprofit causes across tech, sports, and startups. I turn relationships into pipeline, and pipeline into signed deals.";
 
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
 
-export const PUBLIC_EMAIL = "john@makeacompany.ai";
+export const PUBLIC_EMAIL = "john@brandlete.com";
 
 // logo.dev serves real company logos by domain. The publishable key (pk_) is
 // meant for client-side use. fallback=404 makes unknown domains 404 so each
@@ -35,13 +35,6 @@ export const roles = [
     period: "Nov 2021 – Present",
     blurb:
       "Co-founded an AI-enabled athlete development platform. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
-  },
-  {
-    org: "MakeaCompany.ai",
-    title: "Head of Growth / Founding Member",
-    period: "May 2026 – Present",
-    blurb:
-      "Grew the active user base 9.8x in my first 6 weeks (12 to 117, +880%). Own the growth engine end to end: positioning, messaging, demand, and founder-led sales to signed customers. Build the GTM operating system and close strategic partnerships.",
   },
   {
     org: "POWER of OZmosis Consulting",

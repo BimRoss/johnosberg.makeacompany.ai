@@ -64,12 +64,11 @@ const jsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   email: PUBLIC_EMAIL,
-  jobTitle: "Head of Growth & Partnerships",
+  jobTitle: "VP of Partnerships & Growth Leader",
   address: { "@type": "PostalPlace", addressLocality: "Buffalo", addressRegion: "NY" },
   sameAs: socials.filter((s) => s.external).map((s) => s.href),
   worksFor: [
     { "@type": "Organization", name: "Brandlete, Inc.", url: "https://brandlete.com" },
-    { "@type": "Organization", name: "MakeaCompany.ai", url: "https://makeacompany.ai" },
   ],
 };
 

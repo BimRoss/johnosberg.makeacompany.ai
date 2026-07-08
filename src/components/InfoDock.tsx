@@ -44,7 +44,6 @@ const CONNECT_IDEAS: string[] = [
   "Pilot a Brandlete athlete-development partnership",
   "Strategize a launch or fundraising campaign",
   "Trade intros, just two connectors comparing notes",
-  "Explore a MakeaCompany.ai growth collaboration",
   "Mentor a founder cohort or pitch competition",
   "Grab a round of twilight golf and talk shop",
 ];

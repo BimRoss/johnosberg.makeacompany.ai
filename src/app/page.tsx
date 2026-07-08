@@ -68,7 +68,7 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-              VP of Partnerships @ Brandlete, Inc. · Head of Growth @ MakeaCompany.ai (MaC)
+              VP of Partnerships @ Brandlete, Inc.
             </p>
             <TypeCycle />
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
@@ -305,23 +305,12 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>© {new Date().getFullYear()} John Osberg</span>
             <a
-              href="mailto:john@makeacompany.ai"
+              href="mailto:john@brandlete.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-zinc-700 dark:hover:text-zinc-300"
             >
-              john@makeacompany.ai
-            </a>
-          </div>
-          <div>
-            Built by{" "}
-            <a
-              href="https://makeacompany.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 dark:text-zinc-400 dark:decoration-zinc-700 dark:hover:text-white"
-            >
-              Ross @ MakeaCompany
+              john@brandlete.com
             </a>
           </div>
         </footer>
