@@ -196,23 +196,26 @@ export const FEATURED_VIDEO = {
   title: "John Osberg on The Incept CONNECT Podcast",
 };
 
-export type Podcast = { title: string; role: "Host" | "Guest"; href: string };
+export type Podcast = { title: string; role: "Host" | "Guest"; href: string; thumb: string };
 
 export const podcasts: Podcast[] = [
   {
     title: "The Incept CONNECT Podcast",
     role: "Host",
     href: "https://www.youtube.com/playlist?list=PLWvPwqLIgvdvsFWhEAOLgHBuB_e_aAhk8",
+    thumb: "uJ39_XxlB3I",
   },
   {
     title: "POWER of OZmosis Podcast Library",
     role: "Host",
     href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgUd-nFY-z2VXu68NbiauLm",
+    thumb: "cRGzR-yDVEo",
   },
   {
     title: "John Osberg, Featured Guest",
     role: "Guest",
     href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgMHOYeCaDmnwcjEnzumQSn",
+    thumb: "n2aAi-frg7Q",
   },
 ];
 

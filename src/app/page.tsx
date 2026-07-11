@@ -275,19 +275,28 @@ export default function Home() {
                 href={pod.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col justify-between gap-7 rounded-2xl border border-black/10 bg-white/70 p-6 backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:border-black/20 hover:shadow-xl hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20 dark:hover:shadow-black/40 sm:p-7"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white/70 backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:border-black/20 hover:shadow-xl hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20 dark:hover:shadow-black/40"
               >
-                <div className="flex items-center justify-between">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg shadow-red-500/25 transition-transform duration-200 group-hover:scale-105">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6 translate-x-0.5" fill="currentColor" aria-hidden>
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                <div className="relative aspect-video w-full overflow-hidden border-b border-black/10 dark:border-white/10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://img.youtube.com/vi/${pod.thumb}/maxresdefault.jpg`}
+                    alt={pod.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/40">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg shadow-red-500/30 transition-transform duration-200 group-hover:scale-110">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6 translate-x-0.5" fill="currentColor" aria-hidden>
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
                   </span>
-                  <span className="rounded-full border border-black/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500 dark:border-white/15">
+                  <span className="absolute right-3 top-3 rounded-full border border-white/25 bg-black/45 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-white backdrop-blur-sm">
                     {pod.role}
                   </span>
                 </div>
-                <div>
+                <div className="p-6 sm:p-7">
                   <span className="block font-[family-name:var(--font-sora)] text-lg font-semibold leading-snug text-zinc-900 dark:text-white">
                     {pod.title}
                   </span>
