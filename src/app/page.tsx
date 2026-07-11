@@ -10,14 +10,14 @@ import SearchPalette from "@/components/SearchPalette";
 import StatTilt from "@/components/StatTilt";
 import Testimonials from "@/components/Testimonials";
 import TypeCycle from "@/components/TypeCycle";
-import BrandLogo from "@/components/BrandLogo";
+import CareerTimeline from "@/components/CareerTimeline";
+import PartnershipsGrid from "@/components/PartnershipsGrid";
 import CivicCard from "@/components/CivicCard";
 import PressLogo from "@/components/PressLogo";
 import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
-  brands,
   civic,
   FEATURED_VIDEO,
   HERO_LABEL,
@@ -147,6 +147,14 @@ export default function Home() {
           <DataViz />
         </div>
 
+        {/* Career timeline */}
+        <section id="timeline" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            Career at a glance
+          </h2>
+          <CareerTimeline />
+        </section>
+
         {/* Experience */}
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
@@ -186,11 +194,7 @@ export default function Home() {
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Partnerships built with
           </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {brands.map((b) => (
-              <BrandLogo key={b.name} brand={b} />
-            ))}
-          </div>
+          <PartnershipsGrid />
         </section>
 
         {/* Civic & nonprofit */}

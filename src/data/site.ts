@@ -66,31 +66,67 @@ export const roles = [
   },
 ];
 
-export type Brand = { name: string; mark: string; accent: string; logo: string; url: string };
+// Partnership sectors — drive the donut chart and the filterable logo wall.
+// Order here is the order chips render in.
+export type Sector =
+  | "Sports & Golf"
+  | "Beverage & CPG"
+  | "Healthcare"
+  | "Finance & Insurance"
+  | "Media, Energy & Travel";
+
+export const SECTORS: { name: Sector; color: string }[] = [
+  { name: "Sports & Golf", color: "#16a34a" },
+  { name: "Beverage & CPG", color: "#f59e0b" },
+  { name: "Healthcare", color: "#06b6d4" },
+  { name: "Finance & Insurance", color: "#8b5cf6" },
+  { name: "Media, Energy & Travel", color: "#ec4899" },
+];
+
+// Revenue driven by venture, in $K. Numbers are the ones John states on his
+// resume for each role — used by the "Revenue driven, by venture" bar chart.
+export const revenueByVenture: { label: string; period: string; valueK: number; note: string }[] = [
+  { label: "OnCore Golf", period: "2017–18", valueK: 3500, note: "DICK'S, Golf Galaxy, Wegmans, NYSGA" },
+  { label: "EmergenceTek", period: "2012–17", valueK: 3000, note: "0→25+ enterprise & mid-market" },
+  { label: "POWER of OZmosis", period: "2019–26", valueK: 775, note: "$325K revenue · $775K deal flow" },
+  { label: "PGA WNY", period: "2023–25", valueK: 250, note: "annual, sponsorships & renewals" },
+];
+
+// Career milestones for the interactive timeline. `metric` is the one headline
+// number for each stop; `revenueK` sizes the marker.
+export const milestones: { year: string; org: string; title: string; metric: string; revenueK: number }[] = [
+  { year: "2012", org: "EmergenceTek", title: "VP, Client Engagement & Sales", metric: "$3M+ · 0→25 orgs", revenueK: 3000 },
+  { year: "2017", org: "OnCore Golf", title: "Director of Partnerships", metric: "$3.5M+ driven", revenueK: 3500 },
+  { year: "2019", org: "POWER of OZmosis", title: "Founder / Principal", metric: "40+ founders coached", revenueK: 775 },
+  { year: "2021", org: "Brandlete", title: "VP Partnerships / Founding Member", metric: "AI athlete platform", revenueK: 1000 },
+  { year: "2023", org: "PGA of America WNY", title: "Director, Partnerships & Dev.", metric: "275% growth · 97% kept", revenueK: 250 },
+];
+
+export type Brand = { name: string; mark: string; accent: string; logo: string; url: string; sector: Sector };
 
 export const brands: Brand[] = [
-  { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: logoDev("dickssportinggoods.com"), url: "https://www.dickssportinggoods.com" },
-  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: logoDev("golfgalaxy.com"), url: "https://www.golfgalaxy.com" },
-  { name: "Wegmans", mark: "W", accent: "#e0301e", logo: logoDev("wegmans.com"), url: "https://www.wegmans.com" },
-  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: logoDev("michelobultra.com"), url: "https://www.michelobultra.com" },
-  { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com" },
-  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: logoDev("ralphlauren.com"), url: "https://www.ralphlauren.com/rlx-golf" },
-  { name: "Tito's", mark: "T", accent: "#3aa0ff", logo: logoDev("titosvodka.com"), url: "https://www.titosvodka.com" },
-  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: logoDev("corebridgefinancial.com"), url: "https://www.corebridgefinancial.com" },
-  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: logoDev("sandals.com"), url: "https://www.sandals.com" },
-  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", logo: logoDev("ajg.com"), url: "https://www.ajg.com" },
-  { name: "National Fuel", mark: "NF", accent: "#2563eb", logo: logoDev("nationalfuel.com"), url: "https://www.nationalfuel.com" },
-  { name: "Special Olympics", mark: "SO", accent: "#e0301e", logo: logoDev("specialolympics.org"), url: "https://www.specialolympics.org" },
-  { name: "Gatorade", mark: "G", accent: "#ff7a1a", logo: logoDev("gatorade.com"), url: "https://www.gatorade.com" },
-  { name: "Audacy", mark: "A", accent: "#9b5cff", logo: logoDev("audacy.com"), url: "https://www.audacy.com" },
-  { name: "Club Car", mark: "CC", accent: "#22a447", logo: logoDev("clubcar.com"), url: "https://www.clubcar.com" },
-  { name: "NY State Golf Assn.", mark: "NYSGA", accent: "#344475", logo: logoDev("nysga.org"), url: "https://nysga.org" },
-  { name: "Liazon (WTW)", mark: "L", accent: "#0a6ebd", logo: logoDev("wtwco.com"), url: "https://www.wtwco.com" },
-  { name: "CareSource", mark: "CS", accent: "#00a0af", logo: logoDev("caresource.com"), url: "https://www.caresource.com" },
-  { name: "HealtheLink", mark: "HL", accent: "#1b75bc", logo: logoDev("wnyhealthelink.com"), url: "https://wnyhealthelink.com" },
-  { name: "HealtheConnections", mark: "HC", accent: "#6cb33f", logo: logoDev("healtheconnections.org"), url: "https://www.healtheconnections.org" },
-  { name: "Fidelis Care", mark: "FC", accent: "#00529b", logo: logoDev("fideliscare.org"), url: "https://www.fideliscare.org" },
-  { name: "BlueCross BlueShield", mark: "BCBS", accent: "#0066b3", logo: logoDev("bcbswny.com"), url: "https://www.bcbswny.com" },
+  { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: logoDev("dickssportinggoods.com"), url: "https://www.dickssportinggoods.com", sector: "Sports & Golf" },
+  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: logoDev("golfgalaxy.com"), url: "https://www.golfgalaxy.com", sector: "Sports & Golf" },
+  { name: "Wegmans", mark: "W", accent: "#e0301e", logo: logoDev("wegmans.com"), url: "https://www.wegmans.com", sector: "Beverage & CPG" },
+  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: logoDev("michelobultra.com"), url: "https://www.michelobultra.com", sector: "Beverage & CPG" },
+  { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com", sector: "Sports & Golf" },
+  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: logoDev("ralphlauren.com"), url: "https://www.ralphlauren.com/rlx-golf", sector: "Sports & Golf" },
+  { name: "Tito's", mark: "T", accent: "#3aa0ff", logo: logoDev("titosvodka.com"), url: "https://www.titosvodka.com", sector: "Beverage & CPG" },
+  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: logoDev("corebridgefinancial.com"), url: "https://www.corebridgefinancial.com", sector: "Finance & Insurance" },
+  { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: logoDev("sandals.com"), url: "https://www.sandals.com", sector: "Media, Energy & Travel" },
+  { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", logo: logoDev("ajg.com"), url: "https://www.ajg.com", sector: "Finance & Insurance" },
+  { name: "National Fuel", mark: "NF", accent: "#2563eb", logo: logoDev("nationalfuel.com"), url: "https://www.nationalfuel.com", sector: "Media, Energy & Travel" },
+  { name: "Special Olympics", mark: "SO", accent: "#e0301e", logo: logoDev("specialolympics.org"), url: "https://www.specialolympics.org", sector: "Sports & Golf" },
+  { name: "Gatorade", mark: "G", accent: "#ff7a1a", logo: logoDev("gatorade.com"), url: "https://www.gatorade.com", sector: "Beverage & CPG" },
+  { name: "Audacy", mark: "A", accent: "#9b5cff", logo: logoDev("audacy.com"), url: "https://www.audacy.com", sector: "Media, Energy & Travel" },
+  { name: "Club Car", mark: "CC", accent: "#22a447", logo: logoDev("clubcar.com"), url: "https://www.clubcar.com", sector: "Sports & Golf" },
+  { name: "NY State Golf Assn.", mark: "NYSGA", accent: "#344475", logo: logoDev("nysga.org"), url: "https://nysga.org", sector: "Sports & Golf" },
+  { name: "Liazon (WTW)", mark: "L", accent: "#0a6ebd", logo: logoDev("wtwco.com"), url: "https://www.wtwco.com", sector: "Finance & Insurance" },
+  { name: "CareSource", mark: "CS", accent: "#00a0af", logo: logoDev("caresource.com"), url: "https://www.caresource.com", sector: "Healthcare" },
+  { name: "HealtheLink", mark: "HL", accent: "#1b75bc", logo: logoDev("wnyhealthelink.com"), url: "https://wnyhealthelink.com", sector: "Healthcare" },
+  { name: "HealtheConnections", mark: "HC", accent: "#6cb33f", logo: logoDev("healtheconnections.org"), url: "https://www.healtheconnections.org", sector: "Healthcare" },
+  { name: "Fidelis Care", mark: "FC", accent: "#00529b", logo: logoDev("fideliscare.org"), url: "https://www.fideliscare.org", sector: "Healthcare" },
+  { name: "BlueCross BlueShield", mark: "BCBS", accent: "#0066b3", logo: logoDev("bcbswny.com"), url: "https://www.bcbswny.com", sector: "Healthcare" },
 ];
 
 export type PressItem = { source: string; title: string; href: string; logo: string; fallback: string };
