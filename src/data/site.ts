@@ -38,7 +38,7 @@ export const roles = [
   },
   {
     org: "MakeaCompany.ai",
-    title: "Co-Founder / Founding Member",
+    title: "Co-Founder / Growth",
     period: "May 2026 – Present",
     blurb:
       "Grew the active user base 9.8x in my first 6 weeks (12 to 117, +880%). Own the growth engine end to end: positioning, messaging, demand, and founder-led sales to signed customers. Build the GTM operating system and close strategic partnerships.",

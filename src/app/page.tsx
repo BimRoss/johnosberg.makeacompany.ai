@@ -65,7 +65,7 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-              VP of Partnerships @ Brandlete, Inc. · Co-Founder @ MakeaCompany.ai (MaC)
+              VP of Partnerships @ Brandlete, Inc. · Co-Founder / Growth @ MakeaCompany.ai (MaC)
             </p>
             <TypeCycle />
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
