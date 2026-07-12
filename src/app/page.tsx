@@ -323,6 +323,20 @@ export default function Home() {
               john@makeacompany.ai
             </a>
           </div>
+          <p className="max-w-2xl text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-500">
+            Built with{" "}
+            <a
+              href="https://makeacompany.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-zinc-700 dark:hover:text-zinc-300"
+            >
+              MakeaCompany
+            </a>
+            . Designed in plain language by a non-developer, right from a Slack
+            message. Built, hosted, secured, and shipped open-source to GitHub in
+            minutes.
+          </p>
         </footer>
       </main>
     </>
