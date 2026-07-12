@@ -63,7 +63,68 @@ function Card({
   );
 }
 
-// 1. PGA partner portfolio — retention ring + growth callout.
+// 1. MakeaCompany user growth — area sparkline, 12 → 117 over 6 weeks.
+function GrowthChart() {
+  const { ref, inView } = useInView<HTMLDivElement>();
+  const series = [12, 19, 31, 48, 70, 95, 117];
+  const min = 12;
+  const max = 117;
+  const W = 300;
+  const H = 110;
+  const pad = 6;
+  const pts = series.map((v, i) => {
+    const x = pad + (i / (series.length - 1)) * (W - pad * 2);
+    const y = H - pad - ((v - min) / (max - min)) * (H - pad * 2);
+    return [x, y] as const;
+  });
+  const line = pts.map(([x, y], i) => `${i === 0 ? "M" : "L"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
+  const area = `${line} L${pts[pts.length - 1][0].toFixed(1)} ${H - pad} L${pts[0][0].toFixed(1)} ${H - pad} Z`;
+  // Length used to draw the stroke on first scroll-in, matching the CountUp feel.
+  const len = 620;
+  return (
+    <Card kicker="MakeaCompany.ai · Growth" title="Active users, first 6 weeks">
+      <div ref={ref}>
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="User growth from 12 to 117 over six weeks">
+          <defs>
+            <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" className="[stop-color:rgb(16,185,129)]" stopOpacity="0.35" />
+              <stop offset="100%" className="[stop-color:rgb(16,185,129)]" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path d={area} fill="url(#growthFill)" style={{ opacity: inView ? 1 : 0, transition: "opacity 1s ease 0.3s" }} />
+          <path
+            d={line}
+            fill="none"
+            className="stroke-emerald-500"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray={len}
+            strokeDashoffset={inView ? 0 : len}
+            style={{ transition: "stroke-dashoffset 1.3s cubic-bezier(0.22,1,0.36,1)" }}
+          />
+          {pts.map(([x, y], i) => (
+            <circle
+              key={i}
+              cx={x}
+              cy={y}
+              r={i === pts.length - 1 ? 4 : 2.5}
+              className="fill-emerald-500"
+              style={{ opacity: inView ? 1 : 0, transition: `opacity 0.4s ease ${0.4 + i * 0.12}s` }}
+            />
+          ))}
+        </svg>
+      </div>
+      <div className="flex items-baseline gap-4">
+        <span className="font-[family-name:var(--font-sora)] text-2xl font-bold text-zinc-900 dark:text-white">9.8×</span>
+        <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400">+880%</span>
+        <span className="ml-auto font-mono text-[11px] text-zinc-500">12 → 117</span>
+      </div>
+    </Card>
+  );
+}
+
+// 2. PGA partner portfolio — retention ring + growth callout.
 function RetentionRing() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const pct = 97;
@@ -285,6 +346,7 @@ export default function DataViz() {
         By the numbers
       </h2>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <GrowthChart />
         <RevenueByVenture />
         <SectorDonut />
         <RetentionRing />
