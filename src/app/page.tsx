@@ -16,6 +16,7 @@ import CivicCard from "@/components/CivicCard";
 import PressLogo from "@/components/PressLogo";
 import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
+import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   civic,
@@ -124,6 +125,25 @@ export default function Home() {
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
+        </section>
+
+        {/* Brandlete video */}
+        <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-4">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            What I&apos;m building at Brandlete
+          </h2>
+          <figure className="flex flex-col gap-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
+              <BrandleteVideo
+                src="/brandlete.mp4"
+                poster="/brandlete-poster.jpg"
+                title="Brandlete — the athlete development driven sports program operating system"
+              />
+            </div>
+            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+              Everything your program and athlete needs to perform on and off the field.
+            </figcaption>
+          </figure>
         </section>
 
         {/* Stats */}
