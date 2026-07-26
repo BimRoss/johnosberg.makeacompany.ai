@@ -69,7 +69,6 @@ const jsonLd = {
   sameAs: socials.filter((s) => s.external).map((s) => s.href),
   worksFor: [
     { "@type": "Organization", name: "Brandlete, Inc.", url: "https://brandlete.com" },
-    { "@type": "Organization", name: "MakeaCompany.ai", url: "https://makeacompany.ai" },
   ],
 };
 

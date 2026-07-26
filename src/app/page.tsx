@@ -66,7 +66,7 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-              VP of Partnerships @ Brandlete, Inc. · Co-Founder / Growth @ MakeaCompany.ai (MaC)
+              VP of Partnerships @ Brandlete, Inc.
             </p>
             <TypeCycle />
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
@@ -335,28 +335,14 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>© {new Date().getFullYear()} John Osberg</span>
             <a
-              href="mailto:john@makeacompany.ai"
+              href="mailto:john@brandlete.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-zinc-700 dark:hover:text-zinc-300"
             >
-              john@makeacompany.ai
+              john@brandlete.com
             </a>
           </div>
-          <p className="max-w-2xl text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-500">
-            Built with{" "}
-            <a
-              href="https://makeacompany.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-zinc-700 dark:hover:text-zinc-300"
-            >
-              MakeaCompany
-            </a>
-            . Designed in plain language by a non-developer, right from a Slack
-            message. Built, hosted, secured, and shipped open-source to GitHub in
-            minutes.
-          </p>
         </footer>
       </main>
     </>
