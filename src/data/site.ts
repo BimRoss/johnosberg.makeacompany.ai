@@ -51,6 +51,20 @@ export const roles = [
       "275% partner growth with 97% retention across 60+ accounts. $250K+ annually through sponsorships and multi-year partnerships with Michelob Ultra, Oakley, RLX, and more.",
   },
   {
+    org: "Stealth Startup",
+    title: "Sports Tech – Revenue / GTM / Partnerships",
+    period: "Jan 2017 – Jul 2025",
+    blurb:
+      "Revenue, go-to-market, and partnerships across a portfolio of early-stage sports-tech companies on a contract basis. An estimated $2.2M+ in total attributed value to the portfolio.",
+  },
+  {
+    org: "Oro Sports USA",
+    title: "Strategic Advisor",
+    period: "May 2019 – Dec 2021",
+    blurb:
+      "Advised Oro Sports (formerly Coolture) through its rebrand on go-to-market and product positioning, working directly with the CEO to sharpen the youth-sports pitch and support strategy, fundraising, and early product priorities.",
+  },
+  {
     org: "EmergenceTek Group",
     title: "VP, Client Engagement & Sales (Founding Employee)",
     period: "2012 – 2017",
