@@ -130,7 +130,7 @@ export default function Home() {
         {/* Brandlete video */}
         <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-4">
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
-            What I&apos;m building at Brandlete
+            What I&apos;m co-building at Brandlete
           </h2>
           <figure className="flex flex-col gap-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
@@ -140,7 +140,7 @@ export default function Home() {
                 title="Brandlete — the athlete development driven sports program operating system"
               />
             </div>
-            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+            <figcaption className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.85),0_0_10px_rgba(0,0,0,0.6)]">
               Everything your program and athlete needs to perform on and off the field.
             </figcaption>
           </figure>
