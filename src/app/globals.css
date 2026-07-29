@@ -3,20 +3,25 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #fafafa;
-  --fg: #18181b;
-  --muted: #52525b;
+  --bg: #f4f7fb;
+  --fg: #0b1220;
+  --muted: #475569;
+  /* Brandlete blue — the single brand accent used across the site. */
+  --brand: #00ccff;
+  --brand-deep: #0088cc;
   /* Matches the backdrop photo's bottom edge so any uncovered strip on iOS
      (collapsing toolbars shrink a position:fixed element) blends in instead
      of flashing white. */
-  --backdrop-base: #496831;
+  --backdrop-base: #0a1220;
 }
 
 .dark {
-  --bg: #09090b;
-  --fg: #f4f4f5;
-  --muted: #a1a1aa;
-  --backdrop-base: #031b17;
+  --bg: #05070d;
+  --fg: #f2f6fb;
+  --muted: #9fb0c4;
+  --brand: #00ccff;
+  --brand-deep: #22a3d6;
+  --backdrop-base: #04070e;
 }
 
 @theme inline {
@@ -85,12 +90,12 @@ body::after {
 }
 
 .backdrop-light {
-  background-image: url("/bg-golf-light-v2.jpg");
+  background-image: url("/bg-brand-light.jpg");
   opacity: 1;
 }
 
 .backdrop-dark {
-  background-image: url("/bg-golf-dark.jpg");
+  background-image: url("/bg-brand-dark.jpg");
   opacity: 0;
 }
 
@@ -107,26 +112,28 @@ body::after {
   position: absolute;
   inset: 0;
   background:
-    /* Strong light wash concentrated at the top, where all the on-photo text
-       lives, so dark text reads cleanly on the bright course photo. Fades out
+    /* Strong cool wash concentrated at the top, where all the on-photo text
+       lives, so dark text reads cleanly on the bright facility photo. Fades out
        by ~70% so the lower image keeps its color. */
-    radial-gradient(130% 95% at 50% 10%, rgba(250, 250, 250, 0.70), rgba(250, 250, 250, 0.34) 40%, transparent 72%),
+    radial-gradient(130% 95% at 50% 10%, rgba(244, 247, 251, 0.72), rgba(244, 247, 251, 0.36) 40%, transparent 72%),
     linear-gradient(
       180deg,
-      rgba(250, 250, 250, 0.40) 0%,
-      rgba(250, 250, 250, 0.22) 50%,
-      rgba(250, 250, 250, 0.55) 100%
+      rgba(244, 247, 251, 0.42) 0%,
+      rgba(244, 247, 251, 0.24) 50%,
+      rgba(244, 247, 251, 0.58) 100%
     );
 }
 
 .dark .backdrop-scrim {
   background:
-    radial-gradient(120% 80% at 50% 18%, rgba(9, 9, 11, 0.08), transparent 60%),
+    /* Cinematic blue-black cast — a faint brand-cyan glow up top, deepening to
+       near-black at the fold so the content column stays legible. */
+    radial-gradient(120% 85% at 50% 8%, rgba(0, 204, 255, 0.10), transparent 55%),
     linear-gradient(
       180deg,
-      rgba(9, 9, 11, 0.38) 0%,
-      rgba(9, 9, 11, 0.26) 45%,
-      rgba(9, 9, 11, 0.72) 100%
+      rgba(4, 7, 14, 0.62) 0%,
+      rgba(4, 7, 14, 0.48) 45%,
+      rgba(4, 7, 14, 0.86) 100%
     );
 }
 
@@ -142,13 +149,13 @@ body::after {
 
 .dark .on-photo {
   text-shadow:
-    0 1px 2px rgba(9, 9, 11, 0.7),
-    0 0 14px rgba(9, 9, 11, 0.5);
+    0 1px 2px rgba(4, 7, 14, 0.78),
+    0 0 14px rgba(4, 7, 14, 0.6);
 }
 
 /* Animated gradient eyebrow — "growth · partnerships · revenue" */
 .label-shimmer {
-  background: linear-gradient(90deg, #047857, #0284c7, #7c3aed, #b45309, #047857);
+  background: linear-gradient(90deg, #0088cc, #00ccff, #2563eb, #00ccff, #0088cc);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -156,7 +163,7 @@ body::after {
   animation: label-pan 7s linear infinite;
 }
 .dark .label-shimmer {
-  background: linear-gradient(90deg, #34d399, #38bdf8, #a78bfa, #fbbf24, #34d399);
+  background: linear-gradient(90deg, #22a3d6, #00ccff, #7cc9ff, #00ccff, #22a3d6);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -221,17 +228,17 @@ body::after {
   }
 }
 
-/* Search button — pulsing amber ring + flickering bolt so it reads as live */
+/* Search button — pulsing brand-cyan ring + flickering bolt so it reads as live */
 @keyframes search-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
-  50% { box-shadow: 0 0 0 9px rgba(245, 158, 11, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 204, 255, 0.5); }
+  50% { box-shadow: 0 0 0 9px rgba(0, 204, 255, 0); }
 }
 .search-pulse {
   animation: search-pulse 2.4s ease-out infinite;
 }
 @keyframes bolt-flicker {
-  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.7)); }
-  50% { transform: scale(1.18) rotate(-5deg); filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.95)); }
+  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px rgba(0, 204, 255, 0.7)); }
+  50% { transform: scale(1.18) rotate(-5deg); filter: drop-shadow(0 0 6px rgba(0, 204, 255, 0.95)); }
 }
 .bolt-flicker {
   animation: bolt-flicker 1.8s ease-in-out infinite;

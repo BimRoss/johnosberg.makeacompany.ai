@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-const COLORS = ["#10b981", "#f59e0b", "#3b82f6", "#8b5cf6", "#f97316", "#ef4444", "#facc15"];
+const COLORS = ["#00ccff", "#33d6ff", "#0088cc", "#2563eb", "#7cc9ff", "#ffffff", "#a5f3ff"];
 
 function burst(ox: number, oy: number) {
   const canvas = document.createElement("canvas");
@@ -68,7 +68,7 @@ export default function BookCallBtn() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="group inline-flex items-center gap-2 rounded-sm bg-emerald-600 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-emerald-600/25 transition-colors hover:bg-emerald-500"
+      className="group inline-flex items-center gap-2 rounded-sm bg-[#00ccff] px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#04070e] shadow-lg shadow-[#00ccff]/30 transition-colors hover:bg-[#33d6ff]"
     >
       <span aria-hidden>⚡</span>
       Book a call

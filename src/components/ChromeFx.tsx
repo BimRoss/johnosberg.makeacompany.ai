@@ -29,7 +29,7 @@ export default function ChromeFx() {
     <>
       <div className="fixed inset-x-0 top-0 z-50 h-1">
         <div
-          className="h-full origin-left bg-gradient-to-r from-emerald-500 via-sky-500 to-violet-500 transition-transform duration-150 ease-out"
+          className="h-full origin-left bg-gradient-to-r from-[#0088cc] via-[#00ccff] to-[#7cc9ff] transition-transform duration-150 ease-out"
           style={{ transform: `scaleX(${progress})` }}
         />
       </div>
@@ -40,7 +40,7 @@ export default function ChromeFx() {
         onClick={() =>
           window.scrollTo({ top: 0, behavior: "smooth" })
         }
-        className={`group fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-white/20 bg-emerald-600 px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-emerald-600/30 transition-all duration-300 hover:bg-emerald-500 ${
+        className={`group fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-[#04070e]/20 bg-[#00ccff] px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#04070e] shadow-lg shadow-[#00ccff]/30 transition-all duration-300 hover:bg-[#33d6ff] ${
           showTop
             ? "translate-y-0 opacity-100"
             : "pointer-events-none translate-y-3 opacity-0"

@@ -59,7 +59,7 @@ export default function Home() {
             </div>
           </div>
           <div className="min-w-0">
-            <p className="label-shimmer border-l-2 border-emerald-600/60 pl-3 font-mono text-[11px] font-bold uppercase leading-relaxed tracking-[0.24em] dark:border-emerald-400/60 sm:text-sm">
+            <p className="label-shimmer border-l-2 border-[#00ccff]/60 pl-3 font-mono text-[11px] font-bold uppercase leading-relaxed tracking-[0.24em] dark:border-[#00ccff]/60 sm:text-sm">
               {HERO_LABEL}
             </p>
             <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">

@@ -51,7 +51,7 @@ export default function CareerTimeline() {
         <div className="absolute left-0 right-0 top-[22px] h-[2px] rounded-full bg-black/10 dark:bg-white/10" />
         {/* animated progress line */}
         <div
-          className="absolute left-0 top-[22px] h-[2px] rounded-full bg-gradient-to-r from-emerald-500 to-sky-500"
+          className="absolute left-0 top-[22px] h-[2px] rounded-full bg-gradient-to-r from-[#0088cc] to-[#00ccff]"
           style={{
             width: drawn ? "100%" : "0%",
             transition: "width 1.4s cubic-bezier(0.22,1,0.36,1)",
@@ -76,8 +76,8 @@ export default function CareerTimeline() {
                   <span
                     className={`rounded-full ring-2 transition-all duration-300 ${
                       on
-                        ? "bg-sky-500 ring-sky-500/40"
-                        : "bg-white ring-black/15 group-hover:ring-sky-500/50 dark:bg-zinc-800 dark:ring-white/20"
+                        ? "bg-[#00ccff] ring-[#00ccff]/40"
+                        : "bg-white ring-black/15 group-hover:ring-[#00ccff]/50 dark:bg-zinc-800 dark:ring-white/20"
                     }`}
                     style={{
                       width: on ? d + 6 : d,
@@ -90,7 +90,7 @@ export default function CareerTimeline() {
                 </span>
                 <span
                   className={`font-mono text-[11px] font-semibold tracking-[0.08em] transition-colors sm:text-xs ${
-                    on ? "text-sky-600 dark:text-sky-300" : "text-zinc-500 dark:text-zinc-400"
+                    on ? "text-[#0088cc] dark:text-[#00ccff]" : "text-zinc-500 dark:text-zinc-400"
                   }`}
                 >
                   {m.year}
@@ -117,7 +117,7 @@ export default function CareerTimeline() {
         <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {current.title}
         </span>
-        <span className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-mono text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+        <span className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/10 px-3 py-1 font-mono text-xs font-semibold text-[#0088cc] dark:text-[#00ccff]">
           {current.metric}
         </span>
       </div>

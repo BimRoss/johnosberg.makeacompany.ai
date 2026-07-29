@@ -90,11 +90,11 @@ export type Sector =
   | "Media, Energy & Travel";
 
 export const SECTORS: { name: Sector; color: string }[] = [
-  { name: "Sports & Golf", color: "#16a34a" },
-  { name: "Beverage & CPG", color: "#f59e0b" },
-  { name: "Healthcare", color: "#06b6d4" },
-  { name: "Finance & Insurance", color: "#8b5cf6" },
-  { name: "Media, Energy & Travel", color: "#ec4899" },
+  { name: "Sports & Golf", color: "#00ccff" },
+  { name: "Beverage & CPG", color: "#0088cc" },
+  { name: "Healthcare", color: "#2563eb" },
+  { name: "Finance & Insurance", color: "#7cc9ff" },
+  { name: "Media, Energy & Travel", color: "#005f99" },
 ];
 
 // Revenue driven by venture, in $K. Numbers are the ones John states on his

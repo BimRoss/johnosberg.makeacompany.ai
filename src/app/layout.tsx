@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, Sora } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 
 import {
   LINK_PREVIEW_DESCRIPTION,
@@ -12,15 +12,19 @@ import { socials } from "@/data/socials";
 
 import "./globals.css";
 
-const sora = Sora({
+// Brandlete brand type: Playfair Display headlines + Inter body. The CSS
+// variable names below are legacy (--font-sora / --font-ibm-plex) so the
+// existing font-[family-name:var(--font-sora)] usages across components keep
+// working — only the underlying typeface changed.
+const display = Playfair_Display({
   weight: ["600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-sora",
   display: "swap",
 });
 
-const ibmPlex = IBM_Plex_Sans({
-  weight: ["400", "500", "600"],
+const body = Inter({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-ibm-plex",
   display: "swap",
@@ -51,8 +55,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f7fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#05070d" },
   ],
 };
 
@@ -78,7 +82,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${ibmPlex.variable}`}
+      className={`${display.variable} ${body.variable}`}
       suppressHydrationWarning
     >
       <head>
