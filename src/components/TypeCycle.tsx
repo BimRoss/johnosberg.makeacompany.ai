@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 
 const PHRASES = [
+  "Sports Tech Leader.",
+  "Youth Sports Advocate.",
+  "Former High-Level Athlete, and still a current one.",
   "revenue generator.",
   "partnership builder.",
   "deal closer.",

@@ -108,7 +108,7 @@ export default function Home() {
                 {...(external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="on-photo inline-flex items-center gap-2 border border-black/25 bg-white/30 px-4 py-3 font-mono text-xs font-medium text-zinc-900 backdrop-blur-md transition-colors hover:border-black/50 hover:text-black dark:border-white/15 dark:bg-transparent dark:font-normal dark:text-zinc-300 dark:hover:border-white/50 dark:hover:text-white"
+                className="on-photo inline-flex items-center gap-2 border border-[#00ccff]/55 bg-white/30 px-4 py-3 font-mono text-xs font-medium text-zinc-900 backdrop-blur-md transition-colors hover:border-[#00ccff] hover:text-black dark:border-[#00ccff]/45 dark:bg-transparent dark:font-normal dark:text-zinc-200 dark:hover:border-[#00ccff] dark:hover:text-white"
               >
                 <Icon className="h-4 w-4 shrink-0" />
                 <span className="hidden sm:inline">{label}</span>
@@ -127,11 +127,63 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brandlete video */}
-        <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-4">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
-            What I&apos;m co-building at Brandlete
-          </h2>
+        {/* Brandlete — #1 focus */}
+        <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-6">
+          <div className="flex flex-col gap-3">
+            <p className="label-shimmer w-fit border-l-2 border-[#00ccff]/60 pl-3 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">
+              My #1 focus
+            </p>
+            <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+              What I&apos;m co-building at Brandlete
+            </h2>
+            <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-[#0088cc] dark:text-[#00ccff] sm:text-xl">
+              The Athlete Development Driven Sports Program Operating System.
+            </p>
+            <p className="on-photo max-w-3xl text-base font-medium leading-7 text-zinc-900 dark:font-normal dark:text-zinc-300 sm:text-[17px] sm:leading-8">
+              One connected platform for the coaches, athletes, families, and
+              organizations that run youth sports. Development plans, insights and
+              feedback, tournaments, communications, registration, and full athlete
+              profiles, plus Max, the built-in AI assistant. Live and in use today,
+              getting better every week.
+            </p>
+          </div>
+
+          {/* What's inside — Brandlete-blue outlined pills */}
+          <div className="flex flex-wrap gap-2">
+            {[
+              "Development Plans",
+              "Insights & Feedback",
+              "Tournaments",
+              "Communications",
+              "Registration",
+              "Athlete Profiles",
+              "Max · AI Assistant",
+            ].map((f) => (
+              <span
+                key={f}
+                className="inline-flex items-center rounded-full border border-[#00ccff]/45 bg-[#00ccff]/5 px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-zinc-800 backdrop-blur-md dark:text-zinc-200"
+              >
+                {f}
+              </span>
+            ))}
+          </div>
+
+          {/* Role + link */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="on-photo font-mono text-xs uppercase tracking-[0.14em] text-zinc-700 dark:text-zinc-400">
+              VP of Partnerships &amp; Founding Member
+            </span>
+            <a
+              href="https://brandlete.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
+            >
+              brandlete.com
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
+          </div>
+
           <figure className="flex flex-col gap-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
               <BrandleteVideo
