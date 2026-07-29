@@ -1,14 +1,16 @@
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
+// Cool blue-family gradients — varied enough to tell avatars apart while
+// staying inside the Brandlete palette.
 const AVATAR_GRADIENTS = [
-  "from-emerald-500 to-teal-600",
-  "from-sky-500 to-blue-600",
-  "from-violet-500 to-purple-600",
-  "from-amber-500 to-orange-600",
-  "from-rose-500 to-pink-600",
-  "from-cyan-500 to-sky-600",
-  "from-indigo-500 to-violet-600",
-  "from-lime-500 to-emerald-600",
+  "from-[#00ccff] to-[#0088cc]",
+  "from-[#38bdf8] to-[#2563eb]",
+  "from-[#7cc9ff] to-[#00ccff]",
+  "from-[#2563eb] to-[#1e3a8a]",
+  "from-[#22d3ee] to-[#0891b2]",
+  "from-[#00ccff] to-[#005f99]",
+  "from-[#60a5fa] to-[#3b82f6]",
+  "from-[#0ea5e9] to-[#0088cc]",
 ];
 
 const FEATURED: Testimonial[] = [
@@ -78,8 +80,8 @@ function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg" }) {
 
 function FeaturedCard({ t }: { t: Testimonial }) {
   return (
-    <figure className="relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-emerald-200/60 bg-white/90 p-6 shadow-lg shadow-emerald-100/40 backdrop-blur-md dark:border-emerald-500/20 dark:bg-zinc-900/70 dark:shadow-emerald-900/20">
-      <span aria-hidden className="absolute right-5 top-3 select-none font-serif text-6xl leading-none text-emerald-200/70 dark:text-emerald-700/40">&#10077;</span>
+    <figure className="relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-[#00ccff]/30 bg-white/90 p-6 shadow-lg shadow-[#00ccff]/10 backdrop-blur-md dark:border-[#00ccff]/25 dark:bg-zinc-900/70 dark:shadow-[#00ccff]/10">
+      <span aria-hidden className="absolute right-5 top-3 select-none font-serif text-6xl leading-none text-[#00ccff]/40 dark:text-[#00ccff]/30">&#10077;</span>
       <Stars />
       <blockquote className="text-[15px] leading-7 text-zinc-800 dark:text-zinc-200">
         &ldquo;{t.text}&rdquo;
@@ -90,7 +92,7 @@ function FeaturedCard({ t }: { t: Testimonial }) {
           <span className="block font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
             {t.name}
           </span>
-          <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-emerald-700 dark:text-emerald-400">
+          <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-[#0088cc] dark:text-[#00ccff]">
             {t.title}
           </span>
           {t.company && (
@@ -107,7 +109,7 @@ function FeaturedCard({ t }: { t: Testimonial }) {
 function Card({ t }: { t: Testimonial }) {
   return (
     <figure className="flex w-[320px] shrink-0 flex-col gap-3 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55 sm:w-[360px]">
-      <span aria-hidden className="select-none font-serif text-2xl leading-none text-emerald-400/60 dark:text-emerald-600/50">&#10077;</span>
+      <span aria-hidden className="select-none font-serif text-2xl leading-none text-[#00ccff]/50 dark:text-[#00ccff]/40">&#10077;</span>
       <blockquote className="line-clamp-5 text-[14px] leading-6 text-zinc-800 dark:text-zinc-300">
         {t.text}
       </blockquote>

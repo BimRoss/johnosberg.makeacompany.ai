@@ -37,8 +37,8 @@ export default function TypeCycle() {
   return (
     <p className="on-photo mt-3 font-mono text-sm font-medium uppercase tracking-[0.18em] text-zinc-700 dark:text-zinc-400 sm:text-base">
       {"I'm a "}
-      <span className="text-emerald-600 dark:text-emerald-400">{displayed}</span>
-      <span className="ml-px inline-block w-0.5 animate-pulse bg-emerald-500 align-middle">&nbsp;</span>
+      <span className="text-[#0088cc] dark:text-[#00ccff]">{displayed}</span>
+      <span className="ml-px inline-block w-0.5 animate-pulse bg-[#00ccff] align-middle">&nbsp;</span>
     </p>
   );
 }

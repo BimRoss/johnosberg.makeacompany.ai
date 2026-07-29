@@ -80,7 +80,7 @@ function RetentionRing() {
             cy="60"
             r={r}
             fill="none"
-            className="stroke-sky-500"
+            className="stroke-[#00ccff]"
             strokeWidth="10"
             strokeLinecap="round"
             strokeDasharray={`${dash.toFixed(1)} ${c.toFixed(1)}`}
@@ -110,9 +110,9 @@ function RetentionRing() {
 function CapitalBar() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const segs = [
-    { label: "Venture capital", value: 725, fill: "fill-violet-500", bg: "bg-violet-500" },
-    { label: "Non-dilutive state", value: 500, fill: "fill-violet-400", bg: "bg-violet-400" },
-    { label: "Additional sources", value: 275, fill: "fill-violet-300", bg: "bg-violet-300" },
+    { label: "Venture capital", value: 725, fill: "fill-[#00ccff]", bg: "bg-[#00ccff]" },
+    { label: "Non-dilutive state", value: 500, fill: "fill-[#0088cc]", bg: "bg-[#0088cc]" },
+    { label: "Additional sources", value: 275, fill: "fill-[#7cc9ff]", bg: "bg-[#7cc9ff]" },
   ];
   const total = segs.reduce((a, s) => a + s.value, 0);
   const W = 300;
@@ -175,7 +175,7 @@ function NonprofitBars() {
             </div>
             <div className="h-2 w-full overflow-hidden rounded-full bg-black/5 dark:bg-white/10">
               <div
-                className="h-full rounded-full bg-amber-500"
+                className="h-full rounded-full bg-[#2563eb]"
                 style={{
                   width: inView ? `${(r.value / max) * 100}%` : "0%",
                   transition: `width 1s cubic-bezier(0.22,1,0.36,1) ${i * 90}ms`,
@@ -208,7 +208,7 @@ function RevenueByVenture() {
             </div>
             <div className="h-2.5 w-full overflow-hidden rounded-full bg-black/5 dark:bg-white/10">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-sky-500"
+                className="h-full rounded-full bg-gradient-to-r from-[#0088cc] to-[#00ccff]"
                 style={{
                   width: inView ? `${(r.valueK / max) * 100}%` : "0%",
                   transition: `width 1.1s cubic-bezier(0.22,1,0.36,1) ${i * 110}ms`,
