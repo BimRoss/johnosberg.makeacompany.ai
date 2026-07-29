@@ -90,12 +90,12 @@ body::after {
 }
 
 .backdrop-light {
-  background-image: url("/bg-brand-light.jpg");
+  background-image: url("/bg-brand-light-v2.jpg");
   opacity: 1;
 }
 
 .backdrop-dark {
-  background-image: url("/bg-brand-dark.jpg");
+  background-image: url("/bg-brand-dark-v2.jpg");
   opacity: 0;
 }
 
