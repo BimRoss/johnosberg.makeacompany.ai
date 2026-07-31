@@ -362,6 +362,14 @@ export const FEATURED_VIDEO = {
   title: "John Osberg on The Incept CONNECT Podcast",
 };
 
+// Guest appearance, embedded directly under the main podcast and above the
+// three playlist cards. Featured episode from John's "Featured Guest" playlist.
+export const FEATURED_GUEST_VIDEO = {
+  id: "n2aAi-frg7Q",
+  start: 0,
+  title: "John Osberg, Featured Guest",
+};
+
 export type Podcast = { title: string; role: "Host" | "Guest"; href: string; thumb: string };
 
 export const podcasts: Podcast[] = [
