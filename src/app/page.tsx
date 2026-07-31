@@ -59,6 +59,26 @@ export default function Home() {
             </div>
           </div>
           <div className="min-w-0">
+            <a
+              href="https://www.brandlete.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Brandlete"
+              className="mb-5 inline-block transition-opacity hover:opacity-80"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brandlete-logo-light.png"
+                alt="Brandlete"
+                className="h-8 w-auto dark:hidden sm:h-9"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brandlete-logo-dark.png"
+                alt="Brandlete"
+                className="hidden h-8 w-auto dark:block sm:h-9"
+              />
+            </a>
             <p className="label-shimmer border-l-2 border-[#00ccff]/60 pl-3 font-mono text-[11px] font-bold uppercase leading-relaxed tracking-[0.24em] dark:border-[#00ccff]/60 sm:text-sm">
               {HERO_LABEL}
             </p>
@@ -66,7 +86,15 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-              VP of Partnerships @ Brandlete, Inc.
+              VP of Partnerships @{" "}
+              <a
+                href="https://www.brandlete.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[#00ccff]/50 decoration-2 underline-offset-4 transition-colors hover:text-[#00ccff] hover:decoration-[#00ccff]"
+              >
+                Brandlete, Inc.
+              </a>
             </p>
             <TypeCycle />
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
