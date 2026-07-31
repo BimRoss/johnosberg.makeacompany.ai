@@ -23,7 +23,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 import {
   civic,
   FEATURED_VIDEO,
-  HERO_LABEL,
   HERO_SUMMARY,
   podcasts,
   press,
@@ -81,10 +80,7 @@ export default function Home() {
                 className="hidden h-8 w-auto dark:block sm:h-9"
               />
             </a>
-            <p className="label-shimmer border-l-2 border-[#00ccff]/60 pl-3 font-mono text-[11px] font-bold uppercase leading-relaxed tracking-[0.24em] dark:border-[#00ccff]/60 sm:text-sm">
-              {HERO_LABEL}
-            </p>
-            <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
+            <h1 className="on-photo font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
@@ -101,9 +97,6 @@ export default function Home() {
               </a>
             </p>
             <TypeCycle />
-            <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight tracking-tight text-zinc-950 dark:text-white sm:text-3xl md:text-4xl">
-              Get to know me before we formally connect. ⚡
-            </p>
             <a
               href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
               target="_blank"
