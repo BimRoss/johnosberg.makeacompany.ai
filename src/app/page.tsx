@@ -252,9 +252,11 @@ export default function Home() {
                   <div className="text-base font-semibold text-zinc-900 dark:text-zinc-200">
                     {r.title}
                   </div>
-                  <p className="mt-2 text-[15px] leading-7 text-zinc-900 dark:text-zinc-300">
-                    {r.blurb}
-                  </p>
+                  {r.blurb && (
+                    <p className="mt-2 text-[15px] leading-7 text-zinc-900 dark:text-zinc-300">
+                      {r.blurb}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
