@@ -195,36 +195,43 @@ export const roles: Role[] = [
 
 // Partnership sectors — drive the donut chart and the filterable logo wall.
 // Order here is the order chips render in.
-// Tools & technology — from John's resume. `logo` pulls the real brand mark
-// via logo.dev; `mark`/`accent` are the colored-monogram fallback rendered by
-// <SkillsGrid> when a logo is missing or 404s.
+// Tools & technology — from John's resume, ordered by importance. AI tools lead
+// (John builds in AI-native startups), then sales/GTM, collaboration, creative,
+// job boards, and golf tech. `logo` pulls the real brand mark via logo.dev;
+// `mark`/`accent` are the colored-monogram fallback rendered by <SkillsGrid>.
 export type Tool = { name: string; logo: string; mark: string; accent: string };
 
 export const tools: Tool[] = [
+  // AI
+  { name: "Claude", logo: logoDev("anthropic.com"), mark: "C", accent: "#d97757" },
+  { name: "ChatGPT", logo: logoDev("openai.com"), mark: "AI", accent: "#10a37f" },
+  { name: "Claude Code", logo: logoDev("claude.com"), mark: "CC", accent: "#d97757" },
+  { name: "Gemini", logo: "/logos/tool-gemini.svg", mark: "G", accent: "#8e75f8" },
+  { name: "Perplexity", logo: logoDev("perplexity.ai"), mark: "PX", accent: "#20808d" },
+  { name: "Copilot", logo: "/logos/tool-copilot.svg", mark: "Co", accent: "#111111" },
+  // Sales / GTM
   { name: "HubSpot", logo: logoDev("hubspot.com"), mark: "HS", accent: "#ff7a59" },
   { name: "LinkedIn Sales Navigator", logo: logoDev("linkedin.com"), mark: "in", accent: "#0a66c2" },
   { name: "ZoomInfo", logo: logoDev("zoominfo.com"), mark: "ZI", accent: "#e11d48" },
-  { name: "Microsoft 365", logo: logoDev("microsoft.com"), mark: "365", accent: "#0078d4" },
-  { name: "Google Workspace", logo: "", mark: "GW", accent: "#4285f4" },
-  { name: "Dice", logo: logoDev("dice.com"), mark: "D", accent: "#e11d48" },
-  { name: "Monster", logo: logoDev("monster.com"), mark: "M", accent: "#6f42c1" },
   { name: "LinkedIn Recruiter", logo: logoDev("linkedin.com"), mark: "in", accent: "#0a66c2" },
+  // Collaboration / productivity
   { name: "Slack", logo: logoDev("slack.com"), mark: "S", accent: "#611f69" },
   { name: "Microsoft Teams", logo: "/logos/tool-teams.svg", mark: "T", accent: "#6264a7" },
+  { name: "Microsoft 365", logo: logoDev("microsoft.com"), mark: "365", accent: "#0078d4" },
+  { name: "Google Workspace", logo: "", mark: "GW", accent: "#4285f4" },
   { name: "Monday.com", logo: logoDev("monday.com"), mark: "M", accent: "#ff3d57" },
   { name: "Asana", logo: logoDev("asana.com"), mark: "A", accent: "#f06a6a" },
   { name: "Trello", logo: logoDev("trello.com"), mark: "T", accent: "#0079bf" },
+  // Creative / marketing
   { name: "Canva", logo: logoDev("canva.com"), mark: "C", accent: "#00c4cc" },
   { name: "Mailchimp", logo: logoDev("mailchimp.com"), mark: "MC", accent: "#eab308" },
   { name: "Eventbrite", logo: logoDev("eventbrite.com"), mark: "E", accent: "#f05537" },
+  // Job boards
+  { name: "Dice", logo: logoDev("dice.com"), mark: "D", accent: "#e11d48" },
+  { name: "Monster", logo: logoDev("monster.com"), mark: "M", accent: "#6f42c1" },
+  // Golf tech
   { name: "Golf Genius", logo: logoDev("golfgenius.com"), mark: "GG", accent: "#1a7f37" },
   { name: "BlueGolf", logo: logoDev("bluegolf.com"), mark: "BG", accent: "#1d4ed8" },
-  { name: "Claude", logo: logoDev("anthropic.com"), mark: "C", accent: "#d97757" },
-  { name: "Claude Code", logo: logoDev("claude.com"), mark: "CC", accent: "#d97757" },
-  { name: "Perplexity", logo: logoDev("perplexity.ai"), mark: "PX", accent: "#20808d" },
-  { name: "Gemini", logo: "/logos/tool-gemini.svg", mark: "G", accent: "#8e75f8" },
-  { name: "Copilot", logo: "/logos/tool-copilot.svg", mark: "Co", accent: "#111111" },
-  { name: "ChatGPT", logo: logoDev("openai.com"), mark: "AI", accent: "#10a37f" },
 ];
 
 export type Sector =
