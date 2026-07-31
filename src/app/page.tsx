@@ -91,9 +91,11 @@ export default function Home() {
                 href="https://www.brandlete.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline decoration-[#00ccff]/50 decoration-2 underline-offset-4 transition-colors hover:text-[#00ccff] hover:decoration-[#00ccff]"
+                title="Visit brandlete.com (opens in a new tab)"
+                className="font-bold text-[#00ccff] underline decoration-[#00ccff] decoration-2 underline-offset-4 transition-colors hover:text-[#33d6ff] hover:decoration-[#33d6ff]"
               >
                 Brandlete, Inc.
+                <span aria-hidden className="ml-0.5 text-[0.7em] align-super">↗</span>
               </a>
             </p>
             <TypeCycle />
