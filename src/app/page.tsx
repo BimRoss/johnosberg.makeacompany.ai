@@ -15,6 +15,7 @@ import PartnershipsGrid from "@/components/PartnershipsGrid";
 import CivicCard from "@/components/CivicCard";
 import PressLogo from "@/components/PressLogo";
 import RoleLogo from "@/components/RoleLogo";
+import SkillsGrid from "@/components/SkillsGrid";
 import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
 import BrandleteVideo from "@/components/BrandleteVideo";
@@ -30,7 +31,7 @@ import {
   SITE_NAME,
   stats,
 } from "@/data/site";
-import { DownloadIcon, socials } from "@/data/socials";
+import { socials } from "@/data/socials";
 
 export default function Home() {
   return (
@@ -123,15 +124,6 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <BookCallBtn />
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-zinc-900/80 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-zinc-900 transition-colors hover:bg-zinc-900 hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
-            >
-              <DownloadIcon className="h-4 w-4" />
-              Download resume
-            </a>
             {socials.map(({ label, href, Icon, external }) => (
               <a
                 key={label}
@@ -295,6 +287,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Tools & technology */}
+        <section id="skills" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            Tools & technology
+          </h2>
+          <SkillsGrid />
         </section>
 
         {/* Brands */}
