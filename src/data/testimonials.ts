@@ -760,8 +760,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     "name": "Del Reid",
-    "title": "Founder",
-    "company": "26 Shirts",
+    "title": "Founder, 26 Shirts",
+    "company": "Co-Founder, Bills Mafia",
     "text": "There’s no one quite like John! 1) John’s a connector. He does a great job of keeping a mental inventory of what everyone he knows is working on, so that when he meets a new person, he’s able to see how that person may be able to complement something one of his other connections is already tackling. I’ve had several great opportunities come about where I was able to work with other another local business specifically because John took the time to make sure I got to meet someone that I’d probably never have bumped into without him. 2) John’s an encourager. I can’t tell you how many times I’ve gotten a random text with something as simple as “hey dude you’re awesome” just out of the blue. I always leave conversations with John, ready to take on the world because of what he’s poured into me. 3) John cares. So many of the connections he’s made with me have been related to worthy causes, or people who are working on some charitable or potentially world-changing effort. He sees the good that other people are doing and immediately thinks “what can I do to help them get there?” or “how can I help put them in a position to do even more good?” I’m super appreciative of John and grateful that he took the time to introduce himself to me all those years ago!"
   },
   {
