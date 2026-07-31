@@ -11,7 +11,14 @@ import { useEffect, useRef, useState } from "react";
 import { milestones } from "@/data/site";
 
 export default function CareerTimeline() {
-  const [active, setActive] = useState(milestones.length - 1);
+  // Default the timeline to the Brandlete stop — John's #1 focus — rather than
+  // the most recent role.
+  const brandleteIndex = milestones.findIndex((m) =>
+    m.org.toLowerCase().includes("brandlete")
+  );
+  const [active, setActive] = useState(
+    brandleteIndex >= 0 ? brandleteIndex : milestones.length - 1
+  );
   const [drawn, setDrawn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
