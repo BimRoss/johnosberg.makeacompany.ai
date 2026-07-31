@@ -64,7 +64,7 @@ export default function BookCallBtn() {
   return (
     <a
       ref={ref}
-      href="https://calendar.app.google/yPadngiD35aN7BWa7"
+      href="https://tinyurl.com/meet-josberg-brandlete"
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
