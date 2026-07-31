@@ -23,6 +23,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import {
   civic,
   FEATURED_VIDEO,
+  FEATURED_GUEST_VIDEO,
   HERO_SUMMARY,
   podcasts,
   press,
@@ -366,6 +367,14 @@ export default function Home() {
             </div>
             <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
               {FEATURED_VIDEO.title}
+            </figcaption>
+          </figure>
+          <figure className="flex flex-col gap-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
+              <VideoPlayer id={FEATURED_GUEST_VIDEO.id} start={FEATURED_GUEST_VIDEO.start} title={FEATURED_GUEST_VIDEO.title} />
+            </div>
+            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+              {FEATURED_GUEST_VIDEO.title}
             </figcaption>
           </figure>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
