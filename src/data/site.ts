@@ -61,7 +61,7 @@ export const roles: Role[] = [
     period: "Apr 2026 – Present",
     blurb:
       "Own go-to-market for an AI-native startup, building the motion from positioning through pipeline to closed revenue. Stand up the growth engine end to end and the early GTM foundation a Series-stage company scales on.",
-    logo: logoDev("makeacompany.ai"),
+    logo: "/logos/makeacompany.png",
     mark: "M",
     accent: "#6366f1",
   },
@@ -71,7 +71,7 @@ export const roles: Role[] = [
     period: "Jul 2026 – Present",
     blurb:
       "Advise on talent strategy across sales, business development, engineering, and finance, drawing on 14+ years of recruiting built mostly in technology. Help position Kreuz as the boutique, high-touch alternative in search.",
-    logo: "",
+    logo: "/logos/kreuz.png",
     mark: "K",
     accent: "#b45309",
   },
@@ -81,7 +81,7 @@ export const roles: Role[] = [
     period: "Jan 2017 – Apr 2026",
     blurb:
       "Revenue, go-to-market, and partnerships across a portfolio of early-stage sports-tech companies on a contract basis. An estimated $2.2M+ in total attributed value to the portfolio.",
-    logo: "",
+    logo: "/logos/stealth.png",
     mark: "SS",
     accent: "#64748b",
   },
@@ -111,7 +111,7 @@ export const roles: Role[] = [
     period: "Jan 2019 – Jul 2025",
     blurb:
       "Founded a golf-driven networking platform (a POWER of OZmosis sub-brand) convening 50–125 professionals per event to generate referrals and early-stage deal flow, with monetization validated through pricing partnerships.",
-    logo: "",
+    logo: "/logos/badgolf.png",
     mark: "BG",
     accent: "#15803d",
   },
@@ -141,7 +141,7 @@ export const roles: Role[] = [
     period: "May 2019 – Dec 2021",
     blurb:
       "Advised Oro Sports (formerly Coolture) through its rebrand on go-to-market and product positioning, working directly with the CEO to sharpen the youth-sports pitch and support strategy, fundraising, and early product priorities.",
-    logo: "",
+    logo: "/logos/orosports.png",
     mark: "OS",
     accent: "#14b8a6",
   },
