@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
 // Cool blue-family gradients — varied enough to tell avatars apart while
@@ -132,13 +136,23 @@ function Card({ t }: { t: Testimonial }) {
   );
 }
 
-function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
+function Row({
+  items,
+  dir,
+  paused,
+}: {
+  items: Testimonial[];
+  dir: "l" | "r";
+  paused: boolean;
+}) {
   return (
     <div className="group flex overflow-hidden">
       <div
         className={`flex w-max gap-5 pr-5 ${
           dir === "l" ? "animate-marquee-l" : "animate-marquee-r"
-        } group-hover:[animation-play-state:paused]`}
+        } group-hover:[animation-play-state:paused] ${
+          paused ? "[animation-play-state:paused]" : ""
+        }`}
       >
         {items.map((t, i) => (
           <Card key={`a-${i}`} t={t} />
@@ -155,6 +169,11 @@ export default function Testimonials() {
   const mid = Math.ceil(testimonials.length / 2);
   const rowA = testimonials.slice(0, mid);
   const rowB = testimonials.slice(mid);
+
+  // Touch-and-hold anywhere on the marquee pauses it, so a finger on the screen
+  // stops the scroll (the mobile counterpart to hover-to-pause on desktop).
+  const [paused, setPaused] = useState(false);
+
   return (
     <div className="flex flex-col gap-10">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -162,9 +181,14 @@ export default function Testimonials() {
           <FeaturedCard key={t.name} t={t} />
         ))}
       </div>
-      <div className="marquee-mask flex flex-col gap-5">
-        <Row items={rowA} dir="l" />
-        <Row items={rowB} dir="r" />
+      <div
+        className="marquee-mask flex flex-col gap-5"
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+        onTouchCancel={() => setPaused(false)}
+      >
+        <Row items={rowA} dir="l" paused={paused} />
+        <Row items={rowB} dir="r" paused={paused} />
       </div>
     </div>
   );

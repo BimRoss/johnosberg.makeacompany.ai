@@ -14,6 +14,7 @@ import CareerTimeline from "@/components/CareerTimeline";
 import PartnershipsGrid from "@/components/PartnershipsGrid";
 import CivicCard from "@/components/CivicCard";
 import PressLogo from "@/components/PressLogo";
+import RoleLogo from "@/components/RoleLogo";
 import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
 import BrandleteVideo from "@/components/BrandleteVideo";
@@ -270,12 +271,15 @@ export default function Home() {
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
-                <div className="md:w-1/3 md:shrink-0">
-                  <div className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
-                    {r.org}
-                  </div>
-                  <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
-                    {r.period}
+                <div className="flex items-start gap-3 md:w-1/3 md:shrink-0">
+                  <RoleLogo role={r} />
+                  <div className="min-w-0">
+                    <div className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
+                      {r.org}
+                    </div>
+                    <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
+                      {r.period}
+                    </div>
                   </div>
                 </div>
                 <div className="md:w-2/3">
