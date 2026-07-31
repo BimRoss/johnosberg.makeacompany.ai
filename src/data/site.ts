@@ -5,10 +5,10 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "Growth and partnerships leader co-building in youth sports and sports tech, with 15+ years turning relationships into revenue and $8.5M+ generated and influenced.";
+  "Growth and partnerships leader co-building in youth sports and sports tech, with 15+ years turning relationships into revenue and $11M+ generated and influenced.";
 
 export const LINK_PREVIEW_DESCRIPTION =
-  "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
+  "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $11M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -22,19 +22,23 @@ export function logoDev(domain: string): string {
 }
 
 export const stats = [
-  { value: "$8.5M+", label: "revenue gen. / influenced" },
+  { value: "$11M+", label: "revenue gen. / influenced" },
   { value: "$1.5M+", label: "capital secured" },
   { value: "$1.5M+", label: "nonprofit raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
 ];
 
+// Experience — mirrors John's LinkedIn: same roles, same order (most recent
+// first), same date ranges. The four early finance roles (Citi, CFA Institute,
+// Bloomberg, M&T Bank) intentionally carry no blurb per John's direction; the
+// Experience list renders the title + period only when blurb is empty.
 export const roles = [
   {
     org: "Brandlete, Inc.",
     title: "VP of Partnerships / Founding Member",
     period: "Nov 2021 – Present",
     blurb:
-      "Co-founded an AI-enabled athlete development platform. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
+      "Co-founded the Sports Program Operating System and Athlete Development Engine. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
   },
   {
     org: "MakeaCompany",
@@ -51,46 +55,84 @@ export const roles = [
       "Advise on talent strategy across sales, business development, engineering, and finance, drawing on 14+ years of recruiting built mostly in technology. Help position Kreuz as the boutique, high-touch alternative in search.",
   },
   {
-    org: "POWER of OZmosis Consulting",
-    title: "Founder / Principal Consultant & Coach",
-    period: "2019 – 2026",
-    blurb:
-      "$325K+ in revenue outcomes and $775K in deal flow. Coached 40+ founders and executives, facilitated 150+ strategic introductions, raised $221K+ for nonprofits.",
-  },
-  {
-    org: "PGA of America – Western NY / PGA REACH WNY",
-    title: "Director of Partnerships & Development",
-    period: "2023 – 2025",
-    blurb:
-      "275% partner growth with 97% retention across 60+ accounts. $250K+ annually through sponsorships and multi-year partnerships with Michelob Ultra, Oakley, RLX, and more.",
-  },
-  {
     org: "Stealth Startup",
     title: "Sports Tech – Revenue / GTM / Partnerships",
-    period: "Jan 2017 – Jul 2025",
+    period: "Jan 2017 – Apr 2026",
     blurb:
       "Revenue, go-to-market, and partnerships across a portfolio of early-stage sports-tech companies on a contract basis. An estimated $2.2M+ in total attributed value to the portfolio.",
   },
   {
-    org: "Oro Sports USA",
+    org: "PGA of America",
+    title: "Director of Partnerships / Founding Trustee",
+    period: "Jan 2020 – Oct 2025",
+    blurb:
+      "275% partner growth with 97% retention across 60+ accounts in Western NY. $250K+ annually through sponsorships and multi-year partnerships with Michelob Ultra, Oakley, RLX, and more. Scaled PGA HOPE and other fundraising to $350K+ in program funding over six years.",
+  },
+  {
+    org: "OnCore Golf",
+    title: "Director of Revenue Partnerships / Strategic Advisor / Consultant",
+    period: "Jul 2016 – Aug 2025",
+    blurb:
+      "Secured distribution partnerships with NYSGA, DICK'S Sporting Goods, Golf Galaxy (30+ locations), and Wegmans, representing $3.5M+ in revenue across those relationships.",
+  },
+  {
+    org: "Bad Golf Business School",
+    title: "Founder / Operator",
+    period: "Jan 2019 – Jul 2025",
+    blurb:
+      "Founded a golf-driven networking platform (a POWER of OZmosis sub-brand) convening 50–125 professionals per event to generate referrals and early-stage deal flow, with monetization validated through pricing partnerships.",
+  },
+  {
+    org: "POWER of OZmosis",
+    title: "Principal Consultant / Founder",
+    period: "Jul 2019 – Jun 2025",
+    blurb:
+      "$200K–$325K+ in client revenue through strategic partnerships, with $817K in aggregate client deal flow closed as of Q1 2026. Coached 20+ leaders across verticals over four years, secured $221K+ in venture funding for startup clients, and raised $221K+ across nonprofit campaigns.",
+  },
+  {
+    org: "EmergenceTek Group Inc.",
+    title: "VP of Sales / Founding Member / Management Consultant",
+    period: "Sep 2012 – Sep 2024",
+    blurb:
+      "Drove full-cycle business development, growing the client base 0 to 35+ enterprise and mid-market orgs and helping push company revenue to ~$5M. Generated $3M+ across technical projects, staffing, and MRR contracts, plus $750K+ in new business and $500K in NY State economic development incentives.",
+  },
+  {
+    org: "Oro Sports USA, Inc.",
     title: "Strategic Advisor",
     period: "May 2019 – Dec 2021",
     blurb:
       "Advised Oro Sports (formerly Coolture) through its rebrand on go-to-market and product positioning, working directly with the CEO to sharpen the youth-sports pitch and support strategy, fundraising, and early product priorities.",
   },
   {
-    org: "EmergenceTek Group",
-    title: "VP, Client Engagement & Sales (Founding Employee)",
-    period: "2012 – 2017",
+    org: "DataSure24",
+    title: "Director of Business Development / Founding Employee",
+    period: "Aug 2018 – Jul 2019",
     blurb:
-      "Built the client base 0 to 25+ enterprise and mid-market orgs. $3M+ in revenue across software and staffing, plus $500K in state economic development funding.",
+      "Generated $150K+ in new revenue and expanded existing accounts 22% in year one. Built and managed a $600K pipeline through prospecting, partnerships, and targeted account development, supporting $400K ARR across startups, SMBs, and enterprise accounts.",
   },
   {
-    org: "OnCore Golf Technologies",
-    title: "Director of Partnerships & Engagement",
-    period: "2017 – 2018",
-    blurb:
-      "Landed DICK'S Sporting Goods, Golf Galaxy, Wegmans, and NYSGA, driving $3.5M+ across those relationships.",
+    org: "Citi",
+    title: "Investment Equities Associate",
+    period: "Apr 2012 – Dec 2012",
+    blurb: "",
+  },
+  {
+    org: "CFA Institute",
+    title: "Management Analyst",
+    period: "Jan 2012 – Jun 2012",
+    blurb: "",
+  },
+  {
+    org: "Bloomberg",
+    title: "Brand Engagement Lead",
+    period: "Sep 2011 – Feb 2012",
+    blurb: "",
+  },
+  {
+    org: "M&T Bank",
+    title: "Profitability Analytics Associate",
+    period: "Jan 2011 – Sep 2011",
+    blurb: "",
   },
 ];
 
