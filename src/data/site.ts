@@ -5,7 +5,7 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "VP of Partnerships & Founding Member at Brandlete, Inc. For 15+ years I've built the partnership and growth engines that move real revenue: $6.5M+ generated ($8.5M+ influenced), $1.5M+ in capital secured, and $1.5M+ raised for nonprofit causes across tech, sports, and startups. I turn relationships into pipeline, and pipeline into signed deals.";
+  "Growth and partnerships leader co-building in youth sports and sports tech, with 15+ years turning relationships into revenue and $8.5M+ generated and influenced.";
 
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $6.5M+ in revenue generated, partnerships with national brands across sports, tech, and nonprofit.";
@@ -35,6 +35,20 @@ export const roles = [
     period: "Nov 2021 – Present",
     blurb:
       "Co-founded an AI-enabled athlete development platform. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
+  },
+  {
+    org: "MakeaCompany",
+    title: "Head of Growth / GTM",
+    period: "Apr 2026 – Present",
+    blurb:
+      "Own go-to-market for an AI-native startup, building the motion from positioning through pipeline to closed revenue. Stand up the growth engine end to end and the early GTM foundation a Series-stage company scales on.",
+  },
+  {
+    org: "Kreuz Staffing & Business Development",
+    title: "Strategic Advisor",
+    period: "Jul 2026 – Present",
+    blurb:
+      "Advise on talent strategy across sales, business development, engineering, and finance, drawing on 14+ years of recruiting built mostly in technology. Help position Kreuz as the boutique, high-touch alternative in search.",
   },
   {
     org: "POWER of OZmosis Consulting",
