@@ -26,8 +26,8 @@ const FEATURED: Testimonial[] = [
   },
   {
     name: "Del Reid",
-    title: "Founder",
-    company: "26 Shirts",
+    title: "Founder, 26 Shirts",
+    company: "Co-Founder, Bills Mafia",
     text: "There's no one quite like John! He keeps a mental inventory of what everyone he knows is working on so that when he meets a new person, he sees exactly how they could complement something one of his connections is already tackling. I always leave conversations with John ready to take on the world.",
   },
   {
