@@ -276,7 +276,7 @@ export default function Home() {
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Civic leadership & volunteer work
           </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
             {civic.map((c, i) => (
               <CivicCard key={`${c.org}-${c.role}-${i}`} c={c} />
             ))}

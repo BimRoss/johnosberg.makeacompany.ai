@@ -169,7 +169,7 @@ export const milestones: { year: string; org: string; title: string; metric: str
   { year: "2017", org: "OnCore Golf", title: "Director of Partnerships", metric: "$3.5M+ driven", revenueK: 3500 },
   { year: "2019", org: "POWER of OZmosis", title: "Founder / Principal", metric: "40+ founders coached", revenueK: 775 },
   { year: "2021", org: "Brandlete", title: "VP Partnerships / Founding Member", metric: "AI athlete platform", revenueK: 1000 },
-  { year: "2023", org: "PGA of America WNY", title: "Director, Partnerships & Dev.", metric: "275% growth · 97% kept", revenueK: 250 },
+  { year: "2023", org: "PGA of America WNY", title: "Director, Partnerships & Dev.", metric: "275% growth · 97% retained", revenueK: 250 },
 ];
 
 export type Brand = { name: string; mark: string; accent: string; logo: string; url: string; sector: Sector };
