@@ -385,12 +385,6 @@ export const podcasts: Podcast[] = [
     href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgUd-nFY-z2VXu68NbiauLm",
     thumb: "cRGzR-yDVEo",
   },
-  {
-    title: "John Osberg, Featured Guest",
-    role: "Guest",
-    href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgMHOYeCaDmnwcjEnzumQSn",
-    thumb: "n2aAi-frg7Q",
-  },
 ];
 
 export type Civic = { org: string; role: string; logo: string; mark: string; accent: string; url: string };
