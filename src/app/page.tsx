@@ -166,8 +166,7 @@ export default function Home() {
               One connected platform for the coaches, athletes, families, and
               organizations that run youth sports. Development plans, insights and
               feedback, tournaments, communications, registration, and full athlete
-              profiles, plus Max, the built-in AI assistant. Live and in use today,
-              getting better every week.
+              profiles, plus Max, the built-in AI assistant.
             </p>
           </div>
 
