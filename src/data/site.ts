@@ -460,7 +460,7 @@ export const civic: Civic[] = [
   { org: "First Tee", role: "Youth Golf Coach", logo: logoDev("firsttee.org"), mark: "FT", accent: "#16a34a", url: "https://firsttee.org" },
   { org: "Police Athletic League", role: "Youth Golf Coach", logo: logoDev("nationalpal.org"), mark: "PAL", accent: "#1e3a8a", url: "https://www.nationalpal.org" },
   { org: "NAACP", role: "Member, Buffalo NY Chapter", logo: logoDev("naacp.org"), mark: "NA", accent: "#111827", url: "https://naacp.org" },
-  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: logoDev("recoveryoptionsmadeeasy.org"), mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptionsmadeeasy.org" },
+  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptionsmadeeasy.org" },
   { org: "People Inc.", role: "Mentor", logo: logoDev("people-inc.org"), mark: "PI", accent: "#16a34a", url: "https://www.people-inc.org" },
   { org: "Team F.A.S.T.", role: "Board Member", logo: logoDev("teamfastfoundation.com"), mark: "TF", accent: "#1d4ed8", url: "https://teamfastfoundation.com" },
   { org: "Niagara University Marketing Assn.", role: "Business Competition Finals Judge", logo: logoDev("niagara.edu"), mark: "NUMA", accent: "#5b2a86", url: "https://www.niagara.edu" },
