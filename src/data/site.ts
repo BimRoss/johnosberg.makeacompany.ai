@@ -395,25 +395,41 @@ export const press: PressItem[] = [
 ];
 
 // Awards & honors — mirrors John's LinkedIn "Honors & awards", newest first.
-// Kept tight on purpose: one line each, issuer + year only.
-export type Award = { title: string; org: string; year: string };
+// Repeat issuers (PGA, Heritage Christian Services, Veterans Affairs) are
+// grouped into one entry that lists each award with its year.
+export type Award = { org: string; items: { title: string; year: string }[] };
 
 export const awards: Award[] = [
-  { title: "Top Fundraiser Award", org: "PGA of America REACH Foundation", year: "2025" },
-  { title: "Above & Beyond Recognition Award", org: "PGA of America", year: "2024" },
-  { title: "Wellness Champion of 2024", org: "Buffalo Business First", year: "2024" },
-  { title: "Top Fundraiser Award", org: "Heritage Christian Services", year: "2022" },
-  { title: "Community Partnership Award", org: "U.S. Dept. of Veterans Affairs", year: "2022" },
-  { title: "“Good Neighbor” Community Award", org: "November Project — Buffalo", year: "2022" },
-  { title: "Carol & Ernie Forth Community Service Award", org: "Heritage Christian Services", year: "2021" },
-  { title: "Certificate of Pride in Public Service", org: "U.S. Dept. of Veterans Affairs", year: "2021" },
-  { title: "Amateur Golf National Champion", org: "Jack Nicklaus", year: "2020" },
-  { title: "30 Under 30", org: "Buffalo Business First", year: "2019" },
-  { title: "Rising Star Awardee", org: "Cystic Fibrosis Foundation", year: "2018" },
-  { title: "Top Fundraiser / Event Chair Award", org: "Heritage Christian Services", year: "2018" },
-  { title: "New Coach of the Year", org: "The First Tee of WNY", year: "2016" },
-  { title: "Top 20 Most Intriguing Student", org: "Niagara University", year: "2013" },
-  { title: "Who’s Who Among Students in American Universities & Colleges", org: "Niagara University", year: "2012" },
+  {
+    org: "PGA of America",
+    items: [
+      { title: "Top Fundraiser Award · REACH Foundation", year: "2025" },
+      { title: "Above & Beyond Recognition Award", year: "2024" },
+    ],
+  },
+  { org: "Buffalo Business First", items: [{ title: "Wellness Champion of 2024", year: "2024" }] },
+  {
+    org: "Heritage Christian Services",
+    items: [
+      { title: "Top Fundraiser Award", year: "2022" },
+      { title: "Carol & Ernie Forth Community Service Award", year: "2021" },
+      { title: "Top Fundraiser / Event Chair Award", year: "2018" },
+    ],
+  },
+  {
+    org: "U.S. Dept. of Veterans Affairs",
+    items: [
+      { title: "Community Partnership Award", year: "2022" },
+      { title: "Certificate of Pride in Public Service", year: "2021" },
+    ],
+  },
+  { org: "November Project — Buffalo", items: [{ title: "“Good Neighbor” Community Award", year: "2022" }] },
+  { org: "Jack Nicklaus", items: [{ title: "Amateur Golf National Champion", year: "2020" }] },
+  { org: "Buffalo Business First", items: [{ title: "30 Under 30", year: "2019" }] },
+  { org: "Cystic Fibrosis Foundation", items: [{ title: "Rising Star Awardee", year: "2018" }] },
+  { org: "The First Tee of WNY", items: [{ title: "New Coach of the Year", year: "2016" }] },
+  { org: "Niagara University", items: [{ title: "Top 20 Most Intriguing Student", year: "2013" }] },
+  { org: "Niagara University", items: [{ title: "Who’s Who Among Students in American Universities & Colleges", year: "2012" }] },
 ];
 
 export const FEATURED_VIDEO = {
