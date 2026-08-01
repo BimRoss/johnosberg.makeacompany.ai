@@ -129,7 +129,7 @@ export const roles: Role[] = [
     title: "Principal Consultant / Founder",
     period: "Jul 2019 – Jun 2025",
     blurb:
-      "$200K–$325K+ in client revenue through strategic partnerships, with $817K in aggregate client deal flow closed as of Q1 2026. Coached 20+ leaders across verticals over four years, secured $221K+ in venture funding for startup clients, and raised $221K+ across nonprofit campaigns.",
+      "$200K–$325K+ in client revenue through strategic partnerships, with $817K in aggregate client deal flow closed as of Q1 2026. Coached 20+ leaders across verticals over four years, secured $221K+ in venture funding for startup clients, and raised $285K across nonprofit campaigns.",
     logo: logoDev("powerofozmosis.com"),
     mark: "OZ",
     accent: "#1d4ed8",
