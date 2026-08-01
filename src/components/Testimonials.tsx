@@ -17,33 +17,6 @@ const AVATAR_GRADIENTS = [
   "from-[#0ea5e9] to-[#0088cc]",
 ];
 
-const FEATURED: Testimonial[] = [
-  {
-    name: "Jay O'Brien",
-    title: "Senior Relationship Manager",
-    company: "Corebridge Financial",
-    text: "He was a tremendous partner who was willing to go the extra mile to ensure everyone was more than satisfied with the result. I will miss working with him and expect he will continue growing successful relationships throughout his career. I'd work with him again in a second.",
-  },
-  {
-    name: "Del Reid",
-    title: "Founder, 26 Shirts",
-    company: "Co-Founder, Bills Mafia",
-    text: "There's no one quite like John! He keeps a mental inventory of what everyone he knows is working on so that when he meets a new person, he sees exactly how they could complement something one of his connections is already tackling. I always leave conversations with John ready to take on the world.",
-  },
-  {
-    name: "Matthew Cunha",
-    title: "Sales Representative",
-    company: "Oakley",
-    text: "John is the kind of person who produces meaningful results while inspiring everyone around him. His positive outlook isn't just something he turns on for meetings — it's a fundamental part of who he is. Working with him doesn't just push projects forward; it elevates the entire environment.",
-  },
-  {
-    name: "Barbara Boese",
-    title: "Transition Coordinator",
-    company: "Accessible Academics",
-    text: "John Osberg is a force of nature. Arms wide open to help another realize a passion in education, experience or employment. That was over a year ago and the mentorship is thriving — a young man with a disability has been embraced by the world of golf and advertising. John was instrumental in a career exploration and launch.",
-  },
-];
-
 function initials(name: string) {
   const parts = name.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return "?";
@@ -79,34 +52,6 @@ function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg" }) {
         {initials(name)}
       </div>
     </div>
-  );
-}
-
-function FeaturedCard({ t }: { t: Testimonial }) {
-  return (
-    <figure className="relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-[#00ccff]/30 bg-white/90 p-6 shadow-lg shadow-[#00ccff]/10 backdrop-blur-md dark:border-[#00ccff]/25 dark:bg-zinc-900/70 dark:shadow-[#00ccff]/10">
-      <span aria-hidden className="absolute right-5 top-3 select-none font-serif text-6xl leading-none text-[#00ccff]/40 dark:text-[#00ccff]/30">&#10077;</span>
-      <Stars />
-      <blockquote className="text-[15px] leading-7 text-zinc-800 dark:text-zinc-200">
-        &ldquo;{t.text}&rdquo;
-      </blockquote>
-      <figcaption className="mt-auto flex items-center gap-3.5">
-        <Avatar name={t.name} size="lg" />
-        <span className="min-w-0">
-          <span className="block font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
-            {t.name}
-          </span>
-          <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-[#0088cc] dark:text-[#00ccff]">
-            {t.title}
-          </span>
-          {t.company && (
-            <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-500">
-              {t.company}
-            </span>
-          )}
-        </span>
-      </figcaption>
-    </figure>
   );
 }
 
@@ -233,16 +178,9 @@ export default function Testimonials() {
   const rowB = testimonials.slice(mid);
 
   return (
-    <div className="flex flex-col gap-10">
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {FEATURED.map((t) => (
-          <FeaturedCard key={t.name} t={t} />
-        ))}
-      </div>
-      <div className="marquee-mask flex flex-col gap-5">
-        <Row items={rowA} dir="l" />
-        <Row items={rowB} dir="r" />
-      </div>
+    <div className="marquee-mask flex flex-col gap-5">
+      <Row items={rowA} dir="l" />
+      <Row items={rowB} dir="r" />
     </div>
   );
 }

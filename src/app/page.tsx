@@ -21,10 +21,10 @@ import VideoPlayer from "@/components/VideoPlayer";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
+  awards,
   civic,
   FEATURED_VIDEO,
   FEATURED_GUEST_VIDEO,
-  HERO_SUMMARY,
   podcasts,
   press,
   roles,
@@ -44,7 +44,7 @@ export default function Home() {
       <CursorTrail />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-24 pt-16 sm:gap-20 sm:px-8 md:gap-28 md:pt-24"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-24 pt-28 sm:gap-20 sm:px-8 md:gap-28 md:pt-32"
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
@@ -94,7 +94,7 @@ export default function Home() {
                 className="font-bold text-[#00ccff] underline decoration-[#00ccff] decoration-2 underline-offset-4 transition-colors hover:text-[#33d6ff] hover:decoration-[#33d6ff]"
               >
                 Brandlete, Inc.
-                <span aria-hidden className="ml-0.5 text-[0.7em] align-super">↗</span>
+                <span aria-hidden className="ml-1">{"↗︎"}</span>
               </a>
             </p>
             <TypeCycle />
@@ -105,7 +105,7 @@ export default function Home() {
               className="on-photo group mt-4 inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:text-xs"
             >
               <span aria-hidden>⭐</span>
-              Endorsed by 134+ top professionals and counting
+              Endorsed by 134+ top professionals
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
@@ -113,9 +113,6 @@ export default function Home() {
 
         {/* Summary + CTA */}
         <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
-          <p className="on-photo max-w-3xl text-base font-medium leading-7 text-zinc-950 dark:font-normal dark:text-zinc-300 sm:text-xl sm:leading-8">
-            {HERO_SUMMARY}
-          </p>
           <div className="flex flex-wrap items-center gap-3">
             <BookCallBtn />
             {socials.map(({ label, href, Icon, external }) => (
@@ -167,20 +164,24 @@ export default function Home() {
           {/* What's inside — Brandlete-blue outlined pills */}
           <div className="flex flex-wrap gap-2">
             {[
-              "Development Plans",
-              "Insights & Feedback",
-              "Tournaments",
-              "Communications",
-              "Registration",
-              "Athlete Profiles",
-              "Max · AI Assistant",
+              { label: "Development Plans", href: "https://brandlete.com/platform/athlete-development" },
+              { label: "Insights & Feedback", href: "https://brandlete.com/platform/intelligence" },
+              { label: "Tournaments", href: "https://brandlete.com/capabilities/tournament-director" },
+              { label: "Communications", href: "https://brandlete.com/capabilities/communication-engagement" },
+              { label: "Registration", href: "https://brandlete.com/capabilities/registration-forms" },
+              { label: "Athlete Profiles", href: "https://brandlete.com/capabilities/athlete-development-record" },
+              { label: "Max · AI Assistant", href: "https://brandlete.com/platform/max" },
             ].map((f) => (
-              <span
-                key={f}
-                className="inline-flex items-center rounded-full border border-[#00ccff]/45 bg-[#00ccff]/5 px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-zinc-800 backdrop-blur-md dark:text-zinc-200"
+              <a
+                key={f.label}
+                href={f.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`${f.label} on brandlete.com (opens in a new tab)`}
+                className="inline-flex items-center rounded-full border border-[#00ccff]/45 bg-[#00ccff]/5 px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-zinc-800 backdrop-blur-md transition-colors hover:border-[#00ccff] hover:bg-[#00ccff]/15 hover:text-black dark:text-zinc-200 dark:hover:text-white"
               >
-                {f}
-              </span>
+                {f.label}
+              </a>
             ))}
           </div>
 
@@ -317,7 +318,7 @@ export default function Home() {
               Endorsements
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
-              Endorsed by 134+ top professionals and counting.
+              Endorsed by 134+ top professionals.
             </p>
           </div>
           <Testimonials />
@@ -352,6 +353,33 @@ export default function Home() {
                   ↗
                 </span>
               </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Awards & honors */}
+        <section id="awards" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            Awards & honors
+          </h2>
+          <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+            {awards.map((a, i) => (
+              <div
+                key={`${a.title}-${i}`}
+                className="on-photo flex items-baseline justify-between gap-4 border-t border-black/10 py-3 dark:border-white/10"
+              >
+                <span className="min-w-0">
+                  <span className="block font-[family-name:var(--font-sora)] text-[15px] font-semibold leading-snug text-zinc-900 dark:text-white">
+                    {a.title}
+                  </span>
+                  <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
+                    {a.org}
+                  </span>
+                </span>
+                <span className="shrink-0 font-mono text-[11px] font-semibold text-[#0088cc] dark:text-[#00ccff]">
+                  {a.year}
+                </span>
+              </div>
             ))}
           </div>
         </section>

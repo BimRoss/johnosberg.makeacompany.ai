@@ -272,7 +272,7 @@ export const revenueByVenture: { label: string; period: string; valueK: number; 
   { label: "OnCore Golf", period: "2017–18", valueK: 3500, note: "DICK'S, Golf Galaxy, Wegmans, NYSGA" },
   { label: "EmergenceTek", period: "2012–17", valueK: 3000, note: "0→25+ enterprise & mid-market" },
   { label: "POWER of OZmosis", period: "2019–26", valueK: 775, note: "$325K revenue · $775K deal flow" },
-  { label: "PGA WNY", period: "2023–25", valueK: 250, note: "annual, sponsorships & renewals" },
+  { label: "PGA WNY", period: "2020–2025", valueK: 750, note: "annual, sponsorships & renewals" },
 ];
 
 // Career milestones for the interactive timeline. `metric` is the one headline
@@ -351,6 +351,27 @@ export const press: PressItem[] = [
     fallback: "/logos/news-ese.png",
   },
   {
+    source: "My Worst Investment Ever",
+    title: "John Osberg: Explore Who You Are and Build on That",
+    href: "https://myworstinvestmentever.com/ep480-john-osberg-explore-who-you-are-and-build-on-that/",
+    logo: logoDev("myworstinvestmentever.com"),
+    fallback: "/logos/news-ese.png",
+  },
+  {
+    source: "Mike'D Up!",
+    title: "Being Energized by the POWER of OZmosis with John Osberg",
+    href: "https://www.youtube.com/watch?v=9FjZ6rbXC4s",
+    logo: logoDev("youtube.com"),
+    fallback: "/logos/news-ese.png",
+  },
+  {
+    source: "vidwheel",
+    title: "John Osberg on Leveraging Your Network, Passions & Content to Win",
+    href: "https://www.youtube.com/watch?v=tnbyvyawlgA",
+    logo: logoDev("vidwheel.com"),
+    fallback: "/logos/news-ese.png",
+  },
+  {
     source: "Clark Dever",
     title: "Bad Golf Business School: Startup Lessons from the Fairway",
     href: "https://www.clarkdever.com/projects/bad-golf-business-school",
@@ -371,6 +392,28 @@ export const press: PressItem[] = [
     logo: logoDev("bizjournals.com"),
     fallback: "/logos/news-biz.png",
   },
+];
+
+// Awards & honors — mirrors John's LinkedIn "Honors & awards", newest first.
+// Kept tight on purpose: one line each, issuer + year only.
+export type Award = { title: string; org: string; year: string };
+
+export const awards: Award[] = [
+  { title: "Top Fundraiser Award", org: "PGA of America REACH Foundation", year: "2025" },
+  { title: "Above & Beyond Recognition Award", org: "PGA of America", year: "2024" },
+  { title: "Wellness Champion of 2024", org: "Buffalo Business First", year: "2024" },
+  { title: "Top Fundraiser Award", org: "Heritage Christian Services", year: "2022" },
+  { title: "Community Partnership Award", org: "U.S. Dept. of Veterans Affairs", year: "2022" },
+  { title: "“Good Neighbor” Community Award", org: "November Project — Buffalo", year: "2022" },
+  { title: "Carol & Ernie Forth Community Service Award", org: "Heritage Christian Services", year: "2021" },
+  { title: "Certificate of Pride in Public Service", org: "U.S. Dept. of Veterans Affairs", year: "2021" },
+  { title: "Amateur Golf National Champion", org: "Jack Nicklaus", year: "2020" },
+  { title: "30 Under 30", org: "Buffalo Business First", year: "2019" },
+  { title: "Rising Star Awardee", org: "Cystic Fibrosis Foundation", year: "2018" },
+  { title: "Top Fundraiser / Event Chair Award", org: "Heritage Christian Services", year: "2018" },
+  { title: "New Coach of the Year", org: "The First Tee of WNY", year: "2016" },
+  { title: "Top 20 Most Intriguing Student", org: "Niagara University", year: "2013" },
+  { title: "Who’s Who Among Students in American Universities & Colleges", org: "Niagara University", year: "2012" },
 ];
 
 export const FEATURED_VIDEO = {
