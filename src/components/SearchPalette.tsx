@@ -20,6 +20,7 @@ function buildIndex(): Item[] {
     { label: "Civic leadership & volunteer work", kind: "Section", href: "#civic" },
     { label: "Endorsements", kind: "Section", href: "#recommendations" },
     { label: "In the news", kind: "Section", href: "#news" },
+    { label: "Awards & honors", kind: "Section", href: "#awards" },
     { label: "Podcasts", kind: "Section", href: "#podcasts" },
     { label: "Download resume", kind: "Action", href: "/resume.pdf", external: true },
   ];
