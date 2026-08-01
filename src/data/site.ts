@@ -5,10 +5,10 @@ export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "Growth and partnerships leader co-building in youth sports and sports tech, with 15+ years turning relationships into revenue and $11M+ generated and influenced.";
+  "Growth and partnerships leader co-building in youth sports and sports tech, with 15+ years turning relationships into revenue and $15M+ generated and influenced.";
 
 export const LINK_PREVIEW_DESCRIPTION =
-  "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $11M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
+  "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $15M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -22,7 +22,7 @@ export function logoDev(domain: string): string {
 }
 
 export const stats = [
-  { value: "$11M+", label: "revenue generated" },
+  { value: "$15M+", label: "revenue generated" },
   { value: "$2.1M+", label: "capital secured" },
   { value: "$1.5M+", label: "nonprofit raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
