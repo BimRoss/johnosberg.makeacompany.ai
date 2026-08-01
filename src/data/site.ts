@@ -442,41 +442,58 @@ export const podcasts: Podcast[] = [
   },
 ];
 
-export type Civic = { org: string; role: string; logo: string; mark: string; accent: string; url: string };
+// Civic categories — drive the filterable civic logo wall, same pattern as the
+// partnership SECTORS above.
+export type CivicCategory =
+  | "Entrepreneurship & Startups"
+  | "Higher Ed & Mentorship"
+  | "Sports & Golf"
+  | "Health & Recovery"
+  | "Community & Nonprofit";
+
+export const CIVIC_CATEGORIES: { name: CivicCategory; color: string }[] = [
+  { name: "Entrepreneurship & Startups", color: "#00ccff" },
+  { name: "Higher Ed & Mentorship", color: "#7c4dff" },
+  { name: "Sports & Golf", color: "#16a34a" },
+  { name: "Health & Recovery", color: "#ef4444" },
+  { name: "Community & Nonprofit", color: "#f59e0b" },
+];
+
+export type Civic = { org: string; role: string; logo: string; mark: string; accent: string; url: string; category: CivicCategory };
 
 // John's civic leadership & volunteer roles. logo "" falls back to a monogram.
 export const civic: Civic[] = [
-  { org: "Techstars", role: "Community Organizer & Program Contributor", logo: logoDev("techstars.com"), mark: "T", accent: "#1f1f1f", url: "https://www.techstars.com" },
-  { org: "POWER of OZmosis", role: "Mentor · Connector · Fundraiser", logo: logoDev("powerofozmosis.com"), mark: "OZ", accent: "#1d4ed8", url: "https://www.powerofozmosis.com" },
-  { org: "PGA REACH Western NY", role: "Board of Trustees & Advisor", logo: logoDev("pga.com"), mark: "PGA", accent: "#0b3d2e", url: "https://westernnewyork.pga.com" },
-  { org: "EforAll", role: "Lead Mentor, Buffalo NY Cohort", logo: logoDev("eforall.org"), mark: "Ef", accent: "#2bb3a3", url: "https://eforall.org" },
-  { org: "OnCore Golf", role: "Fundraising Director", logo: logoDev("oncoregolf.com"), mark: "OC", accent: "#111827", url: "https://www.oncoregolf.com" },
-  { org: "University at Buffalo", role: "Expert in Residence, LaunchPad · Finals Judge, Student Pitches (CoLab · Blackstone) · Mentor & Finals Judge, Student 2 Biz (School of Management)", logo: logoDev("buffalo.edu"), mark: "UB", accent: "#005bbb", url: "https://www.buffalo.edu" },
-  { org: "dooProcess", role: "Community Champion & Mentor", logo: "/logos/civ-dooprocess.png", mark: "DP", accent: "#6d28d9", url: "https://www.dooprocess.org" },
-  { org: "Buffalo Startup Week", role: "Featured Speaker, Social Media", logo: "/logos/civ-buffalo-startup-week.png", mark: "BSW", accent: "#f59e0b", url: "https://www.buffalo.edu/partnerships/landing-pages/startup-week.html" },
-  { org: "Heritage Christian Services", role: "Chairperson, Heritage HERO 5K & Annual Foundation Fundraiser", logo: logoDev("heritagechristianservices.org"), mark: "HC", accent: "#0e7490", url: "https://www.heritagechristianservices.org" },
-  { org: "Niagara Global Tourism Institute", role: "Community Advocate, TReC", logo: "/logos/civ-niagara-global.png", mark: "NG", accent: "#0891b2", url: "https://www.google.com/search?q=Niagara%20Global%20Tourism%20Institute" },
-  { org: "First Tee", role: "Youth Golf Coach", logo: logoDev("firsttee.org"), mark: "FT", accent: "#16a34a", url: "https://firsttee.org" },
-  { org: "Police Athletic League", role: "Youth Golf Coach", logo: logoDev("nationalpal.org"), mark: "PAL", accent: "#1e3a8a", url: "https://www.nationalpal.org" },
-  { org: "NAACP", role: "Member, Buffalo NY Chapter", logo: logoDev("naacp.org"), mark: "NA", accent: "#111827", url: "https://naacp.org" },
-  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptionsmadeeasy.org" },
-  { org: "People Inc.", role: "Mentor", logo: logoDev("people-inc.org"), mark: "PI", accent: "#16a34a", url: "https://www.people-inc.org" },
-  { org: "Team F.A.S.T.", role: "Board Member", logo: logoDev("teamfastfoundation.com"), mark: "TF", accent: "#1d4ed8", url: "https://teamfastfoundation.com" },
-  { org: "Niagara University", role: "Featured Speaker & Careers Connector · Business Competition Finals Judge (Marketing Assn.)", logo: logoDev("niagara.edu"), mark: "NU", accent: "#5b2a86", url: "https://www.niagara.edu" },
-  { org: "Accessible Academics", role: "Mentor", logo: "/logos/civ-accessible-academics.png", mark: "AA", accent: "#b45309", url: "https://www.google.com/search?q=Accessible%20Academics" },
-  { org: "F BITES", role: "Community Champion", logo: "/logos/civ-fbites.png", mark: "FB", accent: "#65a30d", url: "https://www.google.com/search?q=F%20BITES%20Buffalo" },
-  { org: "CALLSIGN 22", role: "5x4x48 Challenge Fundraiser", logo: "/logos/civ-callsign22.png", mark: "C22", accent: "#475569", url: "https://www.google.com/search?q=CALLSIGN%2022%20veteran%20fundraiser" },
-  { org: "The Essential Machine", role: "Mentor to Founder", logo: "/logos/civ-essential-machine.png", mark: "EM", accent: "#0ea5e9", url: "https://www.google.com/search?q=The%20Essential%20Machine%20startup" },
-  { org: "NYBPC", role: "Regional Finals Judge", logo: logoDev("nybpc.org"), mark: "NY", accent: "#1f7a3f", url: "https://nybpc.org" },
-  { org: "vidwheel", role: "Podcast Host & Featured Speaker", logo: logoDev("vidwheel.com"), mark: "VW", accent: "#16a34a", url: "https://vidwheel.com" },
-  { org: "Bad Golf Business School", role: "Founder / Operator", logo: "/logos/badgolf.png", mark: "BG", accent: "#15803d", url: "https://www.clarkdever.com/projects/bad-golf-business-school" },
-  { org: "American University", role: "Featured Speaker", logo: logoDev("american.edu"), mark: "AU", accent: "#b91c1c", url: "https://www.american.edu" },
-  { org: "Trocaire College", role: "Featured Speaker", logo: logoDev("trocaire.edu"), mark: "TC", accent: "#7f1d1d", url: "https://www.trocaire.edu" },
-  { org: "American Lung Association", role: "Fight for Air Climb Fundraiser", logo: logoDev("lung.org"), mark: "AL", accent: "#2563eb", url: "https://www.lung.org" },
-  { org: "InfoTech WNY", role: "Board Member & Co-Director, Networking", logo: "/logos/civ-infotech-wny.png", mark: "IT", accent: "#0d9488", url: "https://www.google.com/search?q=InfoTech%20WNY" },
-  { org: "Buffalo Niagara Partnership", role: "Featured Speaker, BN360", logo: logoDev("thepartnership.org"), mark: "BN", accent: "#1d4ed8", url: "https://www.thepartnership.org" },
-  { org: "Cystic Fibrosis Foundation", role: "Rising Star Selection", logo: logoDev("cff.org"), mark: "CF", accent: "#2563eb", url: "https://www.cff.org" },
-  { org: "Special Olympics", role: "Event Volunteer, Fire Truck Pull", logo: logoDev("specialolympics.org"), mark: "SO", accent: "#e0301e", url: "https://www.specialolympics.org" },
-  { org: "United Way of Buffalo & Erie County", role: "Student Liaison", logo: logoDev("uwbec.org"), mark: "UW", accent: "#e0301e", url: "https://www.uwbec.org" },
-  { org: "Jericho Road Community Health Center", role: "Volunteer, Vive La Casa", logo: logoDev("jrchc.org"), mark: "JR", accent: "#ea580c", url: "https://jrchc.org" },
+  { org: "Techstars", role: "Community Organizer & Program Contributor", logo: logoDev("techstars.com"), mark: "T", accent: "#1f1f1f", url: "https://www.techstars.com", category: "Entrepreneurship & Startups" },
+  { org: "POWER of OZmosis", role: "Mentor · Connector · Fundraiser", logo: logoDev("powerofozmosis.com"), mark: "OZ", accent: "#1d4ed8", url: "https://www.powerofozmosis.com", category: "Entrepreneurship & Startups" },
+  { org: "PGA REACH Western NY", role: "Board of Trustees & Advisor", logo: logoDev("pga.com"), mark: "PGA", accent: "#0b3d2e", url: "https://westernnewyork.pga.com", category: "Sports & Golf" },
+  { org: "EforAll", role: "Lead Mentor, Buffalo NY Cohort", logo: logoDev("eforall.org"), mark: "Ef", accent: "#2bb3a3", url: "https://eforall.org", category: "Entrepreneurship & Startups" },
+  { org: "OnCore Golf", role: "Fundraising Director", logo: logoDev("oncoregolf.com"), mark: "OC", accent: "#111827", url: "https://www.oncoregolf.com", category: "Sports & Golf" },
+  { org: "University at Buffalo", role: "Expert in Residence, LaunchPad · Finals Judge, Student Pitches (CoLab · Blackstone) · Mentor & Finals Judge, Student 2 Biz (School of Management)", logo: logoDev("buffalo.edu"), mark: "UB", accent: "#005bbb", url: "https://www.buffalo.edu", category: "Higher Ed & Mentorship" },
+  { org: "dooProcess", role: "Community Champion & Mentor", logo: "/logos/civ-dooprocess.png", mark: "DP", accent: "#6d28d9", url: "https://www.dooprocess.org", category: "Entrepreneurship & Startups" },
+  { org: "Buffalo Startup Week", role: "Featured Speaker, Social Media", logo: "/logos/civ-buffalo-startup-week.png", mark: "BSW", accent: "#f59e0b", url: "https://www.buffalo.edu/partnerships/landing-pages/startup-week.html", category: "Entrepreneurship & Startups" },
+  { org: "Heritage Christian Services", role: "Chairperson, Heritage HERO 5K & Annual Foundation Fundraiser", logo: logoDev("heritagechristianservices.org"), mark: "HC", accent: "#0e7490", url: "https://www.heritagechristianservices.org", category: "Community & Nonprofit" },
+  { org: "Niagara Global Tourism Institute", role: "Community Advocate, TReC", logo: "/logos/civ-niagara-global.png", mark: "NG", accent: "#0891b2", url: "https://www.google.com/search?q=Niagara%20Global%20Tourism%20Institute", category: "Community & Nonprofit" },
+  { org: "First Tee", role: "Youth Golf Coach", logo: logoDev("firsttee.org"), mark: "FT", accent: "#16a34a", url: "https://firsttee.org", category: "Sports & Golf" },
+  { org: "Police Athletic League", role: "Youth Golf Coach", logo: logoDev("nationalpal.org"), mark: "PAL", accent: "#1e3a8a", url: "https://www.nationalpal.org", category: "Sports & Golf" },
+  { org: "NAACP", role: "Member, Buffalo NY Chapter", logo: logoDev("naacp.org"), mark: "NA", accent: "#111827", url: "https://naacp.org", category: "Community & Nonprofit" },
+  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptionsmadeeasy.org", category: "Health & Recovery" },
+  { org: "People Inc.", role: "Mentor", logo: logoDev("people-inc.org"), mark: "PI", accent: "#16a34a", url: "https://www.people-inc.org", category: "Community & Nonprofit" },
+  { org: "Team F.A.S.T.", role: "Board Member", logo: logoDev("teamfastfoundation.com"), mark: "TF", accent: "#1d4ed8", url: "https://teamfastfoundation.com", category: "Health & Recovery" },
+  { org: "Niagara University", role: "Featured Speaker & Careers Connector · Business Competition Finals Judge (Marketing Assn.)", logo: logoDev("niagara.edu"), mark: "NU", accent: "#5b2a86", url: "https://www.niagara.edu", category: "Higher Ed & Mentorship" },
+  { org: "Accessible Academics", role: "Mentor", logo: "/logos/civ-accessible-academics.png", mark: "AA", accent: "#b45309", url: "https://www.google.com/search?q=Accessible%20Academics", category: "Higher Ed & Mentorship" },
+  { org: "F BITES", role: "Community Champion", logo: "/logos/civ-fbites.png", mark: "FB", accent: "#65a30d", url: "https://www.google.com/search?q=F%20BITES%20Buffalo", category: "Community & Nonprofit" },
+  { org: "CALLSIGN 22", role: "5x4x48 Challenge Fundraiser", logo: "/logos/civ-callsign22.png", mark: "C22", accent: "#475569", url: "https://www.google.com/search?q=CALLSIGN%2022%20veteran%20fundraiser", category: "Health & Recovery" },
+  { org: "The Essential Machine", role: "Mentor to Founder", logo: "/logos/civ-essential-machine.png", mark: "EM", accent: "#0ea5e9", url: "https://www.google.com/search?q=The%20Essential%20Machine%20startup", category: "Entrepreneurship & Startups" },
+  { org: "NYBPC", role: "Regional Finals Judge", logo: logoDev("nybpc.org"), mark: "NY", accent: "#1f7a3f", url: "https://nybpc.org", category: "Higher Ed & Mentorship" },
+  { org: "vidwheel", role: "Podcast Host & Featured Speaker", logo: logoDev("vidwheel.com"), mark: "VW", accent: "#16a34a", url: "https://vidwheel.com", category: "Entrepreneurship & Startups" },
+  { org: "Bad Golf Business School", role: "Founder / Operator", logo: "/logos/badgolf.png", mark: "BG", accent: "#15803d", url: "https://www.clarkdever.com/projects/bad-golf-business-school", category: "Sports & Golf" },
+  { org: "American University", role: "Featured Speaker", logo: logoDev("american.edu"), mark: "AU", accent: "#b91c1c", url: "https://www.american.edu", category: "Higher Ed & Mentorship" },
+  { org: "Trocaire College", role: "Featured Speaker", logo: logoDev("trocaire.edu"), mark: "TC", accent: "#7f1d1d", url: "https://www.trocaire.edu", category: "Higher Ed & Mentorship" },
+  { org: "American Lung Association", role: "Fight for Air Climb Fundraiser", logo: logoDev("lung.org"), mark: "AL", accent: "#2563eb", url: "https://www.lung.org", category: "Health & Recovery" },
+  { org: "InfoTech WNY", role: "Board Member & Co-Director, Networking", logo: "/logos/civ-infotech-wny.png", mark: "IT", accent: "#0d9488", url: "https://www.google.com/search?q=InfoTech%20WNY", category: "Entrepreneurship & Startups" },
+  { org: "Buffalo Niagara Partnership", role: "Featured Speaker, BN360", logo: logoDev("thepartnership.org"), mark: "BN", accent: "#1d4ed8", url: "https://www.thepartnership.org", category: "Entrepreneurship & Startups" },
+  { org: "Cystic Fibrosis Foundation", role: "Rising Star Selection", logo: logoDev("cff.org"), mark: "CF", accent: "#2563eb", url: "https://www.cff.org", category: "Health & Recovery" },
+  { org: "Special Olympics", role: "Event Volunteer, Fire Truck Pull", logo: logoDev("specialolympics.org"), mark: "SO", accent: "#e0301e", url: "https://www.specialolympics.org", category: "Sports & Golf" },
+  { org: "United Way of Buffalo & Erie County", role: "Student Liaison", logo: logoDev("uwbec.org"), mark: "UW", accent: "#e0301e", url: "https://www.uwbec.org", category: "Community & Nonprofit" },
+  { org: "Jericho Road Community Health Center", role: "Volunteer, Vive La Casa", logo: logoDev("jrchc.org"), mark: "JR", accent: "#ea580c", url: "https://jrchc.org", category: "Health & Recovery" },
 ];

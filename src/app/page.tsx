@@ -12,7 +12,7 @@ import Testimonials from "@/components/Testimonials";
 import TypeCycle from "@/components/TypeCycle";
 import CareerTimeline from "@/components/CareerTimeline";
 import PartnershipsGrid from "@/components/PartnershipsGrid";
-import CivicCard from "@/components/CivicCard";
+import CivicGrid from "@/components/CivicGrid";
 import PressLogo from "@/components/PressLogo";
 import RoleLogo from "@/components/RoleLogo";
 import SkillsGrid from "@/components/SkillsGrid";
@@ -22,7 +22,6 @@ import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   awards,
-  civic,
   FEATURED_VIDEO,
   FEATURED_GUEST_VIDEO,
   podcasts,
@@ -286,11 +285,7 @@ export default function Home() {
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Civic leadership & volunteer work
           </h2>
-          <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-8">
-            {civic.map((c, i) => (
-              <CivicCard key={`${c.org}-${c.role}-${i}`} c={c} />
-            ))}
-          </div>
+          <CivicGrid />
         </section>
 
         {/* Recommendations */}
