@@ -96,6 +96,13 @@ body::after {
 
 .backdrop-dark {
   background-image: url("/bg-brand-dark-v3.jpg");
+  /* Reframe the twilight golf shot so the lit flag rises into the upper-right,
+     behind the name, instead of sitting dead-center-low. Zoomed past cover to
+     free up vertical travel, then pinned high. Brightness lift keeps it from
+     going muddy at this crop. */
+  background-size: auto 168%;
+  background-position: 42% 100%;
+  filter: brightness(1.15) saturate(1.04);
   opacity: 0;
 }
 
