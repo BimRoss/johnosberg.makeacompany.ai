@@ -44,7 +44,7 @@ export default function Home() {
       <CursorTrail />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-24 pt-28 sm:gap-20 sm:px-8 md:gap-28 md:pt-32"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-8 pt-28 sm:gap-20 sm:px-8 md:gap-28 md:pb-10 md:pt-32"
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
@@ -181,22 +181,6 @@ export default function Home() {
                 {f.label}
               </a>
             ))}
-          </div>
-
-          {/* Role + link */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <span className="on-photo font-mono text-xs uppercase tracking-[0.14em] text-zinc-700 dark:text-zinc-400">
-              VP of Partnerships &amp; Founding Member
-            </span>
-            <a
-              href="https://brandlete.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
-            >
-              brandlete.com
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </a>
           </div>
 
           <figure className="flex flex-col gap-2">
@@ -462,6 +446,18 @@ export default function Home() {
               john@brandlete.com
             </a>
           </div>
+          <p className="text-[11px] text-zinc-600 dark:text-zinc-500">
+            Site built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
+            <a
+              href="https://makeacompany.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#0088cc] hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
+            >
+              MakeaCompany
+            </a>
+            .
+          </p>
         </footer>
       </main>
     </>
