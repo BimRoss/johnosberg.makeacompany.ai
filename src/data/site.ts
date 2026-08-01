@@ -42,6 +42,9 @@ export type Role = {
   logo: string;
   mark: string;
   accent: string;
+  // Company site the logo links to. Omit for orgs with no public site
+  // (e.g. Stealth Startup) so <RoleLogo> renders the mark without a link.
+  url?: string;
 };
 
 export const roles: Role[] = [
@@ -54,6 +57,7 @@ export const roles: Role[] = [
     logo: logoDev("brandlete.com"),
     mark: "B",
     accent: "#00ccff",
+    url: "https://brandlete.com",
   },
   {
     org: "MakeaCompany",
@@ -64,6 +68,7 @@ export const roles: Role[] = [
     logo: "/logos/makeacompany.png",
     mark: "M",
     accent: "#6366f1",
+    url: "https://makeacompany.ai",
   },
   {
     org: "Kreuz Staffing & Business Development",
@@ -74,6 +79,7 @@ export const roles: Role[] = [
     logo: "/logos/kreuz.png",
     mark: "K",
     accent: "#b45309",
+    url: "https://kreuzbd.com",
   },
   {
     org: "Stealth Startup",
@@ -94,6 +100,7 @@ export const roles: Role[] = [
     logo: logoDev("pga.com"),
     mark: "PGA",
     accent: "#0b3d2e",
+    url: "https://pga.com",
   },
   {
     org: "OnCore Golf",
@@ -104,6 +111,7 @@ export const roles: Role[] = [
     logo: logoDev("oncoregolf.com"),
     mark: "OC",
     accent: "#111827",
+    url: "https://oncoregolf.com",
   },
   {
     org: "Bad Golf Business School",
@@ -114,6 +122,7 @@ export const roles: Role[] = [
     logo: "/logos/badgolf.png",
     mark: "BG",
     accent: "#15803d",
+    url: "https://powerofozmosis.com",
   },
   {
     org: "POWER of OZmosis",
@@ -124,6 +133,7 @@ export const roles: Role[] = [
     logo: logoDev("powerofozmosis.com"),
     mark: "OZ",
     accent: "#1d4ed8",
+    url: "https://powerofozmosis.com",
   },
   {
     org: "EmergenceTek Group Inc.",
@@ -134,6 +144,7 @@ export const roles: Role[] = [
     logo: logoDev("emergencetek.com"),
     mark: "ET",
     accent: "#0ea5e9",
+    url: "https://emergencetek.com",
   },
   {
     org: "Oro Sports USA, Inc.",
@@ -144,6 +155,7 @@ export const roles: Role[] = [
     logo: "/logos/orosports.png",
     mark: "OS",
     accent: "#14b8a6",
+    url: "https://orosportsusa.com",
   },
   {
     org: "DataSure24",
@@ -154,6 +166,7 @@ export const roles: Role[] = [
     logo: logoDev("datasure24.com"),
     mark: "DS",
     accent: "#dc2626",
+    url: "https://datasure24.com",
   },
   {
     org: "Citi",
@@ -163,6 +176,7 @@ export const roles: Role[] = [
     logo: logoDev("citi.com"),
     mark: "C",
     accent: "#003b70",
+    url: "https://citi.com",
   },
   {
     org: "CFA Institute",
@@ -172,6 +186,7 @@ export const roles: Role[] = [
     logo: logoDev("cfainstitute.org"),
     mark: "CFA",
     accent: "#00539b",
+    url: "https://cfainstitute.org",
   },
   {
     org: "Bloomberg",
@@ -181,6 +196,7 @@ export const roles: Role[] = [
     logo: logoDev("bloomberg.com"),
     mark: "B",
     accent: "#111827",
+    url: "https://bloomberg.com",
   },
   {
     org: "M&T Bank",
@@ -190,6 +206,7 @@ export const roles: Role[] = [
     logo: logoDev("mtb.com"),
     mark: "MT",
     accent: "#005e5d",
+    url: "https://mtb.com",
   },
 ];
 
