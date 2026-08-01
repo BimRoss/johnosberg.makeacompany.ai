@@ -24,11 +24,11 @@ export default function TypeCycle() {
     let t: ReturnType<typeof setTimeout>;
 
     if (!deleting && displayed.length < word.length) {
-      t = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 95);
+      t = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 110);
     } else if (!deleting && displayed.length === word.length) {
-      t = setTimeout(() => setDeleting(true), 4200);
+      t = setTimeout(() => setDeleting(true), 7000);
     } else if (deleting && displayed.length > 0) {
-      t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 50);
+      t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 65);
     } else {
       setDeleting(false);
       setIdx((i) => (i + 1) % PHRASES.length);
