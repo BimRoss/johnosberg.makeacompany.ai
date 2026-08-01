@@ -215,7 +215,7 @@ body::after {
   animation: marquee-l 90s linear infinite;
 }
 .animate-marquee-r {
-  animation: marquee-r 90s linear infinite;
+  animation: marquee-r 125s linear infinite;
 }
 .animate-marquee-l:hover,
 .animate-marquee-r:hover {
