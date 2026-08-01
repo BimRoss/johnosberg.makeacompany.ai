@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { tools, type Tool } from "@/data/site";
+import { tools, TOOL_CATEGORIES, type Tool, type ToolCategory } from "@/data/site";
 
 // One tool: brand logo (logo.dev) with a colored-monogram fallback, name
 // beneath. Chip lifts and glows brand-cyan on hover.
@@ -40,11 +40,59 @@ function ToolChip({ tool }: { tool: Tool }) {
 }
 
 export default function SkillsGrid() {
+  const [active, setActive] = useState<ToolCategory | "All">("All");
+
+  const counts = TOOL_CATEGORIES.map((c) => ({
+    ...c,
+    value: tools.filter((t) => t.category === c.name).length,
+  }));
+  const shown = active === "All" ? tools : tools.filter((t) => t.category === active);
+
+  const chip = (on: boolean) =>
+    `inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.1em] transition-all ${
+      on
+        ? "border-transparent text-white shadow-sm"
+        : "border-black/15 text-zinc-600 hover:border-black/35 hover:text-zinc-900 dark:border-white/15 dark:text-zinc-400 dark:hover:border-white/40 dark:hover:text-white"
+    }`;
+
   return (
-    <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
-      {tools.map((t) => (
-        <ToolChip key={t.name} tool={t} />
-      ))}
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setActive("All")}
+          className={chip(active === "All")}
+          style={active === "All" ? { backgroundColor: "#0f172a" } : undefined}
+        >
+          All
+          <span className={active === "All" ? "text-white/70" : "text-zinc-400"}>{tools.length}</span>
+        </button>
+        {counts.map((c) => {
+          const on = active === c.name;
+          return (
+            <button
+              key={c.name}
+              type="button"
+              onClick={() => setActive(on ? "All" : c.name)}
+              className={chip(on)}
+              style={on ? { backgroundColor: c.color } : undefined}
+            >
+              <span
+                className="h-2 w-2 rounded-sm"
+                style={{ backgroundColor: on ? "rgba(255,255,255,0.85)" : c.color }}
+              />
+              {c.name}
+              <span className={on ? "text-white/70" : "text-zinc-400"}>{c.value}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+        {shown.map((t) => (
+          <ToolChip key={t.name} tool={t} />
+        ))}
+      </div>
     </div>
   );
 }
