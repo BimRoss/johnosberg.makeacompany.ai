@@ -46,32 +46,6 @@ export default function Home() {
         id="main"
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-8 pt-28 sm:gap-20 sm:px-8 md:gap-28 md:pb-10 md:pt-32"
       >
-        {/* MakeaCompany credit — centered strip at the very top of the page,
-            mirrors the footer credit. Sits below the floating search/theme
-            buttons so it never collides with them. Logo on a white chip so the
-            dark cubes read in both themes. */}
-        <a
-          href="https://makeacompany.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Built with MakeaCompany"
-          className="reveal group -mb-4 inline-flex items-center gap-2 self-center rounded-full border border-black/10 bg-white/60 py-1.5 pl-1.5 pr-3.5 text-xs font-medium text-zinc-600 backdrop-blur-md transition-colors hover:border-black/30 hover:text-zinc-900 dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:hover:border-white/40 dark:hover:text-white sm:-mb-10"
-        >
-          <Image
-            src="/logos/makeacompany.png"
-            alt="MakeaCompany"
-            width={20}
-            height={20}
-            className="h-5 w-5 rounded-full bg-white object-contain p-[2px]"
-          />
-          <span>
-            Built with{" "}
-            <span className="font-semibold text-[#0088cc] dark:text-[#00ccff]">
-              MakeaCompany
-            </span>
-          </span>
-        </a>
-
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
           <div className="shrink-0">
@@ -472,17 +446,26 @@ export default function Home() {
               john@brandlete.com
             </a>
           </div>
-          <p className="text-[11px] text-zinc-600 dark:text-zinc-500">
+          <p className="flex flex-wrap items-center gap-x-1 text-[11px] text-zinc-600 dark:text-zinc-500">
             Site built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
             <a
               href="https://makeacompany.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[#0088cc] hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
+              className="group inline-flex items-center gap-1.5 font-semibold text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
             >
+              <Image
+                src="/logos/makeacompany.png"
+                alt=""
+                width={16}
+                height={16}
+                className="h-4 w-4 rounded-full bg-white object-contain p-[1px]"
+              />
               MakeaCompany
+              <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                ↗
+              </span>
             </a>
-            .
           </p>
         </footer>
       </main>
