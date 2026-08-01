@@ -4,7 +4,9 @@ import { useState } from "react";
 
 import type { Civic } from "@/data/site";
 
-// Civic/volunteer role chip: org logo (with monogram fallback) + role + org.
+// Civic/volunteer org tile: logo only (monogram fallback), hyperlinked to the
+// org. Org + role live in the title/aria-label so hover and screen readers keep
+// the context even though the tile shows just the mark.
 export default function CivicCard({ c }: { c: Civic }) {
   const [failed, setFailed] = useState(!c.logo);
 
@@ -13,37 +15,31 @@ export default function CivicCard({ c }: { c: Civic }) {
       href={c.url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${c.org} — open in new tab`}
-      className="flex flex-col items-center gap-2 rounded-xl border border-black/10 bg-white/70 px-2.5 py-3.5 text-center backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+      title={`${c.org} — ${c.role}`}
+      aria-label={`${c.org} — ${c.role} (opens in new tab)`}
+      className="flex aspect-square items-center justify-center rounded-xl border border-black/10 bg-white/70 p-2.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
+    >
       {failed ? (
         <span
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-xs font-bold"
+          className="flex h-full w-full items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-sm font-bold"
           style={{ backgroundColor: `${c.accent}1f`, color: c.accent }}
         >
           {c.mark}
         </span>
       ) : (
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={c.logo}
             alt={`${c.org} logo`}
-            width={28}
-            height={28}
+            width={40}
+            height={40}
             loading="lazy"
-            className="h-7 w-7 object-contain"
+            className="h-3/5 w-3/5 object-contain"
             onError={() => setFailed(true)}
           />
         </span>
       )}
-      <span className="w-full">
-        <span className="line-clamp-2 block [overflow-wrap:anywhere] font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-snug text-zinc-900 dark:text-white">
-          {c.role}
-        </span>
-        <span className="mt-0.5 line-clamp-1 block [overflow-wrap:anywhere] font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
-          {c.org}
-        </span>
-      </span>
     </a>
   );
 }
