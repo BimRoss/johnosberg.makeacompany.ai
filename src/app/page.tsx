@@ -363,19 +363,23 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
             {awards.map((a, i) => (
               <div
-                key={`${a.title}-${i}`}
-                className="on-photo flex items-baseline justify-between gap-4 border-t border-black/10 py-3 dark:border-white/10"
+                key={`${a.org}-${i}`}
+                className="on-photo border-t border-black/10 py-3 dark:border-white/10"
               >
-                <span className="min-w-0">
-                  <span className="block font-[family-name:var(--font-sora)] text-[15px] font-semibold leading-snug text-zinc-900 dark:text-white">
-                    {a.title}
-                  </span>
-                  <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
-                    {a.org}
-                  </span>
-                </span>
-                <span className="shrink-0 font-mono text-[11px] font-semibold text-[#0088cc] dark:text-[#00ccff]">
-                  {a.year}
+                <div className="flex flex-col gap-1.5">
+                  {a.items.map((it, j) => (
+                    <div key={`${it.title}-${j}`} className="flex items-baseline justify-between gap-4">
+                      <span className="min-w-0 font-[family-name:var(--font-sora)] text-[15px] font-semibold leading-snug text-zinc-900 dark:text-white">
+                        {it.title}
+                      </span>
+                      <span className="shrink-0 font-mono text-[11px] font-semibold text-[#0088cc] dark:text-[#00ccff]">
+                        {it.year}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
+                  {a.org}
                 </span>
               </div>
             ))}
