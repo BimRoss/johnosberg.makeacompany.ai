@@ -41,7 +41,7 @@ function ToolChip({ tool }: { tool: Tool }) {
 
 export default function SkillsGrid() {
   return (
-    <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+    <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
       {tools.map((t) => (
         <ToolChip key={t.name} tool={t} />
       ))}

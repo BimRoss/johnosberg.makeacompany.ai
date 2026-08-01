@@ -58,7 +58,7 @@ export default function PartnershipsGrid() {
         })}
       </div>
 
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <div className="grid grid-cols-3 gap-3 lg:grid-cols-4">
         {shown.map((b) => (
           <BrandLogo key={b.name} brand={b} />
         ))}
