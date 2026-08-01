@@ -118,7 +118,7 @@ function CapitalBar() {
   const W = 300;
   let x = 0;
   return (
-    <Card kicker="Capital · Across ventures" title="$1.5M+ secured">
+    <Card kicker="Capital · Across ventures" title="$2.1M+ secured">
       <div ref={ref}>
         <svg viewBox={`0 0 ${W} 22`} className="w-full" role="img" aria-label="Capital secured breakdown">
           {segs.map((s) => {
@@ -195,7 +195,7 @@ function RevenueByVenture() {
   const max = Math.max(...revenueByVenture.map((r) => r.valueK));
   const fmt = (k: number) => (k >= 1000 ? `$${(k / 1000).toFixed(1).replace(/\.0$/, "")}M` : `$${k}K`);
   return (
-    <Card kicker="Revenue · By venture" title="$6.5M+ generated, $8.5M+ influenced">
+    <Card kicker="Revenue · By venture" title="$9M generated, $8.5M+ influenced">
       <div ref={ref} className="flex flex-col gap-3.5">
         {revenueByVenture.map((r, i) => (
           <div key={r.label} className="flex flex-col gap-1">

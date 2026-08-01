@@ -85,7 +85,7 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-              VP of Partnerships @{" "}
+              VP of Partnerships &amp; Co-Founder @{" "}
               <a
                 href="https://www.brandlete.com"
                 target="_blank"
@@ -94,7 +94,7 @@ export default function Home() {
                 className="font-bold text-[#00ccff] underline decoration-[#00ccff] decoration-2 underline-offset-4 transition-colors hover:text-[#33d6ff] hover:decoration-[#33d6ff]"
               >
                 Brandlete, Inc.
-                <span aria-hidden className="ml-1">{"↗︎"}</span>
+                <span aria-hidden className="ml-1 text-[0.6em] align-middle">{"↗︎"}</span>
               </a>
             </p>
             <TypeCycle />
@@ -115,6 +115,7 @@ export default function Home() {
         <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
           <div className="flex flex-wrap items-center gap-3">
             <BookCallBtn />
+            <span aria-hidden className="hidden w-3 shrink-0 sm:block" />
             {socials.map(({ label, href, Icon, external }) => (
               <a
                 key={label}
@@ -144,9 +145,6 @@ export default function Home() {
         {/* Brandlete — #1 focus */}
         <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <p className="label-shimmer w-fit border-l-2 border-[#00ccff]/60 pl-3 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">
-              My #1 focus
-            </p>
             <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
               What I&apos;m co-building at Brandlete
             </h2>
@@ -304,7 +302,7 @@ export default function Home() {
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Civic leadership & volunteer work
           </h2>
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+          <div className="grid grid-cols-3 gap-3 lg:grid-cols-3">
             {civic.map((c, i) => (
               <CivicCard key={`${c.org}-${c.role}-${i}`} c={c} />
             ))}

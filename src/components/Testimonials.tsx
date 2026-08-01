@@ -86,12 +86,24 @@ function Card({ t }: { t: Testimonial }) {
 // its own at a slow pace; any hover, touch, or scroll input pauses that drift
 // and hands control to you, then it resumes a beat after you let go. Cards are
 // duplicated once so the drift can wrap seamlessly.
-function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
+function Row({
+  items,
+  dir,
+  drift = true,
+}: {
+  items: Testimonial[];
+  dir: "l" | "r";
+  drift?: boolean;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // A static row (drift off) stays put — no auto-motion, and it never
+    // captures the page's vertical scroll. Nothing to wire up.
+    if (!drift) return;
 
     const reduce =
       typeof matchMedia !== "undefined" &&
@@ -155,19 +167,22 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
       el.removeEventListener("touchend", resumeSoon);
       el.removeEventListener("wheel", bump);
     };
-  }, [dir]);
+  }, [dir, drift]);
 
   return (
     <div
       ref={ref}
-      className="no-scrollbar flex gap-5 overflow-x-auto pb-1 [touch-action:pan-x] [-webkit-overflow-scrolling:touch]"
+      className="no-scrollbar flex gap-5 overflow-x-auto overscroll-x-contain pb-1 [touch-action:pan-x] [-webkit-overflow-scrolling:touch]"
     >
       {items.map((t, i) => (
         <Card key={`a-${i}`} t={t} />
       ))}
-      {items.map((t, i) => (
-        <Card key={`b-${i}`} t={t} />
-      ))}
+      {/* Duplicate the cards only for the drifting rows, which rely on the
+          second copy to wrap seamlessly. A static row shows one clean set. */}
+      {drift &&
+        items.map((t, i) => (
+          <Card key={`b-${i}`} t={t} />
+        ))}
     </div>
   );
 }
@@ -179,7 +194,7 @@ export default function Testimonials() {
 
   return (
     <div className="marquee-mask flex flex-col gap-5">
-      <Row items={rowA} dir="l" />
+      <Row items={rowA} dir="l" drift={false} />
       <Row items={rowB} dir="r" />
     </div>
   );
