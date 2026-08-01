@@ -211,11 +211,14 @@ body::after {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
 }
+/* Duration here is only a no-JS fallback — Testimonials.tsx measures each row
+   and overrides it inline so both drift at one identical px/s. Kept equal and
+   slow so even the fallback never looks fast or mismatched. */
 .animate-marquee-l {
-  animation: marquee-l 90s linear infinite;
+  animation: marquee-l 800s linear infinite;
 }
 .animate-marquee-r {
-  animation: marquee-r 125s linear infinite;
+  animation: marquee-r 800s linear infinite;
 }
 .animate-marquee-l:hover,
 .animate-marquee-r:hover {

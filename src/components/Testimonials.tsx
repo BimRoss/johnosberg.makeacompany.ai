@@ -1,6 +1,13 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { testimonials, type Testimonial } from "@/data/testimonials";
+
+// Marquee drift speed, in pixels per second. BOTH rows use this exact value, so
+// they move in perfect lockstep regardless of how many cards each holds — no row
+// visibly outrunning the other. That lockstep is what fixes the "sloppy/buggy"
+// feel; the low number is what fixes "too fast". Bump it up to speed both rows.
+const MARQUEE_SPEED = 32;
 
 // Cool blue-family gradients — varied enough to tell avatars apart while
 // staying inside the Brandlete palette.
@@ -86,12 +93,40 @@ function Card({ t }: { t: Testimonial }) {
 // the page always scrolls straight through. Cards are duplicated once so the
 // -50% translate wraps seamlessly; hovering pauses the drift (CSS).
 function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    // The track holds the items twice, so one full set is exactly half the
+    // scroll width — that's the distance the -50% animation travels each loop.
+    // duration = distance / speed keeps px/s identical to the other row and
+    // steady across responsive card-width changes.
+    const measure = () => {
+      const setWidth = track.scrollWidth / 2;
+      if (setWidth > 0) setDuration(setWidth / MARQUEE_SPEED);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(track);
+    return () => ro.disconnect();
+  }, []);
+
   return (
     <div className="overflow-hidden">
       <div
+        ref={trackRef}
         className={`flex w-max gap-5 ${
           dir === "l" ? "animate-marquee-l" : "animate-marquee-r"
         }`}
+        // Hold still until measured, so there's no fast flash before JS sets the
+        // real duration. Once measured, this overrides the CSS fallback.
+        style={
+          duration
+            ? { animationDuration: `${duration}s` }
+            : { animationName: "none" }
+        }
       >
         {items.map((t, i) => (
           <Card key={`a-${i}`} t={t} />
