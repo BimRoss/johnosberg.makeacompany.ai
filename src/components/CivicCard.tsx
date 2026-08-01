@@ -14,7 +14,7 @@ export default function CivicCard({ c }: { c: Civic }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${c.org} — open in new tab`}
-      className="flex items-center gap-3 rounded-xl border border-black/10 bg-white/70 px-4 py-3.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+      className="flex flex-col items-center gap-2 rounded-xl border border-black/10 bg-white/70 px-2.5 py-3.5 text-center backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-xs font-bold"
@@ -36,11 +36,11 @@ export default function CivicCard({ c }: { c: Civic }) {
           />
         </span>
       )}
-      <span className="min-w-0">
-        <span className="block truncate font-[family-name:var(--font-sora)] text-sm font-semibold leading-snug text-zinc-900 dark:text-white">
+      <span className="w-full">
+        <span className="line-clamp-2 block [overflow-wrap:anywhere] font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-snug text-zinc-900 dark:text-white">
           {c.role}
         </span>
-        <span className="block truncate font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
+        <span className="mt-0.5 line-clamp-1 block [overflow-wrap:anywhere] font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
           {c.org}
         </span>
       </span>
