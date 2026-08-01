@@ -29,6 +29,7 @@ export default function StatTilt({ children }: { children: ReactNode }) {
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
+      className="h-full"
       style={{ willChange: "transform" }}
     >
       {children}

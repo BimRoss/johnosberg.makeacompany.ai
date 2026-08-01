@@ -22,7 +22,7 @@ export function logoDev(domain: string): string {
 }
 
 export const stats = [
-  { value: "$11M+", label: "revenue gen. / influenced" },
+  { value: "$11M+", label: "revenue generated" },
   { value: "$2.1M+", label: "capital secured" },
   { value: "$1.5M+", label: "nonprofit raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
@@ -348,27 +348,6 @@ export const press: PressItem[] = [
     title: "John Osberg of WNY PGA — entrepreneur, athlete, growth strategist",
     href: "https://empirestateentrepreneurs.transistor.fm/s2/7",
     logo: "/logos/news-ese.png",
-    fallback: "/logos/news-ese.png",
-  },
-  {
-    source: "My Worst Investment Ever",
-    title: "John Osberg: Explore Who You Are and Build on That",
-    href: "https://myworstinvestmentever.com/ep480-john-osberg-explore-who-you-are-and-build-on-that/",
-    logo: logoDev("myworstinvestmentever.com"),
-    fallback: "/logos/news-ese.png",
-  },
-  {
-    source: "Mike'D Up!",
-    title: "Being Energized by the POWER of OZmosis with John Osberg",
-    href: "https://www.youtube.com/watch?v=9FjZ6rbXC4s",
-    logo: logoDev("youtube.com"),
-    fallback: "/logos/news-ese.png",
-  },
-  {
-    source: "vidwheel",
-    title: "John Osberg on Leveraging Your Network, Passions & Content to Win",
-    href: "https://www.youtube.com/watch?v=tnbyvyawlgA",
-    logo: logoDev("vidwheel.com"),
     fallback: "/logos/news-ese.png",
   },
   {

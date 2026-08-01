@@ -84,7 +84,7 @@ export default function Home() {
             <h1 className="on-photo font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
               John Osberg
             </h1>
-            <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold text-zinc-800 dark:text-zinc-200 sm:text-2xl">
+            <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:mt-5 sm:text-2xl">
               VP of Partnerships &amp; Co-Founder @{" "}
               <a
                 href="https://www.brandlete.com"
@@ -217,7 +217,7 @@ export default function Home() {
         <section className="reveal-3 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10 md:grid-cols-4">
           {stats.map((s) => (
             <StatTilt key={s.label}>
-              <div className="bg-white px-5 py-7 text-center dark:bg-zinc-900">
+              <div className="flex h-full flex-col items-center justify-center bg-white px-5 py-7 text-center dark:bg-zinc-900">
                 <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
                   <CountUp value={s.value} />
                 </div>

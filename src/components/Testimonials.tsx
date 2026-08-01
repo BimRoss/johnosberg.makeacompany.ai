@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
 // Cool blue-family gradients — varied enough to tell avatars apart while
@@ -81,108 +79,27 @@ function Card({ t }: { t: Testimonial }) {
   );
 }
 
-// A native horizontally-scrollable row: you can swipe left/right (or drag with
-// a mouse / trackpad) to move through the cards. When left alone it drifts on
-// its own at a slow pace; any hover, touch, or scroll input pauses that drift
-// and hands control to you, then it resumes a beat after you let go. Cards are
-// duplicated once so the drift can wrap seamlessly.
-function Row({
-  items,
-  dir,
-  drift = true,
-}: {
-  items: Testimonial[];
-  dir: "l" | "r";
-  drift?: boolean;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    // A static row (drift off) stays put — no auto-motion, and it never
-    // captures the page's vertical scroll. Nothing to wire up.
-    if (!drift) return;
-
-    const reduce =
-      typeof matchMedia !== "undefined" &&
-      matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const speed = dir === "l" ? 0.35 : -0.35; // px per frame
-    const half = () => el.scrollWidth / 2;
-
-    // The right-moving row starts from the midpoint so it has room to drift back.
-    if (dir === "r") el.scrollLeft = half();
-
-    let paused = false;
-    let resumeTimer: ReturnType<typeof setTimeout> | undefined;
-    let raf = 0;
-
-    const tick = () => {
-      if (!paused && !reduce && half() > 0) {
-        let next = el.scrollLeft + speed;
-        if (next >= half()) next -= half();
-        else if (next <= 0) next += half();
-        el.scrollLeft = next;
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-
-    // Pause on any manual input; resume a short beat after the last one.
-    const pause = () => {
-      paused = true;
-      if (resumeTimer) clearTimeout(resumeTimer);
-    };
-    const resumeSoon = () => {
-      if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(() => {
-        paused = false;
-      }, 1400);
-    };
-    const bump = () => {
-      pause();
-      resumeSoon();
-    };
-
-    el.addEventListener("mouseenter", pause);
-    el.addEventListener("mouseleave", resumeSoon);
-    el.addEventListener("pointerdown", pause);
-    el.addEventListener("pointerup", resumeSoon);
-    el.addEventListener("pointercancel", resumeSoon);
-    el.addEventListener("touchstart", pause, { passive: true });
-    el.addEventListener("touchend", resumeSoon, { passive: true });
-    el.addEventListener("wheel", bump, { passive: true });
-
-    return () => {
-      cancelAnimationFrame(raf);
-      if (resumeTimer) clearTimeout(resumeTimer);
-      el.removeEventListener("mouseenter", pause);
-      el.removeEventListener("mouseleave", resumeSoon);
-      el.removeEventListener("pointerdown", pause);
-      el.removeEventListener("pointerup", resumeSoon);
-      el.removeEventListener("pointercancel", resumeSoon);
-      el.removeEventListener("touchstart", pause);
-      el.removeEventListener("touchend", resumeSoon);
-      el.removeEventListener("wheel", bump);
-    };
-  }, [dir, drift]);
-
+// A CSS-transform marquee: the track slides via translateX, so there is NO
+// horizontal scroll container. That's the whole point — an overflow-x scroller
+// captures the page's vertical wheel/touch and makes scrolling past this
+// section feel stuck. A transform track never intercepts scroll or clicks, so
+// the page always scrolls straight through. Cards are duplicated once so the
+// -50% translate wraps seamlessly; hovering pauses the drift (CSS).
+function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
   return (
-    <div
-      ref={ref}
-      className="no-scrollbar flex gap-5 overflow-x-auto overscroll-x-contain pb-1 [touch-action:pan-x] [-webkit-overflow-scrolling:touch]"
-    >
-      {items.map((t, i) => (
-        <Card key={`a-${i}`} t={t} />
-      ))}
-      {/* Duplicate the cards only for the drifting rows, which rely on the
-          second copy to wrap seamlessly. A static row shows one clean set. */}
-      {drift &&
-        items.map((t, i) => (
+    <div className="overflow-hidden">
+      <div
+        className={`flex w-max gap-5 ${
+          dir === "l" ? "animate-marquee-l" : "animate-marquee-r"
+        }`}
+      >
+        {items.map((t, i) => (
+          <Card key={`a-${i}`} t={t} />
+        ))}
+        {items.map((t, i) => (
           <Card key={`b-${i}`} t={t} />
         ))}
+      </div>
     </div>
   );
 }
@@ -194,7 +111,7 @@ export default function Testimonials() {
 
   return (
     <div className="marquee-mask flex flex-col gap-5">
-      <Row items={rowA} dir="l" drift={false} />
+      <Row items={rowA} dir="l" />
       <Row items={rowB} dir="r" />
     </div>
   );

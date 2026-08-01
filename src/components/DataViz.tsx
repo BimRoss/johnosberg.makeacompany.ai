@@ -195,7 +195,7 @@ function RevenueByVenture() {
   const max = Math.max(...revenueByVenture.map((r) => r.valueK));
   const fmt = (k: number) => (k >= 1000 ? `$${(k / 1000).toFixed(1).replace(/\.0$/, "")}M` : `$${k}K`);
   return (
-    <Card kicker="Revenue · By venture" title="$9M generated, $8.5M+ influenced">
+    <Card kicker="Revenue · By venture" title="$9M generated">
       <div ref={ref} className="flex flex-col gap-3.5">
         {revenueByVenture.map((r, i) => (
           <div key={r.label} className="flex flex-col gap-1">
