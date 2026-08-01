@@ -269,18 +269,18 @@ export const SECTORS: { name: Sector; color: string }[] = [
 // Revenue driven by venture, in $K. Numbers are the ones John states on his
 // resume for each role — used by the "Revenue driven, by venture" bar chart.
 export const revenueByVenture: { label: string; period: string; valueK: number; note: string }[] = [
-  { label: "OnCore Golf", period: "2017–18", valueK: 3500, note: "DICK'S, Golf Galaxy, Wegmans, NYSGA" },
-  { label: "EmergenceTek", period: "2012–17", valueK: 3000, note: "0→25+ enterprise & mid-market" },
-  { label: "POWER of OZmosis", period: "2019–26", valueK: 775, note: "$325K revenue · $775K deal flow" },
+  { label: "OnCore Golf", period: "2017–18", valueK: 4000, note: "DICK'S, Golf Galaxy, Wegmans, NYSGA" },
+  { label: "EmergenceTek", period: "2012–17", valueK: 5000, note: "0→25+ enterprise & mid-market" },
+  { label: "POWER of OZmosis", period: "2019–26", valueK: 820, note: "$325K revenue · $775K deal flow" },
   { label: "PGA WNY", period: "2020–2025", valueK: 750, note: "annual, sponsorships & renewals" },
 ];
 
 // Career milestones for the interactive timeline. `metric` is the one headline
 // number for each stop; `revenueK` sizes the marker.
 export const milestones: { year: string; org: string; title: string; metric: string; revenueK: number }[] = [
-  { year: "2012", org: "EmergenceTek", title: "VP, Client Engagement & Sales", metric: "$3M+ · 0→25 orgs", revenueK: 3000 },
-  { year: "2017", org: "OnCore Golf", title: "Director of Partnerships", metric: "$3.5M+ driven", revenueK: 3500 },
-  { year: "2019", org: "POWER of OZmosis", title: "Founder / Principal", metric: "40+ founders coached", revenueK: 775 },
+  { year: "2012", org: "EmergenceTek", title: "VP, Client Engagement & Sales", metric: "$5M+ · 0→25 orgs", revenueK: 5000 },
+  { year: "2017", org: "OnCore Golf", title: "Director of Partnerships", metric: "$4M+ driven", revenueK: 4000 },
+  { year: "2019", org: "POWER of OZmosis", title: "Founder / Principal", metric: "40+ founders coached", revenueK: 820 },
   { year: "2021", org: "Brandlete", title: "VP Partnerships / Founding Member", metric: "Sports Org OS & Athlete Development Engine", revenueK: 1000 },
   { year: "2023", org: "PGA of America WNY", title: "Director, Partnerships & Dev.", metric: "275% growth · 97% retained", revenueK: 250 },
 ];
