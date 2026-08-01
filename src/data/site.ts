@@ -50,7 +50,7 @@ export type Role = {
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
-    title: "VP of Partnerships / Founding Member",
+    title: "VP of Partnerships / Co-Founder",
     period: "Nov 2021 – Present",
     blurb:
       "Co-founded the Sports Program Operating System and Athlete Development Engine. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
@@ -61,7 +61,7 @@ export const roles: Role[] = [
   },
   {
     org: "MakeaCompany",
-    title: "Head of Growth / GTM",
+    title: "Growth & GTM / Co-Founder",
     period: "Apr 2026 – Present",
     blurb:
       "Own go-to-market for an AI-native startup, building the motion from positioning through pipeline to closed revenue. Stand up the growth engine end to end and the early GTM foundation a Series-stage company scales on.",
@@ -300,7 +300,7 @@ export const milestones: { year: string; org: string; title: string; metric: str
   { year: "2012", org: "EmergenceTek", title: "VP, Client Engagement & Sales", metric: "$5M+ · 0→25 orgs", revenueK: 5000 },
   { year: "2017", org: "OnCore Golf", title: "Director of Partnerships", metric: "$4M+ driven", revenueK: 4000 },
   { year: "2019", org: "POWER of OZmosis", title: "Founder / Principal", metric: "40+ founders coached", revenueK: 820 },
-  { year: "2021", org: "Brandlete", title: "VP Partnerships / Founding Member", metric: "Sports Org OS & Athlete Development Engine", revenueK: 1000 },
+  { year: "2021", org: "Brandlete", title: "VP Partnerships / Co-Founder", metric: "Sports Org OS & Athlete Development Engine", revenueK: 1000 },
   { year: "2023", org: "PGA of America WNY", title: "Director, Partnerships & Dev.", metric: "275% growth · 97% retained", revenueK: 250 },
 ];
 
