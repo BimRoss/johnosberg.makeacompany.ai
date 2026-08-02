@@ -61,8 +61,9 @@ export const viewport: Viewport = {
 };
 
 // Default theme follows the visitor's local clock: light from 6:30am to 8:00pm,
-// dark otherwise. A manual toggle saves to localStorage and always wins.
-const themeInit = `(function(){try{var t=localStorage.getItem('theme');var d;if(t){d=t==='dark';}else{var n=new Date();var m=n.getHours()*60+n.getMinutes();d=!(m>=390&&m<1200);}document.documentElement.classList.toggle('dark',d);}catch(e){document.documentElement.classList.add('dark');}})();`;
+// dark otherwise. A manual toggle holds for the rest of that local day (stored as
+// "dark|<date>"), then the clock takes back over. Undated legacy values are ignored.
+const themeInit = `(function(){try{var raw=localStorage.getItem('theme');var n=new Date();var today=n.toDateString();var saved=null;if(raw){var p=raw.split('|');if(p[1]===today){saved=p[0];}}var d;if(saved==='dark'||saved==='light'){d=saved==='dark';}else{var m=n.getHours()*60+n.getMinutes();d=!(m>=390&&m<1200);}document.documentElement.classList.toggle('dark',d);}catch(e){document.documentElement.classList.add('dark');}})();`;
 
 const jsonLd = {
   "@context": "https://schema.org",
