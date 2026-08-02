@@ -16,7 +16,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${brand.name} website`}
-      className="flex flex-col items-center gap-2 rounded-xl border border-black/10 bg-white/70 px-2.5 py-3.5 text-center backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+      className="flex flex-col items-center gap-2 rounded-xl border border-black/10 bg-white/70 px-2.5 py-3.5 text-center backdrop-blur-md transition-all [container-type:inline-size] hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-xs font-bold"
@@ -38,7 +38,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
           />
         </span>
       )}
-      <span className="line-clamp-2 w-full [overflow-wrap:anywhere] font-[family-name:var(--font-sora)] text-[11px] font-medium leading-tight tracking-tight text-zinc-700 dark:text-zinc-300">
+      <span className="w-full whitespace-nowrap font-[family-name:var(--font-sora)] text-[clamp(7px,6.6cqi,13px)] font-medium leading-tight tracking-tight text-zinc-700 dark:text-zinc-300">
         {brand.name}
       </span>
     </a>
