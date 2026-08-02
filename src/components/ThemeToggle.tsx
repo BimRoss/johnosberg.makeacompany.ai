@@ -48,7 +48,9 @@ export default function ThemeToggle() {
     const next = !document.documentElement.classList.contains("dark");
     document.documentElement.classList.toggle("dark", next);
     try {
-      localStorage.setItem("theme", next ? "dark" : "light");
+      // Stamp the choice with today's local date so it holds for the rest of
+      // the day, then the clock default takes back over on the next visit.
+      localStorage.setItem("theme", (next ? "dark" : "light") + "|" + new Date().toDateString());
     } catch {}
     setDark(next);
   }
