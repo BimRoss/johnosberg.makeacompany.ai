@@ -63,17 +63,19 @@ export default function Home() {
             <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl">
               John Osberg
             </h1>
-            <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:mt-5 sm:text-2xl">
-              VP of Partnerships &amp; Co-Founder
-            </p>
-            <a
-              href="https://www.brandlete.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit brandlete.com (opens in a new tab)"
-              aria-label="Brandlete (opens in a new tab)"
-              className="mt-5 inline-block transition-opacity hover:opacity-80"
-            >
+            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-5">
+              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:text-2xl">
+                VP of Partnerships &amp; Co-Founder{" "}
+                <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>
+              </p>
+              <a
+                href="https://www.brandlete.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Visit brandlete.com (opens in a new tab)"
+                aria-label="Brandlete (opens in a new tab)"
+                className="inline-block transition-opacity hover:opacity-80"
+              >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/brandlete-logo-light.png"
@@ -86,7 +88,8 @@ export default function Home() {
                 alt="Brandlete"
                 className="hidden h-8 w-auto dark:block sm:h-9"
               />
-            </a>
+              </a>
+            </div>
             <TypeCycle />
             <a
               href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
