@@ -29,9 +29,9 @@ export const stats = [
 ];
 
 // Experience — mirrors John's LinkedIn: same roles, same order (most recent
-// first), same date ranges. The four early finance roles (Citi, CFA Institute,
-// Bloomberg, M&T Bank) intentionally carry no blurb per John's direction; the
-// Experience list renders the title + period only when blurb is empty.
+// first), same date ranges. Each role carries a one-line blurb drawn from
+// John's LinkedIn bullets; the Experience list renders title + period only
+// when blurb is empty.
 // Each role carries a `logo` (logo.dev by domain, or "" to go straight to the
 // monogram) plus a `mark`/`accent` monogram fallback, rendered by <RoleLogo>.
 export type Role = {
@@ -172,7 +172,8 @@ export const roles: Role[] = [
     org: "Citi",
     title: "Investment Equities Associate",
     period: "Apr 2012 – Dec 2012",
-    blurb: "",
+    blurb:
+      "Supported equity research and capital markets work for institutional investors, running financial analysis and building client-facing materials that informed trading and portfolio strategy.",
     logo: logoDev("citi.com"),
     mark: "C",
     accent: "#003b70",
@@ -182,7 +183,8 @@ export const roles: Role[] = [
     org: "CFA Institute",
     title: "Management Analyst",
     period: "Jan 2012 – Jun 2012",
-    blurb: "",
+    blurb:
+      "Selected for a competitive multi-month analyst program, building investment theses and financial models and delivering capital-allocation recommendations in a cohort competition grounded in CFA frameworks.",
     logo: logoDev("cfainstitute.org"),
     mark: "CFA",
     accent: "#00539b",
@@ -192,7 +194,8 @@ export const roles: Role[] = [
     org: "Bloomberg",
     title: "Brand Engagement Lead",
     period: "Sep 2011 – Feb 2012",
-    blurb: "",
+    blurb:
+      "Ran brand engagement and client-facing programs inside a high-performance financial data business, driving user acquisition, retention, and event-based marketing tied to revenue growth.",
     logo: logoDev("bloomberg.com"),
     mark: "B",
     accent: "#111827",
@@ -202,7 +205,8 @@ export const roles: Role[] = [
     org: "M&T Bank",
     title: "Profitability Analytics Associate",
     period: "Jan 2011 – Sep 2011",
-    blurb: "",
+    blurb:
+      "Analyzed product and segment profitability across retail and commercial banking, delivering pricing and P&L insights to senior stakeholders to sharpen margins and portfolio performance.",
     logo: logoDev("mtb.com"),
     mark: "MT",
     accent: "#005e5d",
