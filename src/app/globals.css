@@ -68,13 +68,12 @@ body::after {
 /* Sports backdrop — empty-stadium plate, day/night per theme */
 .backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* Cover the largest viewport (toolbars hidden) so the fixed layer never
-     falls short at the bottom of a long scroll on iOS Safari. */
-  height: 100vh;
-  height: 100lvh;
+  /* Pin to all four viewport edges instead of a 100lvh height. On iOS Safari a
+     fixed element sized with viewport units gets mis-sized/mis-positioned at the
+     very bottom of a long page (this doc is ~15000px), leaving a large black
+     strip below the footer. Constraining top AND bottom to the viewport lets the
+     browser track its dynamic toolbar so the layer always fills what's visible. */
+  inset: 0;
   background-color: var(--backdrop-base);
   z-index: 0;
   pointer-events: none;
