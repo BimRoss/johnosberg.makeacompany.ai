@@ -296,12 +296,62 @@ export const revenueByVenture: { label: string; period: string; valueK: number; 
 
 // Career milestones for the interactive timeline. `metric` is the one headline
 // number for each stop; `revenueK` sizes the marker.
-export const milestones: { year: string; org: string; title: string; metric: string; revenueK: number }[] = [
-  { year: "2012", org: "EmergenceTek", title: "VP, Client Engagement & Sales", metric: "$5M+ · 0→25 orgs", revenueK: 5000 },
-  { year: "2017", org: "OnCore Golf", title: "Director of Partnerships", metric: "$4M+ driven", revenueK: 4000 },
-  { year: "2019", org: "POWER of OZmosis", title: "Founder / Principal", metric: "40+ founders coached", revenueK: 820 },
-  { year: "2021", org: "Brandlete", title: "VP Partnerships / Co-Founder", metric: "Sports Org OS & Athlete Development Engine", revenueK: 1000 },
-  { year: "2023", org: "PGA of America WNY", title: "Director, Partnerships & Dev.", metric: "275% growth · 97% retained", revenueK: 250 },
+export const milestones: { year: string; org: string; title: string; metric: string; details: string[]; revenueK: number }[] = [
+  {
+    year: "2012",
+    org: "EmergenceTek",
+    title: "VP, Client Engagement & Sales",
+    metric: "$5M+ · 0→25 orgs",
+    details: [
+      "Stood up the client-engagement function from scratch, scaling the book from 0 to 25 active organizations.",
+      "Owned the full sales cycle end to end, closing $5M+ in new business.",
+    ],
+    revenueK: 5000,
+  },
+  {
+    year: "2017",
+    org: "OnCore Golf",
+    title: "Director of Partnerships",
+    metric: "$4M+ driven",
+    details: [
+      "Landed and grew national retail and brand partnerships across the golf category.",
+      "Drove $4M+ in partnership revenue through DICK'S, Golf Galaxy, and tour-level deals.",
+    ],
+    revenueK: 4000,
+  },
+  {
+    year: "2019",
+    org: "POWER of OZmosis",
+    title: "Founder / Principal",
+    metric: "40+ founders coached",
+    details: [
+      "Founded a startup-advisory practice focused on go-to-market and partnerships.",
+      "Coached 40+ early-stage founders through fundraising and their first revenue.",
+    ],
+    revenueK: 820,
+  },
+  {
+    year: "2021",
+    org: "Brandlete",
+    title: "VP Partnerships / Co-Founder",
+    metric: "Sports Org OS & Athlete Development Engine",
+    details: [
+      "Co-founded the connected operating system for coaches, athletes, families, and sports orgs.",
+      "Built the partnerships engine bringing development plans, insights, and registration onto one platform.",
+    ],
+    revenueK: 1000,
+  },
+  {
+    year: "2023",
+    org: "PGA of America WNY",
+    title: "Director, Partnerships & Dev.",
+    metric: "275% growth · 97% retained",
+    details: [
+      "Rebuilt the section's partnership and development program end to end.",
+      "Grew sponsorship 275% while retaining 97% of existing partners.",
+    ],
+    revenueK: 250,
+  },
 ];
 
 export type Brand = { name: string; mark: string; accent: string; logo: string; url: string; sector: Sector };
