@@ -95,14 +95,11 @@ body::after {
 }
 
 .backdrop-dark {
-  background-image: url("/bg-brand-dark-v3.jpg");
-  /* Reframe the twilight golf shot so the lit flag rises into the upper-right,
-     behind the name, instead of sitting dead-center-low. Zoomed past cover to
-     free up vertical travel, then pinned high. Brightness lift keeps it from
-     going muddy at this crop. */
-  background-size: auto 168%;
-  background-position: 42% 100%;
-  filter: brightness(1.15) saturate(1.04);
+  /* John's exact twilight golf portrait (golf-tall.jpg), shown as-is: no zoom
+     past cover, no reframe, no filter. Just fill the viewport and center it. */
+  background-image: url("/bg-brand-dark-v4.jpg");
+  background-size: cover;
+  background-position: center;
   opacity: 0;
 }
 
