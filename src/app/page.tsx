@@ -64,23 +64,14 @@ export default function Home() {
               John Osberg
             </h1>
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:mt-5 sm:text-2xl">
-              VP of Partnerships &amp; Co-Founder @{" "}
-              <a
-                href="https://www.brandlete.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Visit brandlete.com (opens in a new tab)"
-                className="font-bold text-[#00ccff] underline decoration-[#00ccff] decoration-2 underline-offset-4 transition-colors hover:text-[#33d6ff] hover:decoration-[#33d6ff]"
-              >
-                Brandlete, Inc.
-                <span aria-hidden className="ml-1 text-[0.6em] align-middle">{"↗︎"}</span>
-              </a>
+              VP of Partnerships &amp; Co-Founder
             </p>
             <a
               href="https://www.brandlete.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Brandlete"
+              title="Visit brandlete.com (opens in a new tab)"
+              aria-label="Brandlete (opens in a new tab)"
               className="mt-5 inline-block transition-opacity hover:opacity-80"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
