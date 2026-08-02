@@ -118,7 +118,7 @@ function CapitalBar() {
   const W = 300;
   let x = 0;
   return (
-    <Card kicker="Capital · Across ventures" title="$2.1M+ secured">
+    <Card kicker="Capital · Across ventures" title="$3.1M+ raised">
       <div ref={ref}>
         <svg viewBox={`0 0 ${W} 22`} className="w-full" role="img" aria-label="Capital secured breakdown">
           {segs.map((s) => {
@@ -165,7 +165,7 @@ function NonprofitBars() {
   ];
   const max = Math.max(...rows.map((r) => r.value));
   return (
-    <Card kicker="Nonprofit · Fundraising" title="$1.5M+ raised across causes">
+    <Card kicker="501c3 · Fundraising" title="$2.2M+ raised across causes">
       <div ref={ref} className="flex flex-col gap-2.5">
         {rows.map((r, i) => (
           <div key={r.label} className="flex flex-col gap-1">
