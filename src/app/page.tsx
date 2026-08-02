@@ -429,7 +429,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="on-photo flex flex-col gap-2 border-t border-black/20 pt-8 text-xs text-zinc-700 dark:border-white/10 dark:text-zinc-400">
+        <footer className="on-photo flex flex-col gap-2 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-zinc-400">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>© {new Date().getFullYear()} John Osberg</span>
             <a
