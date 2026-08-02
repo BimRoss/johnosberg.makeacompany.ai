@@ -101,7 +101,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
               target="_blank"
               rel="noopener noreferrer"
-              className="on-photo group mt-4 inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:text-xs"
+              className="on-photo group mt-6 inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:mt-7 sm:text-xs"
             >
               <span aria-hidden>⭐</span>
               Endorsed by 134+ top professionals
@@ -111,7 +111,7 @@ export default function Home() {
         </section>
 
         {/* Summary + CTA */}
-        <section className="reveal-2 -mt-12 flex flex-col gap-7 md:-mt-16">
+        <section className="reveal-2 -mt-6 flex flex-col gap-7 md:-mt-8">
           <div className="flex flex-wrap items-center gap-3">
             <BookCallBtn />
             <span aria-hidden className="hidden w-3 shrink-0 sm:block" />
