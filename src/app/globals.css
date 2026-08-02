@@ -94,9 +94,10 @@ body::after {
 }
 
 .backdrop-dark {
-  /* John's exact twilight golf portrait (golf-tall.jpg), shown as-is: no zoom
-     past cover, no reframe, no filter. Just fill the viewport and center it. */
-  background-image: url("/bg-brand-dark-v4.jpg");
+  /* High-res twilight golf hero (v5): 2816x1536 render, sweeping green toward a
+     glowing clubhouse under a fiery orange horizon. Fill the viewport, center it,
+     no zoom past cover, no reframe, no filter. */
+  background-image: url("/bg-brand-dark-v5.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0;
