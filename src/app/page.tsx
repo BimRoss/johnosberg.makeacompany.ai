@@ -60,27 +60,7 @@ export default function Home() {
             </div>
           </div>
           <div className="min-w-0">
-            <a
-              href="https://www.brandlete.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Brandlete"
-              className="mb-5 inline-block transition-opacity hover:opacity-80"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brandlete-logo-light.png"
-                alt="Brandlete"
-                className="h-8 w-auto dark:hidden sm:h-9"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brandlete-logo-dark.png"
-                alt="Brandlete"
-                className="hidden h-8 w-auto dark:block sm:h-9"
-              />
-            </a>
-            <h1 className="on-photo font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
+            <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl">
               John Osberg
             </h1>
             <p className="on-photo mt-4 font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:mt-5 sm:text-2xl">
@@ -96,6 +76,26 @@ export default function Home() {
                 <span aria-hidden className="ml-1 text-[0.6em] align-middle">{"↗︎"}</span>
               </a>
             </p>
+            <a
+              href="https://www.brandlete.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Brandlete"
+              className="mt-5 inline-block transition-opacity hover:opacity-80"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brandlete-logo-light.png"
+                alt="Brandlete"
+                className="h-8 w-auto dark:hidden sm:h-9"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brandlete-logo-dark.png"
+                alt="Brandlete"
+                className="hidden h-8 w-auto dark:block sm:h-9"
+              />
+            </a>
             <TypeCycle />
             <a
               href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
