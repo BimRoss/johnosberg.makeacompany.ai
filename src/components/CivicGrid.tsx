@@ -58,7 +58,7 @@ export default function CivicGrid() {
         })}
       </div>
 
-      <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-8">
+      <div className="grid grid-cols-3 gap-3 lg:grid-cols-4">
         {shown.map((c, i) => (
           <CivicCard key={`${c.org}-${c.role}-${i}`} c={c} />
         ))}
