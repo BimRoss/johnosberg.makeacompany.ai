@@ -74,7 +74,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 title="Visit brandlete.com (opens in a new tab)"
                 aria-label="Brandlete (opens in a new tab)"
-                className="inline-block transition-opacity hover:opacity-80"
+                className="group inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
               >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -88,6 +88,12 @@ export default function Home() {
                 alt="Brandlete"
                 className="hidden h-8 w-auto dark:block sm:h-9"
               />
+              <span
+                aria-hidden
+                className="text-lg font-bold leading-none text-[#00ccff] transition-transform group-hover:translate-x-0.5 sm:text-xl"
+              >
+                ↗
+              </span>
               </a>
             </div>
             <TypeCycle />
