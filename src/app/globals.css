@@ -89,9 +89,7 @@ body::after {
 }
 
 .backdrop-light {
-  /* Light-mode hero (v3): clean bright ice rink, blue line and faceoff circles,
-     Brandlete mark in the corner. Portrait source, cover-filled and centered. */
-  background-image: url("/bg-brand-light-v3.jpg");
+  background-image: url("/bg-brand-light-v2.jpg");
   opacity: 1;
 }
 
