@@ -191,7 +191,7 @@ export default function Home() {
               />
             </div>
             <figcaption className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.85),0_0_10px_rgba(0,0,0,0.6)]">
-              Everything your program and athlete needs to perform on and off the field.
+              Everything your program and athletes need to perform on and off the field.
             </figcaption>
           </figure>
         </section>
