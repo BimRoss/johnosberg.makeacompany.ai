@@ -68,12 +68,17 @@ body::after {
 /* Sports backdrop — empty-stadium plate, day/night per theme */
 .backdrop {
   position: fixed;
-  /* Pin to all four viewport edges instead of a 100lvh height. On iOS Safari a
-     fixed element sized with viewport units gets mis-sized/mis-positioned at the
-     very bottom of a long page (this doc is ~15000px), leaving a large black
-     strip below the footer. Constraining top AND bottom to the viewport lets the
-     browser track its dynamic toolbar so the layer always fills what's visible. */
-  inset: 0;
+  /* iOS Safari lays fixed elements against the small/dynamic viewport. At the
+     bottom of a long page (~15000px) the toolbar retracts and exposes a strip
+     below a bottom-anchored layer, which fell through to html's dark base and
+     read as a black band under the footer. Anchoring to the top and sizing to
+     100lvh (the large, toolbar-hidden viewport) makes the layer pre-cover the
+     tallest the visual viewport can ever get, so that strip is always painted. */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100lvh;
   background-color: var(--backdrop-base);
   z-index: 0;
   pointer-events: none;
