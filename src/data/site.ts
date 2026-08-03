@@ -444,6 +444,27 @@ export const press: PressItem[] = [
     logo: logoDev("bizjournals.com"),
     fallback: "/logos/news-biz.png",
   },
+  {
+    source: "Buffalo Business First",
+    title: "How to be a better CEO: OZmosis' John Osberg on 'actualizing' your potential",
+    href: "https://www.bizjournals.com/buffalo/news/2021/08/24/ozmosis-john-osberg-consultancy.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
+  {
+    source: "Buffalo Business First",
+    title: "Growing EmergenceTek pledges to create 40 new jobs in downtown Buffalo",
+    href: "https://www.bizjournals.com/buffalo/news/2017/04/20/growing-emergencetek-pledges-to-create-40-new-jobs.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
+  {
+    source: "Buffalo Business First",
+    title: "EmergenceTek: Another high-growth software startup in Buffalo",
+    href: "https://www.bizjournals.com/buffalo/news/2015/05/02/emergencetek-another-high-growth-software-startup.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
 ];
 
 // Awards & honors — mirrors John's LinkedIn "Honors & awards", newest first.
