@@ -453,6 +453,13 @@ export const press: PressItem[] = [
   },
   {
     source: "Buffalo Business First",
+    title: "John Osberg launches OZmosis Consulting in Buffalo",
+    href: "https://www.bizjournals.com/buffalo/news/2020/10/16/john-osberg-ozmosis-consulting-startup-news.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
+  {
+    source: "Buffalo Business First",
     title: "Growing EmergenceTek pledges to create 40 new jobs in downtown Buffalo",
     href: "https://www.bizjournals.com/buffalo/news/2017/04/20/growing-emergencetek-pledges-to-create-40-new-jobs.html",
     logo: logoDev("bizjournals.com"),
@@ -462,6 +469,13 @@ export const press: PressItem[] = [
     source: "Buffalo Business First",
     title: "EmergenceTek: Another high-growth software startup in Buffalo",
     href: "https://www.bizjournals.com/buffalo/news/2015/05/02/emergencetek-another-high-growth-software-startup.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
+  {
+    source: "Buffalo Business First",
+    title: "Healthiest Employers of Western New York 2024",
+    href: "https://www.bizjournals.com/buffalo/news/2024/08/23/healthiest-employers-western-new-york-2024-winners.html",
     logo: logoDev("bizjournals.com"),
     fallback: "/logos/news-biz.png",
   },
