@@ -50,7 +50,7 @@ export type Role = {
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
-    title: "VP of Partnerships / Co-Founder",
+    title: "VP of Partnerships / Founding Member",
     period: "Nov 2021 – Present",
     blurb:
       "Co-founded the Sports Program Operating System and Athlete Development Engine. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
@@ -337,7 +337,7 @@ export const milestones: { year: string; org: string; title: string; metric: str
   {
     year: "2021",
     org: "Brandlete",
-    title: "VP Partnerships / Co-Founder",
+    title: "VP Partnerships / Founding Member",
     metric: "Sports Org OS & Athlete Development Engine",
     details: [
       "Co-founded the connected operating system for coaches, athletes, families, and sports orgs.",

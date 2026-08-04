@@ -65,7 +65,7 @@ export default function Home() {
             </h1>
             <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-5">
               <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-                VP of Partnerships &amp; Co-Founder{" "}
+                VP of Partnerships &amp; Founding Member{" "}
                 <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>
               </p>
               <a
