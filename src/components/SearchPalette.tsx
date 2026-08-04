@@ -22,7 +22,6 @@ function buildIndex(): Item[] {
     { label: "In the news", kind: "Section", href: "#news" },
     { label: "Awards & honors", kind: "Section", href: "#awards" },
     { label: "Podcasts", kind: "Section", href: "#podcasts" },
-    { label: "Download resume", kind: "Action", href: "/resume.pdf", external: true },
   ];
   const exp: Item[] = roles.map((r) => ({
     label: `${r.org} — ${r.title}`,
