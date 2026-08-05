@@ -10,6 +10,12 @@ export const HERO_SUMMARY =
 export const LINK_PREVIEW_DESCRIPTION =
   "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $15M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
 
+// Social/link-unfurl description (LinkedIn Featured, Slack, iMessage). Weaves
+// John's three current seats, org names front-loaded so the important part
+// survives LinkedIn's ~2-line truncation.
+export const OG_DESCRIPTION =
+  "VP of Partnerships at Brandlete, the sports program operating system. Strategic Advisor at Kreuz, boutique staffing and business development. Head of Growth at MakeaCompany, building AI-native software.";
+
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
 // logo.dev serves real company logos by domain. The publishable key (pk_) is

@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 
 import {
   LINK_PREVIEW_DESCRIPTION,
+  OG_DESCRIPTION,
   PUBLIC_EMAIL,
   SITE_NAME,
   SITE_TITLE,
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     title: SITE_TITLE,
-    description: LINK_PREVIEW_DESCRIPTION,
+    description: OG_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
-    description: LINK_PREVIEW_DESCRIPTION,
+    description: OG_DESCRIPTION,
     images: ["/og.png?v=91"],
   },
 };
