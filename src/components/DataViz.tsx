@@ -7,7 +7,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { awards, brands, podcasts, press, revenueByVenture, SECTORS } from "@/data/site";
+import { brands, revenueByVenture, SECTORS } from "@/data/site";
 
 // Fires once when the element first enters view. Honors reduced-motion by
 // reporting "in view" immediately so nothing animates.
@@ -278,17 +278,16 @@ function SectorDonut() {
   );
 }
 
-// 6. Recognition — press features, honors, and podcast reach, counted live off
-// the same data that drives the Press and Awards sections so it never drifts.
+// 6. Recognition — honors, press, podcast reach, civic roles, and mentorship,
+// John's headline recognition numbers.
 function Recognition() {
   const { ref, inView } = useInView<HTMLDivElement>();
-  const awardCount = awards.reduce((a, g) => a + g.items.length, 0);
-  const hostSeries = podcasts.filter((p) => p.role === "Host").length;
   const rows = [
-    { label: "Honors & awards", value: awardCount },
-    { label: "Press features", value: press.length },
-    { label: "Podcast series hosted", value: hostSeries },
-    { label: "National golf title", value: 1 },
+    { label: "Honors & awards", value: 17, display: "17" },
+    { label: "Press features", value: 20, display: "20+" },
+    { label: "Podcasts hosted or featured on", value: 100, display: "100+" },
+    { label: "Civic leadership roles", value: 38, display: "38" },
+    { label: "People mentored", value: 250, display: "250+" },
   ];
   const max = Math.max(...rows.map((r) => r.value));
   return (
@@ -298,7 +297,7 @@ function Recognition() {
           <div key={r.label} className="flex flex-col gap-1">
             <div className="flex items-baseline justify-between text-xs">
               <span className="text-zinc-600 dark:text-zinc-400">{r.label}</span>
-              <span className="font-mono text-zinc-900 dark:text-white">{r.value}</span>
+              <span className="font-mono text-zinc-900 dark:text-white">{r.display}</span>
             </div>
             <div className="h-2 w-full overflow-hidden rounded-full bg-black/5 dark:bg-white/10">
               <div
