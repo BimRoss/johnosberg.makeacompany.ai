@@ -362,6 +362,21 @@ export const milestones: { year: string; org: string; title: string; metric: str
     ],
     revenueK: 250,
   },
+  {
+    year: "2026",
+    org: "MakeaCompany",
+    title: "Co-Founder / Growth & GTM",
+    metric: "9.8x active users · +880%",
+    details: [
+      "Grew the active user base 9.8x in the first six weeks, from 12 to 117 users (+880%).",
+      "Leading the venture raise across VCs, angel investors, accelerators, and incubators.",
+      "Own the growth engine end to end: positioning, messaging, demand, and the sales motion to signed customers.",
+      "Run founder-led sales, from live demos and discovery through close.",
+      "Build the GTM operating system: CRM, pipeline reviews, forecasting, and attribution.",
+      "Source and close strategic partnerships and channel relationships that compound reach.",
+    ],
+    revenueK: 1000,
+  },
 ];
 
 export type Brand = { name: string; mark: string; accent: string; logo: string; url: string; sector: Sector };
