@@ -3,14 +3,19 @@
 import { useEffect, useState } from "react";
 
 export default function GoToBottom() {
-  // Flip to "Top" once the reader is near the bottom, so the button always
-  // does the useful thing instead of going dead at the end of the page.
+  // Flip to "Top" once the footer is in view, so the button always does the
+  // useful thing instead of going dead at the end of the page.
   const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      const scrolled = window.scrollY + window.innerHeight;
-      setAtBottom(scrolled >= document.documentElement.scrollHeight - 200);
+      const footer = document.querySelector("footer");
+      if (!footer) return;
+      // Consider us "at bottom" once the footer's bottom edge is at or above
+      // the viewport bottom. Anchoring to the footer (not scrollHeight) keeps
+      // this correct on iOS, where the dynamic viewport makes scrollHeight
+      // overshoot into the fixed backdrop below the content.
+      setAtBottom(footer.getBoundingClientRect().bottom <= window.innerHeight + 4);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -22,10 +27,18 @@ export default function GoToBottom() {
   }, []);
 
   function jump() {
-    window.scrollTo({
-      top: atBottom ? 0 : document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
+    if (atBottom) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    // Scroll the footer's bottom edge to the viewport bottom. This lands on the
+    // real footer instead of the empty dark backdrop that sits below it on iOS.
+    const footer = document.querySelector("footer");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth", block: "end" });
+    } else {
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+    }
   }
 
   return (
