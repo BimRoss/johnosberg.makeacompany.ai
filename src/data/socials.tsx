@@ -67,6 +67,12 @@ export const socials: SocialEntry[] = [
     external: false,
   },
   {
+    label: "john@makeacompany.ai",
+    href: "mailto:john@makeacompany.ai",
+    Icon: EmailIcon,
+    external: false,
+  },
+  {
     label: "brandlete.com",
     href: "https://brandlete.com",
     Icon: GlobeIcon,
