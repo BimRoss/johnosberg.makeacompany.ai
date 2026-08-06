@@ -33,7 +33,7 @@ export default function GoToBottom() {
       type="button"
       onClick={jump}
       aria-label={atBottom ? "Go to top" : "Go to bottom"}
-      className="fixed left-1/2 top-4 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-black/15 bg-white/70 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.1em] text-zinc-700 backdrop-blur-md transition-colors hover:border-black/40 hover:text-zinc-900 dark:border-white/15 dark:bg-white/5 dark:text-zinc-300 dark:hover:border-white/50 dark:hover:text-white sm:top-6"
+      className="fixed left-1/2 top-4 z-30 flex -translate-x-[calc(50%-75px)] items-center gap-1.5 rounded-full border border-black/15 bg-white/70 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.1em] text-zinc-700 backdrop-blur-md transition-colors hover:border-black/40 hover:text-zinc-900 dark:border-white/15 dark:bg-white/5 dark:text-zinc-300 dark:hover:border-white/50 dark:hover:text-white sm:top-6"
     >
       <span>{atBottom ? "Top" : "Bottom"}</span>
       <svg
