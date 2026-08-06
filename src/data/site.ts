@@ -572,6 +572,12 @@ export const podcasts: Podcast[] = [
     href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgMHOYeCaDmnwcjEnzumQSn",
     thumb: "/podcasts/smarter-business.png",
   },
+  {
+    title: "The Vidwheel Podcast",
+    role: "Host",
+    href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqg2uZaGoT40iPyNRdhHXadG",
+    thumb: "axFUn_K8mD0",
+  },
 ];
 
 // Civic categories — drive the filterable civic logo wall, same pattern as the
