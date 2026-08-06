@@ -374,7 +374,7 @@ export default function Home() {
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
               <VideoPlayer id={FEATURED_VIDEO.id} start={FEATURED_VIDEO.start} title={FEATURED_VIDEO.title} />
             </div>
-            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-white">
               {FEATURED_VIDEO.title}
             </figcaption>
           </figure>
@@ -382,7 +382,7 @@ export default function Home() {
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
               <VideoPlayer id={FEATURED_GUEST_VIDEO.id} start={FEATURED_GUEST_VIDEO.start} title={FEATURED_GUEST_VIDEO.title} />
             </div>
-            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-white">
               {FEATURED_GUEST_VIDEO.title}
             </figcaption>
           </figure>
@@ -433,7 +433,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="on-photo flex flex-col gap-2 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-zinc-400">
+        <footer className="on-photo flex flex-col gap-2 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>© {new Date().getFullYear()} John Osberg</span>
             <a
@@ -445,7 +445,7 @@ export default function Home() {
               john@brandlete.com
             </a>
           </div>
-          <p className="flex flex-wrap items-center gap-x-1 text-[11px] text-zinc-600 dark:text-zinc-500">
+          <p className="flex flex-wrap items-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
             Site built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
             <a
               href="https://makeacompany.ai"
