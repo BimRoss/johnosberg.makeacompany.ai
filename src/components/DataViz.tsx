@@ -7,7 +7,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { brands, revenueByVenture, SECTORS } from "@/data/site";
+import { awards, brands, podcasts, press, revenueByVenture, SECTORS } from "@/data/site";
 
 // Fires once when the element first enters view. Honors reduced-motion by
 // reporting "in view" immediately so nothing animates.
@@ -278,6 +278,44 @@ function SectorDonut() {
   );
 }
 
+// 6. Recognition — press features, honors, and podcast reach, counted live off
+// the same data that drives the Press and Awards sections so it never drifts.
+function Recognition() {
+  const { ref, inView } = useInView<HTMLDivElement>();
+  const awardCount = awards.reduce((a, g) => a + g.items.length, 0);
+  const hostSeries = podcasts.filter((p) => p.role === "Host").length;
+  const rows = [
+    { label: "Honors & awards", value: awardCount },
+    { label: "Press features", value: press.length },
+    { label: "Podcast series hosted", value: hostSeries },
+    { label: "National golf title", value: 1 },
+  ];
+  const max = Math.max(...rows.map((r) => r.value));
+  return (
+    <Card kicker="Recognition · Press & honors" title="Featured & awarded">
+      <div ref={ref} className="flex flex-col gap-2.5">
+        {rows.map((r, i) => (
+          <div key={r.label} className="flex flex-col gap-1">
+            <div className="flex items-baseline justify-between text-xs">
+              <span className="text-zinc-600 dark:text-zinc-400">{r.label}</span>
+              <span className="font-mono text-zinc-900 dark:text-white">{r.value}</span>
+            </div>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-black/5 dark:bg-white/10">
+              <div
+                className="h-full rounded-full bg-[#00ccff]"
+                style={{
+                  width: inView ? `${(r.value / max) * 100}%` : "0%",
+                  transition: `width 1s cubic-bezier(0.22,1,0.36,1) ${i * 90}ms`,
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
 export default function DataViz() {
   return (
     <section className="flex flex-col gap-8">
@@ -290,6 +328,7 @@ export default function DataViz() {
         <RetentionRing />
         <CapitalBar />
         <NonprofitBars />
+        <Recognition />
       </div>
     </section>
   );

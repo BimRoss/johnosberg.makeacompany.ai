@@ -4,7 +4,7 @@
 // show; "All" resets. Counts live on each chip so the wall reads like data.
 // Dependency-free, themed for light/dark.
 
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import BrandLogo from "@/components/BrandLogo";
 import { brands, SECTORS, type Sector } from "@/data/site";
@@ -59,25 +59,18 @@ export default function PartnershipsGrid() {
       </div>
 
       {/* Flex-wrap + justify-center so any trailing partial row centers instead
-          of hanging left. Full rows still fill edge to edge (3-up mobile,
-          4-up desktop) because each tile's basis matches the old grid. In the
-          unfiltered view we force the last four healthcare logos into two
-          centered rows of two — HealtheLink · Fidelis on the second-to-last
-          line, HealtheConnections · BlueCross on the last — via full-width
-          break elements. */}
+          of hanging left. Full rows fill edge to edge (3-up mobile, 4-up
+          desktop) because each tile's basis matches the old grid; the logos
+          flow naturally with no forced row breaks. */}
       <div className="flex flex-wrap justify-center gap-3">
-        {shown.map((b, i) => {
-          const breakBefore =
-            active === "All" && (i === shown.length - 4 || i === shown.length - 2);
-          return (
-            <Fragment key={b.name}>
-              {breakBefore && <div aria-hidden className="basis-full" />}
-              <div className="flex basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] [&>a]:flex-1">
-                <BrandLogo brand={b} />
-              </div>
-            </Fragment>
-          );
-        })}
+        {shown.map((b) => (
+          <div
+            key={b.name}
+            className="flex basis-[calc((100%-1.5rem)/3)] lg:basis-[calc((100%-2.25rem)/4)] [&>a]:flex-1"
+          >
+            <BrandLogo brand={b} />
+          </div>
+        ))}
       </div>
     </div>
   );
