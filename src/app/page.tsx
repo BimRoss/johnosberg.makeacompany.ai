@@ -20,6 +20,7 @@ import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
+import GoToBottom from "@/components/GoToBottom";
 import {
   awards,
   FEATURED_VIDEO,
@@ -37,6 +38,7 @@ export default function Home() {
     <>
       <Backdrop />
       <ThemeToggle />
+      <GoToBottom />
       <ScrollReveal />
       <ChromeFx />
       <SearchPalette />
