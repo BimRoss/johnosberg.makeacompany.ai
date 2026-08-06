@@ -554,6 +554,12 @@ export const podcasts: Podcast[] = [
     href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgUd-nFY-z2VXu68NbiauLm",
     thumb: "cRGzR-yDVEo",
   },
+  {
+    title: "Featured Guest Appearances",
+    role: "Guest",
+    href: "https://www.youtube.com/playlist?list=PLgKNSRICJcqgMHOYeCaDmnwcjEnzumQSn",
+    thumb: "/podcasts/smarter-business.png",
+  },
 ];
 
 // Civic categories — drive the filterable civic logo wall, same pattern as the

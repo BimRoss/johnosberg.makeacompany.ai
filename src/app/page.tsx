@@ -101,7 +101,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
               target="_blank"
               rel="noopener noreferrer"
-              className="on-photo group mt-6 inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:mt-7 sm:text-xs"
+              className="on-photo group mt-6 inline-flex w-fit items-center gap-2 font-mono text-sm font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:mt-7 sm:text-base"
             >
               <span aria-hidden>⭐</span>
               Endorsed by 134+ top professionals
@@ -398,7 +398,11 @@ export default function Home() {
                 <div className="relative aspect-video w-full overflow-hidden border-b border-black/10 dark:border-white/10">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`https://img.youtube.com/vi/${pod.thumb}/maxresdefault.jpg`}
+                    src={
+                      pod.thumb.startsWith("/")
+                        ? pod.thumb
+                        : `https://img.youtube.com/vi/${pod.thumb}/maxresdefault.jpg`
+                    }
                     alt={pod.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
