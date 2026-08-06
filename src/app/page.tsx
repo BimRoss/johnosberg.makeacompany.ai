@@ -48,13 +48,13 @@ export default function Home() {
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
           <div className="shrink-0">
-            <div className="relative h-32 w-32 overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/15 md:h-44 md:w-44">
+            <div className="relative aspect-[4/5] w-44 overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/15 sm:w-52 md:w-60">
               <Image
                 src="/headshot.png"
                 alt={SITE_NAME}
                 fill
                 priority
-                sizes="176px"
+                sizes="240px"
                 className="object-cover"
               />
             </div>
