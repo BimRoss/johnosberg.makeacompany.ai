@@ -47,46 +47,6 @@ export default function Home() {
         id="main"
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-8 pt-28 sm:gap-20 sm:px-8 md:gap-28 md:pb-10 md:pt-32"
       >
-        {/* Brandlete is hiring — top banner */}
-        <section className="reveal -mb-4 sm:-mb-10 md:-mb-16">
-          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/15 via-white/70 to-[#00ccff]/10 p-5 backdrop-blur-md dark:from-[#00ccff]/15 dark:via-zinc-950/70 dark:to-[#0088cc]/15 sm:p-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-              <div className="flex flex-col gap-1">
-                <span className="inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#0088cc] dark:text-[#00ccff]">
-                  <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
-                  Now hiring
-                </span>
-                <h2 className="on-photo font-[family-name:var(--font-sora)] text-2xl font-extrabold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-                  Brandlete is hiring!
-                </h2>
-                <p className="on-photo text-sm font-medium text-zinc-700 dark:text-zinc-300 sm:text-[15px]">
-                  Two ways in.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:shrink-0 sm:flex-row sm:items-center">
-                <a
-                  href="https://www.brandlete.com/playmakers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#00ccff] px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/30 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40 sm:text-base"
-                >
-                  Apply to the Playmaker Network
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/jobs/view/4454747810"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#00ccff] bg-transparent px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-[#0088cc] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-[#00ccff]/10 dark:text-[#00ccff] sm:text-base"
-                >
-                  See the open role we&apos;re hiring for
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1">↗</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
           <div className="shrink-0">
@@ -180,6 +140,46 @@ export default function Home() {
               <span className="hidden sm:inline">30 Under 30</span>
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
+          </div>
+        </section>
+
+        {/* Brandlete is hiring — banner */}
+        <section className="reveal-2">
+          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/15 via-white/70 to-[#00ccff]/10 p-5 backdrop-blur-md dark:from-[#00ccff]/15 dark:via-zinc-950/70 dark:to-[#0088cc]/15 sm:p-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+              <div className="flex flex-col gap-1">
+                <span className="inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#0088cc] dark:text-[#00ccff]">
+                  <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
+                  Now hiring
+                </span>
+                <h2 className="on-photo font-[family-name:var(--font-sora)] text-2xl font-extrabold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
+                  Brandlete is hiring!
+                </h2>
+                <p className="on-photo text-sm font-medium text-zinc-700 dark:text-zinc-300 sm:text-[15px]">
+                  Two ways in.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:shrink-0 sm:flex-row sm:items-center">
+                <a
+                  href="https://www.brandlete.com/playmakers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#00ccff] px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/30 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40 sm:text-base"
+                >
+                  Apply to the Playmaker Network
+                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/jobs/view/4454747810"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#00ccff] bg-transparent px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-[#0088cc] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-[#00ccff]/10 dark:text-[#00ccff] sm:text-base"
+                >
+                  See the open role we&apos;re hiring for
+                  <span aria-hidden className="transition-transform group-hover:translate-x-1">↗</span>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
