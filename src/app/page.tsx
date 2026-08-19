@@ -45,7 +45,7 @@ export default function Home() {
       <CursorTrail />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12 px-5 pb-8 pt-28 sm:gap-20 sm:px-8 md:gap-28 md:pb-10 md:pt-32"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-8 pt-24 sm:gap-14 sm:px-8 md:gap-20 md:pb-10 md:pt-28"
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
