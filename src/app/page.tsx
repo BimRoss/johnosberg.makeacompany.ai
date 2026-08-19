@@ -31,7 +31,7 @@ import {
   SITE_NAME,
   stats,
 } from "@/data/site";
-import { socials } from "@/data/socials";
+import { socials, LinkedInIcon } from "@/data/socials";
 
 export default function Home() {
   return (
@@ -148,6 +148,16 @@ export default function Home() {
             >
               <span aria-hidden>🏆</span>
               <span className="hidden sm:inline">Jack Nicklaus National Champion</span>
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#0a66c2] px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-[#0a66c2]/25 transition-all hover:-translate-y-0.5 hover:bg-[#0e76d6]"
+            >
+              <LinkedInIcon className="h-4 w-4 shrink-0" />
+              <span className="hidden sm:inline">Subscribe on LinkedIn</span>
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
