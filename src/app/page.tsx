@@ -140,6 +140,16 @@ export default function Home() {
               <span className="hidden sm:inline">30 Under 30</span>
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
+            <a
+              href="https://westernnewyork.pga.com/usa-national-championships/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-50/80 px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-amber-900 backdrop-blur-md transition-colors hover:border-amber-500/80 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-200 dark:hover:border-amber-400/60"
+            >
+              <span aria-hidden>🏆</span>
+              <span className="hidden sm:inline">USA National Championships</span>
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
           </div>
         </section>
 
