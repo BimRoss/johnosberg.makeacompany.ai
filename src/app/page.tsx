@@ -16,7 +16,6 @@ import CivicGrid from "@/components/CivicGrid";
 import PressLogo from "@/components/PressLogo";
 import RoleLogo from "@/components/RoleLogo";
 import SkillsGrid from "@/components/SkillsGrid";
-import DataViz from "@/components/DataViz";
 import VideoPlayer from "@/components/VideoPlayer";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -273,11 +272,6 @@ export default function Home() {
             </StatTilt>
           ))}
         </section>
-
-        {/* Data viz */}
-        <div id="numbers" className="reveal-on-scroll scroll-mt-24">
-          <DataViz />
-        </div>
 
         {/* Career timeline */}
         <section id="timeline" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">

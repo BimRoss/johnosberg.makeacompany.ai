@@ -14,7 +14,6 @@ type Item = {
 
 function buildIndex(): Item[] {
   const sections: Item[] = [
-    { label: "By the numbers", kind: "Section", href: "#numbers" },
     { label: "Experience", kind: "Section", href: "#experience" },
     { label: "Partnerships", kind: "Section", href: "#partnerships" },
     { label: "Civic leadership & volunteer work", kind: "Section", href: "#civic" },
