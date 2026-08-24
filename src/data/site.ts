@@ -58,8 +58,7 @@ export const roles: Role[] = [
     org: "Brandlete, Inc.",
     title: "VP of Partnerships / Founding Member",
     period: "Nov 2021 – Present",
-    blurb:
-      "Co-founded the Sports Program Operating System and Athlete Development Engine. Drive early-stage partnerships and pilots with clubs, coaches, and athletic organizations, and assembled the founding team.",
+    blurb: "",
     logo: logoDev("brandlete.com"),
     mark: "B",
     accent: "#00ccff",
@@ -69,8 +68,7 @@ export const roles: Role[] = [
     org: "MakeaCompany",
     title: "Growth & GTM / Co-Founder",
     period: "Apr 2026 – Present",
-    blurb:
-      "Own go-to-market for an AI-native startup, building the motion from positioning through pipeline to closed revenue. Stand up the growth engine end to end and the early GTM foundation a Series-stage company scales on.",
+    blurb: "",
     logo: "/logos/makeacompany.png",
     mark: "M",
     accent: "#6366f1",
@@ -80,8 +78,7 @@ export const roles: Role[] = [
     org: "Kreuz Staffing & Business Development",
     title: "Strategic Advisor",
     period: "Jul 2026 – Present",
-    blurb:
-      "Advise on talent strategy across sales, business development, engineering, and finance, drawing on 14+ years of recruiting built mostly in technology. Help position Kreuz as the boutique, high-touch alternative in search.",
+    blurb: "",
     logo: "/logos/kreuz.png",
     mark: "K",
     accent: "#b45309",
@@ -91,8 +88,7 @@ export const roles: Role[] = [
     org: "Stealth Startup",
     title: "Sports Tech – Revenue / GTM / Partnerships",
     period: "Jan 2017 – Apr 2026",
-    blurb:
-      "Revenue, go-to-market, and partnerships across a portfolio of early-stage sports-tech companies on a contract basis. An estimated $2.2M+ in total attributed value to the portfolio.",
+    blurb: "",
     logo: "/logos/stealth.png",
     mark: "SS",
     accent: "#64748b",
@@ -101,8 +97,7 @@ export const roles: Role[] = [
     org: "PGA of America",
     title: "Director of Partnerships / Founding Trustee",
     period: "Jan 2020 – Oct 2025",
-    blurb:
-      "275% partner growth with 97% retention across 60+ accounts in Western NY. $250K+ annually through sponsorships and multi-year partnerships with Michelob Ultra, Oakley, RLX, and more. Scaled PGA HOPE and other fundraising to $350K+ in program funding over six years.",
+    blurb: "",
     logo: logoDev("pga.com"),
     mark: "PGA",
     accent: "#0b3d2e",
@@ -112,8 +107,7 @@ export const roles: Role[] = [
     org: "OnCore Golf",
     title: "Director of Revenue Partnerships / Strategic Advisor / Consultant",
     period: "Jul 2016 – Aug 2025",
-    blurb:
-      "Secured distribution partnerships with NYSGA, DICK'S Sporting Goods, Golf Galaxy (30+ locations), and Wegmans, representing $3.5M+ in revenue across those relationships.",
+    blurb: "",
     logo: logoDev("oncoregolf.com"),
     mark: "OC",
     accent: "#111827",
@@ -123,8 +117,7 @@ export const roles: Role[] = [
     org: "Bad Golf Business School",
     title: "Founder / Operator",
     period: "Jan 2019 – Jul 2025",
-    blurb:
-      "Founded a golf-driven networking platform (a POWER of OZmosis sub-brand) convening 50–125 professionals per event to generate referrals and early-stage deal flow, with monetization validated through pricing partnerships.",
+    blurb: "",
     logo: "/logos/badgolf.png",
     mark: "BG",
     accent: "#15803d",
@@ -134,8 +127,7 @@ export const roles: Role[] = [
     org: "POWER of OZmosis",
     title: "Principal Consultant / Founder",
     period: "Jul 2019 – Jun 2025",
-    blurb:
-      "$200K–$325K+ in client revenue through strategic partnerships, with $817K in aggregate client deal flow closed as of Q1 2026. Coached 20+ leaders across verticals over four years, secured $221K+ in venture funding for startup clients, and raised $285K across nonprofit campaigns.",
+    blurb: "",
     logo: logoDev("powerofozmosis.com"),
     mark: "OZ",
     accent: "#1d4ed8",
@@ -145,8 +137,7 @@ export const roles: Role[] = [
     org: "EmergenceTek Group Inc.",
     title: "VP of Sales / Founding Member / Management Consultant",
     period: "Sep 2012 – Sep 2024",
-    blurb:
-      "Drove full-cycle business development, growing the client base 0 to 35+ enterprise and mid-market orgs and helping push company revenue to ~$5M. Generated $3M+ across technical projects, staffing, and MRR contracts, plus $750K+ in new business and $500K in NY State economic development incentives.",
+    blurb: "",
     logo: logoDev("emergencetek.com"),
     mark: "ET",
     accent: "#0ea5e9",
@@ -156,8 +147,7 @@ export const roles: Role[] = [
     org: "Oro Sports USA, Inc.",
     title: "Strategic Advisor",
     period: "May 2019 – Dec 2021",
-    blurb:
-      "Advised Oro Sports (formerly Coolture) through its rebrand on go-to-market and product positioning, working directly with the CEO to sharpen the youth-sports pitch and support strategy, fundraising, and early product priorities.",
+    blurb: "",
     logo: "/logos/orosports.png",
     mark: "OS",
     accent: "#14b8a6",
@@ -167,8 +157,7 @@ export const roles: Role[] = [
     org: "DataSure24",
     title: "Director of Business Development / Founding Employee",
     period: "Aug 2018 – Jul 2019",
-    blurb:
-      "Generated $150K+ in new revenue and expanded existing accounts 22% in year one. Built and managed a $600K pipeline through prospecting, partnerships, and targeted account development, supporting $400K ARR across startups, SMBs, and enterprise accounts.",
+    blurb: "",
     logo: logoDev("datasure24.com"),
     mark: "DS",
     accent: "#dc2626",
@@ -178,8 +167,7 @@ export const roles: Role[] = [
     org: "Citi",
     title: "Investment Equities Associate",
     period: "Apr 2012 – Dec 2012",
-    blurb:
-      "Supported equity research and capital markets work for institutional investors, running financial analysis and building client-facing materials that informed trading and portfolio strategy.",
+    blurb: "",
     logo: logoDev("citi.com"),
     mark: "C",
     accent: "#003b70",
@@ -189,8 +177,7 @@ export const roles: Role[] = [
     org: "CFA Institute",
     title: "Management Analyst",
     period: "Jan 2012 – Jun 2012",
-    blurb:
-      "Selected for a competitive multi-month analyst program, building investment theses and financial models and delivering capital-allocation recommendations in a cohort competition grounded in CFA frameworks.",
+    blurb: "",
     logo: logoDev("cfainstitute.org"),
     mark: "CFA",
     accent: "#00539b",
@@ -200,8 +187,7 @@ export const roles: Role[] = [
     org: "Bloomberg",
     title: "Brand Engagement Lead",
     period: "Sep 2011 – Feb 2012",
-    blurb:
-      "Ran brand engagement and client-facing programs inside a high-performance financial data business, driving user acquisition, retention, and event-based marketing tied to revenue growth.",
+    blurb: "",
     logo: logoDev("bloomberg.com"),
     mark: "B",
     accent: "#111827",
@@ -211,8 +197,7 @@ export const roles: Role[] = [
     org: "M&T Bank",
     title: "Profitability Analytics Associate",
     period: "Jan 2011 – Sep 2011",
-    blurb:
-      "Analyzed product and segment profitability across retail and commercial banking, delivering pricing and P&L insights to senior stakeholders to sharpen margins and portfolio performance.",
+    blurb: "",
     logo: logoDev("mtb.com"),
     mark: "MT",
     accent: "#005e5d",
