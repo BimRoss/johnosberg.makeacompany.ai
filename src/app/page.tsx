@@ -189,7 +189,7 @@ export default function Home() {
                   <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/jobs/view/4454747810"
+                  href="https://www.linkedin.com/jobs/view/4457164770"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#00ccff] bg-transparent px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-[#0088cc] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-[#00ccff]/10 dark:text-[#00ccff] sm:text-base"
