@@ -14,7 +14,7 @@ export const LINK_PREVIEW_DESCRIPTION =
 // John's three current seats, org names front-loaded so the important part
 // survives LinkedIn's ~2-line truncation.
 export const OG_DESCRIPTION =
-  "VP of Partnerships at Brandlete, the sports program operating system. Strategic Advisor at Kreuz, boutique staffing and business development. Head of Growth at MakeaCompany, building AI-native software.";
+  "VP of Partnerships at Brandlete, the sports program operating system. Strategic Talent Advisor at Kreuz, boutique staffing and business development. Head of Growth at MakeaCompany, building AI-native software.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -65,6 +65,16 @@ export const roles: Role[] = [
     url: "https://brandlete.com",
   },
   {
+    org: "Kreuz Staffing & Business Development",
+    title: "Strategic Talent Advisor",
+    period: "Jul 2026 – Present",
+    blurb: "",
+    logo: "/logos/kreuz.png",
+    mark: "K",
+    accent: "#b45309",
+    url: "https://kreuzbd.com",
+  },
+  {
     org: "MakeaCompany",
     title: "Growth & GTM / Co-Founder",
     period: "Apr 2026 – Present",
@@ -73,16 +83,6 @@ export const roles: Role[] = [
     mark: "M",
     accent: "#6366f1",
     url: "https://makeacompany.ai",
-  },
-  {
-    org: "Kreuz Staffing & Business Development",
-    title: "Strategic Advisor",
-    period: "Jul 2026 – Present",
-    blurb: "",
-    logo: "/logos/kreuz.png",
-    mark: "K",
-    accent: "#b45309",
-    url: "https://kreuzbd.com",
   },
   {
     org: "Stealth Startup",
