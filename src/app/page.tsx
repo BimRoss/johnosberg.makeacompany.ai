@@ -64,38 +64,40 @@ export default function Home() {
             <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl">
               John Osberg
             </h1>
-            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-5">
+            <div className="mt-4 sm:mt-5">
               <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:text-2xl">
-                VP of Partnerships &amp; Founding Member{" "}
-                <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>
+                VP of Partnerships &amp; Founding Director{" "}
+                <span className="whitespace-nowrap">
+                  <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
+                  <a
+                    href="https://www.brandlete.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Visit brandlete.com (opens in a new tab)"
+                    aria-label="Brandlete (opens in a new tab)"
+                    className="group inline-flex items-center gap-1.5 align-middle transition-opacity hover:opacity-80"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/brandlete-logo-light.png"
+                      alt="Brandlete"
+                      className="inline h-7 w-auto dark:hidden sm:h-8"
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/brandlete-logo-dark.png"
+                      alt="Brandlete"
+                      className="hidden h-7 w-auto dark:block sm:h-8"
+                    />
+                    <span
+                      aria-hidden
+                      className="text-lg font-bold leading-none text-[#00ccff] transition-transform group-hover:translate-x-0.5 sm:text-xl"
+                    >
+                      ↗
+                    </span>
+                  </a>
+                </span>
               </p>
-              <a
-                href="https://www.brandlete.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Visit brandlete.com (opens in a new tab)"
-                aria-label="Brandlete (opens in a new tab)"
-                className="group inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
-              >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brandlete-logo-light.png"
-                alt="Brandlete"
-                className="h-8 w-auto dark:hidden sm:h-9"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brandlete-logo-dark.png"
-                alt="Brandlete"
-                className="hidden h-8 w-auto dark:block sm:h-9"
-              />
-              <span
-                aria-hidden
-                className="text-lg font-bold leading-none text-[#00ccff] transition-transform group-hover:translate-x-0.5 sm:text-xl"
-              >
-                ↗
-              </span>
-              </a>
             </div>
             <TypeCycle />
             <a
