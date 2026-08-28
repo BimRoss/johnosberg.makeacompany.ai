@@ -4,7 +4,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import {
   LINK_PREVIEW_DESCRIPTION,
   OG_DESCRIPTION,
-  PUBLIC_EMAIL,
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
@@ -71,7 +70,6 @@ const jsonLd = {
   "@type": "Person",
   name: SITE_NAME,
   url: SITE_URL,
-  email: PUBLIC_EMAIL,
   jobTitle: "VP of Partnerships & Growth Leader",
   address: { "@type": "PostalPlace", addressLocality: "Buffalo", addressRegion: "NY" },
   sameAs: socials.filter((s) => s.external).map((s) => s.href),

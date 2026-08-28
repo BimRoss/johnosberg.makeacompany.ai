@@ -150,13 +150,23 @@ export default function Home() {
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
             <a
+              href="https://www.linkedin.com/in/johnosberg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#0a66c2] px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-[#0a66c2]/25 transition-all hover:-translate-y-0.5 hover:bg-[#0e76d6]"
+            >
+              <LinkedInIcon className="h-4 w-4 shrink-0" />
+              <span className="hidden sm:inline">Let&apos;s Connect on LinkedIn</span>
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </a>
+            <a
               href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-[#0a66c2] px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-[#0a66c2]/25 transition-all hover:-translate-y-0.5 hover:bg-[#0e76d6]"
             >
               <LinkedInIcon className="h-4 w-4 shrink-0" />
-              <span className="hidden sm:inline">Subscribe on LinkedIn</span>
+              <span className="hidden sm:inline">Check out my Newsletter, &quot;Bigger Than Sports&quot;</span>
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
@@ -492,14 +502,6 @@ export default function Home() {
         <footer className="on-photo flex flex-col gap-2 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>© {new Date().getFullYear()} John Osberg</span>
-            <a
-              href="mailto:john@brandlete.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-zinc-700 dark:hover:text-zinc-300"
-            >
-              john@brandlete.com
-            </a>
           </div>
           <p className="flex flex-wrap items-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
             Site built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}

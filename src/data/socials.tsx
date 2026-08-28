@@ -55,18 +55,6 @@ export type SocialEntry = {
 
 export const socials: SocialEntry[] = [
   {
-    label: "linkedin.com/in/johnosberg",
-    href: "https://www.linkedin.com/in/johnosberg",
-    Icon: LinkedInIcon,
-    external: true,
-  },
-  {
-    label: "john@brandlete.com",
-    href: "mailto:john@brandlete.com",
-    Icon: EmailIcon,
-    external: false,
-  },
-  {
     label: "brandlete.com",
     href: "https://brandlete.com",
     Icon: GlobeIcon,

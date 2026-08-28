@@ -71,7 +71,7 @@ export default function BookCallBtn() {
       className="group inline-flex items-center gap-2 rounded-sm bg-[#00ccff] px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#04070e] shadow-lg shadow-[#00ccff]/30 transition-colors hover:bg-[#33d6ff]"
     >
       <span aria-hidden>⚡</span>
-      Book a call
+      Let&apos;s Talk!
       <span className="transition-transform group-hover:translate-x-0.5">↗</span>
     </a>
   );
