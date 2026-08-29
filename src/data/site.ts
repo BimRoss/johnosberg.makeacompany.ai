@@ -56,7 +56,7 @@ export type Role = {
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
-    title: "VP of Partnerships / Founding Member",
+    title: "VP of Partnerships / Founding Director",
     period: "Nov 2021 – Present",
     blurb: "",
     logo: logoDev("brandlete.com"),
@@ -83,6 +83,16 @@ export const roles: Role[] = [
     mark: "M",
     accent: "#6366f1",
     url: "https://makeacompany.ai",
+  },
+  {
+    org: "Ron Langhorne Golf Foundation",
+    title: "Board Member",
+    period: "Aug 2026 – Present",
+    blurb: "",
+    logo: "/logos/rlg.png",
+    mark: "RLG",
+    accent: "#166534",
+    url: "https://www.imjustagolfer.com/rlg-foundation",
   },
   {
     org: "Stealth Startup",
@@ -328,7 +338,7 @@ export const milestones: { year: string; org: string; title: string; metric: str
   {
     year: "2021",
     org: "Brandlete",
-    title: "VP Partnerships / Founding Member",
+    title: "VP Partnerships / Founding Director",
     metric: "Sports Org OS & Athlete Development Engine",
     details: [
       "Co-founded the connected operating system for coaches, athletes, families, and sports orgs.",
