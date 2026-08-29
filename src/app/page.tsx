@@ -22,7 +22,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 import GoToBottom from "@/components/GoToBottom";
 import {
   awards,
-  FEATURED_VIDEO,
   FEATURED_GUEST_VIDEO,
   podcasts,
   press,
@@ -231,30 +230,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* What's inside — Brandlete-blue outlined pills */}
-          <div className="flex flex-wrap gap-2">
-            {[
-              { label: "Development Plans", href: "https://brandlete.com/platform/athlete-development" },
-              { label: "Insights & Feedback", href: "https://brandlete.com/platform/intelligence" },
-              { label: "Tournaments", href: "https://brandlete.com/capabilities/tournament-director" },
-              { label: "Communications", href: "https://brandlete.com/capabilities/communication-engagement" },
-              { label: "Registration", href: "https://brandlete.com/capabilities/registration-forms" },
-              { label: "Athlete Profiles", href: "https://brandlete.com/capabilities/athlete-development-record" },
-              { label: "Max · AI Assistant", href: "https://brandlete.com/platform/max" },
-            ].map((f) => (
-              <a
-                key={f.label}
-                href={f.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`${f.label} on brandlete.com (opens in a new tab)`}
-                className="inline-flex items-center rounded-full border border-[#00ccff]/45 bg-[#00ccff]/5 px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-zinc-800 backdrop-blur-md transition-colors hover:border-[#00ccff] hover:bg-[#00ccff]/15 hover:text-black dark:text-zinc-200 dark:hover:text-white"
-              >
-                {f.label}
-              </a>
-            ))}
-          </div>
-
           <figure className="flex flex-col gap-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
               <BrandleteVideo
@@ -438,14 +413,6 @@ export default function Home() {
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Podcasts
           </h2>
-          <figure className="flex flex-col gap-2">
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
-              <VideoPlayer id={FEATURED_VIDEO.id} start={FEATURED_VIDEO.start} title={FEATURED_VIDEO.title} />
-            </div>
-            <figcaption className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-white">
-              {FEATURED_VIDEO.title}
-            </figcaption>
-          </figure>
           <figure className="flex flex-col gap-2">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10">
               <VideoPlayer id={FEATURED_GUEST_VIDEO.id} start={FEATURED_GUEST_VIDEO.start} title={FEATURED_GUEST_VIDEO.title} />

@@ -402,6 +402,34 @@ export type PressItem = { source: string; title: string; href: string; logo: str
 
 export const press: PressItem[] = [
   {
+    source: "Empire State Entrepreneurs",
+    title: "John Osberg of WNY PGA — entrepreneur, athlete, growth strategist",
+    href: "https://empirestateentrepreneurs.transistor.fm/s2/7",
+    logo: "/logos/news-ese.png",
+    fallback: "/logos/news-ese.png",
+  },
+  {
+    source: "Clark Dever",
+    title: "Bad Golf Business School: Startup Lessons from the Fairway",
+    href: "https://www.clarkdever.com/projects/bad-golf-business-school",
+    logo: logoDev("clarkdever.com"),
+    fallback: "/logos/news-clarkdever.png",
+  },
+  {
+    source: "Buffalo Business First",
+    title: "Healthiest Employers of Western New York 2024",
+    href: "https://www.bizjournals.com/buffalo/news/2024/08/23/healthiest-employers-western-new-york-2024-winners.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
+  {
+    source: "Buffalo Business First",
+    title: "John Osberg & Brandlete in Buffalo Business First",
+    href: "https://www.bizjournals.com/buffalo/inno/stories/news/2022/09/02/brandlete-buffalo-startup-sports-social-media.html",
+    logo: logoDev("bizjournals.com"),
+    fallback: "/logos/news-biz.png",
+  },
+  {
     source: "PGA REACH WNY",
     title: "John Osberg Named PGA REACH WNY Trustee",
     href: "https://westernnewyork.pga.com/news/john-osberg-named-as-pga-reach-wny-trustee/",
@@ -428,27 +456,6 @@ export const press: PressItem[] = [
     href: "https://nysga.org/communications-news/nysga-partners-with-buffalo-based-oncore-golf-technology",
     logo: logoDev("nysga.org"),
     fallback: "/logos/nysga.png",
-  },
-  {
-    source: "Empire State Entrepreneurs",
-    title: "John Osberg of WNY PGA — entrepreneur, athlete, growth strategist",
-    href: "https://empirestateentrepreneurs.transistor.fm/s2/7",
-    logo: "/logos/news-ese.png",
-    fallback: "/logos/news-ese.png",
-  },
-  {
-    source: "Clark Dever",
-    title: "Bad Golf Business School: Startup Lessons from the Fairway",
-    href: "https://www.clarkdever.com/projects/bad-golf-business-school",
-    logo: logoDev("clarkdever.com"),
-    fallback: "/logos/news-clarkdever.png",
-  },
-  {
-    source: "Buffalo Business First",
-    title: "John Osberg & Brandlete in Buffalo Business First",
-    href: "https://www.bizjournals.com/buffalo/inno/stories/news/2022/09/02/brandlete-buffalo-startup-sports-social-media.html",
-    logo: logoDev("bizjournals.com"),
-    fallback: "/logos/news-biz.png",
   },
   {
     source: "Buffalo Business First",
@@ -482,13 +489,6 @@ export const press: PressItem[] = [
     source: "Buffalo Business First",
     title: "EmergenceTek: Another high-growth software startup in Buffalo",
     href: "https://www.bizjournals.com/buffalo/news/2015/05/02/emergencetek-another-high-growth-software-startup.html",
-    logo: logoDev("bizjournals.com"),
-    fallback: "/logos/news-biz.png",
-  },
-  {
-    source: "Buffalo Business First",
-    title: "Healthiest Employers of Western New York 2024",
-    href: "https://www.bizjournals.com/buffalo/news/2024/08/23/healthiest-employers-western-new-york-2024-winners.html",
     logo: logoDev("bizjournals.com"),
     fallback: "/logos/news-biz.png",
   },
@@ -596,6 +596,8 @@ export type Civic = { org: string; role: string; logo: string; mark: string; acc
 
 // John's civic leadership & volunteer roles. logo "" falls back to a monogram.
 export const civic: Civic[] = [
+  { org: "Ron Langhorne Golf Foundation", role: "Board Member", logo: "/logos/rlg.png", mark: "RLG", accent: "#166534", url: "https://www.imjustagolfer.com/rlg-foundation", category: "Sports & Golf" },
+  { org: "Compeer of Greater Buffalo", role: "Advisor / Connector", logo: logoDev("compeerbuffalo.org"), mark: "Cp", accent: "#0d9488", url: "https://compeerbuffalo.org", category: "Health & Recovery" },
   { org: "Techstars", role: "Community Organizer & Program Contributor", logo: logoDev("techstars.com"), mark: "T", accent: "#1f1f1f", url: "https://www.techstars.com", category: "Entrepreneurship & Startups" },
   { org: "POWER of OZmosis", role: "Mentor · Connector · Fundraiser", logo: logoDev("powerofozmosis.com"), mark: "OZ", accent: "#1d4ed8", url: "https://www.powerofozmosis.com", category: "Entrepreneurship & Startups" },
   { org: "PGA REACH Western NY", role: "Board of Trustees & Advisor", logo: logoDev("pga.com"), mark: "PGA", accent: "#0b3d2e", url: "https://westernnewyork.pga.com", category: "Sports & Golf" },

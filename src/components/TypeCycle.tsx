@@ -26,7 +26,7 @@ export default function TypeCycle() {
     if (!deleting && displayed.length < word.length) {
       t = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 75);
     } else if (!deleting && displayed.length === word.length) {
-      t = setTimeout(() => setDeleting(true), 3000);
+      t = setTimeout(() => setDeleting(true), 5000);
     } else if (deleting && displayed.length > 0) {
       t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
     } else {
