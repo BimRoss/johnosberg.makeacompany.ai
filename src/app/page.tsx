@@ -245,14 +245,14 @@ export default function Home() {
         </section>
 
         {/* Stats */}
-        <section className="reveal-3 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10 md:grid-cols-4">
+        <section className="reveal-3 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-lg shadow-[#00ccff]/30 ring-1 ring-[#04070e]/15 md:grid-cols-4">
           {stats.map((s) => (
             <StatTilt key={s.label}>
-              <div className="flex h-full flex-col items-center justify-center bg-white px-5 py-7 text-center dark:bg-zinc-900">
-                <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-zinc-900 dark:text-white md:text-4xl">
+              <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-5 py-7 text-center">
+                <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-[#04070e] md:text-4xl">
                   <CountUp value={s.value} />
                 </div>
-                <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400">
+                <div className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#04070e]/75">
                   {s.label}
                 </div>
               </div>
