@@ -9,10 +9,10 @@
   /* Brandlete blue — the single brand accent used across the site. */
   --brand: #00ccff;
   --brand-deep: #0088cc;
-  /* Matches the backdrop photo's bottom edge so any uncovered strip on iOS
-     (collapsing toolbars shrink a position:fixed element) blends in instead
-     of flashing white. */
-  --backdrop-base: #0a1220;
+  /* Light editorial canvas. Content below the hero now sits directly on this
+     surface (the photo only covers the hero), so in light mode it must be light
+     for the dark body text to read. Also the iOS bottom-strip fill color. */
+  --backdrop-base: #eef2f7;
 }
 
 .dark {
