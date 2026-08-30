@@ -65,105 +65,97 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Sports backdrop — empty-stadium plate, day/night per theme */
+/* Fixed editorial canvas — a stable deep surface behind the whole page.
+   iOS note: anchored to the top and sized to 100lvh so the toolbar-retract
+   strip at the bottom of a long page is always painted, never a black band. */
 .backdrop {
   position: fixed;
-  /* iOS Safari lays fixed elements against the small/dynamic viewport. At the
-     bottom of a long page (~15000px) the toolbar retracts and exposes a strip
-     below a bottom-anchored layer, which fell through to html's dark base and
-     read as a black band under the footer. Anchoring to the top and sizing to
-     100lvh (the large, toolbar-hidden viewport) makes the layer pre-cover the
-     tallest the visual viewport can ever get, so that strip is always painted. */
   top: 0;
   left: 0;
   right: 0;
   height: 100vh;
   height: 100lvh;
-  background-color: var(--backdrop-base);
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(0, 136, 204, 0.06), transparent 60%),
+    var(--backdrop-base);
+}
+.dark .backdrop {
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(0, 204, 255, 0.08), transparent 60%),
+    var(--backdrop-base);
+}
+
+/* Hero atmosphere — absolutely positioned at the document top so the sports
+   photo scrolls away with the hero instead of pinning to the viewport. Below
+   the hero, content sits on the calm fixed canvas above. */
+.hero-atmos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 94vh;
+  height: 94lvh;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
-.backdrop-img {
+.hero-atmos-img {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center 24%;
   transition: opacity 0.5s ease;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 34%, transparent 96%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 34%, transparent 96%);
 }
 
-.backdrop-light {
+.hero-atmos-light {
   background-image: url("/bg-brand-light-v2.jpg");
-  opacity: 1;
+  opacity: 0.85;
 }
 
-.backdrop-dark {
-  /* High-res twilight golf hero (v5): 2816x1536 render, sweeping green toward a
-     glowing clubhouse under a fiery orange horizon. Fill the viewport, center it,
-     no zoom past cover, no reframe, no filter. */
+.hero-atmos-dark {
+  /* Twilight golf hero (v5), dimmed as atmosphere behind the hero only. */
   background-image: url("/bg-brand-dark-v5.jpg");
-  background-size: cover;
-  background-position: center;
   opacity: 0;
 }
 
-.dark .backdrop-light {
+.dark .hero-atmos-light {
   opacity: 0;
 }
 
-.dark .backdrop-dark {
-  opacity: 1;
+.dark .hero-atmos-dark {
+  opacity: 0.5;
 }
 
-/* Legibility scrim — keeps the centered column readable in both themes */
-.backdrop-scrim {
+/* Legibility scrim over the hero photo — keeps the hero text crisp while the
+   photo fades into the canvas. */
+.hero-atmos-scrim {
   position: absolute;
   inset: 0;
   background:
-    /* Strong cool wash concentrated at the top, where all the on-photo text
-       lives, so dark text reads cleanly on the bright facility photo. Fades out
-       by ~70% so the lower image keeps its color. */
-    radial-gradient(130% 95% at 50% 10%, rgba(244, 247, 251, 0.72), rgba(244, 247, 251, 0.36) 40%, transparent 72%),
-    linear-gradient(
-      180deg,
-      rgba(244, 247, 251, 0.42) 0%,
-      rgba(244, 247, 251, 0.24) 50%,
-      rgba(244, 247, 251, 0.58) 100%
-    );
+    radial-gradient(95% 62% at 26% 30%, rgba(244, 247, 251, 0.82), rgba(244, 247, 251, 0.32) 55%, transparent 78%),
+    radial-gradient(120% 90% at 50% 2%, rgba(255, 255, 255, 0.6), rgba(244, 247, 251, 0.28) 42%, transparent 74%),
+    linear-gradient(180deg, rgba(244, 247, 251, 0.36) 0%, rgba(244, 247, 251, 0.2) 45%, transparent 100%);
 }
 
-.dark .backdrop-scrim {
+.dark .hero-atmos-scrim {
   background:
-    /* Cinematic blue-black cast — a faint brand-cyan glow up top, deepening to
-       near-black at the fold so the content column stays legible. */
-    radial-gradient(120% 85% at 50% 8%, rgba(0, 204, 255, 0.10), transparent 55%),
-    linear-gradient(
-      180deg,
-      rgba(4, 7, 14, 0.50) 0%,
-      rgba(4, 7, 14, 0.36) 45%,
-      rgba(4, 7, 14, 0.78) 100%
-    );
+    radial-gradient(115% 70% at 50% 0%, rgba(0, 204, 255, 0.16), transparent 52%),
+    linear-gradient(180deg, rgba(4, 7, 14, 0.58) 0%, rgba(4, 7, 14, 0.42) 34%, transparent 100%);
 }
 
-/* Text that sits directly on the backdrop photo (hero block + section labels).
-   A soft halo keeps it readable over a darker image without washing the
-   photo back out. Light mode gets a light halo behind dark text; dark mode a
-   dark halo behind light text. */
+/* Text over the hero photo band. Now that the content sits on a stable canvas,
+   this is a light touch rather than a heavy halo crutch. */
 .on-photo {
-  /* Crisp light outline + soft halo so the blue text reads sharply against the
-     busy ice-rink photo instead of blending into it. */
-  text-shadow:
-    0 0 1px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(255, 255, 255, 0.95),
-    0 0 6px rgba(255, 255, 255, 0.8),
-    0 0 16px rgba(244, 247, 251, 0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .dark .on-photo {
-  text-shadow:
-    0 1px 2px rgba(4, 7, 14, 0.78),
-    0 0 14px rgba(4, 7, 14, 0.6);
+  text-shadow: 0 1px 3px rgba(4, 7, 14, 0.55);
 }
 
 /* Hero name — a living cyan gradient with a real glow so it jumps off the page
@@ -374,4 +366,72 @@ body::after {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ===== Editorial system ===== */
+
+/* Section header: a small brand eyebrow with a short accent rule, so every
+   section opens with the same clear, quiet rhythm. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-ibm-plex), ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--brand-deep);
+}
+.dark .eyebrow {
+  color: var(--brand);
+}
+.eyebrow::before {
+  content: "";
+  width: 1.6rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--brand), transparent);
+}
+
+/* Subtle raised surface for the editorial cards and stat panels. */
+.panel {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(4, 7, 14, 0.1);
+  backdrop-filter: blur(10px);
+}
+.dark .panel {
+  background: rgba(9, 14, 24, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Uniform proof-strip chip so the badges read as one calm row, not button soup. */
+.proof-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(4, 7, 14, 0.14);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-ibm-plex), ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #1f2937;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+.proof-chip:hover {
+  border-color: var(--brand);
+  transform: translateY(-1px);
+}
+.dark .proof-chip {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #d5dee8;
+}
+.dark .proof-chip:hover {
+  border-color: var(--brand);
+  color: #fff;
 }

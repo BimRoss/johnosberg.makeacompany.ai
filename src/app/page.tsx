@@ -43,24 +43,16 @@ export default function Home() {
       <CursorTrail />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-8 pt-14 text-center sm:gap-14 sm:px-8 md:gap-20 md:pb-10 md:pt-20"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-16 px-5 pb-8 pt-20 sm:gap-20 sm:px-8 md:gap-28 md:pb-10 md:pt-28"
       >
         {/* Hero */}
-        <section className="reveal flex flex-col items-center gap-8 text-center">
-          <div className="shrink-0">
-            <div className="relative aspect-[4/5] w-44 overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/15 sm:w-52 md:w-60">
-              <Image
-                src="/headshot-v2.png"
-                alt={SITE_NAME}
-                fill
-                priority
-                sizes="240px"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="min-w-0">
-            <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl">
+        <section className="reveal flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
+          {/* Text column */}
+          <div className="order-2 flex min-w-0 flex-col items-start text-left md:order-1 md:flex-1">
+            <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
+              Partnerships · Growth · Sports Tech
+            </span>
+            <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[4.4rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
                 target="_blank"
@@ -71,60 +63,89 @@ export default function Home() {
                 John Osberg
               </a>
             </h1>
-            <div className="mt-4 sm:mt-5">
-              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-[#015f92] dark:text-[#00ccff] sm:text-2xl md:whitespace-nowrap">
-                VP of Partnerships &amp; Founding Director{" "}
-                <span className="whitespace-nowrap">
-                  <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
-                  <a
-                    href="https://www.brandlete.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Visit brandlete.com (opens in a new tab)"
-                    aria-label="Brandlete (opens in a new tab)"
-                    className="group inline-flex items-center gap-1.5 align-middle transition-opacity hover:opacity-80"
+            <p className="on-photo mt-5 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
+              VP of Partnerships &amp; Founding Director{" "}
+              <span className="inline-flex items-center gap-1.5 whitespace-nowrap align-middle">
+                <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
+                <a
+                  href="https://www.brandlete.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit brandlete.com (opens in a new tab)"
+                  aria-label="Brandlete (opens in a new tab)"
+                  className="group inline-flex items-center gap-1.5 align-middle transition-opacity hover:opacity-80"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/brandlete-logo-light.png"
+                    alt="Brandlete"
+                    className="inline h-7 w-auto dark:hidden sm:h-8"
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/brandlete-logo-dark.png"
+                    alt="Brandlete"
+                    className="hidden h-7 w-auto dark:block sm:h-8"
+                  />
+                  <span
+                    aria-hidden
+                    className="text-lg font-bold leading-none text-[#00ccff] transition-transform group-hover:translate-x-0.5 sm:text-xl"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/brandlete-logo-light.png"
-                      alt="Brandlete"
-                      className="inline h-7 w-auto dark:hidden sm:h-8"
-                    />
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/brandlete-logo-dark.png"
-                      alt="Brandlete"
-                      className="hidden h-7 w-auto dark:block sm:h-8"
-                    />
-                    <span
-                      aria-hidden
-                      className="text-lg font-bold leading-none text-[#00ccff] transition-transform group-hover:translate-x-0.5 sm:text-xl"
-                    >
-                      ↗
-                    </span>
-                  </a>
-                </span>
-              </p>
-            </div>
+                    ↗
+                  </span>
+                </a>
+              </span>
+            </p>
             <TypeCycle />
+
+            {/* Primary actions */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <BookCallBtn />
+              <a
+                href="https://www.linkedin.com/in/johnosberg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-sm border border-[#0a66c2]/60 bg-[#0a66c2]/10 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#0a66c2] backdrop-blur-md transition-colors hover:bg-[#0a66c2] hover:text-white dark:border-[#4d9fe8]/50 dark:text-[#66b2ff] dark:hover:bg-[#0a66c2] dark:hover:text-white"
+              >
+                <LinkedInIcon className="h-4 w-4 shrink-0" />
+                Let&apos;s Connect
+                <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+              </a>
+            </div>
             <a
               href="https://www.linkedin.com/in/johnosberg/details/recommendations/"
               target="_blank"
               rel="noopener noreferrer"
-              className="on-photo group mt-6 inline-flex w-fit items-center gap-2 font-mono text-sm font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:mt-7 sm:text-base"
+              className="on-photo group mt-5 inline-flex w-fit items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:text-sm"
             >
               <span aria-hidden>⭐</span>
               Endorsed by 134+ Leaders
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
+
+          {/* Photo column */}
+          <div className="order-1 shrink-0 md:order-2">
+            <div className="relative aspect-[4/5] w-48 overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15 sm:w-56 md:w-72">
+              <Image
+                src="/headshot-v2.png"
+                alt={SITE_NAME}
+                fill
+                priority
+                sizes="288px"
+                className="object-cover"
+              />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#00ccff]/25"
+              />
+            </div>
+          </div>
         </section>
 
-        {/* Summary + CTA */}
-        <section className="reveal-2 -mt-6 flex flex-col gap-7 md:-mt-8">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <BookCallBtn />
-            <span aria-hidden className="hidden w-3 shrink-0 sm:block" />
+        {/* Proof strip */}
+        <section className="reveal-2 -mt-6 flex flex-col gap-4 md:-mt-10">
+          <div className="flex flex-wrap items-center gap-2.5">
             {socials.map(({ label, href, Icon, external }) => (
               <a
                 key={label}
@@ -132,51 +153,41 @@ export default function Home() {
                 {...(external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="on-photo inline-flex items-center gap-2 border border-[#00ccff]/55 bg-white/30 px-4 py-3 font-mono text-xs font-medium text-zinc-900 backdrop-blur-md transition-colors hover:border-[#00ccff] hover:text-black dark:border-[#00ccff]/45 dark:bg-transparent dark:font-normal dark:text-zinc-200 dark:hover:border-[#00ccff] dark:hover:text-white"
+                className="proof-chip"
               >
-                <Icon className="h-4 w-4 shrink-0" />
-                <span className="hidden sm:inline">{label}</span>
+                <Icon className="h-3.5 w-3.5 shrink-0" />
+                {label}
               </a>
             ))}
             <a
               href="https://www.bizjournals.com/buffalo/news/2019/04/01/buffalo-2019-30-under-30-winners-wny.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-50/80 px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-amber-900 backdrop-blur-md transition-colors hover:border-amber-500/80 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-200 dark:hover:border-amber-400/60"
+              className="proof-chip"
             >
               <span aria-hidden>🏆</span>
-              <span className="hidden sm:inline">30 Under 30</span>
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+              30 Under 30
+              <span aria-hidden className="opacity-50">↗</span>
             </a>
             <a
               href="https://westernnewyork.pga.com/usa-national-championships/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-50/80 px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-amber-900 backdrop-blur-md transition-colors hover:border-amber-500/80 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-200 dark:hover:border-amber-400/60"
+              className="proof-chip"
             >
               <span aria-hidden>🏆</span>
-              <span className="hidden sm:inline">Jack Nicklaus National Champion</span>
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/johnosberg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#0a66c2] px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-[#0a66c2]/25 transition-all hover:-translate-y-0.5 hover:bg-[#0e76d6]"
-            >
-              <LinkedInIcon className="h-4 w-4 shrink-0" />
-              <span className="hidden sm:inline">Let&apos;s Connect on LinkedIn</span>
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+              Jack Nicklaus National Champion
+              <span aria-hidden className="opacity-50">↗</span>
             </a>
             <a
               href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#0a66c2] px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg shadow-[#0a66c2]/25 transition-all hover:-translate-y-0.5 hover:bg-[#0e76d6]"
+              className="proof-chip"
             >
-              <LinkedInIcon className="h-4 w-4 shrink-0" />
-              <span className="hidden sm:inline">Check out my Newsletter, &quot;Bigger Than Sports&quot;</span>
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+              <span aria-hidden>📩</span>
+              Newsletter: &ldquo;Bigger Than Sports&rdquo;
+              <span aria-hidden className="opacity-50">↗</span>
             </a>
           </div>
         </section>
@@ -254,7 +265,7 @@ export default function Home() {
 
         {/* Career timeline */}
         <section id="timeline" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Career at a glance
           </h2>
           <CareerTimeline />
@@ -262,7 +273,7 @@ export default function Home() {
 
         {/* The Numbers */}
         <section className="reveal-on-scroll flex flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             The Numbers
           </h2>
           <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-4">
@@ -283,7 +294,7 @@ export default function Home() {
 
         {/* Experience */}
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Experience
           </h2>
           <div className="flex flex-col">
@@ -328,7 +339,7 @@ export default function Home() {
 
         {/* Tools & technology */}
         <section id="skills" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Tools & technology
           </h2>
           <SkillsGrid />
@@ -336,7 +347,7 @@ export default function Home() {
 
         {/* Brands */}
         <section id="partnerships" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Partnerships built with
           </h2>
           <PartnershipsGrid />
@@ -344,7 +355,7 @@ export default function Home() {
 
         {/* Civic & nonprofit */}
         <section id="civic" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Civic leadership & volunteer work
           </h2>
           <CivicGrid />
@@ -353,7 +364,7 @@ export default function Home() {
         {/* Recommendations */}
         <section id="recommendations" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            <h2 className="eyebrow on-photo">
               Endorsements
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
@@ -365,7 +376,7 @@ export default function Home() {
 
         {/* In the news */}
         <section id="news" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             In the news
           </h2>
           <div className="flex flex-col">
@@ -404,7 +415,7 @@ export default function Home() {
 
         {/* Awards & honors */}
         <section id="awards" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Awards & honors
           </h2>
           <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
@@ -435,7 +446,7 @@ export default function Home() {
 
         {/* Podcasts */}
         <section id="podcasts" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+          <h2 className="eyebrow on-photo">
             Podcasts
           </h2>
           <figure className="flex flex-col gap-2">
