@@ -8,10 +8,11 @@ const PHRASES = [
   "Lifelong Athlete.",
   "Revenue Generator.",
   "Partnership Builder.",
-  "Deal Closer.",
+  "Door Opener.",
   "Network Architect.",
   "Growth Driver.",
   "Dot Connector.",
+  "Girl Dad.",
 ];
 
 export default function TypeCycle() {
