@@ -45,8 +45,8 @@ export default function CareerTimeline() {
     return () => io.disconnect();
   }, []);
 
-  const maxRev = Math.max(...milestones.map((m) => m.revenueK));
-  const size = (k: number) => 12 + Math.round((k / maxRev) * 12); // 12–24px dot
+  // Every stop is the same size — the active one gets a small, fixed bump.
+  const DOT = 16;
 
   const current = milestones[active];
 
@@ -66,7 +66,6 @@ export default function CareerTimeline() {
         />
         <div className="relative flex items-start justify-between">
           {milestones.map((m, i) => {
-            const d = size(m.revenueK);
             const on = i === active;
             return (
               <button
@@ -87,8 +86,8 @@ export default function CareerTimeline() {
                         : "bg-white ring-black/15 group-hover:ring-[#00ccff]/50 dark:bg-zinc-800 dark:ring-white/20"
                     }`}
                     style={{
-                      width: on ? d + 6 : d,
-                      height: on ? d + 6 : d,
+                      width: on ? DOT + 6 : DOT,
+                      height: on ? DOT + 6 : DOT,
                       opacity: drawn ? 1 : 0,
                       transform: drawn ? "scale(1)" : "scale(0.3)",
                       transitionDelay: `${i * 120 + 300}ms`,
@@ -111,25 +110,15 @@ export default function CareerTimeline() {
       {/* Detail card for the active stop */}
       <div
         key={active}
-        className="anim-fade-up mx-auto flex w-full max-w-xl flex-col items-center gap-2 rounded-xl border border-black/10 bg-white/70 p-6 text-center backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55"
+        className="anim-fade-up mx-auto flex w-full max-w-md flex-col items-center gap-1.5 rounded-xl border border-black/10 bg-white/70 px-5 py-4 text-center backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55"
       >
-        <div className="flex flex-col items-center gap-1">
-          <span className="font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-900 dark:text-white">
-            {current.org}
-          </span>
-          <span className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500">
-            {current.year}
-          </span>
-        </div>
+        <span className="font-[family-name:var(--font-sora)] text-base font-bold text-zinc-900 dark:text-white">
+          {current.org}
+        </span>
         <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           {current.title}
         </span>
-        <ul className="mt-1 flex max-w-md flex-col gap-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          {current.details.map((d) => (
-            <li key={d}>{d}</li>
-          ))}
-        </ul>
-        <span className="mt-2 inline-flex items-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/10 px-3 py-1 font-mono text-xs font-semibold text-[#0088cc] dark:text-[#00ccff]">
+        <span className="mt-1 inline-flex items-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/10 px-3 py-1 font-mono text-[11px] font-semibold text-[#0088cc] dark:text-[#00ccff]">
           {current.metric}
         </span>
       </div>
