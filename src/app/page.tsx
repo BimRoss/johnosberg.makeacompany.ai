@@ -106,7 +106,7 @@ export default function Home() {
               className="on-photo group mt-6 inline-flex w-fit items-center gap-2 font-mono text-sm font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:mt-7 sm:text-base"
             >
               <span aria-hidden>⭐</span>
-              Endorsed by 134+ top professionals
+              Endorsed by 134+ Leaders
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
@@ -338,7 +338,7 @@ export default function Home() {
               Endorsements
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
-              Endorsed by 134+ top professionals.
+              Endorsed by 134+ Leaders.
             </p>
           </div>
           <Testimonials />
