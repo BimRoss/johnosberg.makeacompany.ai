@@ -66,13 +66,13 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="John Osberg on LinkedIn (opens in a new tab)"
-                className="text-[#0088cc] transition-opacity hover:opacity-80 dark:text-[#00ccff]"
+                className="name-hero transition-opacity hover:opacity-80"
               >
                 John Osberg
               </a>
             </h1>
             <div className="mt-4 sm:mt-5">
-              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-[#0088cc] dark:text-[#00ccff] sm:text-2xl md:whitespace-nowrap">
+              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-[#015f92] dark:text-[#00ccff] sm:text-2xl md:whitespace-nowrap">
                 VP of Partnerships &amp; Founding Director{" "}
                 <span className="whitespace-nowrap">
                   <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
