@@ -46,7 +46,7 @@ export default function Home() {
         className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-8 pt-14 sm:gap-14 sm:px-8 md:gap-20 md:pb-10 md:pt-20"
       >
         {/* Hero */}
-        <section className="reveal flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-12">
+        <section className="reveal flex flex-col items-center gap-8 text-center">
           <div className="shrink-0">
             <div className="relative aspect-[4/5] w-44 overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/15 sm:w-52 md:w-60">
               <Image
@@ -61,10 +61,18 @@ export default function Home() {
           </div>
           <div className="min-w-0">
             <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.95] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-6xl">
-              John Osberg
+              <a
+                href="https://www.linkedin.com/in/johnosberg"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="John Osberg on LinkedIn (opens in a new tab)"
+                className="transition-opacity hover:opacity-80"
+              >
+                John Osberg
+              </a>
             </h1>
             <div className="mt-4 sm:mt-5">
-              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-900 dark:text-white sm:text-2xl">
+              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-900 dark:text-white sm:text-2xl md:whitespace-nowrap">
                 VP of Partnerships &amp; Founding Director{" "}
                 <span className="whitespace-nowrap">
                   <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
