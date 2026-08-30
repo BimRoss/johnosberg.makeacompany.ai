@@ -238,10 +238,10 @@ export default function Home() {
             <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-[#0088cc] dark:text-[#00ccff] sm:text-4xl">
               What we&apos;ve launched at Brandlete
             </h2>
-            <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-[#0088cc] dark:text-[#00ccff] sm:text-xl">
+            <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-black dark:text-white sm:text-xl">
               The Athlete Development Driven Sports Program Operating System.
             </p>
-            <p className="on-photo mx-auto max-w-3xl text-base font-medium leading-7 text-[#0088cc] dark:text-[#00ccff] sm:text-[17px] sm:leading-8">
+            <p className="on-photo mx-auto max-w-3xl text-base font-medium leading-7 text-black dark:text-white sm:text-[17px] sm:leading-8">
               One connected platform for the coaches, athletes, families, and
               organizations that run youth sports. Development plans, insights and
               feedback, tournaments, communications, registration, and full athlete
