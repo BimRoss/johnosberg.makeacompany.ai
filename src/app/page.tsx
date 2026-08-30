@@ -244,28 +244,33 @@ export default function Home() {
           </figure>
         </section>
 
-        {/* Stats */}
-        <section className="reveal-3 mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-4">
-          {stats.map((s) => (
-            <StatTilt key={s.label}>
-              <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-4 text-center">
-                <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#04070e] md:text-3xl">
-                  <CountUp value={s.value} />
-                </div>
-                <div className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#04070e]/75">
-                  {s.label}
-                </div>
-              </div>
-            </StatTilt>
-          ))}
-        </section>
-
         {/* Career timeline */}
         <section id="timeline" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
             Career at a glance
           </h2>
           <CareerTimeline />
+        </section>
+
+        {/* The Numbers */}
+        <section className="reveal-on-scroll flex flex-col gap-6">
+          <h2 className="on-photo font-mono text-sm font-semibold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-300">
+            The Numbers
+          </h2>
+          <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-4">
+            {stats.map((s) => (
+              <StatTilt key={s.label}>
+                <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-4 text-center">
+                  <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#04070e] md:text-3xl">
+                    <CountUp value={s.value} />
+                  </div>
+                  <div className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#04070e]/75">
+                    {s.label}
+                  </div>
+                </div>
+              </StatTilt>
+            ))}
+          </div>
         </section>
 
         {/* Experience */}
