@@ -43,7 +43,7 @@ export default function Home() {
       <CursorTrail />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-8 pt-14 sm:gap-14 sm:px-8 md:gap-20 md:pb-10 md:pt-20"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-5 pb-8 pt-14 text-center sm:gap-14 sm:px-8 md:gap-20 md:pb-10 md:pt-20"
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-center gap-8 text-center">
@@ -122,7 +122,7 @@ export default function Home() {
 
         {/* Summary + CTA */}
         <section className="reveal-2 -mt-6 flex flex-col gap-7 md:-mt-8">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <BookCallBtn />
             <span aria-hidden className="hidden w-3 shrink-0 sm:block" />
             {socials.map(({ label, href, Icon, external }) => (
@@ -230,7 +230,7 @@ export default function Home() {
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-[#0088cc] dark:text-[#00ccff] sm:text-xl">
               The Athlete Development Driven Sports Program Operating System.
             </p>
-            <p className="on-photo max-w-3xl text-base font-medium leading-7 text-zinc-900 dark:font-normal dark:text-zinc-300 sm:text-[17px] sm:leading-8">
+            <p className="on-photo mx-auto max-w-3xl text-base font-medium leading-7 text-zinc-900 dark:font-normal dark:text-zinc-300 sm:text-[17px] sm:leading-8">
               One connected platform for the coaches, athletes, families, and
               organizations that run youth sports. Development plans, insights and
               feedback, tournaments, communications, registration, and full athlete
@@ -481,11 +481,11 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="on-photo flex flex-col gap-2 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <footer className="on-photo flex flex-col items-center gap-2 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
             <span>© {new Date().getFullYear()} John Osberg</span>
           </div>
-          <p className="flex flex-wrap items-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
+          <p className="flex flex-wrap items-center justify-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
             Site built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
             <a
               href="https://makeacompany.ai"
