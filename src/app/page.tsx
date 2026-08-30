@@ -66,13 +66,13 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="John Osberg on LinkedIn (opens in a new tab)"
-                className="transition-opacity hover:opacity-80"
+                className="text-[#0088cc] transition-opacity hover:opacity-80 dark:text-[#00ccff]"
               >
                 John Osberg
               </a>
             </h1>
             <div className="mt-4 sm:mt-5">
-              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-900 dark:text-white sm:text-2xl md:whitespace-nowrap">
+              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-[#0088cc] dark:text-[#00ccff] sm:text-2xl md:whitespace-nowrap">
                 VP of Partnerships &amp; Founding Director{" "}
                 <span className="whitespace-nowrap">
                   <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
@@ -190,7 +190,7 @@ export default function Home() {
                   <span aria-hidden className="hire-dot inline-block h-1.5 w-1.5 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
                   Now hiring
                 </span>
-                <h2 className="on-photo font-[family-name:var(--font-sora)] text-lg font-extrabold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-xl">
+                <h2 className="on-photo font-[family-name:var(--font-sora)] text-lg font-extrabold leading-tight tracking-tight text-[#0088cc] dark:text-[#00ccff] sm:text-xl">
                   Brandlete is hiring!
                 </h2>
                 <p className="on-photo text-[13px] font-medium text-zinc-700 dark:text-zinc-300">
@@ -224,13 +224,13 @@ export default function Home() {
         {/* Brandlete — #1 focus */}
         <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+            <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-[#0088cc] dark:text-[#00ccff] sm:text-4xl">
               What we&apos;ve launched at Brandlete
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-[#0088cc] dark:text-[#00ccff] sm:text-xl">
               The Athlete Development Driven Sports Program Operating System.
             </p>
-            <p className="on-photo mx-auto max-w-3xl text-base font-medium leading-7 text-zinc-900 dark:font-normal dark:text-zinc-300 sm:text-[17px] sm:leading-8">
+            <p className="on-photo mx-auto max-w-3xl text-base font-medium leading-7 text-[#0088cc] dark:text-[#00ccff] sm:text-[17px] sm:leading-8">
               One connected platform for the coaches, athletes, families, and
               organizations that run youth sports. Development plans, insights and
               feedback, tournaments, communications, registration, and full athlete
@@ -297,7 +297,13 @@ export default function Home() {
                 <div className="flex items-start gap-3 md:w-1/3 md:shrink-0">
                   <RoleLogo role={r} />
                   <div className="min-w-0">
-                    <div className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
+                    <div
+                      className={`font-[family-name:var(--font-sora)] text-lg font-semibold ${
+                        r.org.includes("Brandlete")
+                          ? "text-[#0088cc] dark:text-[#00ccff]"
+                          : "text-zinc-900 dark:text-white"
+                      }`}
+                    >
                       {r.org}
                     </div>
                     <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
@@ -379,7 +385,13 @@ export default function Home() {
                     {p.source}
                   </span>
                 </span>
-                <span className="flex-1 font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white sm:text-lg">
+                <span
+                  className={`flex-1 font-[family-name:var(--font-sora)] text-base font-semibold transition-colors sm:text-lg ${
+                    p.title.includes("Brandlete")
+                      ? "text-[#0088cc] dark:text-[#00ccff]"
+                      : "text-zinc-900 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white"
+                  }`}
+                >
                   {p.title}
                 </span>
                 <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5 group-hover:text-zinc-600 dark:group-hover:text-zinc-200">

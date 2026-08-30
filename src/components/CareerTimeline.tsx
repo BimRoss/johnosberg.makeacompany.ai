@@ -112,7 +112,13 @@ export default function CareerTimeline() {
         key={active}
         className="anim-fade-up mx-auto flex w-full max-w-md flex-col items-center gap-1.5 rounded-xl border border-black/10 bg-white/70 px-5 py-4 text-center backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55"
       >
-        <span className="font-[family-name:var(--font-sora)] text-base font-bold text-zinc-900 dark:text-white">
+        <span
+          className={`font-[family-name:var(--font-sora)] text-base font-bold ${
+            current.org.toLowerCase().includes("brandlete")
+              ? "text-[#0088cc] dark:text-[#00ccff]"
+              : "text-zinc-900 dark:text-white"
+          }`}
+        >
           {current.org}
         </span>
         <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
