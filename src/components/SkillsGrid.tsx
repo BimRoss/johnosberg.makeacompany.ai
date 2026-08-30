@@ -10,7 +10,7 @@ function ToolChip({ tool }: { tool: Tool }) {
   const [failed, setFailed] = useState(!tool.logo);
 
   return (
-    <div className="group flex flex-col items-center gap-1.5 rounded-lg border border-black/10 bg-white/70 p-2 text-center backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[#00ccff]/50 hover:shadow-md hover:shadow-[#00ccff]/10 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-[#00ccff]/40">
+    <div className="group flex flex-col items-center gap-1 rounded-lg border border-black/10 bg-white/70 p-1.5 text-center backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[#00ccff]/50 hover:shadow-md hover:shadow-[#00ccff]/10 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-[#00ccff]/40">
       {failed ? (
         <span
           className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md font-[family-name:var(--font-sora)] text-[10px] font-bold"
@@ -49,15 +49,15 @@ export default function SkillsGrid() {
   const shown = active === "All" ? tools : tools.filter((t) => t.category === active);
 
   const chip = (on: boolean) =>
-    `inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.1em] transition-all ${
+    `inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] transition-all ${
       on
         ? "border-transparent text-white shadow-sm"
         : "border-black/15 text-zinc-600 hover:border-black/35 hover:text-zinc-900 dark:border-white/15 dark:text-zinc-400 dark:hover:border-white/40 dark:hover:text-white"
     }`;
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap gap-1.5">
         <button
           type="button"
           onClick={() => setActive("All")}
@@ -88,7 +88,7 @@ export default function SkillsGrid() {
         })}
       </div>
 
-      <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+      <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-9">
         {shown.map((t) => (
           <ToolChip key={t.name} tool={t} />
         ))}

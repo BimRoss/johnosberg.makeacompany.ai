@@ -1,6 +1,6 @@
 export const SITE_URL = "https://johnosberg.com";
 export const SITE_NAME = "John Osberg";
-export const SITE_TITLE = "John Osberg | Growth & Partnerships Leader";
+export const SITE_TITLE = "John Osberg Career Portfolio";
 
 export const HERO_LABEL = "growth · partnerships · revenue";
 

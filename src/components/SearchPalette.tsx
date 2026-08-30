@@ -112,9 +112,9 @@ export default function SearchPalette() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search this site"
-        className="search-pulse group fixed left-4 top-4 z-40 flex items-center gap-2.5 rounded-full border border-[#00ccff]/60 bg-white/85 px-5 py-3 font-mono text-sm font-bold uppercase tracking-[0.14em] text-[#0077aa] shadow-lg shadow-[#00ccff]/25 backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-[#00ccff] hover:bg-white/95 dark:border-[#00ccff]/50 dark:bg-zinc-900/75 dark:text-[#66e0ff] dark:hover:bg-zinc-900/90 sm:left-6 sm:top-6"
+        className="search-pulse group fixed left-4 top-4 z-40 flex items-center gap-1.5 rounded-full border border-[#00ccff]/60 bg-white/85 px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-[#0077aa] shadow-lg shadow-[#00ccff]/25 backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-[#00ccff] hover:bg-white/95 dark:border-[#00ccff]/50 dark:bg-zinc-900/75 dark:text-[#66e0ff] dark:hover:bg-zinc-900/90 sm:left-6 sm:top-6"
       >
-        <svg viewBox="0 0 24 24" className="bolt-flicker h-5 w-5 fill-[#00ccff]" aria-hidden>
+        <svg viewBox="0 0 24 24" className="bolt-flicker h-3.5 w-3.5 fill-[#00ccff]" aria-hidden>
           <path d="M7 2v11h3v9l7-12h-4l4-8z" />
         </svg>
         <span>Search</span>

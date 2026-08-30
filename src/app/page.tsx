@@ -64,7 +64,7 @@ export default function Home() {
               John Osberg
             </h1>
             <div className="mt-4 sm:mt-5">
-              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-800 dark:text-zinc-200 sm:text-2xl">
+              <p className="on-photo font-[family-name:var(--font-sora)] text-xl font-semibold leading-relaxed text-zinc-900 dark:text-white sm:text-2xl">
                 VP of Partnerships &amp; Founding Director{" "}
                 <span className="whitespace-nowrap">
                   <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
@@ -175,26 +175,26 @@ export default function Home() {
 
         {/* Brandlete is hiring — banner */}
         <section className="reveal-2">
-          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/15 via-white/70 to-[#00ccff]/10 p-5 backdrop-blur-md dark:from-[#00ccff]/15 dark:via-zinc-950/70 dark:to-[#0088cc]/15 sm:p-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-              <div className="flex flex-col gap-1">
-                <span className="inline-flex w-fit items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#0088cc] dark:text-[#00ccff]">
-                  <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
+          <div className="hire-glow relative overflow-hidden rounded-xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/15 via-white/70 to-[#00ccff]/10 p-3.5 backdrop-blur-md dark:from-[#00ccff]/15 dark:via-zinc-950/70 dark:to-[#0088cc]/15 sm:p-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+              <div className="flex flex-col gap-0.5">
+                <span className="inline-flex w-fit items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#0088cc] dark:text-[#00ccff]">
+                  <span aria-hidden className="hire-dot inline-block h-1.5 w-1.5 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
                   Now hiring
                 </span>
-                <h2 className="on-photo font-[family-name:var(--font-sora)] text-2xl font-extrabold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
+                <h2 className="on-photo font-[family-name:var(--font-sora)] text-lg font-extrabold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-xl">
                   Brandlete is hiring!
                 </h2>
-                <p className="on-photo text-sm font-medium text-zinc-700 dark:text-zinc-300 sm:text-[15px]">
+                <p className="on-photo text-[13px] font-medium text-zinc-700 dark:text-zinc-300">
                   Two ways in.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:shrink-0 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-2 sm:shrink-0 sm:flex-row sm:items-center">
                 <a
                   href="https://www.brandlete.com/playmakers"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#00ccff] px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/30 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40 sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#00ccff] px-4 py-2.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-zinc-950 shadow-md shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-lg hover:shadow-[#00ccff]/40"
                 >
                   Apply to the Playmaker Network
                   <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -203,7 +203,7 @@ export default function Home() {
                   href="https://www.linkedin.com/jobs/view/4457164770"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#00ccff] bg-transparent px-6 py-3.5 font-[family-name:var(--font-sora)] text-sm font-bold text-[#0088cc] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-[#00ccff]/10 dark:text-[#00ccff] sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#00ccff] bg-transparent px-4 py-2.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-[#0088cc] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-[#00ccff]/10 dark:text-[#00ccff]"
                 >
                   See the open role we&apos;re hiring for
                   <span aria-hidden className="transition-transform group-hover:translate-x-1">↗</span>
@@ -217,7 +217,7 @@ export default function Home() {
         <section id="brandlete" className="reveal-3 flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
-              What I&apos;m co-building at Brandlete
+              What we&apos;ve launched at Brandlete
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-[#0088cc] dark:text-[#00ccff] sm:text-xl">
               The Athlete Development Driven Sports Program Operating System.
@@ -226,7 +226,7 @@ export default function Home() {
               One connected platform for the coaches, athletes, families, and
               organizations that run youth sports. Development plans, insights and
               feedback, tournaments, communications, registration, and full athlete
-              profiles, plus Max, the built-in AI assistant.
+              profiles. Plus Max, our built-in AI assistant coach/admin.
             </p>
           </div>
 
@@ -245,14 +245,14 @@ export default function Home() {
         </section>
 
         {/* Stats */}
-        <section className="reveal-3 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-lg shadow-[#00ccff]/30 ring-1 ring-[#04070e]/15 md:grid-cols-4">
+        <section className="reveal-3 mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-4">
           {stats.map((s) => (
             <StatTilt key={s.label}>
-              <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-5 py-7 text-center">
-                <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-[#04070e] md:text-4xl">
+              <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-4 text-center">
+                <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#04070e] md:text-3xl">
                   <CountUp value={s.value} />
                 </div>
-                <div className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#04070e]/75">
+                <div className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#04070e]/75">
                   {s.label}
                 </div>
               </div>
