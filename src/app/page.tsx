@@ -241,7 +241,7 @@ export default function Home() {
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-black dark:text-white sm:text-xl">
               The Athlete Development Driven Sports Program Operating System.
             </p>
-            <p className="on-photo mx-auto max-w-3xl text-base font-medium leading-7 text-black dark:text-white sm:text-[17px] sm:leading-8">
+            <p className="on-photo max-w-3xl text-base font-medium leading-7 text-black dark:text-white sm:text-[17px] sm:leading-8">
               One connected platform for the coaches, athletes, families, and
               organizations that run youth sports. Development plans, insights and
               feedback, tournaments, communications, registration, and full athlete
