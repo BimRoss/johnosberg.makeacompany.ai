@@ -28,7 +28,7 @@ export function logoDev(domain: string): string {
 }
 
 export const stats = [
-  { value: "$15M+", label: "revenue generated" },
+  { value: "$15M+", label: "financial impact" },
   { value: "$3.1M+", label: "capital raised" },
   { value: "$2.2M+", label: "501c3 funds raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
