@@ -14,7 +14,7 @@ export const LINK_PREVIEW_DESCRIPTION =
 // John's three current seats, org names front-loaded so the important part
 // survives LinkedIn's ~2-line truncation.
 export const OG_DESCRIPTION =
-  "VP of Partnerships at Brandlete, the sports program operating system. Strategic Talent Advisor at Kreuz, boutique staffing and business development. Head of Growth at MakeaCompany, building AI-native software.";
+  "VP of Partnerships at Brandlete, the sports program operating system. Strategic Talent Advisor at Kreuz, boutique staffing and business development. Advisor at MakeaCompany, building AI-native software.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -76,7 +76,7 @@ export const roles: Role[] = [
   },
   {
     org: "MakeaCompany",
-    title: "Growth & GTM / Co-Founder",
+    title: "Advisor",
     period: "Apr 2026 – Present",
     blurb: "",
     logo: "/logos/makeacompany.png",
@@ -360,11 +360,11 @@ export const milestones: { year: string; org: string; title: string; metric: str
   {
     year: "2026",
     org: "MakeaCompany",
-    title: "Co-Founder / Growth & GTM",
+    title: "Advisor",
     metric: "9.8x active users · +880%",
     details: [
-      "Grew active users 9.8x in six weeks (+880%).",
-      "Leading the venture raise; own GTM through revenue.",
+      "Advising on growth and GTM for an AI-native software venture.",
+      "Active users grew 9.8x in six weeks (+880%) over the advisory window.",
     ],
     revenueK: 1000,
   },
