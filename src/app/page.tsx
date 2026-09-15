@@ -276,26 +276,28 @@ export default function Home() {
           <h2 className="eyebrow on-photo">
             The Numbers
           </h2>
-          <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-4">
-            {stats.map((s, i) => (
-              <StatTilt
-                key={s.label}
-                className={
-                  stats.length % 2 !== 0 && i === stats.length - 1
-                    ? "col-span-2 md:col-span-2"
-                    : ""
-                }
-              >
-                <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-4 text-center">
-                  <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#04070e] md:text-3xl">
-                    <CountUp value={s.value} />
+          <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-12">
+            {stats.map((s, i) => {
+              // Balance a 4-over-3 block: top row = 4 tiles at 3/12 each,
+              // bottom row = the remaining 3 at 4/12 each, so both rows fill
+              // evenly instead of stretching one lonely tile.
+              const topRow = stats.length - 3;
+              const desktopSpan = i < topRow ? "md:col-span-3" : "md:col-span-4";
+              const mobileSpan =
+                stats.length % 2 !== 0 && i === stats.length - 1 ? "col-span-2" : "";
+              return (
+                <StatTilt key={s.label} className={`${mobileSpan} ${desktopSpan}`}>
+                  <div className="group flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-5 text-center transition-colors duration-300 hover:bg-[#1ad3ff]">
+                    <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-[#04070e] md:text-4xl">
+                      <CountUp value={s.value} />
+                    </div>
+                    <div className="mt-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#04070e]/75">
+                      {s.label}
+                    </div>
                   </div>
-                  <div className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#04070e]/75">
-                    {s.label}
-                  </div>
-                </div>
-              </StatTilt>
-            ))}
+                </StatTilt>
+              );
+            })}
           </div>
         </section>
 
