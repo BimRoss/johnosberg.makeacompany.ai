@@ -2,7 +2,13 @@
 
 import { useRef, type ReactNode } from "react";
 
-export default function StatTilt({ children }: { children: ReactNode }) {
+export default function StatTilt({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   function onMove(e: React.MouseEvent<HTMLDivElement>) {
@@ -29,7 +35,7 @@ export default function StatTilt({ children }: { children: ReactNode }) {
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="h-full"
+      className={`h-full ${className}`}
       style={{ willChange: "transform" }}
     >
       {children}

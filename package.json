@@ -1,6 +1,6 @@
 {
   "name": "johnosberg.makeacompany.ai",
-  "version": "0.1.213",
+  "version": "0.1.219",
   "private": true,
   "scripts": {
     "dev": "next dev",

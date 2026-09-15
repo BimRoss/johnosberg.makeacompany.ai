@@ -277,8 +277,15 @@ export default function Home() {
             The Numbers
           </h2>
           <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-4">
-            {stats.map((s) => (
-              <StatTilt key={s.label}>
+            {stats.map((s, i) => (
+              <StatTilt
+                key={s.label}
+                className={
+                  stats.length % 2 !== 0 && i === stats.length - 1
+                    ? "col-span-2 md:col-span-2"
+                    : ""
+                }
+              >
                 <div className="flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-4 text-center">
                   <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#04070e] md:text-3xl">
                     <CountUp value={s.value} />

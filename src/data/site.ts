@@ -32,6 +32,9 @@ export const stats = [
   { value: "$3.1M+", label: "capital raised" },
   { value: "$2.2M+", label: "501c3 funds raised" },
   { value: "15+ yrs", label: "growth & partnerships" },
+  { value: "25K+", label: "miles ran" },
+  { value: "35M", label: "LinkedIn impressions" },
+  { value: "40K+", label: "audience & network" },
 ];
 
 // Experience — mirrors John's LinkedIn: same roles, same order (most recent
