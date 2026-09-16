@@ -3,13 +3,18 @@
   "version": "0.1.219",
   "private": true,
   "scripts": {
+    "build": "next build",
     "dev": "next dev",
     "dev:docker": "next dev -p ${PORT:-3000}",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.6",
     "next": "^15.5.19",
     "playwright-core": "^1.61.1",
     "react": "19.1.0",
@@ -21,6 +26,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "tailwindcss": "^4.1.5",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.131.2"
   }
 }

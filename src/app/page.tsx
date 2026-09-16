@@ -310,11 +310,11 @@ export default function Home() {
             {roles.map((r, i) => (
               <div
                 key={r.org}
-                className={`on-photo flex flex-col gap-2 py-5 md:flex-row md:gap-10 md:py-7 ${
+                className={`on-photo flex flex-col gap-1 py-4 md:flex-row md:items-center md:gap-6 ${
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
-                <div className="flex items-start gap-3 md:w-1/3 md:shrink-0">
+                <div className="flex min-w-0 items-center gap-3 md:w-72 md:shrink-0">
                   <RoleLogo role={r} />
                   <div className="min-w-0">
                     <div
@@ -331,12 +331,12 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-2/3">
-                  <div className="text-base font-semibold text-zinc-900 dark:text-zinc-200">
+                <div className="min-w-0 flex-1">
+                  <div className="text-[15px] font-semibold text-zinc-900 dark:text-zinc-200">
                     {r.title}
                   </div>
                   {r.blurb && (
-                    <p className="mt-2 text-[15px] leading-7 text-zinc-900 dark:text-zinc-300">
+                    <p className="mt-1 text-sm leading-6 text-zinc-700 dark:text-zinc-400">
                       {r.blurb}
                     </p>
                   )}
