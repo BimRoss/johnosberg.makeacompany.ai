@@ -14,7 +14,7 @@ export const LINK_PREVIEW_DESCRIPTION =
 // John's three current seats, org names front-loaded so the important part
 // survives LinkedIn's ~2-line truncation.
 export const OG_DESCRIPTION =
-  "VP of Partnerships at Brandlete, the sports program operating system. Strategic Talent Advisor at Kreuz, boutique staffing and business development. Advisor at MakeaCompany, building AI-native software.";
+  "VP of Partnerships at Brandlete, the sports program operating system. 15+ years turning relationships into revenue across sports, tech, and nonprofit.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -66,26 +66,6 @@ export const roles: Role[] = [
     mark: "B",
     accent: "#00ccff",
     url: "https://brandlete.com",
-  },
-  {
-    org: "Kreuz Staffing & Business Development",
-    title: "Strategic Talent Advisor",
-    period: "Jul 2026 – Present",
-    blurb: "Advising on talent strategy and business development for a growing staffing and BD firm.",
-    logo: "/logos/kreuz.png",
-    mark: "K",
-    accent: "#b45309",
-    url: "https://kreuzbd.com",
-  },
-  {
-    org: "MakeaCompany",
-    title: "Advisor",
-    period: "Apr 2026 – Present",
-    blurb: "Advising on growth and GTM for an AI-native software venture; active users grew 9.8x in six weeks.",
-    logo: "/logos/makeacompany.png",
-    mark: "M",
-    accent: "#6366f1",
-    url: "https://makeacompany.ai",
   },
   {
     org: "Ron Langhorne Golf Foundation",
@@ -243,7 +223,7 @@ export const TOOL_CATEGORIES: { name: ToolCategory; color: string }[] = [
   { name: "Golf Tech", color: "#0e7490" },
 ];
 
-export type Tool = { name: string; logo: string; mark: string; accent: string; category: ToolCategory };
+export type Tool = { name: string; logo: string; mark: string; accent: string; category: ToolCategory; url?: string };
 
 export const tools: Tool[] = [
   // AI
@@ -266,6 +246,8 @@ export const tools: Tool[] = [
   { name: "Monday.com", logo: logoDev("monday.com"), mark: "M", accent: "#ff3d57", category: "Collaboration" },
   { name: "Asana", logo: logoDev("asana.com"), mark: "A", accent: "#f06a6a", category: "Collaboration" },
   { name: "Trello", logo: logoDev("trello.com"), mark: "T", accent: "#0079bf", category: "Collaboration" },
+  { name: "Jira", logo: logoDev("jira.com"), mark: "J", accent: "#0052cc", category: "Collaboration", url: "https://www.atlassian.com/software/jira" },
+  { name: "GitHub", logo: logoDev("github.com"), mark: "GH", accent: "#111111", category: "Collaboration", url: "https://github.com" },
   // Creative / marketing
   { name: "Canva", logo: logoDev("canva.com"), mark: "C", accent: "#00c4cc", category: "Creative & Marketing" },
   { name: "Mailchimp", logo: logoDev("mailchimp.com"), mark: "MC", accent: "#eab308", category: "Creative & Marketing" },
@@ -359,17 +341,6 @@ export const milestones: { year: string; org: string; title: string; metric: str
       "Grew sponsorship 275%, retained 97% of partners.",
     ],
     revenueK: 250,
-  },
-  {
-    year: "2026",
-    org: "MakeaCompany",
-    title: "Advisor",
-    metric: "9.8x active users · +880%",
-    details: [
-      "Advising on growth and GTM for an AI-native software venture.",
-      "Active users grew 9.8x in six weeks (+880%) over the advisory window.",
-    ],
-    revenueK: 1000,
   },
 ];
 

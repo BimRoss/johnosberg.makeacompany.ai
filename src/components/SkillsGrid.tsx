@@ -9,8 +9,15 @@ import { tools, TOOL_CATEGORIES, type Tool, type ToolCategory } from "@/data/sit
 function ToolChip({ tool }: { tool: Tool }) {
   const [failed, setFailed] = useState(!tool.logo);
 
+  const Wrapper = tool.url ? "a" : "div";
+  const linkProps = tool.url
+    ? { href: tool.url, target: "_blank", rel: "noopener noreferrer" }
+    : {};
+
   return (
-    <div className="group flex flex-col items-center gap-1 rounded-lg border border-black/10 bg-white/70 p-1.5 text-center backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[#00ccff]/50 hover:shadow-md hover:shadow-[#00ccff]/10 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-[#00ccff]/40">
+    <Wrapper
+      {...linkProps}
+      className="group flex flex-col items-center gap-1 rounded-lg border border-black/10 bg-white/70 p-1.5 text-center backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-[#00ccff]/50 hover:shadow-md hover:shadow-[#00ccff]/10 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-[#00ccff]/40">
       {failed ? (
         <span
           className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md font-[family-name:var(--font-sora)] text-[10px] font-bold"
@@ -35,7 +42,7 @@ function ToolChip({ tool }: { tool: Tool }) {
       <span className="text-[10px] font-medium leading-tight text-zinc-800 transition-colors group-hover:text-zinc-950 dark:text-zinc-300 dark:group-hover:text-white">
         {tool.name}
       </span>
-    </div>
+    </Wrapper>
   );
 }
 
