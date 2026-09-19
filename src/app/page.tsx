@@ -19,6 +19,7 @@ import SkillsGrid from "@/components/SkillsGrid";
 import VideoPlayer from "@/components/VideoPlayer";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
+import LinkedInBadge from "@/components/LinkedInBadge";
 import GoToBottom from "@/components/GoToBottom";
 import {
   awards,
@@ -510,6 +511,19 @@ export default function Home() {
               </a>
             ))}
           </div>
+        </section>
+
+        {/* Connect — live LinkedIn profile badge */}
+        <section id="connect" className="reveal-on-scroll flex scroll-mt-24 flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-1 text-center">
+            <h2 className="eyebrow on-photo">
+              Connect
+            </h2>
+            <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
+              Find me on LinkedIn.
+            </p>
+          </div>
+          <LinkedInBadge />
         </section>
 
         {/* Footer */}
