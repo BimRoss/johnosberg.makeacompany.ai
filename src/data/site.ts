@@ -27,15 +27,23 @@ export function logoDev(domain: string): string {
   return `https://img.logo.dev/${domain}?token=${LOGO_DEV_KEY}&size=128&format=png&retina=true&fallback=404`;
 }
 
-export const stats = [
-  { value: "$15M+", label: "financial impact" },
-  { value: "$3.1M+", label: "capital raised" },
-  { value: "$2.2M+", label: "501c3 funds raised" },
-  { value: "16+ yrs", label: "growth & partnerships" },
-  { value: "25K+", label: "miles ran" },
-  { value: "20.9", label: "WHOOP age" },
-  { value: "35M", label: "LinkedIn impressions" },
-  { value: "40K+", label: "audience & network" },
+export type StatIconKey =
+  | "impact"
+  | "capital"
+  | "nonprofit"
+  | "growth"
+  | "miles"
+  | "impressions"
+  | "network";
+
+export const stats: { value: string; label: string; icon: StatIconKey }[] = [
+  { value: "$15M+", label: "financial impact", icon: "impact" },
+  { value: "$3.1M+", label: "capital raised", icon: "capital" },
+  { value: "$2.2M+", label: "501c3 funds raised", icon: "nonprofit" },
+  { value: "16+ yrs", label: "growth & partnerships", icon: "growth" },
+  { value: "25K+", label: "miles ran", icon: "miles" },
+  { value: "35M", label: "LinkedIn impressions", icon: "impressions" },
+  { value: "40K+", label: "audience & network", icon: "network" },
 ];
 
 // Experience — mirrors John's LinkedIn: same roles, same order (most recent
@@ -471,11 +479,24 @@ export const press: PressItem[] = [
 // Awards & honors — mirrors John's LinkedIn "Honors & awards", newest first.
 // Repeat issuers (PGA, Heritage Christian Services, Veterans Affairs) are
 // grouped into one entry that lists each award with its year.
-export type Award = { org: string; items: { title: string; year: string }[] };
+// Each award carries an issuer `logo` (logo.dev by domain, or "" to skip) plus a
+// `mark` + `accent` for a clean monogram fallback when the issuer has no crisp
+// logo — the AwardLogo component swaps to the monogram on a 404 so a row never
+// shows a broken image (same pattern as RoleLogo).
+export type Award = {
+  org: string;
+  logo: string;
+  mark: string;
+  accent: string;
+  items: { title: string; year: string }[];
+};
 
 export const awards: Award[] = [
   {
     org: "InfoTech WNY",
+    logo: logoDev("infotechwny.com"),
+    mark: "IT",
+    accent: "#2563eb",
     items: [
       { title: "Key Contributor Award Nominee", year: "2026" },
       { title: "The Rebel Award Nominee", year: "2020" },
@@ -483,6 +504,9 @@ export const awards: Award[] = [
   },
   {
     org: "PGA of America",
+    logo: logoDev("pga.com"),
+    mark: "PGA",
+    accent: "#0a2240",
     items: [
       { title: "Elite Fundraiser Award · REACH Foundation", year: "2025" },
       { title: "Above & Beyond Recognition Award", year: "2024" },
@@ -490,6 +514,9 @@ export const awards: Award[] = [
   },
   {
     org: "Buffalo Business First",
+    logo: logoDev("bizjournals.com"),
+    mark: "BBF",
+    accent: "#1a3c6e",
     items: [
       { title: "Wellness Champion of 2024", year: "2024" },
       { title: "30 Under 30 Awardee", year: "2019" },
@@ -497,6 +524,9 @@ export const awards: Award[] = [
   },
   {
     org: "Heritage Christian Services",
+    logo: logoDev("heritagechristian.org"),
+    mark: "HCS",
+    accent: "#0f766e",
     items: [
       { title: "Top Fundraiser Award", year: "2022" },
       { title: "Carol & Ernie Forth Community Service Award", year: "2021" },
@@ -505,18 +535,54 @@ export const awards: Award[] = [
   },
   {
     org: "U.S. Dept. of Veterans Affairs",
+    logo: logoDev("va.gov"),
+    mark: "VA",
+    accent: "#112e51",
     items: [
       { title: "Community Partnership Award", year: "2022" },
       { title: "Certificate of Pride in Public Service", year: "2021" },
     ],
   },
-  { org: "November Project — Buffalo", items: [{ title: "“Good Neighbor” Community Award", year: "2022" }] },
-  { org: "TechStars Buffalo", items: [{ title: "Impact Player Recognition", year: "2021" }] },
-  { org: "Jack Nicklaus", items: [{ title: "Amateur Golf National Champion", year: "2020" }] },
-  { org: "Cystic Fibrosis Foundation", items: [{ title: "Rising Star Awardee", year: "2018" }] },
-  { org: "The First Tee of WNY", items: [{ title: "New Coach of the Year", year: "2016" }] },
+  {
+    org: "November Project — Buffalo",
+    logo: logoDev("november-project.com"),
+    mark: "NP",
+    accent: "#e11d48",
+    items: [{ title: "“Good Neighbor” Community Award", year: "2022" }],
+  },
+  {
+    org: "TechStars Buffalo",
+    logo: logoDev("techstars.com"),
+    mark: "TS",
+    accent: "#16a34a",
+    items: [{ title: "Impact Player Recognition", year: "2021" }],
+  },
+  {
+    org: "Jack Nicklaus",
+    logo: logoDev("nicklaus.com"),
+    mark: "JN",
+    accent: "#c8a24a",
+    items: [{ title: "Amateur Golf National Champion", year: "2020" }],
+  },
+  {
+    org: "Cystic Fibrosis Foundation",
+    logo: logoDev("cff.org"),
+    mark: "CF",
+    accent: "#7c3aed",
+    items: [{ title: "Rising Star Awardee", year: "2018" }],
+  },
+  {
+    org: "The First Tee of WNY",
+    logo: logoDev("firsttee.org"),
+    mark: "FT",
+    accent: "#15803d",
+    items: [{ title: "New Coach of the Year", year: "2016" }],
+  },
   {
     org: "Niagara University",
+    logo: logoDev("niagara.edu"),
+    mark: "NU",
+    accent: "#5a2d82",
     items: [
       { title: "Top 20 Most Intriguing Student", year: "2013" },
       { title: "Who’s Who Among Students in American Universities & Colleges", year: "2012" },
