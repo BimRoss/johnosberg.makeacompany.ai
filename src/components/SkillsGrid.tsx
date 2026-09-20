@@ -95,9 +95,18 @@ export default function SkillsGrid() {
         })}
       </div>
 
-      <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-9">
+      {/* Flex-wrap + justify-center so any trailing partial row (e.g. the two
+          Golf Tech chips) centers instead of hanging left, matching the
+          partnerships wall. Each tile's basis mirrors the old grid columns
+          (4-up mobile → 9-up desktop) so full rows still fill edge to edge. */}
+      <div className="flex flex-wrap justify-center gap-1.5">
         {shown.map((t) => (
-          <ToolChip key={t.name} tool={t} />
+          <div
+            key={t.name}
+            className="flex basis-[calc((100%-1.125rem)/4)] sm:basis-[calc((100%-1.5rem)/5)] md:basis-[calc((100%-2.25rem)/7)] lg:basis-[calc((100%-3rem)/9)] [&>a]:flex-1 [&>div]:flex-1"
+          >
+            <ToolChip tool={t} />
+          </div>
         ))}
       </div>
     </div>

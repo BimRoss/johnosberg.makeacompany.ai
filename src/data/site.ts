@@ -59,7 +59,7 @@ export type Role = {
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
-    title: "VP of Partnerships / Founding Director",
+    title: "Founding Director / VP of Partnerships",
     period: "Nov 2021 – Present",
     blurb: "Co-founded the athlete development operating system for coaches, athletes, families, and the organizations that run youth, amateur, and pro sports.",
     logo: logoDev("brandlete.com"),
@@ -79,7 +79,7 @@ export const roles: Role[] = [
   },
   {
     org: "Stealth Startup",
-    title: "Sports Tech – Revenue / GTM / Partnerships",
+    title: "GTM/Partnerships - AI, SportsTech, Talent",
     period: "Jan 2017 – Apr 2026",
     blurb: "Led revenue, go-to-market, and partnerships across early-stage sports-tech ventures.",
     logo: "/logos/stealth.png",
@@ -323,7 +323,7 @@ export const milestones: { year: string; org: string; title: string; metric: str
   {
     year: "2021",
     org: "Brandlete",
-    title: "VP Partnerships / Founding Director",
+    title: "Founding Director / VP Partnerships",
     metric: "Sports Org OS & Athlete Development Engine",
     details: [
       "Co-founded the operating system for coaches, athletes, and sports orgs.",
@@ -474,13 +474,26 @@ export type Award = { org: string; items: { title: string; year: string }[] };
 
 export const awards: Award[] = [
   {
+    org: "InfoTech WNY",
+    items: [
+      { title: "Key Contributor Award Nominee", year: "2026" },
+      { title: "The Rebel Award Nominee", year: "2020" },
+    ],
+  },
+  {
     org: "PGA of America",
     items: [
-      { title: "Top Fundraiser Award · REACH Foundation", year: "2025" },
+      { title: "Elite Fundraiser Award · REACH Foundation", year: "2025" },
       { title: "Above & Beyond Recognition Award", year: "2024" },
     ],
   },
-  { org: "Buffalo Business First", items: [{ title: "Wellness Champion of 2024", year: "2024" }] },
+  {
+    org: "Buffalo Business First",
+    items: [
+      { title: "Wellness Champion of 2024", year: "2024" },
+      { title: "30 Under 30 Awardee", year: "2019" },
+    ],
+  },
   {
     org: "Heritage Christian Services",
     items: [
@@ -497,12 +510,17 @@ export const awards: Award[] = [
     ],
   },
   { org: "November Project — Buffalo", items: [{ title: "“Good Neighbor” Community Award", year: "2022" }] },
+  { org: "TechStars Buffalo", items: [{ title: "Impact Player Recognition", year: "2021" }] },
   { org: "Jack Nicklaus", items: [{ title: "Amateur Golf National Champion", year: "2020" }] },
-  { org: "Buffalo Business First", items: [{ title: "30 Under 30", year: "2019" }] },
   { org: "Cystic Fibrosis Foundation", items: [{ title: "Rising Star Awardee", year: "2018" }] },
   { org: "The First Tee of WNY", items: [{ title: "New Coach of the Year", year: "2016" }] },
-  { org: "Niagara University", items: [{ title: "Top 20 Most Intriguing Student", year: "2013" }] },
-  { org: "Niagara University", items: [{ title: "Who’s Who Among Students in American Universities & Colleges", year: "2012" }] },
+  {
+    org: "Niagara University",
+    items: [
+      { title: "Top 20 Most Intriguing Student", year: "2013" },
+      { title: "Who’s Who Among Students in American Universities & Colleges", year: "2012" },
+    ],
+  },
 ];
 
 export const FEATURED_VIDEO = {

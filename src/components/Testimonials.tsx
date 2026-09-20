@@ -60,12 +60,43 @@ function Avatar({ name, size = "md" }: { name: string; size?: "md" | "lg" }) {
   );
 }
 
-function Card({ t }: { t: Testimonial }) {
+// Wraps every case-insensitive occurrence of `term` in a highlighted <mark> so
+// the word someone searched for pops in the card. Returns the text untouched
+// when there's no term.
+function Highlight({ text, term }: { text: string; term: string }) {
+  if (!term) return <>{text}</>;
+  const parts: React.ReactNode[] = [];
+  const lower = text.toLowerCase();
+  const needle = term.toLowerCase();
+  let i = 0;
+  let key = 0;
+  while (i <= text.length) {
+    const idx = lower.indexOf(needle, i);
+    if (idx === -1) {
+      parts.push(text.slice(i));
+      break;
+    }
+    if (idx > i) parts.push(text.slice(i, idx));
+    parts.push(
+      <mark
+        key={key++}
+        className="rounded bg-[#00ccff]/30 px-0.5 text-inherit dark:bg-[#00ccff]/25"
+      >
+        {text.slice(idx, idx + needle.length)}
+      </mark>
+    );
+    i = idx + needle.length;
+  }
+  return <>{parts}</>;
+}
+
+function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; term?: string; clamp?: boolean; fluid?: boolean }) {
+  const width = fluid ? "w-full" : "w-[320px] shrink-0 sm:w-[360px]";
   return (
-    <figure className="flex w-[320px] shrink-0 flex-col gap-3 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55 sm:w-[360px]">
+    <figure className={`flex ${width} flex-col gap-3 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55`}>
       <span aria-hidden className="select-none font-serif text-2xl leading-none text-[#00ccff]/50 dark:text-[#00ccff]/40">&#10077;</span>
-      <blockquote className="line-clamp-5 text-[14px] leading-6 text-zinc-800 dark:text-zinc-300">
-        {t.text}
+      <blockquote className={`${clamp ? "line-clamp-5" : ""} text-[14px] leading-6 text-zinc-800 dark:text-zinc-300`}>
+        <Highlight text={t.text} term={term} />
       </blockquote>
       <div className="mt-auto flex flex-col gap-2.5">
         <Stars />
@@ -73,11 +104,10 @@ function Card({ t }: { t: Testimonial }) {
           <Avatar name={t.name} size="md" />
           <span className="min-w-0">
             <span className="block truncate font-[family-name:var(--font-sora)] text-sm font-semibold text-zinc-900 dark:text-white">
-              {t.name}
+              <Highlight text={t.name} term={term} />
             </span>
             <span className="block truncate font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
-              {t.title}
-              {t.company ? ` · ${t.company}` : ""}
+              <Highlight text={t.title + (t.company ? ` · ${t.company}` : "")} term={term} />
             </span>
           </span>
         </figcaption>
@@ -139,15 +169,79 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
   );
 }
 
+function SearchIcon() {
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+      <circle cx="9" cy="9" r="6" />
+      <path d="M14 14l4 4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export default function Testimonials() {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+
+  const matches = q
+    ? testimonials.filter((t) =>
+        `${t.text} ${t.name} ${t.title} ${t.company}`.toLowerCase().includes(q)
+      )
+    : null;
+
   const mid = Math.ceil(testimonials.length / 2);
   const rowA = testimonials.slice(0, mid);
   const rowB = testimonials.slice(mid);
 
   return (
-    <div className="marquee-mask flex flex-col gap-5">
-      <Row items={rowA} dir="l" />
-      <Row items={rowB} dir="r" />
+    <div className="flex flex-col gap-6">
+      {/* Search across every endorsement's words, names, titles, and companies. */}
+      <div className="relative w-full max-w-md">
+        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500">
+          <SearchIcon />
+        </span>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search the endorsements…"
+          aria-label="Search endorsements"
+          className="w-full rounded-full border border-black/10 bg-white/80 py-2.5 pl-11 pr-10 text-sm text-zinc-900 shadow-sm outline-none backdrop-blur-md transition focus:border-[#00ccff] focus:ring-2 focus:ring-[#00ccff]/30 dark:border-white/10 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500"
+        />
+        {query && (
+          <button
+            type="button"
+            onClick={() => setQuery("")}
+            aria-label="Clear search"
+            className="absolute right-3 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full text-zinc-400 transition hover:bg-black/5 hover:text-zinc-700 dark:text-zinc-500 dark:hover:bg-white/10 dark:hover:text-zinc-200"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path d="M5 5l10 10M15 5L5 15" strokeLinecap="round" />
+            </svg>
+          </button>
+        )}
+      </div>
+
+      {matches ? (
+        <div className="flex flex-col gap-5">
+          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+            {matches.length === 0
+              ? `No endorsements mention “${query.trim()}”`
+              : `${matches.length} endorsement${matches.length === 1 ? "" : "s"} mention${matches.length === 1 ? "s" : ""} “${query.trim()}”`}
+          </p>
+          {matches.length > 0 && (
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {matches.map((t, i) => (
+                <Card key={`m-${i}`} t={t} term={query.trim()} clamp={false} fluid />
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="marquee-mask flex flex-col gap-5">
+          <Row items={rowA} dir="l" />
+          <Row items={rowB} dir="r" />
+        </div>
+      )}
     </div>
   );
 }

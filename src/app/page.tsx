@@ -65,7 +65,7 @@ export default function Home() {
               </a>
             </h1>
             <p className="on-photo mt-5 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
-              VP of Partnerships &amp; Founding Director{" "}
+              Founding Director &amp; VP Partnerships{" "}
               <span className="inline-flex items-center gap-1.5 whitespace-nowrap align-middle">
                 <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
                 <a
@@ -120,7 +120,7 @@ export default function Home() {
               className="on-photo group mt-5 inline-flex w-fit items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-sky-800 transition-colors hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200 sm:text-sm"
             >
               <span aria-hidden>⭐</span>
-              Endorsed by 134+ Leaders
+              Endorsed by 137+ Leaders
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </div>
@@ -378,7 +378,7 @@ export default function Home() {
               Endorsements
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
-              Endorsed by 134+ Leaders.
+              Endorsed by 137+ Leaders.
             </p>
           </div>
           <Testimonials />
