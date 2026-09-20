@@ -176,79 +176,15 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
   );
 }
 
-function SearchIcon() {
-  return (
-    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
-      <circle cx="9" cy="9" r="6" />
-      <path d="M14 14l4 4" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 export default function Testimonials() {
-  const [query, setQuery] = useState("");
-  const q = query.trim().toLowerCase();
-
-  const matches = q
-    ? testimonials.filter((t) =>
-        `${t.text} ${t.name} ${t.title} ${t.company}`.toLowerCase().includes(q)
-      )
-    : null;
-
   const mid = Math.ceil(testimonials.length / 2);
   const rowA = testimonials.slice(0, mid);
   const rowB = testimonials.slice(mid);
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* Search across every endorsement's words, names, titles, and companies. */}
-      <div className="relative w-full max-w-md">
-        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500">
-          <SearchIcon />
-        </span>
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search by word or name…"
-          aria-label="Search endorsements by word or name"
-          className="w-full rounded-full border border-black/10 bg-white/80 py-2.5 pl-11 pr-10 text-sm text-zinc-900 shadow-sm outline-none backdrop-blur-md transition focus:border-[#00ccff] focus:ring-2 focus:ring-[#00ccff]/30 dark:border-white/10 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500"
-        />
-        {query && (
-          <button
-            type="button"
-            onClick={() => setQuery("")}
-            aria-label="Clear search"
-            className="absolute right-3 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full text-zinc-400 transition hover:bg-black/5 hover:text-zinc-700 dark:text-zinc-500 dark:hover:bg-white/10 dark:hover:text-zinc-200"
-          >
-            <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}>
-              <path d="M5 5l10 10M15 5L5 15" strokeLinecap="round" />
-            </svg>
-          </button>
-        )}
-      </div>
-
-      {matches ? (
-        <div className="flex flex-col gap-5">
-          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
-            {matches.length === 0
-              ? `No endorsements mention “${query.trim()}”`
-              : `${matches.length} endorsement${matches.length === 1 ? "" : "s"} mention${matches.length === 1 ? "s" : ""} “${query.trim()}”`}
-          </p>
-          {matches.length > 0 && (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {matches.map((t, i) => (
-                <Card key={`m-${i}`} t={t} term={query.trim()} clamp={false} fluid />
-              ))}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="marquee-mask flex flex-col gap-5">
-          <Row items={rowA} dir="l" />
-          <Row items={rowB} dir="r" />
-        </div>
-      )}
+    <div className="marquee-mask flex flex-col gap-5">
+      <Row items={rowA} dir="l" />
+      <Row items={rowB} dir="r" />
     </div>
   );
 }
