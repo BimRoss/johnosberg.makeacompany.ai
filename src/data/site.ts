@@ -353,14 +353,14 @@ export const milestones: { year: string; org: string; title: string; metric: str
   },
 ];
 
-export type Brand = { name: string; mark: string; accent: string; logo: string; url: string; sector: Sector };
+export type Brand = { name: string; mark: string; accent: string; logo: string; url: string; sector: Sector; darkInvert?: boolean };
 
 export const brands: Brand[] = [
-  { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: logoDev("dickssportinggoods.com"), url: "https://www.dickssportinggoods.com", sector: "Sports & Golf" },
+  { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png", url: "https://www.dickssportinggoods.com", sector: "Sports & Golf" },
   { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: logoDev("golfgalaxy.com"), url: "https://www.golfgalaxy.com", sector: "Sports & Golf" },
   { name: "Wegmans", mark: "W", accent: "#e0301e", logo: logoDev("wegmans.com"), url: "https://www.wegmans.com", sector: "Beverage & CPG" },
   { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: logoDev("michelobultra.com"), url: "https://www.michelobultra.com", sector: "Beverage & CPG" },
-  { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com", sector: "Sports & Golf" },
+  { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com", sector: "Sports & Golf", darkInvert: true },
   { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: logoDev("ralphlauren.com"), url: "https://www.ralphlauren.com/rlx-golf", sector: "Sports & Golf" },
   { name: "Tito's", mark: "T", accent: "#3aa0ff", logo: logoDev("titosvodka.com"), url: "https://www.titosvodka.com", sector: "Beverage & CPG" },
   { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: logoDev("corebridgefinancial.com"), url: "https://www.corebridgefinancial.com", sector: "Finance & Insurance" },

@@ -27,19 +27,21 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
           {brand.mark}
         </span>
       ) : (
-        /* Logo sits straight on the frosted tile at near-full size, no white
-           card behind it, so any leftover whitespace is the logo's own, not a
-           slab. */
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={brand.logo}
-          alt={`${brand.name} logo`}
-          width={96}
-          height={96}
-          loading="lazy"
-          className="h-[90%] w-[90%] object-contain"
-          onError={() => setFailed(true)}
-        />
+        /* White plate is kept so dark/transparent marks (Oakley, NYSGA) stay
+           legible on the dark theme, but the logo now fills ~92% of it, so the
+           white reads as a thin border hugging the mark, not a big empty card. */
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-black/5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={brand.logo}
+            alt={`${brand.name} logo`}
+            width={96}
+            height={96}
+            loading="lazy"
+            className="h-[92%] w-[92%] object-contain"
+            onError={() => setFailed(true)}
+          />
+        </span>
       )}
     </a>
   );
