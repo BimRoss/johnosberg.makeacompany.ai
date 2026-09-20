@@ -6,7 +6,8 @@ import type { Brand } from "@/data/site";
 
 // Real brand logos load from a logo CDN (nominative use for genuine
 // partnerships). If a logo doesn't resolve, we fall back to a clean
-// monogram tile so the wall never shows a broken image.
+// monogram tile so the wall never shows a broken image. Logo-only, no name
+// label: the logo fills its square footprint so the wall reads as pure marks.
 export default function BrandLogo({ brand }: { brand: Brand }) {
   const [failed, setFailed] = useState(false);
 
@@ -16,31 +17,29 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${brand.name} website`}
-      className="flex flex-col items-center gap-1.5 rounded-lg border border-black/10 bg-white/70 px-2 py-2.5 text-center backdrop-blur-md transition-all [container-type:inline-size] hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+      title={brand.name}
+      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-2 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-xs font-bold"
+          className="flex h-full w-full items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-lg font-bold"
           style={{ backgroundColor: `${brand.accent}1f`, color: brand.accent }}
         >
           {brand.mark}
         </span>
       ) : (
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={brand.logo}
             alt={`${brand.name} logo`}
-            width={28}
-            height={28}
+            width={96}
+            height={96}
             loading="lazy"
-            className="h-5 w-5 object-contain"
+            className="h-[72%] w-[72%] object-contain"
             onError={() => setFailed(true)}
           />
         </span>
       )}
-      <span className="w-full whitespace-nowrap font-[family-name:var(--font-sora)] text-[clamp(7px,6.6cqi,13px)] font-medium leading-tight tracking-tight text-zinc-700 dark:text-zinc-300">
-        {brand.name}
-      </span>
     </a>
   );
 }

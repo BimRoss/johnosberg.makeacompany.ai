@@ -7,6 +7,7 @@ import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
 import Testimonials from "@/components/Testimonials";
 import PartnershipsGrid from "@/components/PartnershipsGrid";
+import CivicGrid from "@/components/CivicGrid";
 import PressLogo from "@/components/PressLogo";
 import RoleLogo from "@/components/RoleLogo";
 import AwardLogo from "@/components/AwardLogo";
@@ -341,6 +342,12 @@ export default function Home() {
         <section id="partnerships" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="eyebrow on-photo">Partnerships built with</h2>
           <PartnershipsGrid />
+        </section>
+
+        {/* Civic & nonprofit */}
+        <section id="civic" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <h2 className="eyebrow on-photo">Civic leadership &amp; volunteer work</h2>
+          <CivicGrid />
         </section>
 
         {/* Endorsements */}
