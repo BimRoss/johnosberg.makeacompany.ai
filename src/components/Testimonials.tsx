@@ -90,10 +90,17 @@ function Highlight({ text, term }: { text: string; term: string }) {
   return <>{parts}</>;
 }
 
+// NOTE: no backdrop-blur on these cards, on purpose. The marquee renders ~270
+// cards animating nonstop; giving each one a backdrop-filter layer overwhelmed
+// iOS WebKit's renderer and killed the whole tab (Chrome-on-iOS showed its
+// "Can't open this page / Restart Chrome" crash page, most reliably right after
+// focusing the search field, which forces a full repaint). A more opaque solid
+// background keeps the frosted look without the per-card blur layer. Don't add
+// backdrop-blur back here.
 function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; term?: string; clamp?: boolean; fluid?: boolean }) {
   const width = fluid ? "w-full" : "w-[320px] shrink-0 sm:w-[360px]";
   return (
-    <figure className={`flex ${width} flex-col gap-3 rounded-2xl border border-black/10 bg-white/75 p-5 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/55`}>
+    <figure className={`flex ${width} flex-col gap-3 rounded-2xl border border-black/10 bg-white/90 p-5 dark:border-white/10 dark:bg-zinc-950/85`}>
       <span aria-hidden className="select-none font-serif text-2xl leading-none text-[#00ccff]/50 dark:text-[#00ccff]/40">&#10077;</span>
       <blockquote className={`${clamp ? "line-clamp-5" : ""} text-[14px] leading-6 text-zinc-800 dark:text-zinc-300`}>
         <Highlight text={t.text} term={term} />
@@ -203,8 +210,8 @@ export default function Testimonials() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search the endorsements…"
-          aria-label="Search endorsements"
+          placeholder="Search by word or name…"
+          aria-label="Search endorsements by word or name"
           className="w-full rounded-full border border-black/10 bg-white/80 py-2.5 pl-11 pr-10 text-sm text-zinc-900 shadow-sm outline-none backdrop-blur-md transition focus:border-[#00ccff] focus:ring-2 focus:ring-[#00ccff]/30 dark:border-white/10 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500"
         />
         {query && (

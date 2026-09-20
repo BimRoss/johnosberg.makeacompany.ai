@@ -5,16 +5,16 @@ export const SITE_TITLE = "John Osberg Career Portfolio";
 export const HERO_LABEL = "growth · partnerships · revenue";
 
 export const HERO_SUMMARY =
-  "Growth and partnerships leader co-building in youth sports and sports tech, with 15+ years turning relationships into revenue and $15M+ generated and influenced.";
+  "Growth and partnerships leader co-building in youth sports and sports tech, with 16+ years turning relationships into revenue and $15M+ generated and influenced.";
 
 export const LINK_PREVIEW_DESCRIPTION =
-  "John Osberg — growth and partnerships leader in Buffalo, NY. 15+ years, $15M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
+  "John Osberg — growth and partnerships leader in Buffalo, NY. 16+ years, $15M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
 
 // Social/link-unfurl description (LinkedIn Featured, Slack, iMessage). Weaves
 // John's three current seats, org names front-loaded so the important part
 // survives LinkedIn's ~2-line truncation.
 export const OG_DESCRIPTION =
-  "VP of Partnerships at Brandlete, the sports program operating system. 15+ years turning relationships into revenue across sports, tech, and nonprofit.";
+  "VP of Partnerships at Brandlete, the sports program operating system. 16+ years turning relationships into revenue across sports, tech, and nonprofit.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -31,7 +31,7 @@ export const stats = [
   { value: "$15M+", label: "financial impact" },
   { value: "$3.1M+", label: "capital raised" },
   { value: "$2.2M+", label: "501c3 funds raised" },
-  { value: "15+ yrs", label: "growth & partnerships" },
+  { value: "16+ yrs", label: "growth & partnerships" },
   { value: "25K+", label: "miles ran" },
   { value: "35M", label: "LinkedIn impressions" },
   { value: "40K+", label: "audience & network" },
