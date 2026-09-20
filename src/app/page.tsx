@@ -5,7 +5,6 @@ import BookCallBtn from "@/components/BookCallBtn";
 import ChromeFx from "@/components/ChromeFx";
 import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
-import StatTilt from "@/components/StatTilt";
 import Testimonials from "@/components/Testimonials";
 import PartnershipsGrid from "@/components/PartnershipsGrid";
 import PressLogo from "@/components/PressLogo";
@@ -165,32 +164,22 @@ export default function Home() {
         </section>
 
         {/* The Numbers */}
-        <section className="reveal-on-scroll flex flex-col gap-6">
+        <section className="reveal-on-scroll flex flex-col gap-5">
           <h2 className="eyebrow on-photo">The Numbers</h2>
-          <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-12">
-            {stats.map((s, i) => {
-              const topRow = stats.length - 3;
-              const desktopSpan =
-                stats.length % 4 === 0
-                  ? "md:col-span-3"
-                  : i < topRow
-                    ? "md:col-span-3"
-                    : "md:col-span-4";
-              const mobileSpan =
-                stats.length % 2 !== 0 && i === stats.length - 1 ? "col-span-2" : "";
-              return (
-                <StatTilt key={s.label} className={`${mobileSpan} ${desktopSpan}`}>
-                  <div className="group flex h-full flex-col items-center justify-center bg-[#00ccff] px-3 py-5 text-center transition-colors duration-300 hover:bg-[#1ad3ff]">
-                    <div className="font-[family-name:var(--font-sora)] text-3xl font-bold text-[#04070e] md:text-4xl">
-                      <CountUp value={s.value} />
-                    </div>
-                    <div className="mt-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#04070e]/75">
-                      {s.label}
-                    </div>
-                  </div>
-                </StatTilt>
-              );
-            })}
+          <div className="mx-auto flex w-full max-w-2xl flex-wrap justify-center gap-2">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="flex w-[calc(50%-0.25rem)] flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-3 py-4 text-center backdrop-blur-sm md:w-[calc(25%-0.375rem)] dark:border-white/10 dark:bg-white/[0.03]"
+              >
+                <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
+                  <CountUp value={s.value} />
+                </div>
+                <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+                  {s.label}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -198,7 +187,7 @@ export default function Home() {
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
           <h2 className="eyebrow on-photo">Experience</h2>
           <div className="flex flex-col">
-            {roles.map((r, i) => (
+            {roles.slice(0, -4).map((r, i) => (
               <div
                 key={r.org}
                 className={`on-photo flex flex-col gap-1 py-4 md:flex-row md:items-center md:gap-6 ${
@@ -230,6 +219,28 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Early career — condensed 2-up grid to save vertical space */}
+          <div className="grid grid-cols-1 gap-x-6 gap-y-3 border-t border-black/10 pt-5 sm:grid-cols-2 dark:border-white/10">
+            {roles.slice(-4).map((r) => (
+              <div key={r.org} className="on-photo flex min-w-0 items-center gap-3">
+                <RoleLogo role={r} />
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
+                      {r.org}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+                      {r.period}
+                    </span>
+                  </div>
+                  <div className="truncate text-[13px] font-medium text-zinc-700 dark:text-zinc-300">
+                    {r.title}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Partnerships */}
@@ -250,33 +261,31 @@ export default function Home() {
         </section>
 
         {/* Recognized — news, awards, podcasts folded into one */}
-        <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-10">
+        <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
           <h2 className="eyebrow on-photo">Recognized</h2>
 
           {/* In the news */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5">
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               In the news
             </h3>
-            <div className="flex flex-col">
-              {press.map((p, i) => (
+            <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+              {press.map((p) => (
                 <a
                   key={p.href}
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`on-photo group flex items-center gap-4 py-3.5 ${
-                    i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
-                  }`}
+                  className="on-photo group flex items-center gap-2.5 border-t border-black/10 py-1.5 dark:border-white/10"
                 >
-                  <span className="flex w-32 shrink-0 items-center gap-2 sm:w-44">
+                  <span className="flex w-20 shrink-0 items-center gap-1.5 sm:w-28">
                     <PressLogo item={p} />
-                    <span className="min-w-0 font-mono text-[10px] uppercase leading-tight tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
+                    <span className="min-w-0 truncate font-mono text-[10px] uppercase leading-tight tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
                       {p.source}
                     </span>
                   </span>
                   <span
-                    className={`flex-1 font-[family-name:var(--font-sora)] text-base font-semibold transition-colors ${
+                    className={`flex-1 font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-tight transition-colors ${
                       p.title.includes("Brandlete")
                         ? "text-[#0088cc] dark:text-[#00ccff]"
                         : "text-zinc-900 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white"
@@ -293,7 +302,7 @@ export default function Home() {
           </div>
 
           {/* Awards & honors */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5">
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               Awards &amp; honors
             </h3>
@@ -301,12 +310,12 @@ export default function Home() {
               {awards.map((a, i) => (
                 <div
                   key={`${a.org}-${i}`}
-                  className="on-photo border-t border-black/10 py-3 dark:border-white/10"
+                  className="on-photo border-t border-black/10 py-2 dark:border-white/10"
                 >
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-1">
                     {a.items.map((it, j) => (
                       <div key={`${it.title}-${j}`} className="flex items-baseline justify-between gap-4">
-                        <span className="min-w-0 font-[family-name:var(--font-sora)] text-[15px] font-semibold leading-snug text-zinc-900 dark:text-white">
+                        <span className="min-w-0 font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-tight text-zinc-900 dark:text-white">
                           {it.title}
                         </span>
                         <span className="shrink-0 font-mono text-[11px] font-semibold text-[#0088cc] dark:text-[#00ccff]">
@@ -324,7 +333,7 @@ export default function Home() {
           </div>
 
           {/* Podcasts */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5">
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               Podcasts
             </h3>
@@ -335,14 +344,14 @@ export default function Home() {
                   href={pod.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`on-photo group flex items-center gap-4 py-3.5 ${
+                  className={`on-photo group flex items-center gap-4 py-2 ${
                     i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                   }`}
                 >
                   <span className="w-16 shrink-0 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
                     {pod.role}
                   </span>
-                  <span className="flex-1 font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white">
+                  <span className="flex-1 font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white">
                     {pod.title}
                   </span>
                   <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5">

@@ -170,7 +170,7 @@ export const roles: Role[] = [
   {
     org: "CFA Institute",
     title: "Management Analyst",
-    period: "Jan 2012 – Jun 2012",
+    period: "Jan 2012 – Sep 2012",
     blurb: "Supported management analysis and operations for the global investment credentialing body.",
     logo: logoDev("cfainstitute.org"),
     mark: "CFA",
@@ -180,7 +180,7 @@ export const roles: Role[] = [
   {
     org: "Bloomberg",
     title: "Brand Engagement Lead",
-    period: "Sep 2011 – Feb 2012",
+    period: "Sep 2011 – May 2012",
     blurb: "Led brand engagement and client-facing initiatives across the financial data platform.",
     logo: logoDev("bloomberg.com"),
     mark: "B",
