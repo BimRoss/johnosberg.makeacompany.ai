@@ -27,18 +27,19 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
           {brand.mark}
         </span>
       ) : (
-        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={brand.logo}
-            alt={`${brand.name} logo`}
-            width={96}
-            height={96}
-            loading="lazy"
-            className="h-[72%] w-[72%] object-contain"
-            onError={() => setFailed(true)}
-          />
-        </span>
+        /* Logo sits straight on the frosted tile at near-full size, no white
+           card behind it, so any leftover whitespace is the logo's own, not a
+           slab. */
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={brand.logo}
+          alt={`${brand.name} logo`}
+          width={96}
+          height={96}
+          loading="lazy"
+          className="h-[90%] w-[90%] object-contain"
+          onError={() => setFailed(true)}
+        />
       )}
     </a>
   );

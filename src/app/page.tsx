@@ -5,6 +5,7 @@ import BookCallBtn from "@/components/BookCallBtn";
 import ChromeFx from "@/components/ChromeFx";
 import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
+import SearchPalette from "@/components/SearchPalette";
 import Testimonials from "@/components/Testimonials";
 import PartnershipsGrid from "@/components/PartnershipsGrid";
 import CivicGrid from "@/components/CivicGrid";
@@ -31,6 +32,7 @@ export default function Home() {
     <>
       <Backdrop />
       <ThemeToggle />
+      <SearchPalette />
       <ScrollReveal />
       <ChromeFx />
       <main

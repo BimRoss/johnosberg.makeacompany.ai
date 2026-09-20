@@ -112,15 +112,12 @@ export default function SearchPalette() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search this site"
-        className="search-pulse group fixed left-4 top-4 z-40 flex items-center gap-1.5 rounded-full border border-[#00ccff]/60 bg-white/85 px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-[#0077aa] shadow-lg shadow-[#00ccff]/25 backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-[#00ccff] hover:bg-white/95 dark:border-[#00ccff]/50 dark:bg-zinc-900/75 dark:text-[#66e0ff] dark:hover:bg-zinc-900/90 sm:left-6 sm:top-6"
+        className="fixed left-4 top-4 z-30 inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white/70 text-zinc-700 backdrop-blur-md transition-colors hover:border-black/40 hover:text-zinc-900 dark:border-white/15 dark:bg-white/5 dark:text-zinc-300 dark:hover:border-white/50 dark:hover:text-white sm:left-6 sm:top-6"
       >
-        <svg viewBox="0 0 24 24" className="bolt-flicker h-3.5 w-3.5 fill-[#00ccff]" aria-hidden>
-          <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+        <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
         </svg>
-        <span>Search</span>
-        <span className="hidden rounded border border-[#00ccff]/40 px-1.5 py-0.5 text-[10px] text-[#0088cc] opacity-80 dark:text-[#66e0ff] sm:inline">
-          ⌘K
-        </span>
       </button>
 
       {open && (
