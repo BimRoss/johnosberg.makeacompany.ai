@@ -23,7 +23,7 @@ import {
   SITE_NAME,
   stats,
 } from "@/data/site";
-import { LinkedInIcon } from "@/data/socials";
+import { LinkedInIcon, NewsletterIcon } from "@/data/socials";
 
 export default function Home() {
   return (
@@ -86,24 +86,27 @@ export default function Home() {
             </p>
 
             {/* Primary actions */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <BookCallBtn />
-              <a
-                href="https://www.linkedin.com/in/johnosberg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0a66c2] transition-colors hover:text-[#084a8f] dark:text-[#66b2ff] dark:hover:text-[#99ccff]"
-              >
-                <LinkedInIcon className="h-4 w-4 shrink-0" />
-                Connect on LinkedIn
-                <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-              </a>
+            <div className="mt-8 flex flex-col items-start gap-y-4">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                <BookCallBtn />
+                <a
+                  href="https://www.linkedin.com/in/johnosberg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0a66c2] transition-colors hover:text-[#084a8f] dark:text-[#66b2ff] dark:hover:text-[#99ccff]"
+                >
+                  <LinkedInIcon className="h-4 w-4 shrink-0" />
+                  Connect on LinkedIn
+                  <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+                </a>
+              </div>
               <a
                 href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
               >
+                <NewsletterIcon className="h-4 w-4 shrink-0" />
                 Newsletter
                 <span className="transition-transform group-hover:translate-x-0.5">↗</span>
               </a>
@@ -307,7 +310,11 @@ export default function Home() {
           </div>
 
           {/* Early career — condensed 2-up grid to save vertical space */}
-          <div className="grid grid-cols-1 gap-x-6 gap-y-3 border-t border-black/10 pt-5 sm:grid-cols-2 dark:border-white/10">
+          <div className="flex flex-col gap-3 border-t border-black/10 pt-5 dark:border-white/10">
+          <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+            Early Career
+          </h3>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
             {roles.slice(-4).map((r) => (
               <div key={r.org} className="on-photo flex min-w-0 items-center gap-3">
                 <RoleLogo role={r} />
@@ -326,6 +333,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </section>
 
@@ -364,7 +372,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="on-photo group flex items-center gap-2.5 border-t border-black/10 py-1.5 dark:border-white/10"
                 >
-                  <span className="flex w-20 shrink-0 items-center gap-1.5 sm:w-28">
+                  <span className="flex w-32 shrink-0 items-center gap-1.5 sm:w-40">
                     <PressLogo item={p} />
                     <span className="min-w-0 truncate font-mono text-[10px] uppercase leading-tight tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
                       {p.source}

@@ -19,6 +19,15 @@ export function EmailIcon(props: IconProps) {
   );
 }
 
+export function NewsletterIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden {...props}>
+      <path d="M4 22h13a2 2 0 0 0 2-2V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v16a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1h1" />
+      <path d="M8 7h7M8 11h7M8 15h4" />
+    </svg>
+  );
+}
+
 export function GlobeIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden {...props}>
