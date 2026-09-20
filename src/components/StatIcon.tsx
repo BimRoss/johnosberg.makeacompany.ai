@@ -32,11 +32,21 @@ const PATHS: Record<StatIconKey, React.ReactNode> = {
       <path d="M15 7h6v6" />
     </>
   ),
-  // running shoe — miles ran
+  // running shoe (side profile, toe right) — miles ran
   miles: (
     <>
-      <path d="M3 16v-3l4-1 2.5-3 2 1-1 2 4 1 6 1c1.5.2 2.5 1 2.5 2v.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" />
-      <path d="M9 12l2 1.5M12.5 11l2 1.5" />
+      {/* upper: heel counter, tongue bump, long toe box */}
+      <path d="M3 11c0-.6.3-.9.8-.8 1.7.4 3 .8 4.7 1 .5-.8.9-1.2 1.5-1.2s1.1.5 1.9 1c2.5 1.2 5.5 1.6 8.2 2.2.8.2 1.1.8.8 1.6-.3.7-1 1.2-2 1.2H4c-.6 0-1-.4-1-1Z" />
+      {/* midsole stripe */}
+      <path d="M3.3 14.2c6 .7 12 .8 17.3-.1" />
+      {/* laces */}
+      <path d="M11 11.1l1.9.4M11.8 10.3l1.9.5M12.7 11.8l1.8.4" />
+    </>
+  ),
+  // infinity loop — countless / endless
+  countless: (
+    <>
+      <path d="M8 9.5c-1.9 0-3.5 1.1-3.5 2.5S6.1 14.5 8 14.5c2.5 0 3.5-5 6-5 1.9 0 3.5 1.1 3.5 2.5S17.9 14.5 16 14.5c-2.5 0-3.5-5-6-5Z" />
     </>
   ),
   // eye — LinkedIn impressions

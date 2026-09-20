@@ -42,7 +42,7 @@ export default function Home() {
         {/* Hero */}
         <section className="reveal flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
           {/* Text column */}
-          <div className="order-2 flex min-w-0 flex-col items-start text-left md:order-1 md:flex-1">
+          <div className="order-2 flex min-w-0 flex-col items-center text-center md:order-1 md:flex-1">
             <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
               Partnerships · Growth · Sports Tech
             </span>
@@ -60,7 +60,7 @@ export default function Home() {
             <p className="on-photo mt-5 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
               Founding Director &amp; VP Partnerships{" "}
               <span className="inline-flex items-center gap-1.5 whitespace-nowrap align-middle">
-                <span aria-hidden className="font-normal text-zinc-500 dark:text-zinc-400">@</span>{" "}
+                <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
                 <a
                   href="https://www.brandlete.com"
                   target="_blank"
@@ -89,9 +89,9 @@ export default function Home() {
             </p>
 
             {/* Primary actions */}
-            <div className="mt-8 flex flex-col items-start gap-y-4">
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-                <BookCallBtn />
+            <div className="mt-8 flex flex-col items-center">
+              <BookCallBtn />
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -102,17 +102,17 @@ export default function Home() {
                   Connect on LinkedIn
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                 </a>
+                <a
+                  href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
+                >
+                  <NewsletterIcon className="h-4 w-4 shrink-0" />
+                  Newsletter
+                  <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+                </a>
               </div>
-              <a
-                href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
-              >
-                <NewsletterIcon className="h-4 w-4 shrink-0" />
-                Newsletter
-                <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-              </a>
             </div>
           </div>
 
@@ -265,7 +265,7 @@ export default function Home() {
               >
                 <StatIcon icon={s.icon} className="mb-1.5 h-5 w-5 text-[#0088cc]/90 dark:text-[#00ccff]/90" />
                 <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
-                  <CountUp value={s.value} />
+                  {/\d/.test(s.value) ? <CountUp value={s.value} /> : s.value}
                 </div>
                 <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
                   {s.label}
@@ -415,11 +415,18 @@ export default function Home() {
                   key={`${a.org}-${i}`}
                   className="on-photo flex items-start gap-3 border-t border-black/10 py-2.5 dark:border-white/10"
                 >
-                  <AwardLogo award={a} />
+                  <a href={a.url} target="_blank" rel="noopener noreferrer" aria-label={a.org} className="shrink-0">
+                    <AwardLogo award={a} />
+                  </a>
                   <div className="min-w-0 flex-1">
-                    <span className="block font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 dark:text-zinc-400">
+                    <a
+                      href={a.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-fit font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 transition-colors hover:text-[#0088cc] dark:text-zinc-400 dark:hover:text-[#00ccff]"
+                    >
                       {a.org}
-                    </span>
+                    </a>
                     <div className="mt-1 flex flex-col gap-1">
                       {a.items.map((it, j) => (
                         <div key={`${it.title}-${j}`} className="flex items-baseline justify-between gap-4">

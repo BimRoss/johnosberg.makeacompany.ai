@@ -34,7 +34,8 @@ export type StatIconKey =
   | "growth"
   | "miles"
   | "impressions"
-  | "network";
+  | "network"
+  | "countless";
 
 export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "$15M+", label: "financial impact", icon: "impact" },
@@ -44,6 +45,7 @@ export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "25K+", label: "miles ran", icon: "miles" },
   { value: "35M", label: "LinkedIn impressions", icon: "impressions" },
   { value: "40K+", label: "audience & network", icon: "network" },
+  { value: "Countless", label: "wins, connections, relationships, deals", icon: "countless" },
 ];
 
 // Experience — mirrors John's LinkedIn: same roles, same order (most recent
@@ -361,7 +363,7 @@ export const brands: Brand[] = [
   { name: "Wegmans", mark: "W", accent: "#e0301e", logo: logoDev("wegmans.com"), url: "https://www.wegmans.com", sector: "Beverage & CPG" },
   { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: logoDev("michelobultra.com"), url: "https://www.michelobultra.com", sector: "Beverage & CPG" },
   { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com", sector: "Sports & Golf", darkInvert: true },
-  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: logoDev("ralphlauren.com"), url: "https://www.ralphlauren.com/rlx-golf", sector: "Sports & Golf" },
+  { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: logoDev("ralphlauren.com"), url: "https://www.ralphlauren.com/search?q=rlx+golf", sector: "Sports & Golf" },
   { name: "Tito's", mark: "T", accent: "#3aa0ff", logo: logoDev("titosvodka.com"), url: "https://www.titosvodka.com", sector: "Beverage & CPG" },
   { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: logoDev("corebridgefinancial.com"), url: "https://www.corebridgefinancial.com", sector: "Finance & Insurance" },
   { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: logoDev("sandals.com"), url: "https://www.sandals.com", sector: "Media, Energy & Travel" },
@@ -488,25 +490,28 @@ export type Award = {
   logo: string;
   mark: string;
   accent: string;
+  url: string;
   items: { title: string; year: string }[];
 };
 
 export const awards: Award[] = [
   {
     org: "InfoTech WNY",
-    logo: logoDev("infotechwny.com"),
+    logo: "/logos/civ-infotech-wny.png",
     mark: "IT",
     accent: "#2563eb",
+    url: "https://infotechwny.com/",
     items: [
       { title: "Key Contributor Award Nominee", year: "2026" },
       { title: "The Rebel Award Nominee", year: "2020" },
     ],
   },
   {
-    org: "PGA of America",
-    logo: logoDev("pga.com"),
+    org: "PGA REACH Foundation",
+    logo: "/logos/pgareach.png",
     mark: "PGA",
     accent: "#0a2240",
+    url: "https://www.pgareach.org/",
     items: [
       { title: "Elite Fundraiser Award · REACH Foundation", year: "2025" },
       { title: "Above & Beyond Recognition Award", year: "2024" },
@@ -517,6 +522,7 @@ export const awards: Award[] = [
     logo: logoDev("bizjournals.com"),
     mark: "BBF",
     accent: "#1a3c6e",
+    url: "https://www.bizjournals.com/buffalo",
     items: [
       { title: "Wellness Champion of 2024", year: "2024" },
       { title: "30 Under 30 Awardee", year: "2019" },
@@ -524,9 +530,10 @@ export const awards: Award[] = [
   },
   {
     org: "Heritage Christian Services",
-    logo: logoDev("heritagechristian.org"),
+    logo: "/logos/heritagechristian.png",
     mark: "HCS",
     accent: "#0f766e",
+    url: "https://heritagechristianservices.org/",
     items: [
       { title: "Top Fundraiser Award", year: "2022" },
       { title: "Carol & Ernie Forth Community Service Award", year: "2021" },
@@ -538,6 +545,7 @@ export const awards: Award[] = [
     logo: logoDev("va.gov"),
     mark: "VA",
     accent: "#112e51",
+    url: "https://www.va.gov",
     items: [
       { title: "Community Partnership Award", year: "2022" },
       { title: "Certificate of Pride in Public Service", year: "2021" },
@@ -548,6 +556,7 @@ export const awards: Award[] = [
     logo: logoDev("november-project.com"),
     mark: "NP",
     accent: "#e11d48",
+    url: "https://november-project.com",
     items: [{ title: "“Good Neighbor” Community Award", year: "2022" }],
   },
   {
@@ -555,6 +564,7 @@ export const awards: Award[] = [
     logo: logoDev("techstars.com"),
     mark: "TS",
     accent: "#16a34a",
+    url: "https://www.techstars.com",
     items: [{ title: "Impact Player Recognition", year: "2021" }],
   },
   {
@@ -562,6 +572,7 @@ export const awards: Award[] = [
     logo: logoDev("nicklaus.com"),
     mark: "JN",
     accent: "#c8a24a",
+    url: "https://nicklaus.com/the-company/",
     items: [{ title: "Amateur Golf National Champion", year: "2020" }],
   },
   {
@@ -569,6 +580,7 @@ export const awards: Award[] = [
     logo: logoDev("cff.org"),
     mark: "CF",
     accent: "#7c3aed",
+    url: "https://www.cff.org",
     items: [{ title: "Rising Star Awardee", year: "2018" }],
   },
   {
@@ -576,6 +588,7 @@ export const awards: Award[] = [
     logo: logoDev("firsttee.org"),
     mark: "FT",
     accent: "#15803d",
+    url: "https://firsttee.org",
     items: [{ title: "New Coach of the Year", year: "2016" }],
   },
   {
@@ -583,6 +596,7 @@ export const awards: Award[] = [
     logo: logoDev("niagara.edu"),
     mark: "NU",
     accent: "#5a2d82",
+    url: "https://www.niagara.edu",
     items: [
       { title: "Top 20 Most Intriguing Student", year: "2013" },
       { title: "Who’s Who Among Students in American Universities & Colleges", year: "2012" },
@@ -658,18 +672,18 @@ export const civic: Civic[] = [
   { org: "Compeer of Greater Buffalo", role: "Advisor / Connector", logo: logoDev("compeerbuffalo.org"), mark: "Cp", accent: "#0d9488", url: "https://compeerbuffalo.org", category: "Health & Recovery" },
   { org: "Techstars", role: "Community Organizer & Program Contributor", logo: logoDev("techstars.com"), mark: "T", accent: "#1f1f1f", url: "https://www.techstars.com", category: "Entrepreneurship & Startups" },
   { org: "POWER of OZmosis", role: "Mentor · Connector · Fundraiser", logo: logoDev("powerofozmosis.com"), mark: "OZ", accent: "#1d4ed8", url: "https://www.powerofozmosis.com", category: "Entrepreneurship & Startups" },
-  { org: "PGA REACH Western NY", role: "Board of Trustees & Advisor", logo: logoDev("pga.com"), mark: "PGA", accent: "#0b3d2e", url: "https://westernnewyork.pga.com", category: "Sports & Golf" },
+  { org: "PGA REACH Western NY", role: "Board of Trustees & Advisor", logo: "/logos/pgareach.png", mark: "PGA", accent: "#0b3d2e", url: "https://westernnewyork.pga.com", category: "Sports & Golf" },
   { org: "EforAll", role: "Lead Mentor, Buffalo NY Cohort", logo: logoDev("eforall.org"), mark: "Ef", accent: "#2bb3a3", url: "https://eforall.org", category: "Entrepreneurship & Startups" },
   { org: "OnCore Golf", role: "Fundraising Director", logo: logoDev("oncoregolf.com"), mark: "OC", accent: "#111827", url: "https://www.oncoregolf.com", category: "Sports & Golf" },
   { org: "University at Buffalo", role: "Expert in Residence, LaunchPad · Finals Judge, Student Pitches (CoLab · Blackstone) · Mentor & Finals Judge, Student 2 Biz (School of Management)", logo: logoDev("buffalo.edu"), mark: "UB", accent: "#005bbb", url: "https://www.buffalo.edu", category: "Higher Ed & Mentorship" },
   { org: "dooProcess", role: "Community Champion & Mentor", logo: "/logos/civ-dooprocess.png", mark: "DP", accent: "#6d28d9", url: "https://www.dooprocess.org", category: "Entrepreneurship & Startups" },
   { org: "Buffalo Startup Week", role: "Featured Speaker, Social Media", logo: "/logos/civ-buffalo-startup-week.png", mark: "BSW", accent: "#f59e0b", url: "https://www.buffalo.edu/partnerships/landing-pages/startup-week.html", category: "Entrepreneurship & Startups" },
-  { org: "Heritage Christian Services", role: "Chairperson, Heritage HERO 5K & Annual Foundation Fundraiser", logo: logoDev("heritagechristianservices.org"), mark: "HC", accent: "#0e7490", url: "https://www.heritagechristianservices.org", category: "Community & Nonprofit" },
+  { org: "Heritage Christian Services", role: "Chairperson, Heritage HERO 5K & Annual Foundation Fundraiser", logo: "/logos/heritagechristian.png", mark: "HC", accent: "#0e7490", url: "https://heritagechristianservices.org/", category: "Community & Nonprofit" },
   { org: "Niagara Global Tourism Institute", role: "Community Advocate, TReC", logo: "/logos/civ-niagara-global.png", mark: "NG", accent: "#0891b2", url: "https://www.google.com/search?q=Niagara%20Global%20Tourism%20Institute", category: "Community & Nonprofit" },
   { org: "First Tee", role: "Youth Golf Coach", logo: logoDev("firsttee.org"), mark: "FT", accent: "#16a34a", url: "https://firsttee.org", category: "Sports & Golf" },
   { org: "Police Athletic League", role: "Youth Golf Coach", logo: logoDev("nationalpal.org"), mark: "PAL", accent: "#1e3a8a", url: "https://www.nationalpal.org", category: "Sports & Golf" },
   { org: "NAACP", role: "Member, Buffalo NY Chapter", logo: logoDev("naacp.org"), mark: "NA", accent: "#111827", url: "https://naacp.org", category: "Community & Nonprofit" },
-  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptionsmadeeasy.org", category: "Health & Recovery" },
+  { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptions.org", category: "Health & Recovery" },
   { org: "People Inc.", role: "Mentor", logo: logoDev("people-inc.org"), mark: "PI", accent: "#16a34a", url: "https://www.people-inc.org", category: "Community & Nonprofit" },
   { org: "Team F.A.S.T.", role: "Board Member", logo: logoDev("teamfastfoundation.com"), mark: "TF", accent: "#1d4ed8", url: "https://teamfastfoundation.com", category: "Health & Recovery" },
   { org: "Niagara University", role: "Featured Speaker & Careers Connector · Business Competition Finals Judge (Marketing Assn.)", logo: logoDev("niagara.edu"), mark: "NU", accent: "#5b2a86", url: "https://www.niagara.edu", category: "Higher Ed & Mentorship" },
@@ -679,11 +693,10 @@ export const civic: Civic[] = [
   { org: "The Essential Machine", role: "Mentor to Founder", logo: "/logos/civ-essential-machine.png", mark: "EM", accent: "#0ea5e9", url: "https://www.google.com/search?q=The%20Essential%20Machine%20startup", category: "Entrepreneurship & Startups" },
   { org: "NYBPC", role: "Regional Finals Judge", logo: logoDev("nybpc.org"), mark: "NY", accent: "#1f7a3f", url: "https://nybpc.org", category: "Higher Ed & Mentorship" },
   { org: "vidwheel", role: "Podcast Host & Featured Speaker", logo: logoDev("vidwheel.com"), mark: "VW", accent: "#16a34a", url: "https://vidwheel.com", category: "Entrepreneurship & Startups" },
-  { org: "Bad Golf Business School", role: "Founder / Operator", logo: "/logos/badgolf.png", mark: "BG", accent: "#15803d", url: "https://www.clarkdever.com/projects/bad-golf-business-school", category: "Sports & Golf" },
   { org: "American University", role: "Featured Speaker", logo: logoDev("american.edu"), mark: "AU", accent: "#b91c1c", url: "https://www.american.edu", category: "Higher Ed & Mentorship" },
   { org: "Trocaire College", role: "Featured Speaker", logo: logoDev("trocaire.edu"), mark: "TC", accent: "#7f1d1d", url: "https://www.trocaire.edu", category: "Higher Ed & Mentorship" },
   { org: "American Lung Association", role: "Fight for Air Climb Fundraiser", logo: logoDev("lung.org"), mark: "AL", accent: "#2563eb", url: "https://www.lung.org", category: "Health & Recovery" },
-  { org: "InfoTech WNY", role: "Board Member & Co-Director, Networking", logo: "/logos/civ-infotech-wny.png", mark: "IT", accent: "#0d9488", url: "https://www.google.com/search?q=InfoTech%20WNY", category: "Entrepreneurship & Startups" },
+  { org: "InfoTech WNY", role: "Board Member & Co-Director, Networking", logo: "/logos/civ-infotech-wny.png", mark: "IT", accent: "#0d9488", url: "https://infotechwny.com/", category: "Entrepreneurship & Startups" },
   { org: "Buffalo Niagara Partnership", role: "Featured Speaker, BN360", logo: logoDev("thepartnership.org"), mark: "BN", accent: "#1d4ed8", url: "https://www.thepartnership.org", category: "Entrepreneurship & Startups" },
   { org: "Cystic Fibrosis Foundation", role: "Rising Star Selection", logo: logoDev("cff.org"), mark: "CF", accent: "#2563eb", url: "https://www.cff.org", category: "Health & Recovery" },
   { org: "Special Olympics", role: "Event Volunteer, Fire Truck Pull", logo: logoDev("specialolympics.org"), mark: "SO", accent: "#e0301e", url: "https://www.specialolympics.org", category: "Sports & Golf" },

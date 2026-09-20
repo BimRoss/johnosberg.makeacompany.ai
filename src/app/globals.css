@@ -161,7 +161,7 @@ body::after {
 /* Hero name — one clean solid brand color, no glow, no gradient pan. Size and
    weight carry the hierarchy; the color just marks it as the one hero element. */
 .name-hero {
-  color: #0a5c8a;
+  color: #0088cc;
 }
 .dark .name-hero {
   color: #00ccff;
