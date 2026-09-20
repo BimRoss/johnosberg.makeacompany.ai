@@ -33,6 +33,7 @@ export const stats = [
   { value: "$2.2M+", label: "501c3 funds raised" },
   { value: "16+ yrs", label: "growth & partnerships" },
   { value: "25K+", label: "miles ran" },
+  { value: "20.9", label: "WHOOP age" },
   { value: "35M", label: "LinkedIn impressions" },
   { value: "40K+", label: "audience & network" },
 ];

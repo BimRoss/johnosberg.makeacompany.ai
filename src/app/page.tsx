@@ -170,7 +170,12 @@ export default function Home() {
           <div className="mx-auto grid w-full max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl bg-[#04070e]/15 shadow-md shadow-[#00ccff]/25 ring-1 ring-[#04070e]/15 md:grid-cols-12">
             {stats.map((s, i) => {
               const topRow = stats.length - 3;
-              const desktopSpan = i < topRow ? "md:col-span-3" : "md:col-span-4";
+              const desktopSpan =
+                stats.length % 4 === 0
+                  ? "md:col-span-3"
+                  : i < topRow
+                    ? "md:col-span-3"
+                    : "md:col-span-4";
               const mobileSpan =
                 stats.length % 2 !== 0 && i === stats.length - 1 ? "col-span-2" : "";
               return (
