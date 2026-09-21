@@ -35,32 +35,103 @@ function Frame({ m, onOpen }: { m: Moment; onOpen: () => void }) {
   );
 }
 
-// The drifting strip. A transform track (not a scroll container) so it never
-// hijacks the page's vertical scroll — same trick the endorsements marquee uses.
-// Items are duplicated once so the -50% loop wraps seamlessly.
+// The strip. A real horizontal scroll container so you can swipe it on a phone,
+// drag it with a mouse, or nudge it with the chevrons — and when you leave it
+// alone it drifts left on its own, same rhythm as the endorsements wall. Items
+// are duplicated once and the scroll position wraps at the halfway mark, so the
+// loop is seamless in either direction and never runs out of photos.
 function Strip({ onOpen }: { onOpen: (i: number) => void }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [duration, setDuration] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  // Auto-drift resumes once now() passes this timestamp; every interaction
+  // pushes it out, so the strip stays still while you're working with it.
+  const resumeAtRef = useRef(0);
+  const hoverRef = useRef(false);
+  // Mouse click-drag bookkeeping. draggedRef flips true once the pointer has
+  // moved far enough that the gesture is a drag, not a click — that suppresses
+  // the lightbox-open click when you let go.
+  const dragRef = useRef<{ startX: number; startScroll: number } | null>(null);
+  const draggedRef = useRef(false);
 
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    const measure = () => {
-      const setWidth = track.scrollWidth / 2;
-      if (setWidth > 0) setDuration(setWidth / DRIFT_SPEED);
-    };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(track);
-    return () => ro.disconnect();
+  // Pause drift for a beat after any manual interaction.
+  const nudgeResume = useCallback((ms = 2500) => {
+    resumeAtRef.current = performance.now() + ms;
   }, []);
 
+  // Keep scrollLeft inside [0, setWidth) so the two duplicated sets loop forever.
+  const wrap = useCallback((el: HTMLDivElement) => {
+    const setWidth = el.scrollWidth / 2;
+    if (setWidth <= 0) return;
+    if (el.scrollLeft >= setWidth) el.scrollLeft -= setWidth;
+    else if (el.scrollLeft < 0) el.scrollLeft += setWidth;
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let raf = 0;
+    let last = performance.now();
+
+    const tick = (now: number) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      const idle = now >= resumeAtRef.current && !hoverRef.current && !dragRef.current;
+      if (idle && !reduce) el.scrollLeft += DRIFT_SPEED * dt;
+      wrap(el);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [wrap]);
+
+  // Chevron nudge — scroll about one viewport of the strip, smoothly.
+  const nudge = useCallback((dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    nudgeResume();
+    el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
+  }, [nudgeResume]);
+
   return (
-    <div className="marquee-mask overflow-hidden">
+    <div className="group/strip relative">
       <div
-        ref={trackRef}
-        className="flex w-max gap-4 animate-marquee-l"
-        style={duration ? { animationDuration: `${duration}s` } : { animationName: "none" }}
+        ref={scrollRef}
+        className="marquee-mask no-scrollbar flex w-full cursor-grab gap-4 overflow-x-auto overscroll-x-contain active:cursor-grabbing"
+        onMouseEnter={() => (hoverRef.current = true)}
+        onMouseLeave={() => {
+          hoverRef.current = false;
+          dragRef.current = null;
+        }}
+        onWheel={() => nudgeResume()}
+        onTouchStart={() => nudgeResume()}
+        onTouchMove={() => nudgeResume()}
+        onPointerDown={(e) => {
+          if (e.pointerType !== "mouse") return; // touch scrolls natively
+          const el = scrollRef.current;
+          if (!el) return;
+          dragRef.current = { startX: e.clientX, startScroll: el.scrollLeft };
+          draggedRef.current = false;
+          nudgeResume();
+        }}
+        onPointerMove={(e) => {
+          const drag = dragRef.current;
+          const el = scrollRef.current;
+          if (!drag || !el) return;
+          const dx = e.clientX - drag.startX;
+          if (Math.abs(dx) > 5) draggedRef.current = true;
+          el.scrollLeft = drag.startScroll - dx;
+          nudgeResume();
+        }}
+        onPointerUp={() => (dragRef.current = null)}
+        onClickCapture={(e) => {
+          // Swallow the click that ends a drag so it doesn't open the lightbox.
+          if (draggedRef.current) {
+            e.preventDefault();
+            e.stopPropagation();
+            draggedRef.current = false;
+          }
+        }}
       >
         {gallery.map((m, i) => (
           <Frame key={`a-${i}`} m={m} onOpen={() => onOpen(i)} />
@@ -69,6 +140,28 @@ function Strip({ onOpen }: { onOpen: (i: number) => void }) {
           <Frame key={`b-${i}`} m={m} onOpen={() => onOpen(i)} />
         ))}
       </div>
+
+      {/* Desktop toggle arrows — fade in on hover, out of the way on touch. */}
+      <button
+        type="button"
+        onClick={() => nudge(-1)}
+        aria-label="Scroll photos left"
+        className="absolute left-2 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white opacity-0 backdrop-blur-sm transition hover:bg-black/60 group-hover/strip:opacity-100 sm:flex"
+      >
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        onClick={() => nudge(1)}
+        aria-label="Scroll photos right"
+        className="absolute right-2 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white opacity-0 backdrop-blur-sm transition hover:bg-black/60 group-hover/strip:opacity-100 sm:flex"
+      >
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
     </div>
   );
 }
