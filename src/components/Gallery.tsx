@@ -4,9 +4,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { gallery, type Moment } from "@/data/site";
 
-// Same drift speed as the endorsements marquee so the two sections feel like
-// one family. px/second; bump to speed the filmstrip up.
-const DRIFT_SPEED = 32;
+// Drift speed of the filmstrip, px/second. John flagged the old 32 as "barely
+// moving"; this reads as a clear, steady glide without feeling frantic.
+const DRIFT_SPEED = 75;
 
 // One photo in the strip. Fixed height, width follows the image's aspect ratio,
 // so portrait and landscape shots sit together like a real filmstrip. Clicking

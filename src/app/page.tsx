@@ -123,20 +123,22 @@ export default function Home() {
 
           {/* Photo column */}
           <div className="order-1 shrink-0 md:order-2">
-            <div className="relative aspect-[4/5] w-48 overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15 sm:w-56 md:w-72">
-              <Image
-                src="/headshot-v2.png"
-                alt={SITE_NAME}
-                fill
-                priority
-                sizes="288px"
-                className="object-cover"
-              />
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#00ccff]/25"
-              />
-            </div>
+            <TiltCard className="w-48 rounded-2xl sm:w-56 md:w-72">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15">
+                <Image
+                  src="/headshot-v2.png"
+                  alt={SITE_NAME}
+                  fill
+                  priority
+                  sizes="288px"
+                  className="object-cover"
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#00ccff]/25"
+                />
+              </div>
+            </TiltCard>
           </div>
         </section>
 
@@ -262,7 +264,7 @@ export default function Home() {
         {/* The Numbers */}
         <section className="reveal-on-scroll flex flex-col gap-5">
           <h2 className="eyebrow on-photo">The Numbers</h2>
-          <div className="mx-auto flex w-full max-w-2xl flex-wrap justify-center gap-2">
+          <div className="cascade mx-auto flex w-full max-w-2xl flex-wrap justify-center gap-2">
             {stats.map((s) => (
               <TiltCard
                 key={s.label}
@@ -285,7 +287,7 @@ export default function Home() {
         {/* Experience */}
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
           <h2 className="eyebrow on-photo">Experience</h2>
-          <div className="flex flex-col">
+          <div className="cascade flex flex-col">
             {roles.slice(0, -4).map((r, i) => (
               <div
                 key={r.org}
@@ -379,7 +381,7 @@ export default function Home() {
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               In the news
             </h3>
-            <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+            <div className="cascade grid grid-cols-1 gap-x-10 sm:grid-cols-2">
               {press.map((p) => (
                 <a
                   key={p.href}
@@ -416,7 +418,7 @@ export default function Home() {
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               Awards &amp; honors
             </h3>
-            <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+            <div className="cascade grid grid-cols-1 gap-x-10 sm:grid-cols-2">
               {awards.map((a, i) => (
                 <div
                   key={`${a.org}-${i}`}
@@ -457,7 +459,7 @@ export default function Home() {
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               Podcasts
             </h3>
-            <div className="flex flex-col">
+            <div className="cascade flex flex-col">
               {podcasts.map((pod, i) => (
                 <a
                   key={pod.href}
