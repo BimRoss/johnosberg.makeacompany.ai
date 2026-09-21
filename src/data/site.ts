@@ -784,6 +784,14 @@ export const gallery: Moment[] = [
   { src: "/gallery/g12-IMG_8185.jpg", caption: "Blue skies, good company" },
   { src: "/gallery/g12-IMG_4131.jpg", caption: "Fairway friends" },
   { src: "/gallery/g12-IMG_3789.jpg", caption: "Night miles" },
+  { src: "/gallery/g13-pga-hope-reach.jpg", caption: "PGA HOPE & REACH night" },
+  { src: "/gallery/g13-IMG_5043.jpg", caption: "Taking the mic" },
+  { src: "/gallery/g13-IMG_6410.jpg", caption: "With the students" },
+  { src: "/gallery/g13-IMG_2387.jpg", caption: "Frozen beard, finished" },
+  { src: "/gallery/g13-IMG_0483.jpg", caption: "Foursome at the flag" },
+  { src: "/gallery/g13-IMG_7581.jpg", caption: "Cart path crew" },
+  { src: "/gallery/g13-IMG_1320.jpg", caption: "Winter night run" },
+  { src: "/gallery/g13-IMG_2577.jpg", caption: "Snow run" },
 ];
 
 // Civic categories — drive the filterable civic logo wall, same pattern as the
