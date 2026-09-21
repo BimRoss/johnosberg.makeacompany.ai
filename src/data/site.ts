@@ -687,6 +687,16 @@ export const gallery: Moment[] = [
   { src: "/gallery/g2-IMG_0669.jpg", caption: "The home range" },
   { src: "/gallery/g2-IMG_5379.jpg", caption: "7 AM tee time, in memory" },
   { src: "/gallery/g2-IMG_8774.jpg", caption: "Beach volleyball" },
+  { src: "/gallery/g3-IMG_1478.jpg", caption: "Vikings hockey, #29" },
+  { src: "/gallery/g3-IMG_7806.jpg", caption: "Winter Classic" },
+  { src: "/gallery/g3-IMG_8854.jpg", caption: "Networking night" },
+  { src: "/gallery/g3-IMG_6363.jpg", caption: "Teaching the room" },
+  { src: "/gallery/g3-IMG_6953.jpg", caption: "Golf dome, full house" },
+  { src: "/gallery/g3-IMG_9059.jpg", caption: "PGA HOPE round" },
+  { src: "/gallery/g3-IMG_4852.jpg", caption: "PGA HOPE, serving vets" },
+  { src: "/gallery/g3-IMG_2710.jpg", caption: "Spring tee shot" },
+  { src: "/gallery/g3-IMG_3991.jpg", caption: "Clubhouse view" },
+  { src: "/gallery/g3-IMG_8825.jpg", caption: "A quiet moment" },
 ];
 
 // Civic categories — drive the filterable civic logo wall, same pattern as the
