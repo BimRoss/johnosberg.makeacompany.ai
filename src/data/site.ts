@@ -650,6 +650,25 @@ export const podcasts: Podcast[] = [
   },
 ];
 
+// Moments gallery — a filmstrip of life-and-career photos that drifts left near
+// the bottom of the page. Order here is display order (left to right); John
+// reorders chronologically by moving entries. `caption` is optional; leave it
+// off for a bare photo. Images live in /public/gallery, web-sized.
+export type Moment = { src: string; caption?: string };
+
+export const gallery: Moment[] = [
+  { src: "/gallery/IMG_7693.jpg", caption: "Youth hockey, 1998" },
+  { src: "/gallery/IMG_3405.jpg", caption: "Game day" },
+  { src: "/gallery/IMG_1467.jpg", caption: "In the office" },
+  { src: "/gallery/IMG_3721.jpg", caption: "Suited up with the crew" },
+  { src: "/gallery/IMG_8245.jpg", caption: "After hours" },
+  { src: "/gallery/IMG_5521.jpg", caption: "Building it out" },
+  { src: "/gallery/IMG_2652.jpg", caption: "Repping EmergenceTek Group" },
+  { src: "/gallery/IMG_4085.jpg", caption: "On the range" },
+  { src: "/gallery/IMG_7500.jpg", caption: "Beach volleyball" },
+  { src: "/gallery/IMG_4542.jpg", caption: "Tournament day" },
+];
+
 // Civic categories — drive the filterable civic logo wall, same pattern as the
 // partnership SECTORS above.
 export type CivicCategory =

@@ -13,6 +13,7 @@ import PressLogo from "@/components/PressLogo";
 import RoleLogo from "@/components/RoleLogo";
 import AwardLogo from "@/components/AwardLogo";
 import PodcastThumb from "@/components/PodcastThumb";
+import Gallery from "@/components/Gallery";
 import StatIcon from "@/components/StatIcon";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -477,6 +478,17 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Moments — a drifting filmstrip of life & career photos */}
+        <section id="moments" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <h2 className="eyebrow on-photo">Moments</h2>
+            <p className="on-photo max-w-2xl text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+              A few from along the way. Tap any photo to open it, then swipe or arrow through.
+            </p>
+          </div>
+          <Gallery />
         </section>
 
         {/* Connect */}
