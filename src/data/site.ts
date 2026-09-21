@@ -36,6 +36,7 @@ export type StatIconKey =
   | "impressions"
   | "reach"
   | "network"
+  | "reach"
   | "countless";
 
 export const stats: { value: string; label: string; icon: StatIconKey }[] = [
@@ -588,7 +589,7 @@ export const awards: Award[] = [
   },
   {
     org: "The First Tee of WNY",
-    logo: logoDev("firsttee.org"),
+    logo: "/logos/firsttee.png",
     mark: "FT",
     accent: "#15803d",
     url: "https://firsttee.org",
@@ -683,7 +684,7 @@ export const civic: Civic[] = [
   { org: "Buffalo Startup Week", role: "Featured Speaker, Social Media", logo: "/logos/civ-buffalo-startup-week.png", mark: "BSW", accent: "#f59e0b", url: "https://www.buffalo.edu/partnerships/landing-pages/startup-week.html", category: "Entrepreneurship & Startups" },
   { org: "Heritage Christian Services", role: "Chairperson, Heritage HERO 5K & Annual Foundation Fundraiser", logo: "/logos/heritagechristian.png", mark: "HC", accent: "#0e7490", url: "https://heritagechristianservices.org/", category: "Community & Nonprofit" },
   { org: "Niagara Global Tourism Institute", role: "Community Advocate, TReC", logo: "/logos/civ-niagara-global.png", mark: "NG", accent: "#0891b2", url: "https://www.google.com/search?q=Niagara%20Global%20Tourism%20Institute", category: "Community & Nonprofit" },
-  { org: "First Tee", role: "Youth Golf Coach", logo: logoDev("firsttee.org"), mark: "FT", accent: "#16a34a", url: "https://firsttee.org", category: "Sports & Golf" },
+  { org: "First Tee", role: "Youth Golf Coach", logo: "/logos/firsttee.png", mark: "FT", accent: "#16a34a", url: "https://firsttee.org", category: "Sports & Golf" },
   { org: "Police Athletic League", role: "Youth Golf Coach", logo: logoDev("nationalpal.org"), mark: "PAL", accent: "#1e3a8a", url: "https://www.nationalpal.org", category: "Sports & Golf" },
   { org: "NAACP", role: "Member, Buffalo NY Chapter", logo: logoDev("naacp.org"), mark: "NA", accent: "#111827", url: "https://naacp.org", category: "Community & Nonprofit" },
   { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptions.org", category: "Health & Recovery" },
