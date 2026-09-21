@@ -18,7 +18,8 @@
 .dark {
   --bg: #05070d;
   --fg: #f2f6fb;
-  --muted: #9fb0c4;
+  /* John: no grey body text in dark mode — muted reads bright white. */
+  --muted: #ffffff;
   --brand: #00ccff;
   --brand-deep: #22a3d6;
   --backdrop-base: #04070e;
@@ -173,7 +174,24 @@ body::after {
   color: #5a7385;
 }
 .dark .label-shimmer {
-  color: #7c96a6;
+  color: #ffffff;
+}
+
+/* John: any grey text in dark mode should read bright white. The theme-driven
+   greys (--muted, .label-shimmer above) are handled directly; this catches the
+   per-component muted utilities (dark:text-zinc-* and the translucent white
+   labels). Scoped to html.dark so light mode keeps its full hierarchy. */
+html.dark :is(
+  .dark\:text-zinc-100,
+  .dark\:text-zinc-200,
+  .dark\:text-zinc-300,
+  .dark\:text-zinc-400,
+  .dark\:text-zinc-500,
+  .text-white\/70,
+  .text-white\/60,
+  .text-white\/50
+) {
+  color: #ffffff;
 }
 
 /* Scroll-into-view fade-up, driven by ScrollReveal */

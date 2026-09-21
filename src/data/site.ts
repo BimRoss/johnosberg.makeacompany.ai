@@ -34,7 +34,6 @@ export type StatIconKey =
   | "growth"
   | "miles"
   | "impressions"
-  | "reach"
   | "network"
   | "reach"
   | "countless";

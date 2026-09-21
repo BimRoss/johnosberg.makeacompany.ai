@@ -84,7 +84,7 @@ export default function Home() {
                 </a>
               </span>
             </p>
-            <p className="on-photo mt-5 max-w-md text-base leading-7 text-zinc-700 dark:text-zinc-300">
+            <p className="on-photo mt-5 max-w-md text-base leading-7 text-zinc-700 dark:text-white">
               16+ years turning relationships into revenue across sports, tech, and nonprofit.
             </p>
 
