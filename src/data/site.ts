@@ -96,6 +96,7 @@ export const roles: Role[] = [
     logo: "/logos/stealth.png",
     mark: "SS",
     accent: "#64748b",
+    url: "https://www.linkedin.com/company/stealth-startup-community/",
   },
   {
     org: "PGA of America",
