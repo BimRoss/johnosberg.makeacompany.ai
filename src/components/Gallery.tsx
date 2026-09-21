@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { gallery, type Moment } from "@/data/site";
 
 // Same drift speed as the endorsements marquee so the two sections feel like
@@ -190,9 +191,13 @@ function Lightbox({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose, onMove]);
 
-  return (
+  // Portal to <body>. The Moments section is a `.reveal-on-scroll` element with
+  // `will-change: transform`, which makes it a containing block — so a plain
+  // `position: fixed` viewer stays trapped inside the section and the page bleeds
+  // in around it. Rendering into <body> escapes that and covers the real viewport.
+  return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black p-4"
       onClick={onClose}
       onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
       onTouchEnd={(e) => {
@@ -256,7 +261,8 @@ function Lightbox({
           {index + 1} / {gallery.length}
         </span>
       </figure>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
