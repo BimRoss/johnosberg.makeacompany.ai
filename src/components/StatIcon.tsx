@@ -56,6 +56,13 @@ const PATHS: Record<StatIconKey, React.ReactNode> = {
       <circle cx="12" cy="12" r="2.5" />
     </>
   ),
+  // globe with orbit — network reach (2nd-degree)
+  reach: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
+    </>
+  ),
   // people — audience & network
   network: (
     <>
