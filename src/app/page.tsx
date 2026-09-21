@@ -15,6 +15,8 @@ import AwardLogo from "@/components/AwardLogo";
 import PodcastThumb from "@/components/PodcastThumb";
 import Gallery from "@/components/Gallery";
 import StatIcon from "@/components/StatIcon";
+import TiltCard from "@/components/TiltCard";
+import TypeCycle from "@/components/TypeCycle";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ThemeToggle from "@/components/ThemeToggle";
 import LinkedInBadge from "@/components/LinkedInBadge";
@@ -88,6 +90,8 @@ export default function Home() {
             <p className="on-photo mt-5 max-w-md text-base leading-7 text-zinc-700 dark:text-white">
               16+ years turning relationships into revenue across sports, tech, and nonprofit.
             </p>
+
+            <TypeCycle />
 
             {/* Primary actions */}
             <div className="mt-8 flex flex-col items-center">
@@ -260,18 +264,20 @@ export default function Home() {
           <h2 className="eyebrow on-photo">The Numbers</h2>
           <div className="mx-auto flex w-full max-w-2xl flex-wrap justify-center gap-2">
             {stats.map((s) => (
-              <div
+              <TiltCard
                 key={s.label}
-                className="flex w-[calc(50%-0.25rem)] flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-3 py-4 text-center backdrop-blur-sm md:w-[calc(25%-0.375rem)] dark:border-white/10 dark:bg-white/[0.03]"
+                className="w-[calc(50%-0.25rem)] rounded-lg md:w-[calc(25%-0.375rem)]"
               >
-                <StatIcon icon={s.icon} className="mb-1.5 h-5 w-5 text-[#0088cc]/90 dark:text-[#00ccff]/90" />
-                <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
-                  {/\d/.test(s.value) ? <CountUp value={s.value} /> : s.value}
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-3 py-4 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]">
+                  <StatIcon icon={s.icon} className="mb-1.5 h-5 w-5 text-[#0088cc]/90 dark:text-[#00ccff]/90" />
+                  <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
+                    {/\d/.test(s.value) ? <CountUp value={s.value} /> : s.value}
+                  </div>
+                  <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+                    {s.label}
+                  </div>
                 </div>
-                <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
-                  {s.label}
-                </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </section>

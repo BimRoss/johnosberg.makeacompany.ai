@@ -52,6 +52,13 @@ function burst(ox: number, oy: number) {
   raf = requestAnimationFrame(tick);
 }
 
+function magnetOk() {
+  if (typeof window === "undefined") return false;
+  if (window.matchMedia("(pointer: coarse)").matches) return false;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  return true;
+}
+
 export default function BookCallBtn() {
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -61,6 +68,25 @@ export default function BookCallBtn() {
     burst(r.left + r.width / 2, r.top + r.height / 2);
   }
 
+  // Magnetic pull: the button eases a few pixels toward the cursor as it nears,
+  // then springs back on leave. Desktop + motion-allowed only.
+  function onMove(e: React.MouseEvent<HTMLAnchorElement>) {
+    const el = ref.current;
+    if (!el || !magnetOk()) return;
+    const r = el.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width / 2);
+    const dy = e.clientY - (r.top + r.height / 2);
+    el.style.transition = "transform 0.1s ease-out";
+    el.style.transform = `translate(${dx * 0.28}px, ${dy * 0.28}px)`;
+  }
+
+  function onLeave() {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
+    el.style.transform = "";
+  }
+
   return (
     <a
       ref={ref}
@@ -68,7 +94,10 @@ export default function BookCallBtn() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
       className="group inline-flex items-center gap-2 rounded-sm bg-[#00ccff] px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#04070e] shadow-lg shadow-[#00ccff]/30 transition-colors hover:bg-[#33d6ff]"
+      style={{ willChange: "transform" }}
     >
       <span aria-hidden>⚡</span>
       Let&apos;s Talk!

@@ -44,7 +44,7 @@ export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "$2.2M+", label: "501c3 funds raised", icon: "nonprofit" },
   { value: "16+ yrs", label: "growth & partnerships", icon: "growth" },
   { value: "25K+", label: "miles ran", icon: "miles" },
-  { value: "35M", label: "LinkedIn impressions", icon: "impressions" },
+  { value: "35M+", label: "LinkedIn impressions", icon: "impressions" },
   { value: "20M+", label: "network reach", icon: "reach" },
   { value: "30K+", label: "audience & network", icon: "network" },
   { value: "Countless", label: "wins, connections, relationships, deals", icon: "countless" },
