@@ -47,7 +47,7 @@ export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "35M+", label: "LinkedIn impressions", icon: "impressions" },
   { value: "20M+", label: "network reach", icon: "reach" },
   { value: "30K+", label: "audience & network", icon: "network" },
-  { value: "Countless", label: "wins, connections, relationships, deals", icon: "countless" },
+  { value: "Countless", label: "wins, intros, relationships, connections, deals done, invigorating moments, growth, smiles, laughs", icon: "countless" },
 ];
 
 // Experience — mirrors John's LinkedIn: same roles, same order (most recent

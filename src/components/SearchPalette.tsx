@@ -14,6 +14,7 @@ type Item = {
 
 function buildIndex(): Item[] {
   const sections: Item[] = [
+    { label: "Clutch Factor — nTangible assessment", kind: "Section", href: "#clutch" },
     { label: "Experience", kind: "Section", href: "#experience" },
     { label: "Partnerships", kind: "Section", href: "#partnerships" },
     { label: "Civic leadership & volunteer work", kind: "Section", href: "#civic" },

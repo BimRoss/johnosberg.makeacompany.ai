@@ -18,6 +18,7 @@ import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
 import BrandleteVideo from "@/components/BrandleteVideo";
+import ClutchFactor from "@/components/ClutchFactor";
 import ThemeToggle from "@/components/ThemeToggle";
 import LinkedInBadge from "@/components/LinkedInBadge";
 import {
@@ -89,6 +90,10 @@ export default function Home() {
             </p>
             <p className="on-photo mt-5 max-w-md text-base leading-7 text-zinc-700 dark:text-white">
               16+ years turning relationships into revenue across sports, tech, and nonprofit.
+            </p>
+            <p className="on-photo mt-3 inline-flex items-center gap-1.5 font-mono text-xs font-medium text-zinc-600 dark:text-zinc-400">
+              <span aria-hidden>🎤</span>
+              Secret talent: impersonations of rappers &amp; singers, Lil Wayne and Green Day.
             </p>
 
             <TypeCycle />
@@ -268,7 +273,11 @@ export default function Home() {
             {stats.map((s) => (
               <TiltCard
                 key={s.label}
-                className="w-[calc(50%-0.25rem)] rounded-lg md:w-[calc(25%-0.375rem)]"
+                className={`rounded-lg ${
+                  s.icon === "countless"
+                    ? "w-full"
+                    : "w-[calc(50%-0.25rem)] md:w-[calc(25%-0.375rem)]"
+                }`}
               >
                 <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-3 py-4 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]">
                   <StatIcon icon={s.icon} className="mb-1.5 h-5 w-5 text-[#0088cc]/90 dark:text-[#00ccff]/90" />
@@ -282,6 +291,11 @@ export default function Home() {
               </TiltCard>
             ))}
           </div>
+        </section>
+
+        {/* Clutch Factor — nTangible assessment */}
+        <section id="clutch" className="reveal-on-scroll scroll-mt-24">
+          <ClutchFactor />
         </section>
 
         {/* Experience */}
