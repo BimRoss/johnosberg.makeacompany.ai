@@ -91,10 +91,6 @@ export default function Home() {
             <p className="on-photo mt-5 max-w-md text-base leading-7 text-zinc-700 dark:text-white">
               16+ years turning relationships into revenue across sports, tech, and nonprofit.
             </p>
-            <p className="on-photo mt-3 inline-flex items-center gap-1.5 font-mono text-xs font-medium text-zinc-600 dark:text-zinc-400">
-              <span aria-hidden>🎤</span>
-              Secret talent: impersonations of rappers &amp; singers, Lil Wayne and Green Day.
-            </p>
 
             <TypeCycle />
 
@@ -511,6 +507,10 @@ export default function Home() {
             </p>
           </div>
           <Gallery />
+          <p className="on-photo mt-2 inline-flex items-center gap-1.5 font-mono text-xs font-medium text-zinc-600 dark:text-zinc-400">
+            <span aria-hidden>🎤</span>
+            Secret talent: impersonations of rappers &amp; singers, Lil Wayne and Green Day.
+          </p>
         </section>
 
         {/* Connect */}
