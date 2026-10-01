@@ -88,10 +88,6 @@ export default function Home() {
                 </a>
               </span>
             </p>
-            <p className="on-photo mt-5 max-w-md text-base leading-7 text-zinc-700 dark:text-white">
-              16+ years turning relationships into revenue across sports, tech, and nonprofit.
-            </p>
-
             <TypeCycle />
 
             {/* Primary actions */}
@@ -507,7 +503,7 @@ export default function Home() {
             </p>
           </div>
           <Gallery />
-          <p className="on-photo mt-2 inline-flex items-center gap-1.5 font-mono text-xs font-medium text-zinc-600 dark:text-zinc-400">
+          <p className="on-photo mt-3 flex items-center justify-center gap-2 text-center font-mono text-base font-bold text-zinc-900 dark:text-white">
             <span aria-hidden>🎤</span>
             Secret talent: impersonations of rappers &amp; singers, Lil Wayne and Green Day.
           </p>
