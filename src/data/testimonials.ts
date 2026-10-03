@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
     "text": "I have known John for many years now. Wherever we meet up he has a very positive and urgent attitude with what he works with, he brings the energy to the room. At the company he works with he will be a great asset."
   },
   {
-    "name": "Michael Calabrese",
+    "name": "Michael Calabret",
     "title": "Growth Partner at Brandlete, Inc. | Miami University Farmer School of Business, Finance Major, Wealth Management Minor",
     "company": "Brandlete, Inc.",
     "text": "If I had to write about a few defining qualities of my boss, John Osberg, it would be his ability to listen, be open-minded, and think outside the box. When I first approached him last spring, I was finishing up my freshman year of college and I was looking forward to opportunities in the world of business development. Despite the fact I had no prior experience, John was able to understand that as a goalie, I see things from a different perspective. By recognizing that I had a unique trait, he welcomed me with open arms to the Brandlete team this fall. Now we are working as a team to find solutions for each client we target and give the product team feedback for the next model's improvements and adjustments. Working with him has been an absolute pleasure as he keeps a positive attitude and always thinks about the upside of each situation. It leaves a lot for me to take away and apply to my own pursuit of eventually managing clients in the sports and entertainment space of Wealth Management."
