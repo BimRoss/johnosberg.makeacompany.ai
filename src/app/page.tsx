@@ -372,7 +372,7 @@ export default function Home() {
           <div className="flex flex-col gap-1">
             <h2 className="eyebrow on-photo">Endorsements</h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
-              Endorsed by 137+ leaders.
+              Endorsed by 138+ leaders.
             </p>
           </div>
           <Testimonials />

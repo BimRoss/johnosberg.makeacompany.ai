@@ -56,18 +56,13 @@ export default function ClutchFactor() {
           </div>
         </div>
 
-        {/* What the score measures + provenance (from the nTangible assessment card) */}
+        {/* What the score measures (from the nTangible assessment card) */}
         <div className="mt-6 border-t border-white/10 pt-5">
           <p className="text-[13px] leading-6 text-zinc-400">
             The nTangible Clutch Factor™ is a 1 to 1,000 score that measures and
             predicts an athlete&apos;s mental capacity to perform under
             high-pressure, game-deciding moments.
           </p>
-          <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
-            <span>Assessed Sep 2026</span>
-            <span aria-hidden className="text-zinc-700">·</span>
-            <span className="text-[#00ccff]">Associated with Brandlete, Inc.</span>
-          </div>
         </div>
       </a>
     </TiltCard>

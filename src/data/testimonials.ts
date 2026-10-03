@@ -1,4 +1,4 @@
-// Auto-generated from John's LinkedIn Recommendations export (137 received).
+// Auto-generated from John's LinkedIn Recommendations export (138 received).
 export type Testimonial = { name: string; title: string; company: string; text: string };
 
 export const testimonials: Testimonial[] = [
@@ -823,5 +823,11 @@ export const testimonials: Testimonial[] = [
     "title": "Creative Executive",
     "company": "Golfluential",
     "text": "This recommendation for John Osberg is an easy one to write for the depth and breadth of content to draw on, which also makes it difficult to capture everything that makes him Johnny O; man, myth and legend. His character is beyond reproach leading foremost with openness and a smile, wanting to hear from others before speaking anything on his own behalf. His word is his sacred trust. He commits to his ideals he lives, to intentional living, and to his dedication to maximize his effectiveness and his integrity with every heartbeat and step he makes. I know this from 7 years of our combined efforts and driven purposefulness supporting golf for Veterans through the PGA HOPE program of the PGA REACH fundraising arm of the Western NY PGA Headquarters, and our ongoing personal connection that extends well outside those bounds. In the military we have a phrase, \"iron sharpens iron\" and together we strive to promote excellence as \"the tip of the spear\" leading the way so others may follow. John doesn't need anyone with him to be that tip of the spear and his enthusiasm is infectious lighting the desires of many who are inspired by his shared concepts of clarity and purpose painting the future in bright colors and with advantages to be gained by everyone those intentions would touch. He is a visionary and a motivator, a committed friend and warrior at heart. John is a dedicated family man to his wife and daughter and they are the foundation of his purpose. When I think of John I see a spiritual brother who leads from the heart but balances that ideal grounded in the wisdom of experience. His actions for PGA HOPE communicate louder than any words spoken and his direct actions woven into the fabric of the WNY golf community through the REACH Foundation and WNYPGA Headquarters will continue to provide service to our US military Veterans, our nation's defenders well beyond his time. Words can be inadequate and too many can take away from those chosen. I give thanks for John's path crossing mine. Derek G. Henshaw, Lieutenant Colonel (Retired), US Army Reserve"
+  },
+  {
+    "name": "Jack Cooper",
+    "title": "Freight Brokerage | Customer & Account Management | Business Development | Transportation",
+    "company": "",
+    "text": "John is a great guy with a lot of energy and a strong presence. He's personable, easy to talk to, and does a great job connecting with the people around him. I enjoyed getting the opportunity to hear from him and would definitely recommend John to anyone looking to work with someone who brings a positive attitude and good energy."
   }
 ];
