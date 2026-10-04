@@ -513,6 +513,39 @@ export default function Home() {
         <section id="connect" className="reveal-on-scroll flex scroll-mt-24 flex-col items-center gap-6">
           <h2 className="eyebrow on-photo">Connect</h2>
           <LinkedInBadge />
+
+          {/* Newsletter — Bigger Than Sports */}
+          <a
+            href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex w-full max-w-md items-center gap-4 rounded-2xl border border-[#00ccff]/40 bg-[#00ccff]/[0.06] p-4 transition-all hover:-translate-y-0.5 hover:border-[#00ccff]/70 hover:bg-[#00ccff]/[0.1]"
+          >
+            <Image
+              src="/bts-logo.png"
+              alt="Bigger Than Sports newsletter logo"
+              width={72}
+              height={72}
+              className="h-16 w-16 shrink-0 rounded-xl shadow-lg shadow-black/20"
+            />
+            <div className="flex flex-col gap-1 text-left">
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0088cc] dark:text-[#00ccff]">
+                Newsletter
+              </span>
+              <span className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-black dark:text-white">
+                Bigger Than Sports
+              </span>
+              <span className="text-sm leading-5 text-zinc-700 dark:text-zinc-300">
+                Weekly field notes on getting better. Follow on LinkedIn.
+              </span>
+            </div>
+            <span
+              aria-hidden
+              className="ml-auto self-center text-[#0088cc] transition-transform group-hover:translate-x-1 dark:text-[#00ccff]"
+            >
+              →
+            </span>
+          </a>
         </section>
 
         {/* Footer */}
@@ -523,6 +556,13 @@ export default function Home() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff]"
           >
+            <Image
+              src="/bts-logo.png"
+              alt=""
+              width={18}
+              height={18}
+              className="h-[18px] w-[18px] rounded-[4px] object-contain"
+            />
             Newsletter: &ldquo;Bigger Than Sports&rdquo;
             <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
           </a>
