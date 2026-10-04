@@ -29,7 +29,7 @@ import {
   SITE_NAME,
   stats,
 } from "@/data/site";
-import { LinkedInIcon, NewsletterIcon } from "@/data/socials";
+import { LinkedInIcon } from "@/data/socials";
 
 export default function Home() {
   return (
@@ -110,7 +110,13 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
                 >
-                  <NewsletterIcon className="h-4 w-4 shrink-0" />
+                  <Image
+                    src="/bts-logo.png"
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 shrink-0 rounded-[5px] object-contain"
+                  />
                   Newsletter
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                 </a>
