@@ -542,7 +542,7 @@ export default function Home() {
                 Bigger Than Sports
               </span>
               <span className="text-sm leading-5 text-zinc-700 dark:text-zinc-300">
-                Weekly field notes on getting better. Follow on LinkedIn.
+                BTS: where sports, growth and community intersect. Follow on LinkedIn.
               </span>
             </div>
             <span
@@ -556,22 +556,6 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="on-photo flex flex-col items-center gap-3 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
-          <a
-            href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff]"
-          >
-            <Image
-              src="/bts-logo.png"
-              alt=""
-              width={18}
-              height={18}
-              className="h-[18px] w-[18px] rounded-[4px] object-contain"
-            />
-            Newsletter: &ldquo;Bigger Than Sports&rdquo;
-            <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
-          </a>
           <span>© {new Date().getFullYear()} John Osberg</span>
           <p className="flex flex-wrap items-center justify-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
             Built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
