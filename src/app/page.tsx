@@ -61,6 +61,7 @@ export default function Home() {
                 John Osberg
               </a>
             </h1>
+            <TypeCycle />
             <p className="on-photo mt-7 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
               Founding Director &amp; VP Partnerships{" "}
               <span className="inline-flex items-center gap-1.5 whitespace-nowrap align-middle">
@@ -88,7 +89,6 @@ export default function Home() {
                 </a>
               </span>
             </p>
-            <TypeCycle />
 
             {/* Primary actions */}
             <div className="mt-8 flex flex-col items-center">
@@ -149,7 +149,7 @@ export default function Home() {
         <section id="brandlete" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-[#0088cc] dark:text-[#00ccff] sm:text-4xl">
-              What we&apos;ve built at Brandlete
+              What we&apos;ve built at Brandlete, Inc.
             </h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-semibold text-black dark:text-white sm:text-xl">
               The Athlete Development Driven Sports Program Operating System.
