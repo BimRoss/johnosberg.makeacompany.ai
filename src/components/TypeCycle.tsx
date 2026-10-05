@@ -53,11 +53,11 @@ export default function TypeCycle() {
   }, [displayed, deleting, idx, still]);
 
   return (
-    <p className="on-photo mt-6 font-mono text-sm font-semibold uppercase tracking-[0.18em] text-white sm:mt-8 sm:text-base">
+    <p className="on-photo mt-6 font-mono text-sm font-semibold uppercase tracking-[0.18em] text-[#415568] dark:text-white sm:mt-8 sm:text-base">
       {"I'm a "}
-      <span className="text-white">{displayed}</span>
+      <span className="text-[#415568] dark:text-white">{displayed}</span>
       {!still && (
-        <span className="ml-px inline-block w-0.5 animate-pulse bg-white align-middle">&nbsp;</span>
+        <span className="ml-px inline-block w-0.5 animate-pulse bg-[#415568] align-middle dark:bg-white">&nbsp;</span>
       )}
     </p>
   );
