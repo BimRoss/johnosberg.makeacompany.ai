@@ -50,7 +50,7 @@ export default function Home() {
             <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
               Partnerships · Growth · Sports Tech
             </span>
-            <h1 className="on-photo mt-4 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[4.4rem]">
+            <h1 className="on-photo mt-6 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[4.4rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
                 target="_blank"
@@ -61,7 +61,7 @@ export default function Home() {
                 John Osberg
               </a>
             </h1>
-            <p className="on-photo mt-5 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
+            <p className="on-photo mt-7 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
               Founding Director &amp; VP Partnerships{" "}
               <span className="inline-flex items-center gap-1.5 whitespace-nowrap align-middle">
                 <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
