@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 export default function ChromeFx() {
   const [progress, setProgress] = useState(0);
   const [showTop, setShowTop] = useState(false);
+  const [showBottom, setShowBottom] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,6 +18,9 @@ export default function ChromeFx() {
       const y = el.scrollTop || window.scrollY;
       setProgress(max > 0 ? y / max : 0);
       setShowTop(y > 600);
+      // Hold the "Go to bottom" pill until you've scrolled past the hero, so it
+      // isn't sitting over the "Let's Talk!" CTA the moment you land.
+      setShowBottom(y > 260 && y <= 600);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -68,7 +72,7 @@ export default function ChromeFx() {
         type="button"
         aria-label="Go to bottom"
         onClick={toBottom}
-        className={`${pill} ${showTop ? hidden : shown}`}
+        className={`${pill} ${showBottom ? shown : hidden}`}
       >
         <svg viewBox="0 0 24 24" className="h-3 w-3 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
           <path d="M12 5v14M5 12l7 7 7-7" />
