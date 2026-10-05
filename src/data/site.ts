@@ -72,7 +72,7 @@ export type Role = {
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
-    title: "Founding Director / VP of Partnerships",
+    title: "Founding Director / VP Partnerships",
     period: "Nov 2021 – Present",
     blurb: "Co-founded the athlete development operating system for coaches, athletes, families, and the organizations that run youth, amateur, and pro sports.",
     logo: logoDev("brandlete.com"),
@@ -82,7 +82,7 @@ export const roles: Role[] = [
   },
   {
     org: "Stealth Startup",
-    title: "GTM/Partnerships - AI, SportsTech, Talent",
+    title: "GTM / Partnerships / Sales Consultant",
     period: "Jun 2016 – Present",
     blurb: "Estimated attributions to portfolio of companies = $2.2M+.",
     logo: "/logos/stealth.png",
@@ -102,7 +102,7 @@ export const roles: Role[] = [
   },
   {
     org: "OnCore Golf",
-    title: "Director of Revenue Partnerships / Strategic Advisor / Consultant",
+    title: "Director of Partnerships / Strategic Advisor",
     period: "Jul 2016 – Aug 2025",
     blurb: "Drove $4M+ in revenue through DICK'S, Golf Galaxy, Wegmans, and NYSGA tour deals.",
     logo: logoDev("oncoregolf.com"),
@@ -112,7 +112,7 @@ export const roles: Role[] = [
   },
   {
     org: "Bad Golf Business School",
-    title: "Founder / Operator",
+    title: "Co-Founder",
     period: "Jan 2019 – Jul 2025",
     blurb: "Founded a golf-meets-business platform sharing startup lessons from the fairway.",
     logo: "/logos/badgolf.png",
@@ -122,7 +122,7 @@ export const roles: Role[] = [
   },
   {
     org: "POWER of OZmosis",
-    title: "Principal Consultant / Founder",
+    title: "Founder",
     period: "Jul 2019 – Jun 2025",
     blurb: "Founded a startup-advisory practice and coached 40+ founders to fundraising and first revenue.",
     logo: logoDev("powerofozmosis.com"),
@@ -132,7 +132,7 @@ export const roles: Role[] = [
   },
   {
     org: "EmergenceTek Group Inc.",
-    title: "VP of Sales / Founding Member / Management Consultant",
+    title: "VP Sales / Founding Director / Consultant",
     period: "Sep 2012 – Sep 2024",
     blurb: "Built client engagement from zero to 25+ organizations and closed $5M+ in sales.",
     logo: logoDev("emergencetek.com"),
@@ -152,7 +152,7 @@ export const roles: Role[] = [
   },
   {
     org: "DataSure24",
-    title: "Director of Business Development / Founding Employee",
+    title: "Director of Sales / Business Development",
     period: "Aug 2018 – Jul 2019",
     blurb: "Founding employee driving early business development for a data and safety-tech startup.",
     logo: logoDev("datasure24.com"),
