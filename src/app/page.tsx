@@ -388,10 +388,10 @@ export default function Home() {
         <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
           <h2 className="eyebrow on-photo">Recognized</h2>
 
-          {/* In the news */}
+          {/* In the press */}
           <div className="flex flex-col gap-2.5">
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
-              In the news
+              In the press
             </h3>
             <div className="cascade grid grid-cols-1 gap-x-10 sm:grid-cols-2">
               {press.map((p) => (
@@ -511,7 +511,7 @@ export default function Home() {
           <Gallery />
           <p className="on-photo mt-10 flex items-center justify-center gap-2 text-center font-mono text-base font-bold text-zinc-900 dark:text-white">
             <span aria-hidden>🎤</span>
-            Secret talent: impersonations of rappers &amp; singers, Lil Wayne, Green Day, Akon and Zac Brown.
+            Secret talent: impersonations of rappers &amp; singers, Lil Wayne + Akon, and Zac Brown + Green Day, to name some.
           </p>
         </section>
 
