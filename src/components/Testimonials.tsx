@@ -123,55 +123,96 @@ function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; t
   );
 }
 
-// A CSS-transform marquee: the track slides via translateX, so there is NO
-// horizontal scroll container. That's the whole point — an overflow-x scroller
-// captures the page's vertical wheel/touch and makes scrolling past this
-// section feel stuck. A transform track never intercepts scroll or clicks, so
-// the page always scrolls straight through. Cards are duplicated once so the
-// -50% translate wraps seamlessly; hovering pauses the drift (CSS).
+// A real horizontal scroll container you can swipe/drag, that ALSO auto-drifts
+// on its own so the row still looks alive. The auto-drift nudges scrollLeft each
+// frame; any touch, drag, or wheel pauses it and it resumes a beat after you let
+// go. Cards are duplicated once and the position wraps at the halfway mark, so
+// the drift loops seamlessly in either direction.
+//
+// Why a scroll container is safe here (the original marquee avoided one): the
+// track sets `touch-action: pan-x`, so a vertical finger-drag passes straight
+// through to the page and only a horizontal drag scrolls the row. Paired with
+// `overscroll-behavior-x: contain`, scrolling past this section never feels
+// stuck. Don't add backdrop-blur to the cards (see Card note) — it crashes iOS.
 function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [duration, setDuration] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
+  const resumeAtRef = useRef(0);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    // The track holds the items twice, so one full set is exactly half the
-    // scroll width — that's the distance the -50% animation travels each loop.
-    // duration = distance / speed keeps px/s identical to the other row and
-    // steady across responsive card-width changes.
-    const measure = () => {
-      const setWidth = track.scrollWidth / 2;
-      if (setWidth > 0) setDuration(setWidth / MARQUEE_SPEED);
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const half = () => el.scrollWidth / 2;
+
+    // Start the right-drifting row partway in so it has room to travel toward 0.
+    if (dir === "r") el.scrollLeft = half();
+
+    let raf = 0;
+    let last = performance.now();
+    const tick = (now: number) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      if (!reduce && !pausedRef.current && now >= resumeAtRef.current) {
+        el.scrollLeft += (dir === "l" ? 1 : -1) * MARQUEE_SPEED * dt;
+      }
+      // Seamless wrap: one full set of cards is exactly half the scroll width.
+      const h = half();
+      if (h > 0) {
+        if (el.scrollLeft >= h) el.scrollLeft -= h;
+        else if (el.scrollLeft <= 0) el.scrollLeft += h;
+      }
+      raf = requestAnimationFrame(tick);
     };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(track);
-    return () => ro.disconnect();
-  }, []);
+    raf = requestAnimationFrame(tick);
+
+    // Pause the drift while the user is interacting; resume shortly after they
+    // let go so a swipe (and its momentum) isn't fought by the animation. We
+    // never listen to the `scroll` event — our own drift fires it, which would
+    // self-pause the loop — so interaction is tracked via pointer/touch/wheel.
+    const pause = () => {
+      pausedRef.current = true;
+    };
+    const resumeSoon = () => {
+      pausedRef.current = false;
+      resumeAtRef.current = performance.now() + 1500;
+    };
+
+    el.addEventListener("pointerdown", pause);
+    el.addEventListener("pointerup", resumeSoon);
+    el.addEventListener("pointercancel", resumeSoon);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resumeSoon, { passive: true });
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resumeSoon);
+    el.addEventListener("wheel", resumeSoon, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      el.removeEventListener("pointerdown", pause);
+      el.removeEventListener("pointerup", resumeSoon);
+      el.removeEventListener("pointercancel", resumeSoon);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resumeSoon);
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resumeSoon);
+      el.removeEventListener("wheel", resumeSoon);
+    };
+  }, [dir]);
 
   return (
-    <div className="overflow-hidden">
-      <div
-        ref={trackRef}
-        className={`flex w-max gap-5 ${
-          dir === "l" ? "animate-marquee-l" : "animate-marquee-r"
-        }`}
-        // Hold still until measured, so there's no fast flash before JS sets the
-        // real duration. Once measured, this overrides the CSS fallback.
-        style={
-          duration
-            ? { animationDuration: `${duration}s` }
-            : { animationName: "none" }
-        }
-      >
-        {items.map((t, i) => (
-          <Card key={`a-${i}`} t={t} />
-        ))}
-        {items.map((t, i) => (
-          <Card key={`b-${i}`} t={t} />
-        ))}
-      </div>
+    <div
+      ref={scrollRef}
+      className="no-scrollbar flex gap-5 overflow-x-auto"
+      style={{ touchAction: "pan-x", overscrollBehaviorX: "contain" }}
+    >
+      {items.map((t, i) => (
+        <Card key={`a-${i}`} t={t} />
+      ))}
+      {items.map((t, i) => (
+        <Card key={`b-${i}`} t={t} />
+      ))}
     </div>
   );
 }

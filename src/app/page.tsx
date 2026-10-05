@@ -511,7 +511,7 @@ export default function Home() {
           <Gallery />
           <p className="on-photo mt-10 flex items-center justify-center gap-2 text-center font-mono text-base font-bold text-zinc-900 dark:text-white">
             <span aria-hidden>🎤</span>
-            Secret talent: impersonations of rappers &amp; singers, Lil Wayne + Akon, and Zac Brown + Green Day, to name some.
+            Secret talent: impersonations of rappers &amp; singers, Lil Wayne + Akon, and Zac Brown + Green Day, to name just a few 😆
           </p>
         </section>
 
