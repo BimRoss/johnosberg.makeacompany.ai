@@ -100,7 +100,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0a66c2] transition-colors hover:text-[#084a8f] dark:text-[#66b2ff] dark:hover:text-[#99ccff]"
                 >
-                  <LinkedInIcon className="h-4 w-4 shrink-0" />
+                  <LinkedInIcon className="h-7 w-7 shrink-0" />
                   Connect on LinkedIn
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                 </a>
@@ -113,9 +113,9 @@ export default function Home() {
                   <Image
                     src="/bts-logo.png"
                     alt=""
-                    width={20}
-                    height={20}
-                    className="h-5 w-5 shrink-0 rounded-[5px] object-contain"
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 shrink-0 rounded-[7px] object-contain"
                   />
                   Newsletter
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
