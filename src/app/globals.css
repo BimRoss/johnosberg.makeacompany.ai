@@ -204,18 +204,18 @@ html.dark :is(
   color: #ffffff;
 }
 
-/* Scroll-into-view fade-up, driven by ScrollReveal */
+/* Scroll-into-view fade, driven by ScrollReveal.
+   Opacity-only on purpose: a vertical translate here shifts whole sections
+   down until they animate up, so mid-scroll the gaps between sections read
+   unevenly (80px at rest vs ~106px while a section is still sliding in).
+   Fading in place keeps every section-to-section gap rock-steady. */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(26px);
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity;
 }
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: none;
 }
 
 /* Cascade — direct children of a `.cascade` inside a revealed section flow in
