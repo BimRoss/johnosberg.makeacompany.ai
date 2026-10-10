@@ -12,6 +12,8 @@ const PHRASES = [
   "Network Architect.",
   "Growth Driver.",
   "Dot Connector.",
+  "Golf Coach.",
+  "Sports Nonprofit Board Member.",
   "Girl Dad.",
 ];
 
@@ -41,7 +43,7 @@ export default function TypeCycle() {
     if (!deleting && displayed.length < word.length) {
       t = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 90);
     } else if (!deleting && displayed.length === word.length) {
-      t = setTimeout(() => setDeleting(true), 6500);
+      t = setTimeout(() => setDeleting(true), 3500);
     } else if (deleting && displayed.length > 0) {
       t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45);
     } else {

@@ -296,13 +296,12 @@ export default function Home() {
           <h2 className="eyebrow on-photo">Athletic Achievements</h2>
           <div className="cascade mx-auto flex w-full max-w-2xl flex-col gap-2">
             {[
-              { badge: "2020", title: "Jack Nicklaus National Championship Winner" },
-              { badge: "2023", title: "PGA of America Medalist, Playing Ability Test" },
-              { badge: "2020", title: "Goggins 4x4x48 Finisher · 49 mi" },
-              { badge: "2021", title: "Goggins 4x4x48 Finisher · 52 mi" },
-              { badge: "2023", title: "Goggins 4x4x48 Finisher · 60 mi" },
-              { badge: "2024", title: "Goggins 4x4x48 Finisher · 69 mi" },
-              { badge: "70mi", title: "Mind Over Miles Ultra Runner · 18 hours" },
+              { badge: "2020", title: "Jack Nicklaus Doubles Golf Championship Winner" },
+              { badge: "2020–24", title: "Goggins 4x4x48 Finisher · ", miles: "52, 57, 63, 69 mi" },
+              { badge: "2023", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
+              { badge: "2025", title: "Mind Over Miles Ultra Runner · 70 mi · 18 hours · finished early due to injury" },
+              { badge: "To Date", title: "164 half marathons · 8 marathons · 9 ultras" },
+              { badge: "PBs", title: "Half Marathon 1:28:56", line2: "Marathon 3:11:28" },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
                 <div className="on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 py-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]">
@@ -311,6 +310,8 @@ export default function Home() {
                   </span>
                   <span className="text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-base">
                     {h.title}
+                    {h.miles && <span className="whitespace-nowrap">{h.miles}</span>}
+                    {h.line2 && <span className="block whitespace-nowrap">{h.line2}</span>}
                   </span>
                 </div>
               </TiltCard>
