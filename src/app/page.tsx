@@ -291,18 +291,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Honors — golf accolades */}
+        {/* Athletic Achievements — golf + ultra running */}
         <section className="reveal-on-scroll flex flex-col gap-5">
-          <h2 className="eyebrow on-photo">Honors</h2>
+          <h2 className="eyebrow on-photo">Athletic Achievements</h2>
           <div className="cascade mx-auto flex w-full max-w-2xl flex-col gap-2">
             {[
-              { year: "2020", title: "Jack Nicklaus National Championship Winner" },
-              { year: "2023", title: "PGA of America Medalist, Playing Ability Test" },
-            ].map((h) => (
-              <TiltCard key={h.year} className="rounded-lg">
+              { badge: "2020", title: "Jack Nicklaus National Championship Winner" },
+              { badge: "2023", title: "PGA of America Medalist, Playing Ability Test" },
+              { badge: "2020", title: "Goggins 4x4x48 Finisher · 49 mi" },
+              { badge: "2021", title: "Goggins 4x4x48 Finisher · 52 mi" },
+              { badge: "2023", title: "Goggins 4x4x48 Finisher · 60 mi" },
+              { badge: "2024", title: "Goggins 4x4x48 Finisher · 69 mi" },
+              { badge: "70mi", title: "Mind Over Miles Ultra Runner · 18 hours" },
+            ].map((h, i) => (
+              <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
                 <div className="on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 py-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]">
                   <span className="shrink-0 font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff]">
-                    {h.year}
+                    {h.badge}
                   </span>
                   <span className="text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-base">
                     {h.title}
