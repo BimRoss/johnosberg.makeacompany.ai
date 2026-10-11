@@ -34,7 +34,7 @@ export default function ClutchFactor() {
               Composure under pressure
             </span>
             <span className="max-w-xs text-[13px] leading-6 text-zinc-400">
-              Independently assessed. Top-tier for performing when the stakes peak.
+              Independently assessed. Top-tier for performing when the stakes peak. Top 1% globally ranked.
             </span>
             <span className="mt-1 inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-[#00ccff]">
               View full report

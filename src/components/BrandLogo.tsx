@@ -28,9 +28,9 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
         </span>
       ) : (
         /* White plate is kept so dark/transparent marks (Oakley, NYSGA) stay
-           legible on the dark theme, but the logo now fills ~92% of it, so the
-           white reads as a thin border hugging the mark, not a big empty card. */
-        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-black/5">
+           legible on the dark theme. Logo fills 72% of the plate to match the
+           civic wall's sizing (CivicCard), so both sections read identically. */
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={brand.logo}
@@ -38,7 +38,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
             width={96}
             height={96}
             loading="lazy"
-            className="h-[92%] w-[92%] object-contain"
+            className="h-[72%] w-[72%] object-contain"
             onError={() => setFailed(true)}
           />
         </span>

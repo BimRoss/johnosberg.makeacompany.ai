@@ -300,12 +300,12 @@ export default function Home() {
               { badge: "2020–24", title: "Goggins 4x4x48 Finisher · ", miles: "52, 57, 63, 69 mi" },
               { badge: "2023", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
               { badge: "2025", title: "Mind Over Miles Ultra Runner · 70 mi · 18 hours · finished early due to injury" },
-              { badge: "To Date", title: "164 half marathons · 8 marathons · 9 ultras" },
-              { badge: "PBs", title: "Half Marathon 1:28:56", line2: "Marathon 3:11:28" },
+              { badge: "To Date", title: "164 half marathons · 8 marathons · 9 ultra events", metric: true },
+              { badge: "Personal Bests", title: "Half Marathon 1:28:56", line2: "Marathon 3:11:28", metric: true },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
-                <div className="on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 py-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]">
-                  <span className="shrink-0 font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff]">
+                <div className={`on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2.5" : "py-4"}`}>
+                  <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-lg md:text-xl" : "text-2xl"}`}>
                     {h.badge}
                   </span>
                   <span className="text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-base">
