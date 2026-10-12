@@ -357,7 +357,7 @@ export type Brand = { name: string; mark: string; accent: string; logo: string; 
 
 export const brands: Brand[] = [
   { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png", url: "https://www.dickssportinggoods.com", sector: "Sports & Golf" },
-  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: logoDev("golfgalaxy.com"), url: "https://www.golfgalaxy.com", sector: "Sports & Golf" },
+  { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: "/logos/golfgalaxy.png", url: "https://www.golfgalaxy.com", sector: "Sports & Golf" },
   { name: "Wegmans", mark: "W", accent: "#e0301e", logo: logoDev("wegmans.com"), url: "https://www.wegmans.com", sector: "Beverage & CPG" },
   { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: logoDev("michelobultra.com"), url: "https://www.michelobultra.com", sector: "Beverage & CPG" },
   { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com", sector: "Sports & Golf", darkInvert: true },
@@ -378,6 +378,25 @@ export const brands: Brand[] = [
   { name: "Fidelis Care", mark: "FC", accent: "#00529b", logo: logoDev("fideliscare.org"), url: "https://www.fideliscare.org", sector: "Healthcare" },
   { name: "HealtheConnections", mark: "HC", accent: "#6cb33f", logo: logoDev("healtheconnections.org"), url: "https://www.healtheconnections.org", sector: "Healthcare" },
   { name: "BlueCross BlueShield", mark: "BCBS", accent: "#0066b3", logo: logoDev("bcbswny.com"), url: "https://www.bcbswny.com", sector: "Healthcare" },
+  { name: "Oro Sports USA", mark: "OS", accent: "#d4af37", logo: logoDev("orosports.com"), url: "https://www.orosportsusa.com", sector: "Sports & Golf" },
+  { name: "Rolex", mark: "R", accent: "#006039", logo: logoDev("rolex.com"), url: "https://www.rolex.com", sector: "Sports & Golf" },
+  { name: "Pepsi", mark: "P", accent: "#004b93", logo: logoDev("pepsi.com"), url: "https://www.pepsi.com", sector: "Beverage & CPG" },
+  { name: "Evolve Golf", mark: "EG", accent: "#3aa447", logo: logoDev("evolvegolf.com"), url: "https://www.evolvegolf.com", sector: "Sports & Golf" },
+  { name: "Antigua Apparel", mark: "A", accent: "#0a2342", logo: logoDev("antigua.com"), url: "https://www.antigua.com", sector: "Sports & Golf" },
+  { name: "Bushnell Golf", mark: "B", accent: "#e35205", logo: logoDev("bushnellgolf.com"), url: "https://www.bushnellgolf.com", sector: "Sports & Golf" },
+  { name: "Golf Max", mark: "GM", accent: "#2f7df6", logo: logoDev("golfmaxusa.com"), url: "https://golfmaxusa.com", sector: "Sports & Golf" },
+  { name: "Titleist", mark: "T", accent: "#d0021b", logo: "/logos/titleist.png", url: "https://www.titleist.com", sector: "Sports & Golf" },
+  { name: "Levelwear", mark: "L", accent: "#111827", logo: logoDev("levelwear.com"), url: "https://www.levelwear.com", sector: "Sports & Golf" },
+  { name: "Stitch Golf", mark: "SG", accent: "#1b2a4a", logo: logoDev("stitchgolf.com"), url: "https://www.stitchgolf.com", sector: "Sports & Golf" },
+  { name: "Sterling Cut Glass", mark: "SCG", accent: "#b8860b", logo: logoDev("sterlingcutglass.com"), url: "https://www.sterlingcutglass.com", sector: "Sports & Golf" },
+  { name: "StrackaLine", mark: "SL", accent: "#2e7d32", logo: logoDev("strackaline.com"), url: "https://www.strackaline.com", sector: "Sports & Golf" },
+  { name: "Donald Ross Sportswear", mark: "DR", accent: "#14213d", logo: logoDev("donaldross.com"), url: "https://donaldross.com", sector: "Sports & Golf" },
+  { name: "2nd Swing", mark: "2S", accent: "#1c8c3b", logo: logoDev("2ndswing.com"), url: "https://www.2ndswing.com", sector: "Sports & Golf" },
+  { name: "StickX Golf", mark: "SX", accent: "#ff6a00", logo: logoDev("stickxgolf.com"), url: "https://www.stickxgolf.com", sector: "Sports & Golf" },
+  { name: "Under Armour", mark: "UA", accent: "#1d1d1d", logo: logoDev("underarmour.com"), url: "https://www.underarmour.com", sector: "Sports & Golf" },
+  { name: "Withum", mark: "W", accent: "#e2231a", logo: logoDev("withum.com"), url: "https://www.withum.com", sector: "Finance & Insurance" },
+  { name: "Club Champion", mark: "CC", accent: "#c8102e", logo: logoDev("clubchampiongolf.com"), url: "https://www.clubchampiongolf.com", sector: "Sports & Golf" },
+  { name: "GolfTec", mark: "GT", accent: "#ed1c24", logo: logoDev("golftec.com"), url: "https://www.golftec.com", sector: "Sports & Golf" },
 ];
 
 export type PressItem = { source: string; title: string; href: string; logo: string; fallback: string };
@@ -875,7 +894,7 @@ export const civic: Civic[] = [
   { org: "Recovery Options Made Easy", role: "5x4x24 Challenge Fundraiser", logo: "/logos/civ-recovery-options.png", mark: "RO", accent: "#dc2626", url: "https://www.recoveryoptions.org", category: "Health & Recovery" },
   { org: "People Inc.", role: "Mentor", logo: logoDev("people-inc.org"), mark: "PI", accent: "#16a34a", url: "https://www.people-inc.org", category: "Community & Nonprofit" },
   { org: "Team F.A.S.T.", role: "Board Member", logo: logoDev("teamfastfoundation.com"), mark: "TF", accent: "#1d4ed8", url: "https://teamfastfoundation.com", category: "Health & Recovery" },
-  { org: "Niagara University", role: "Featured Speaker & Careers Connector · Business Competition Finals Judge (Marketing Assn.)", logo: logoDev("niagara.edu"), mark: "NU", accent: "#5b2a86", url: "https://www.niagara.edu", category: "Higher Ed & Mentorship" },
+  { org: "Niagara University", role: "Featured Speaker & Careers Connector · Business Competition Finals Judge (Marketing Assn.)", logo: "/logos/brands/niagara-edu.png", mark: "NU", accent: "#5b2a86", url: "https://www.niagara.edu", category: "Higher Ed & Mentorship" },
   { org: "Accessible Academics", role: "Mentor", logo: "/logos/civ-accessible-academics.png", mark: "AA", accent: "#b45309", url: "https://www.google.com/search?q=Accessible%20Academics", category: "Higher Ed & Mentorship" },
   { org: "F BITES", role: "Community Champion", logo: "/logos/civ-fbites.png", mark: "FB", accent: "#65a30d", url: "https://www.google.com/search?q=F%20BITES%20Buffalo", category: "Community & Nonprofit" },
   { org: "CALLSIGN 22", role: "5x4x48 Challenge Fundraiser", logo: "/logos/civ-callsign22.png", mark: "C22", accent: "#475569", url: "https://www.google.com/search?q=CALLSIGN%2022%20veteran%20fundraiser", category: "Health & Recovery" },
@@ -891,4 +910,5 @@ export const civic: Civic[] = [
   { org: "Special Olympics", role: "Event Volunteer, Fire Truck Pull", logo: logoDev("specialolympics.org"), mark: "SO", accent: "#e0301e", url: "https://www.specialolympics.org", category: "Sports & Golf" },
   { org: "United Way of Buffalo & Erie County", role: "Student Liaison", logo: logoDev("uwbec.org"), mark: "UW", accent: "#e0301e", url: "https://www.uwbec.org", category: "Community & Nonprofit" },
   { org: "Jericho Road Community Health Center", role: "Volunteer, Vive La Casa", logo: logoDev("jrchc.org"), mark: "JR", accent: "#ea580c", url: "https://jrchc.org", category: "Health & Recovery" },
+  { org: "Tee It Up For The Troops", role: "Charity Golf Fundraiser", logo: logoDev("teeitupforthetroops.org"), mark: "TT", accent: "#1d4ed8", url: "https://www.teeitupforthetroops.org", category: "Sports & Golf" },
 ];
