@@ -36,7 +36,12 @@ export type StatIconKey =
   | "impressions"
   | "network"
   | "reach"
-  | "countless";
+  | "countless"
+  | "golf"
+  | "trail"
+  | "medal"
+  | "timer"
+  | "clock";
 
 export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "$15M+", label: "financial impact", icon: "impact" },
