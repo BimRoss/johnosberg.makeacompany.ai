@@ -301,7 +301,7 @@ export default function Home() {
               { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
               { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", title: "Mind Over Miles Ultra Runner · 70 mi · 18 hours · finished early due to injury" },
               { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "Half Marathon 1:28:56", line2: "Marathon 3:11:28", metric: true },
-              { badge: "To Date", icon: "clock" as const, title: "164 half marathons · 8 marathons · 9 ultra events", metric: true },
+              { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events", metric: true },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
                 <div className={`on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2.5" : "py-4"}`}>
