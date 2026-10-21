@@ -184,6 +184,9 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
     el.addEventListener("pointercancel", resumeSoon);
     el.addEventListener("touchstart", pause, { passive: true });
     el.addEventListener("touchend", resumeSoon, { passive: true });
+    // iOS fires touchcancel (not touchend) when a touch becomes a page scroll.
+    // Without this, that row stays paused forever — the "top row froze" bug.
+    el.addEventListener("touchcancel", resumeSoon, { passive: true });
     el.addEventListener("mouseenter", pause);
     el.addEventListener("mouseleave", resumeSoon);
     el.addEventListener("wheel", resumeSoon, { passive: true });
@@ -195,6 +198,7 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
       el.removeEventListener("pointercancel", resumeSoon);
       el.removeEventListener("touchstart", pause);
       el.removeEventListener("touchend", resumeSoon);
+      el.removeEventListener("touchcancel", resumeSoon);
       el.removeEventListener("mouseenter", pause);
       el.removeEventListener("mouseleave", resumeSoon);
       el.removeEventListener("wheel", resumeSoon);
