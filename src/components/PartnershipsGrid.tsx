@@ -59,14 +59,14 @@ export default function PartnershipsGrid() {
       </div>
 
       {/* Flex-wrap + justify-center so any trailing partial row centers instead
-          of hanging left. Full rows fill edge to edge (3-up mobile, 4-up
+          of hanging left. Full rows fill edge to edge (4-up mobile, 7-up
           desktop) because each tile's basis matches the old grid; the logos
           flow naturally with no forced row breaks. */}
       <div className="flex flex-wrap justify-center gap-2">
         {shown.map((b) => (
           <div
             key={b.name}
-            className="flex basis-[calc((100%-1.5rem)/4)] lg:basis-[calc((100%-2rem)/5)] [&>a]:flex-1"
+            className="flex basis-[calc((100%-1.5rem)/4)] lg:basis-[calc((100%-3rem)/7)] [&>a]:flex-1"
           >
             <BrandLogo brand={b} />
           </div>

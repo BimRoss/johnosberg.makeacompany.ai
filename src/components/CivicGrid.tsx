@@ -60,13 +60,13 @@ export default function CivicGrid() {
 
       {/* Flex-wrap + justify-center so a trailing partial row (like the last two
           tiles) centers instead of hanging left. Full rows still fill edge to
-          edge (4-up mobile, 5-up desktop) because each tile's basis matches the
+          edge (4-up mobile, 7-up desktop) because each tile's basis matches the
           old grid. */}
       <div className="flex flex-wrap justify-center gap-2">
         {shown.map((c, i) => (
           <div
             key={`${c.org}-${c.role}-${i}`}
-            className="flex basis-[calc((100%-1.5rem)/4)] lg:basis-[calc((100%-2rem)/5)] [&>*]:flex-1"
+            className="flex basis-[calc((100%-1.5rem)/4)] lg:basis-[calc((100%-3rem)/7)] [&>*]:flex-1"
           >
             <CivicCard c={c} />
           </div>

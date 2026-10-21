@@ -41,7 +41,7 @@ export default function Home() {
       <ChromeFx />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-20 px-5 pb-8 pt-20 sm:px-8 md:gap-24 md:pb-10 md:pt-28"
+        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-12 px-5 pb-8 pt-20 sm:px-8 md:gap-16 md:pb-10 md:pt-28"
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
@@ -63,8 +63,8 @@ export default function Home() {
             </h1>
             <TypeCycle />
             <p className="on-photo mt-7 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
-              Founding Director &amp; VP Partnerships{" "}
-              <span className="inline-flex items-center gap-1.5 whitespace-nowrap align-middle">
+              Founding Director x VP Partnerships
+              <span className="mt-2 flex items-center justify-center gap-1.5 whitespace-nowrap">
                 <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
                 <a
                   href="https://www.brandlete.com"
@@ -145,8 +145,44 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Latest podcast — tune in */}
+        <section className="reveal-on-scroll -mt-4 md:-mt-8">
+          <a
+            href="https://www.toolstalentstechniques.com/john-osberg/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Listen to John on Tools, Talents &amp; Techniques (opens in a new tab)"
+            className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white/50 p-3 backdrop-blur-sm transition-colors hover:border-[#00ccff]/50 hover:bg-white/70 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-[#00ccff]/40 dark:hover:bg-white/[0.07] sm:p-4"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/podcasts/ttt-ep120.png"
+              alt="Tools, Talents &amp; Techniques episode 120 cover"
+              width={72}
+              height={72}
+              loading="lazy"
+              className="h-16 w-16 shrink-0 rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10 sm:h-[72px] sm:w-[72px]"
+            />
+            <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+              <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff] sm:text-[11px]">
+                <span aria-hidden>🎙</span> New Episode
+              </span>
+              <p className="truncate font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-zinc-900 dark:text-white sm:text-lg">
+                One Platform for Youth Athlete Development
+              </p>
+              <span className="truncate font-[family-name:var(--font-sora)] text-xs font-medium text-zinc-500 dark:text-zinc-400 sm:text-sm">
+                Ep. 120 · Tools, Talents &amp; Techniques with Dustin Sutton
+              </span>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#0088cc] px-3.5 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-transform group-hover:scale-[1.03] dark:bg-[#00ccff] dark:text-zinc-900 sm:px-4 sm:text-xs">
+              Tune in
+              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+            </span>
+          </a>
+        </section>
+
         {/* Brandlete */}
-        <section id="brandlete" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+        <section id="brandlete" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6 md:-mt-10">
           <div className="flex flex-col gap-3">
             <h2 className="on-photo font-[family-name:var(--font-sora)] text-3xl font-bold leading-tight tracking-tight text-[#0088cc] dark:text-[#00ccff] sm:text-4xl">
               What we&apos;ve built at Brandlete, Inc.
@@ -229,7 +265,7 @@ export default function Home() {
                   <path d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5L12 3Z" />
                   <path d="M18 15l.6 1.6L20.5 17l-1.9.6L18 19.5l-.6-1.9L15.5 17l1.9-.4L18 15Z" />
                 </svg>
-                Max, the AI assistant
+                Max, your AI Assistant Coach
               </li>
             </ul>
           </div>
@@ -244,23 +280,35 @@ export default function Home() {
             </div>
           </figure>
 
-          {/* Hiring — one calm CTA */}
-          <div className="flex flex-col items-center gap-3 rounded-xl border border-[#00ccff]/40 bg-[#00ccff]/[0.07] p-4 sm:flex-row sm:items-center sm:justify-center sm:gap-5">
-            <div className="flex items-center gap-2">
-              <span aria-hidden className="hire-dot inline-block h-1.5 w-1.5 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
-              <span className="font-[family-name:var(--font-sora)] text-base font-bold text-[#0088cc] dark:text-[#00ccff]">
-                Brandlete is hiring.
-              </span>
+          {/* Hiring — Playmaker Network */}
+          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-6 sm:p-8">
+            <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#00ccff]/20 blur-3xl" />
+            <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-[#00ccff]/10 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:text-left">
+              <div className="flex flex-col gap-2.5">
+                <span className="inline-flex items-center gap-2 self-center sm:self-start">
+                  <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
+                  <span className="font-[family-name:var(--font-sora)] text-[11px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff]">
+                    Now Hiring
+                  </span>
+                </span>
+                <h3 className="font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-[1.7rem]">
+                  Join the Playmaker Network
+                </h3>
+                <p className="max-w-md text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                  Brandlete is building the athlete development focused sports operating system for youth sports, collegiate, pro and beyond. We want builders, coaches, and partners who want to move the game forward.
+                </p>
+              </div>
+              <a
+                href="https://www.brandlete.com/playmakers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#00ccff] px-6 py-3 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40"
+              >
+                Apply now
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
             </div>
-            <a
-              href="https://www.brandlete.com/playmakers"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-fit items-center justify-center gap-2 rounded-full bg-[#00ccff] px-5 py-2.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-zinc-950 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff]"
-            >
-              Join the Playmaker Network
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
           </div>
         </section>
 
@@ -277,12 +325,12 @@ export default function Home() {
                     : "w-[calc(50%-0.25rem)] md:w-[calc(25%-0.375rem)]"
                 }`}
               >
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-3 py-4 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]">
-                  <StatIcon icon={s.icon} className="mb-1.5 h-5 w-5 text-[#0088cc]/90 dark:text-[#00ccff]/90" />
-                  <div className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-2.5 py-2.5 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:px-3 md:py-4">
+                  <StatIcon icon={s.icon} className="mb-1 h-4 w-4 text-[#0088cc]/90 dark:text-[#00ccff]/90 md:mb-1.5 md:h-5 md:w-5" />
+                  <div className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
                     {/\d/.test(s.value) ? <CountUp value={s.value} /> : s.value}
                   </div>
-                  <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+                  <div className="mt-0.5 font-mono text-[8px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400 md:mt-1 md:text-[9px]">
                     {s.label}
                   </div>
                 </div>
@@ -296,40 +344,58 @@ export default function Home() {
           <h2 className="eyebrow on-photo">Athletic Achievements</h2>
           <div className="cascade mx-auto flex w-full max-w-2xl flex-col gap-2">
             {[
-              { badge: "2020", icon: "golf" as const, logo: "/logos/jacknicklaus.png", title: "Jack Nicklaus Doubles Golf Championship Winner" },
-              { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", title: "Goggins 4x4x48 Finisher · ", miles: "52, 57, 63, 69 mi" },
-              { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
-              { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", title: "Mind Over Miles Ultra Runner · 70 mi · 18 hours · finished early due to injury" },
-              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "Half Marathon 1:28:56", line2: "Marathon 3:11:28", metric: true },
-              { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events", metric: true },
+              { badge: "2020", icon: "golf" as const, logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", title: "Jack Nicklaus Doubles Golf Championship Winner" },
+              { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 mi" },
+              { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
+              { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", title: "Mind Over Miles Ultra Runner · 70 mi · 18 hours · finished early due to injury" },
+              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06", line2: "26.2 miles — 3:11:28", metric: true },
+              { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", line2: "5x 48 hour challenge finishes · 4x 24 hour challenge finishes", metric: true },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
-                <div className={`on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2.5" : "py-4"}`}>
-                  {h.logo ? (
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1 ring-1 ring-black/5">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={h.logo}
-                        alt=""
-                        loading="lazy"
-                        className="h-full w-full object-contain"
-                      />
-                    </span>
+                {(() => {
+                  const inner = (
+                    <>
+                      {h.logo ? (
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1 ring-1 ring-black/5">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={h.logo}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-contain"
+                          />
+                        </span>
+                      ) : (
+                        <StatIcon
+                          icon={h.icon}
+                          className="h-5 w-5 shrink-0 text-[#0088cc]/70 dark:text-[#00ccff]/70"
+                        />
+                      )}
+                      <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-lg md:text-xl" : "text-2xl"}`}>
+                        {h.badge}
+                      </span>
+                      <span className="text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-base">
+                        {h.title}
+                        {h.miles && <span className="whitespace-nowrap">{h.miles}</span>}
+                        {h.line2 && <span className="block">{h.line2}</span>}
+                      </span>
+                    </>
+                  );
+                  const cardClass = `on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2.5" : "py-4"}`;
+                  return h.href ? (
+                    <a
+                      href={h.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={h.title}
+                      className={`${cardClass} transition-opacity hover:opacity-80`}
+                    >
+                      {inner}
+                    </a>
                   ) : (
-                    <StatIcon
-                      icon={h.icon}
-                      className="h-5 w-5 shrink-0 text-[#0088cc]/70 dark:text-[#00ccff]/70"
-                    />
-                  )}
-                  <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-lg md:text-xl" : "text-2xl"}`}>
-                    {h.badge}
-                  </span>
-                  <span className="text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-base">
-                    {h.title}
-                    {h.miles && <span className="whitespace-nowrap">{h.miles}</span>}
-                    {h.line2 && <span className="block whitespace-nowrap">{h.line2}</span>}
-                  </span>
-                </div>
+                    <div className={cardClass}>{inner}</div>
+                  );
+                })()}
               </TiltCard>
             ))}
           </div>
@@ -341,7 +407,7 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
+        <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="eyebrow on-photo">Experience</h2>
           <div className="cascade flex flex-col">
             {roles.slice(0, -4).map((r, i) => (
@@ -429,7 +495,7 @@ export default function Home() {
         </section>
 
         {/* Recognized — news, awards, podcasts folded into one */}
-        <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-8">
+        <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="eyebrow on-photo">Recognized</h2>
 
           {/* In the press */}
