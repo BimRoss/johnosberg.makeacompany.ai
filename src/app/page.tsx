@@ -145,8 +145,13 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Clutch Factor — nTangible assessment */}
+        <section id="clutch" className="reveal-on-scroll scroll-mt-24">
+          <ClutchFactor />
+        </section>
+
         {/* Latest podcast — tune in */}
-        <section className="reveal-on-scroll -mt-4 md:-mt-8">
+        <section className="reveal-on-scroll">
           <a
             href="https://www.toolstalentstechniques.com/john-osberg/"
             target="_blank"
@@ -164,8 +169,8 @@ export default function Home() {
               className="h-16 w-16 shrink-0 rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10 sm:h-[72px] sm:w-[72px]"
             />
             <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-              <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff] sm:text-[11px]">
-                <span aria-hidden>🎙</span> New Episode
+              <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-[#0088cc] dark:text-[#00ccff] sm:text-[11px]">
+                <span aria-hidden>🎙</span> Brandlete, Inc. Featured in New Podcast - 10/20/2026
               </span>
               <p className="truncate font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-zinc-900 dark:text-white sm:text-lg">
                 One Platform for Youth Athlete Development
@@ -195,6 +200,7 @@ export default function Home() {
               {[
                 {
                   label: "Coaches",
+                  href: "https://www.brandlete.com/solutions/coaches",
                   icon: (
                     <>
                       <path d="M3 11v2a1 1 0 0 0 1 1h2l4 3V7L6 10H4a1 1 0 0 0-1 1Z" />
@@ -204,6 +210,7 @@ export default function Home() {
                 },
                 {
                   label: "Athletes",
+                  href: "https://www.brandlete.com/solutions/athletes",
                   icon: (
                     <>
                       <circle cx="12" cy="15" r="4" />
@@ -213,6 +220,7 @@ export default function Home() {
                 },
                 {
                   label: "Families",
+                  href: "https://www.brandlete.com/solutions/parents",
                   icon: (
                     <>
                       <circle cx="9" cy="9" r="3" />
@@ -223,6 +231,7 @@ export default function Home() {
                 },
                 {
                   label: "Organizations",
+                  href: "https://www.brandlete.com/solutions/organizations",
                   icon: (
                     <>
                       <path d="M5 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16" />
@@ -232,9 +241,35 @@ export default function Home() {
                   ),
                 },
               ].map((c) => (
-                <li
-                  key={c.label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/50 px-3 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-800 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-100"
+                <li key={c.label}>
+                  <a
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/50 px-3 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-800 backdrop-blur-sm transition-transform hover:scale-[1.03] hover:border-[#0088cc]/40 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-100 dark:hover:border-[#00ccff]/40"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.6}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden
+                      className="h-4 w-4 text-[#0088cc] dark:text-[#00ccff]"
+                    >
+                      {c.icon}
+                    </svg>
+                    {c.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://www.brandlete.com/platform/max"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#00ccff]/40 bg-[#00ccff]/[0.1] px-3 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-[#0088cc] transition-transform hover:scale-[1.03] dark:text-[#00ccff]"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -244,28 +279,13 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     aria-hidden
-                    className="h-4 w-4 text-[#0088cc] dark:text-[#00ccff]"
+                    className="h-4 w-4"
                   >
-                    {c.icon}
+                    <path d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5L12 3Z" />
+                    <path d="M18 15l.6 1.6L20.5 17l-1.9.6L18 19.5l-.6-1.9L15.5 17l1.9-.4L18 15Z" />
                   </svg>
-                  {c.label}
-                </li>
-              ))}
-              <li className="inline-flex items-center gap-1.5 rounded-full border border-[#00ccff]/40 bg-[#00ccff]/[0.1] px-3 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-[#0088cc] dark:text-[#00ccff]">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.6}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden
-                  className="h-4 w-4"
-                >
-                  <path d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5L12 3Z" />
-                  <path d="M18 15l.6 1.6L20.5 17l-1.9.6L18 19.5l-.6-1.9L15.5 17l1.9-.4L18 15Z" />
-                </svg>
-                Max, your AI Assistant Coach
+                  Max, your AI Assistant Coach
+                </a>
               </li>
             </ul>
           </div>
@@ -281,21 +301,21 @@ export default function Home() {
           </figure>
 
           {/* Hiring — Playmaker Network */}
-          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-6 sm:p-8">
+          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-5 sm:p-6">
             <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#00ccff]/20 blur-3xl" />
             <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-[#00ccff]/10 blur-3xl" />
-            <div className="relative flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:text-left">
-              <div className="flex flex-col gap-2.5">
+            <div className="relative flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
+              <div className="flex flex-col gap-2">
                 <span className="inline-flex items-center gap-2 self-center sm:self-start">
                   <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
                   <span className="font-[family-name:var(--font-sora)] text-[11px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff]">
                     Now Hiring
                   </span>
                 </span>
-                <h3 className="font-[family-name:var(--font-sora)] text-2xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-[1.7rem]">
+                <h3 className="font-[family-name:var(--font-sora)] text-xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-2xl">
                   Join the Playmaker Network
                 </h3>
-                <p className="max-w-md text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                <p className="max-w-md text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
                   Brandlete is building the athlete development focused sports operating system for youth sports, collegiate, pro and beyond. We want builders, coaches, and partners who want to move the game forward.
                 </p>
               </div>
@@ -303,7 +323,7 @@ export default function Home() {
                 href="https://www.brandlete.com/playmakers"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#00ccff] px-6 py-3 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40"
+                className="group inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#00ccff] px-5 py-2.5 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40"
               >
                 Apply now
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -313,9 +333,9 @@ export default function Home() {
         </section>
 
         {/* The Numbers */}
-        <section className="reveal-on-scroll flex flex-col gap-5">
+        <section className="reveal-on-scroll flex flex-col gap-4">
           <h2 className="eyebrow on-photo">The Numbers</h2>
-          <div className="cascade mx-auto flex w-full max-w-2xl flex-wrap justify-center gap-2">
+          <div className="cascade mx-auto flex w-full max-w-xl flex-wrap justify-center gap-2">
             {stats.map((s) => (
               <TiltCard
                 key={s.label}
@@ -325,12 +345,12 @@ export default function Home() {
                     : "w-[calc(50%-0.25rem)] md:w-[calc(25%-0.375rem)]"
                 }`}
               >
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-2.5 py-2.5 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:px-3 md:py-4">
-                  <StatIcon icon={s.icon} className="mb-1 h-4 w-4 text-[#0088cc]/90 dark:text-[#00ccff]/90 md:mb-1.5 md:h-5 md:w-5" />
-                  <div className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.7rem]">
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-2.5 py-2 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:px-2.5 md:py-2.5">
+                  <StatIcon icon={s.icon} className="mb-1 h-4 w-4 text-[#0088cc]/90 dark:text-[#00ccff]/90 md:mb-1 md:h-4 md:w-4" />
+                  <div className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.35rem]">
                     {/\d/.test(s.value) ? <CountUp value={s.value} /> : s.value}
                   </div>
-                  <div className="mt-0.5 font-mono text-[8px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400 md:mt-1 md:text-[9px]">
+                  <div className="mt-0.5 font-mono text-[8px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400 md:mt-0.5 md:text-[9px]">
                     {s.label}
                   </div>
                 </div>
@@ -340,15 +360,15 @@ export default function Home() {
         </section>
 
         {/* Athletic Achievements — golf + ultra running */}
-        <section className="reveal-on-scroll flex flex-col gap-5">
+        <section className="reveal-on-scroll flex flex-col gap-4">
           <h2 className="eyebrow on-photo">Athletic Achievements</h2>
-          <div className="cascade mx-auto flex w-full max-w-2xl flex-col gap-2">
+          <div className="cascade mx-auto flex w-full max-w-xl flex-col gap-1.5">
             {[
               { badge: "2020", icon: "golf" as const, logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", title: "Jack Nicklaus Doubles Golf Championship Winner" },
-              { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 mi" },
+              { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 miles ran" },
               { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
-              { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", title: "Mind Over Miles Ultra Runner · 70 mi · 18 hours · finished early due to injury" },
-              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06", line2: "26.2 miles — 3:11:28", metric: true },
+              { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", title: "Mind Over Miles Runner · 70 mi ran, 18 hours, early finish - injury" },
+              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06   ·   26.2 miles — 3:11:28", metric: true, center: true },
               { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", line2: "5x 48 hour challenge finishes · 4x 24 hour challenge finishes", metric: true },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
@@ -371,17 +391,17 @@ export default function Home() {
                           className="h-5 w-5 shrink-0 text-[#0088cc]/70 dark:text-[#00ccff]/70"
                         />
                       )}
-                      <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-lg md:text-xl" : "text-2xl"}`}>
+                      <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-base md:text-lg" : "text-xl"}`}>
                         {h.badge}
                       </span>
-                      <span className="text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-base">
+                      <span className={`text-[13px] font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-sm ${h.center ? "flex-1 text-center" : ""}`}>
                         {h.title}
                         {h.miles && <span className="whitespace-nowrap">{h.miles}</span>}
                         {h.line2 && <span className="block">{h.line2}</span>}
                       </span>
                     </>
                   );
-                  const cardClass = `on-photo flex items-center gap-4 rounded-lg border border-black/10 bg-white/40 px-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2.5" : "py-4"}`;
+                  const cardClass = `on-photo flex items-center gap-3 rounded-lg border border-black/10 bg-white/40 px-3.5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2" : "py-3"}`;
                   return h.href ? (
                     <a
                       href={h.href}
@@ -399,11 +419,6 @@ export default function Home() {
               </TiltCard>
             ))}
           </div>
-        </section>
-
-        {/* Clutch Factor — nTangible assessment */}
-        <section id="clutch" className="reveal-on-scroll scroll-mt-24">
-          <ClutchFactor />
         </section>
 
         {/* Experience */}
@@ -438,6 +453,11 @@ export default function Home() {
                   <div className="text-[15px] font-semibold text-zinc-900 dark:text-zinc-200">
                     {r.title}
                   </div>
+                  {r.blurb && (
+                    <p className="mt-1 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                      {r.blurb}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

@@ -16,7 +16,7 @@ export default function ClutchFactor() {
         target="_blank"
         rel="noopener noreferrer"
         title="View John's full Clutch Factor report on nTangible (opens in a new tab)"
-        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] p-7 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40 sm:p-9"
+        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] p-5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40 sm:p-6"
       >
         {/* corner registration marks, like the assessment card */}
         <span aria-hidden className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-white/25" />
@@ -24,7 +24,7 @@ export default function ClutchFactor() {
         <span aria-hidden className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b border-l border-white/25" />
         <span aria-hidden className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b border-r border-white/25" />
 
-        <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:text-left">
+        <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:text-left">
           {/* Left: label + context */}
           <div className="flex flex-col items-center gap-2 sm:items-start">
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#00ccff]">
@@ -45,7 +45,7 @@ export default function ClutchFactor() {
           {/* Right: the score */}
           <div className="flex shrink-0 flex-col items-center gap-2">
             <div className="flex items-baseline gap-1.5">
-              <span className="font-[family-name:var(--font-sora)] text-6xl font-extrabold leading-none text-white sm:text-7xl">
+              <span className="font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-none text-white sm:text-6xl">
                 <CountUp value="803" />
               </span>
               <span className="font-mono text-sm font-semibold text-zinc-500">/ 1000</span>
@@ -57,7 +57,7 @@ export default function ClutchFactor() {
         </div>
 
         {/* What the score measures (from the nTangible assessment card) */}
-        <div className="mt-6 border-t border-white/10 pt-5">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <p className="text-[13px] leading-6 text-zinc-400">
             The nTangible Clutch Factor™ is a 1 to 1,000 score that measures and
             predicts an athlete&apos;s mental capacity to perform under
