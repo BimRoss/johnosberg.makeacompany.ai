@@ -10,7 +10,7 @@ const REPORT_URL =
 export default function ClutchFactor() {
   return (
     <div className="flex justify-center">
-      <TiltCard className="w-44 rounded-2xl sm:w-52">
+      <TiltCard className="w-24 rounded-xl sm:w-28">
         <a
           href={REPORT_URL}
           target="_blank"

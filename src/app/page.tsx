@@ -93,7 +93,11 @@ export default function Home() {
             {/* Primary actions */}
             <div className="mt-8 flex flex-col items-center">
               <BookCallBtn />
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              {/* Clutch Factor — nTangible assessment, small thumbnail above the links */}
+              <div id="clutch" className="mt-8 scroll-mt-24">
+                <ClutchFactor />
+              </div>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -143,11 +147,6 @@ export default function Home() {
               </div>
             </TiltCard>
           </div>
-        </section>
-
-        {/* Clutch Factor — nTangible assessment */}
-        <section id="clutch" className="reveal-on-scroll scroll-mt-24">
-          <ClutchFactor />
         </section>
 
         {/* Latest podcast — tune in */}
