@@ -9,14 +9,18 @@ import { useState } from "react";
 import CivicCard from "@/components/CivicCard";
 import { civic, CIVIC_CATEGORIES, type CivicCategory } from "@/data/site";
 
+const PREVIEW_COUNT = 10;
+
 export default function CivicGrid() {
   const [active, setActive] = useState<CivicCategory | "All">("All");
+  const [expanded, setExpanded] = useState(false);
 
   const counts = CIVIC_CATEGORIES.map((c) => ({
     ...c,
     value: civic.filter((o) => o.category === c.name).length,
   }));
   const shown = active === "All" ? civic : civic.filter((o) => o.category === active);
+  const visible = expanded ? shown : shown.slice(0, PREVIEW_COUNT);
 
   const chip = (on: boolean) =>
     `inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] transition-all ${
@@ -30,7 +34,10 @@ export default function CivicGrid() {
       <div className="flex flex-wrap gap-1.5">
         <button
           type="button"
-          onClick={() => setActive("All")}
+          onClick={() => {
+            setActive("All");
+            setExpanded(false);
+          }}
           className={chip(active === "All")}
           style={active === "All" ? { backgroundColor: "#0f172a" } : undefined}
         >
@@ -43,7 +50,10 @@ export default function CivicGrid() {
             <button
               key={c.name}
               type="button"
-              onClick={() => setActive(on ? "All" : c.name)}
+              onClick={() => {
+                setActive(on ? "All" : c.name);
+                setExpanded(false);
+              }}
               className={chip(on)}
               style={on ? { backgroundColor: c.color } : undefined}
             >
@@ -62,7 +72,7 @@ export default function CivicGrid() {
           of hanging left. Tightened to 5-up mobile / 9-up desktop with a
           smaller gap so the wall reads as more logos in fewer, shorter rows. */}
       <div className="flex flex-wrap justify-center gap-1.5">
-        {shown.map((c, i) => (
+        {visible.map((c, i) => (
           <div
             key={`${c.org}-${c.role}-${i}`}
             className="flex basis-[calc((100%-1.5rem)/5)] lg:basis-[calc((100%-3rem)/9)] [&>*]:flex-1"
@@ -71,6 +81,18 @@ export default function CivicGrid() {
           </div>
         ))}
       </div>
+
+      {shown.length > PREVIEW_COUNT && (
+        <div className="flex justify-center">
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="rounded-full border border-black/15 px-4 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-600 transition-all hover:border-black/35 hover:text-zinc-900 dark:border-white/15 dark:text-zinc-400 dark:hover:border-white/40 dark:hover:text-white"
+          >
+            {expanded ? "Show less" : `Show all ${shown.length}`}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
