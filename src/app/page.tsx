@@ -151,21 +151,18 @@ export default function Home() {
             <img
               src="/podcasts/ttt-ep120.png"
               alt="Tools, Talents &amp; Techniques episode 120 cover"
-              width={72}
-              height={72}
+              width={112}
+              height={112}
               loading="lazy"
-              className="h-16 w-16 shrink-0 rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10 sm:h-[72px] sm:w-[72px]"
+              className="h-24 w-24 shrink-0 rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10 sm:h-28 sm:w-28"
             />
-            <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-              <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-[#0088cc] dark:text-[#00ccff] sm:text-[11px]">
-                <span aria-hidden>🎙</span> Brandlete, Inc. Featured in New Podcast - 10/20/2026
+            <div className="flex min-w-0 flex-1 flex-col gap-1">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-[#0088cc] dark:text-[#00ccff] sm:text-[11px]">
+                Brandlete recent podcast feature
               </span>
-              <p className="truncate font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-zinc-900 dark:text-white sm:text-lg">
+              <p className="font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-zinc-900 dark:text-white sm:text-lg">
                 One Platform for Youth Athlete Development
               </p>
-              <span className="truncate font-[family-name:var(--font-sora)] text-xs font-medium text-zinc-500 dark:text-zinc-400 sm:text-sm">
-                Ep. 120 · Tools, Talents &amp; Techniques with Dustin Sutton
-              </span>
             </div>
             <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#0088cc] px-3.5 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-transform group-hover:scale-[1.03] dark:bg-[#00ccff] dark:text-zinc-900 sm:px-4 sm:text-xs">
               Tune in
