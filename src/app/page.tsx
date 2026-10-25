@@ -40,13 +40,13 @@ export default function Home() {
         className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-8 px-5 pb-8 pt-20 sm:px-8 md:gap-9 md:pb-10 md:pt-28"
       >
         {/* Hero */}
-        <section className="reveal flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
+        <section className="reveal flex flex-col items-center gap-7 md:flex-row md:items-center md:gap-10">
           {/* Text column */}
           <div className="order-2 flex min-w-0 flex-col items-center text-center md:order-1 md:flex-1">
             <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
               Partnerships · Growth · Sports Tech
             </span>
-            <h1 className="on-photo mt-6 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[4.4rem]">
+            <h1 className="on-photo mt-5 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[3.75rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
                 target="_blank"
@@ -58,7 +58,7 @@ export default function Home() {
               </a>
             </h1>
             <TypeCycle />
-            <p className="on-photo mt-7 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
+            <p className="on-photo mt-5 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
               Founding Director x VP Partnerships
               <span className="mt-2 flex items-center justify-center gap-1.5 whitespace-nowrap">
                 <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
@@ -87,13 +87,13 @@ export default function Home() {
             </p>
 
             {/* Primary actions */}
-            <div className="mt-8 flex flex-col items-center">
+            <div className="mt-6 flex flex-col items-center">
               <BookCallBtn />
               {/* Clutch Factor — nTangible assessment, small thumbnail above the links */}
-              <div className="mt-8">
+              <div className="mt-6">
                 <ClutchFactor />
               </div>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -126,14 +126,14 @@ export default function Home() {
 
           {/* Photo column */}
           <div className="order-1 shrink-0 md:order-2">
-            <TiltCard className="w-48 rounded-2xl sm:w-56 md:w-72">
+            <TiltCard className="w-36 rounded-2xl sm:w-44 md:w-56">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15">
                 <Image
                   src="/headshot-v2.png"
                   alt={SITE_NAME}
                   fill
                   priority
-                  sizes="288px"
+                  sizes="224px"
                   className="object-cover"
                 />
                 <span
@@ -296,11 +296,11 @@ export default function Home() {
           </figure>
 
           {/* Hiring — Playmaker Network */}
-          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-5 sm:p-6">
+          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-4 sm:p-5">
             <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#00ccff]/20 blur-3xl" />
             <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-[#00ccff]/10 blur-3xl" />
-            <div className="relative flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
-              <div className="flex flex-col gap-2">
+            <div className="relative flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
+              <div className="flex flex-col gap-1.5">
                 <span className="inline-flex items-center gap-2 self-center sm:self-start">
                   <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
                   <span className="font-[family-name:var(--font-sora)] text-[11px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff]">
@@ -311,7 +311,7 @@ export default function Home() {
                   Join the Playmaker Network
                 </h3>
                 <p className="max-w-md text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  Brandlete is building the athlete development focused sports operating system for youth sports, collegiate, pro and beyond. We want builders, coaches, and partners who want to move the game forward.
+                  Brandlete is building the athlete development sports operating system. We want builders, coaches, and partners ready to move the game forward.
                 </p>
               </div>
               <a

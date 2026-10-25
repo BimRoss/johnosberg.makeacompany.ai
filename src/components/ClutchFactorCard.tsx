@@ -19,7 +19,7 @@ export default function ClutchFactorCard() {
         target="_blank"
         rel="noopener noreferrer"
         title="View John's full Clutch Factor report on nTangible (opens in a new tab)"
-        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] p-5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40 sm:p-6"
+        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] p-5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
       >
         {/* corner registration marks, like the assessment card */}
         <span aria-hidden className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-white/25" />
@@ -37,7 +37,7 @@ export default function ClutchFactorCard() {
               Composure under pressure
             </span>
             <span className="max-w-xs text-[13px] leading-6 text-zinc-400">
-              Independently assessed. Top-tier for performing when the stakes peak. Top 1% globally ranked.
+              Independently assessed. Top 1% globally for composure when the stakes peak.
             </span>
             <span className="mt-1 inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-[#00ccff]">
               View full report
@@ -57,15 +57,6 @@ export default function ClutchFactorCard() {
               Elite
             </span>
           </div>
-        </div>
-
-        {/* What the score measures (from the nTangible assessment card) */}
-        <div className="mt-4 border-t border-white/10 pt-4">
-          <p className="text-[13px] leading-6 text-zinc-400">
-            The nTangible Clutch Factor™ is a 1 to 1,000 score that measures and
-            predicts an athlete&apos;s mental capacity to perform under
-            high-pressure, game-deciding moments.
-          </p>
         </div>
       </a>
     </TiltCard>
