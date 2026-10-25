@@ -89,7 +89,7 @@ export default function Home() {
               {/* The two link features grouped inside one tinted panel so they
                   read as a module with real structure. Let's Talk now lives in
                   the footer as the closing CTA. */}
-              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-4 rounded-2xl border border-[#00ccff]/20 bg-gradient-to-b from-white/60 to-white/30 p-4 backdrop-blur-sm dark:border-[#00ccff]/20 dark:from-white/[0.06] dark:to-white/[0.02]">
+              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-4">
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -356,62 +356,60 @@ export default function Home() {
         {/* Athletic Achievements — golf + ultra running */}
         <section className="reveal-on-scroll flex flex-col gap-3">
           <h2 className="eyebrow on-photo">Athletic Achievements</h2>
-          <div className="cascade mx-auto flex w-full max-w-xl flex-col gap-1">
+          <div className="cascade mx-auto flex w-full max-w-xl flex-col gap-1.5">
             {[
-              { badge: "2020", icon: "golf" as const, logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", title: "Jack Nicklaus Doubles Golf Championship Winner" },
-              { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 miles ran" },
-              { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
-              { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", title: "Mind Over Miles Runner · 70 mi ran, 18 hours, early finish - injury" },
-              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06     26.2 miles — 3:11:28", metric: true, center: true },
-              { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", line2: "5x 48 hour challenge finishes · 4x 24 hour challenge finishes", metric: true },
-            ].map((h, i) => (
-              <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
-                {(() => {
-                  const inner = (
-                    <>
-                      {h.logo ? (
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1 ring-1 ring-black/5">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={h.logo}
-                            alt=""
-                            loading="lazy"
-                            className="h-full w-full object-contain"
-                          />
-                        </span>
-                      ) : (
-                        <StatIcon
-                          icon={h.icon}
-                          className="h-5 w-5 shrink-0 text-[#0088cc]/70 dark:text-[#00ccff]/70"
-                        />
-                      )}
-                      <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-sm md:text-base" : "text-lg"}`}>
-                        {h.badge}
+              { badge: "2020", logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", lines: ["Jack Nicklaus Doubles Golf Championship Winner"] },
+              { badge: "2020–24", logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", lines: ["Ultra Challenge Finisher", "52, 57, 63, 69 miles ran"] },
+              { badge: "2023", logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", lines: ["PGA of America Medalist, Playing Ability Test", "1 of 22 to qualify"] },
+              { badge: "2025", logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", lines: ["Mind Over Miles Runner", "70 mi ran · 18 hours · early finish (injury)"] },
+              { badge: "Personal Bests", logo: "/logos/powerofozmosis.png", lines: ["13.1 miles — 1:28:06", "26.2 miles — 3:11:28"] },
+              { badge: "To Date", logo: "/logos/calendar.png", lines: ["164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", "5× 48-hour challenge finishes · 4× 24-hour challenge finishes"] },
+            ].map((h, i) => {
+              const cardClass =
+                "on-photo grid grid-cols-[1.75rem_4.5rem_1fr] items-center gap-2.5 rounded-xl border border-black/10 bg-white/40 px-3.5 py-2.5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]";
+              const inner = (
+                <>
+                  <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-md bg-white p-1 ring-1 ring-black/5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={h.logo} alt="" loading="lazy" className="h-full w-full object-contain" />
+                  </span>
+                  <span className="text-left font-[family-name:var(--font-sora)] text-[15px] font-bold leading-tight text-[#0088cc] dark:text-[#00ccff]">
+                    {h.badge}
+                  </span>
+                  <span className="min-w-0">
+                    {h.lines.map((line, j) => (
+                      <span
+                        key={j}
+                        className={
+                          j === 0
+                            ? "block text-[13px] font-semibold leading-snug text-zinc-800 dark:text-zinc-100"
+                            : "block text-[12px] leading-snug text-zinc-500 dark:text-zinc-400"
+                        }
+                      >
+                        {line}
                       </span>
-                      <span className={`text-[12px] font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-[13px] ${h.center ? "flex-1 text-center" : ""}`}>
-                        {h.title}
-                        {h.miles && <span className="whitespace-nowrap">{h.miles}</span>}
-                        {h.line2 && <span className="block">{h.line2}</span>}
-                      </span>
-                    </>
-                  );
-                  const cardClass = `on-photo flex items-center gap-2.5 rounded-lg border border-black/10 bg-white/40 px-3 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-1.5" : "py-2"}`;
-                  return h.href ? (
+                    ))}
+                  </span>
+                </>
+              );
+              return (
+                <TiltCard key={`${h.badge}-${i}`} className="rounded-xl">
+                  {h.href ? (
                     <a
                       href={h.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={h.title}
+                      aria-label={h.lines.join(" ")}
                       className={`${cardClass} transition-opacity hover:opacity-80`}
                     >
                       {inner}
                     </a>
                   ) : (
                     <div className={cardClass}>{inner}</div>
-                  );
-                })()}
-              </TiltCard>
-            ))}
+                  )}
+                </TiltCard>
+              );
+            })}
           </div>
         </section>
 

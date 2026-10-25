@@ -56,16 +56,26 @@ export default function ClutchFactorCard() {
             </a>
           </div>
 
-          {/* Right: the circular-gauge score thumbnail */}
+          {/* Right: the circular-gauge score thumbnail, lifted off the black
+              card with a cyan glow, a lighter backing panel, and a hairline ring */}
           <div className="flex shrink-0 items-center justify-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/clutch-factor-803.png"
-              alt="nTangible Clutch Factor™ score: 803 out of 1000, Elite"
-              width={660}
-              height={660}
-              className="block h-auto w-28 rounded-xl sm:w-32"
-            />
+            <div className="relative">
+              {/* soft cyan halo behind the badge */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -inset-2 rounded-2xl bg-[#00ccff]/20 blur-xl"
+              />
+              <div className="relative rounded-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-1.5 ring-1 ring-[#00ccff]/30 shadow-[0_8px_30px_-6px_rgba(0,204,255,0.45)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/clutch-factor-803.png"
+                  alt="nTangible Clutch Factor™ score: 803 out of 1000, Elite"
+                  width={660}
+                  height={660}
+                  className="block h-auto w-28 rounded-xl sm:w-32"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
