@@ -44,7 +44,7 @@ export default function Home() {
             <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
               Partnerships · Growth · Sports Tech
             </span>
-            <h1 className="on-photo mt-3 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[3.75rem]">
+            <h1 className="on-photo mt-3 font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-[3rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
                 target="_blank"

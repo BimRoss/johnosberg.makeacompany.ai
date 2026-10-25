@@ -169,13 +169,15 @@ body::after {
   text-shadow: 0 1px 3px rgba(4, 7, 14, 0.55);
 }
 
-/* Hero name — one clean solid brand color, no glow, no gradient pan. Size and
-   weight carry the hierarchy; the color just marks it as the one hero element. */
+/* Hero name — one clean solid brand color with a soft glow halo. Minimal, just
+   enough to lift it off the photo band as the one hero element. */
 .name-hero {
   color: #0088cc;
+  text-shadow: 0 0 10px rgba(0, 136, 204, 0.3), 0 0 22px rgba(0, 136, 204, 0.18);
 }
 .dark .name-hero {
   color: #00ccff;
+  text-shadow: 0 0 10px rgba(0, 204, 255, 0.4), 0 0 26px rgba(0, 204, 255, 0.25);
 }
 
 /* Eyebrow micro-label — quiet, solid, no shimmer. It sits under the name in the
