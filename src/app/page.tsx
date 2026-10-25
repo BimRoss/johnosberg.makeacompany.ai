@@ -41,10 +41,7 @@ export default function Home() {
         <section className="reveal flex flex-col items-center gap-5 md:flex-row md:items-center md:gap-8">
           {/* Text column */}
           <div className="order-2 flex min-w-0 flex-col items-center text-center md:order-1 md:flex-1">
-            <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
-              Partnerships · Growth · Sports Tech
-            </span>
-            <h1 className="on-photo mt-3 font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-[3rem]">
+            <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-[3rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
                 target="_blank"
@@ -56,9 +53,9 @@ export default function Home() {
               </a>
             </h1>
             <TypeCycle />
-            <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
-              Founding Director x VP Partnerships
-              <span className="mt-2 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <p className="on-photo mt-3 flex flex-nowrap items-center justify-center gap-x-1.5 whitespace-nowrap font-[family-name:var(--font-sora)] text-lg font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:gap-x-2 sm:text-2xl">
+              Founding Director
+              <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
                 <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
                 <a
                   href="https://www.brandlete.com"
@@ -72,13 +69,13 @@ export default function Home() {
                   <img
                     src="/brandlete-logo-light.png"
                     alt="Brandlete"
-                    className="inline h-7 w-auto dark:hidden sm:h-8"
+                    className="inline h-6 w-auto dark:hidden sm:h-8"
                   />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/brandlete-logo-dark.png"
                     alt="Brandlete"
-                    className="hidden h-7 w-auto dark:block sm:h-8"
+                    className="hidden h-6 w-auto dark:block sm:h-8"
                   />
                 </a>
               </span>
