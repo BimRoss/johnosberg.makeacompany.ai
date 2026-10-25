@@ -17,7 +17,6 @@ import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
-import EnduranceChart from "@/components/EnduranceChart";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   roles,
@@ -345,7 +344,6 @@ export default function Home() {
                   <div className="mt-0.5 font-mono text-[8px] font-medium uppercase tracking-[0.08em] text-zinc-500 dark:text-zinc-400 md:text-[9px]">
                     {s.label}
                   </div>
-                  <span aria-hidden className="stat-accent mt-1 h-0.5 w-8 rounded-full bg-gradient-to-r from-[#0088cc] to-[#00ccff]" />
                 </div>
               </TiltCard>
             ))}
@@ -355,9 +353,6 @@ export default function Home() {
         {/* Athletic Achievements — golf + ultra running */}
         <section className="reveal-on-scroll flex flex-col gap-3">
           <h2 className="eyebrow on-photo">Athletic Achievements</h2>
-          <div className="mx-auto w-full max-w-xl">
-            <EnduranceChart />
-          </div>
           <div className="cascade mx-auto flex w-full max-w-xl flex-col gap-1.5">
             {[
               { badge: "2020", logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", lines: ["Jack Nicklaus Doubles Golf Championship Winner"] },
@@ -426,22 +421,14 @@ export default function Home() {
         {/* Experience */}
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="eyebrow on-photo">Experience</h2>
-          <div className="cascade relative flex flex-col md:pl-8">
-            {/* Timeline spine — draws itself down the column as the section
-                reveals, so the role list reads as a path, not a flat stack.
-                Desktop only, where the rows sit centered and the dots align. */}
-            <span aria-hidden className="exp-spine hidden md:block" />
+          <div className="cascade flex flex-col">
             {roles.slice(0, -4).map((r, i) => (
               <div
                 key={r.org}
-                className={`on-photo relative flex flex-col gap-1 py-4 md:flex-row md:items-center md:gap-6 ${
+                className={`on-photo flex flex-col gap-1 py-4 md:flex-row md:items-center md:gap-6 ${
                   i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
                 }`}
               >
-                <span
-                  aria-hidden
-                  className="exp-dot absolute left-[-1.6rem] top-1/2 hidden h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-[#00ccff] ring-4 ring-[#00ccff]/15 md:block"
-                />
                 <div className="flex min-w-0 items-center gap-3 md:w-72 md:shrink-0">
                   <RoleLogo role={r} />
                   <div className="min-w-0">

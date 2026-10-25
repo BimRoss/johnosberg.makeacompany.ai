@@ -70,7 +70,7 @@ export default function PartnershipsGrid() {
 
       {/* Flex-wrap + justify-center. 4-up at every breakpoint so the preview
           reads as two clean rows (4 top, 4 bottom). */}
-      <div className="mx-auto flex w-full max-w-md flex-wrap justify-center gap-1.5">
+      <div className="mx-auto flex w-full max-w-xs flex-wrap justify-center gap-1.5">
         {visible.map((b) => (
           <div
             key={b.name}
