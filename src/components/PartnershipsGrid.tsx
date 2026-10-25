@@ -75,7 +75,7 @@ export default function PartnershipsGrid() {
         {visible.map((b) => (
           <div
             key={b.name}
-            className="flex basis-[calc((100%-1.5rem)/5)] lg:basis-[calc((100%-3rem)/9)] [&>a]:flex-1"
+            className="flex basis-[calc((100%-1.875rem)/6)] lg:basis-[calc((100%-3.375rem)/10)] [&>a]:flex-1"
           >
             <BrandLogo brand={b} />
           </div>

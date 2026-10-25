@@ -39,13 +39,13 @@ export default function Home() {
         className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-8 px-5 pb-8 pt-20 sm:px-8 md:gap-9 md:pb-10 md:pt-28"
       >
         {/* Hero */}
-        <section className="reveal flex flex-col items-center gap-7 md:flex-row md:items-center md:gap-10">
+        <section className="reveal flex flex-col items-center gap-5 md:flex-row md:items-center md:gap-8">
           {/* Text column */}
           <div className="order-2 flex min-w-0 flex-col items-center text-center md:order-1 md:flex-1">
             <span className="label-shimmer font-mono text-[11px] font-bold uppercase tracking-[0.26em] sm:text-xs">
               Partnerships · Growth · Sports Tech
             </span>
-            <h1 className="on-photo mt-5 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[3.75rem]">
+            <h1 className="on-photo mt-3 font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-[3.75rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
                 target="_blank"
@@ -57,7 +57,7 @@ export default function Home() {
               </a>
             </h1>
             <TypeCycle />
-            <p className="on-photo mt-5 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
+            <p className="on-photo mt-3 font-[family-name:var(--font-sora)] text-xl font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:text-2xl">
               Founding Director x VP Partnerships
               <span className="mt-2 flex items-center justify-center gap-1.5 whitespace-nowrap">
                 <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
@@ -86,20 +86,21 @@ export default function Home() {
             </p>
 
             {/* Primary actions */}
-            <div className="mt-6 flex flex-col items-center">
+            <div className="mt-4 flex w-full flex-col items-center">
               <BookCallBtn />
-              {/* Clutch Factor — nTangible assessment, small thumbnail above the links */}
-              <div className="mt-6">
+              {/* The three "features" — Clutch Factor badge + the two links —
+                  grouped inside one tinted panel so they read as a module with
+                  real structure instead of three loose elements. */}
+              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-2.5 rounded-2xl border border-[#00ccff]/20 bg-gradient-to-b from-white/60 to-white/30 p-3 backdrop-blur-sm dark:border-[#00ccff]/20 dark:from-white/[0.06] dark:to-white/[0.02]">
+                {/* Clutch Factor — nTangible assessment */}
                 <ClutchFactor />
-              </div>
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0a66c2] transition-colors hover:text-[#084a8f] dark:text-[#66b2ff] dark:hover:text-[#99ccff]"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#0a66c2]/25 bg-[#0a66c2]/[0.08] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0a66c2] transition-colors hover:bg-[#0a66c2]/[0.14] dark:border-[#66b2ff]/25 dark:bg-[#66b2ff]/[0.08] dark:text-[#99ccff] dark:hover:bg-[#66b2ff]/[0.14]"
                 >
-                  <LinkedInIcon className="h-7 w-7 shrink-0" />
+                  <LinkedInIcon className="h-6 w-6 shrink-0" />
                   Connect on LinkedIn
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                 </a>
@@ -107,14 +108,14 @@ export default function Home() {
                   href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/[0.08] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0088cc] transition-colors hover:bg-[#00ccff]/[0.16] dark:border-[#00ccff]/30 dark:text-[#00ccff] dark:hover:bg-[#00ccff]/[0.16]"
                 >
                   <Image
                     src="/bts-logo.png"
                     alt=""
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 shrink-0 rounded-[7px] object-contain"
+                    width={28}
+                    height={28}
+                    className="h-7 w-7 shrink-0 rounded-[6px] object-contain"
                   />
                   Newsletter
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
@@ -125,14 +126,14 @@ export default function Home() {
 
           {/* Photo column */}
           <div className="order-1 shrink-0 md:order-2">
-            <TiltCard className="w-36 rounded-2xl sm:w-44 md:w-56">
+            <TiltCard className="w-28 rounded-2xl sm:w-36 md:w-44">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15">
                 <Image
                   src="/headshot-v2.png"
                   alt={SITE_NAME}
                   fill
                   priority
-                  sizes="224px"
+                  sizes="176px"
                   className="object-cover"
                 />
                 <span
@@ -190,7 +191,7 @@ export default function Home() {
               The Athlete Development Driven Sports Program Operating System.
             </p>
             {/* Who it's for — icon chips replace the paragraph */}
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-1.5">
               {[
                 {
                   label: "Coaches",
@@ -240,7 +241,7 @@ export default function Home() {
                     href={c.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/50 px-3 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-800 backdrop-blur-sm transition-transform hover:scale-[1.03] hover:border-[#0088cc]/40 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-100 dark:hover:border-[#00ccff]/40"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/50 px-2.5 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-800 backdrop-blur-sm transition-transform hover:scale-[1.03] hover:border-[#0088cc]/40 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-100 dark:hover:border-[#00ccff]/40"
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -263,7 +264,7 @@ export default function Home() {
                   href="https://www.brandlete.com/platform/max"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-[#00ccff]/40 bg-[#00ccff]/[0.1] px-3 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-[#0088cc] transition-transform hover:scale-[1.03] dark:text-[#00ccff]"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#00ccff]/40 bg-[#00ccff]/[0.1] px-2.5 py-1.5 font-[family-name:var(--font-sora)] text-[13px] font-bold text-[#0088cc] transition-transform hover:scale-[1.03] dark:text-[#00ccff]"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -278,7 +279,7 @@ export default function Home() {
                     <path d="M12 3l1.8 4.5L18 9l-4.2 1.5L12 15l-1.8-4.5L6 9l4.2-1.5L12 3Z" />
                     <path d="M18 15l.6 1.6L20.5 17l-1.9.6L18 19.5l-.6-1.9L15.5 17l1.9-.4L18 15Z" />
                   </svg>
-                  Max, your AI Assistant Coach
+                  Max, your AI Coach
                 </a>
               </li>
             </ul>
@@ -295,21 +296,21 @@ export default function Home() {
           </figure>
 
           {/* Hiring — Playmaker Network */}
-          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-4 sm:p-5">
+          <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-3 sm:p-4">
             <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#00ccff]/20 blur-3xl" />
             <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-[#00ccff]/10 blur-3xl" />
-            <div className="relative flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
-              <div className="flex flex-col gap-1.5">
+            <div className="relative flex flex-col items-center gap-2.5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:text-left">
+              <div className="flex flex-col gap-1">
                 <span className="inline-flex items-center gap-2 self-center sm:self-start">
                   <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
                   <span className="font-[family-name:var(--font-sora)] text-[11px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff]">
                     Now Hiring
                   </span>
                 </span>
-                <h3 className="font-[family-name:var(--font-sora)] text-xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-2xl">
+                <h3 className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-zinc-900 dark:text-white sm:text-xl">
                   Join the Playmaker Network
                 </h3>
-                <p className="max-w-md text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+                <p className="max-w-md text-xs leading-relaxed text-zinc-600 dark:text-zinc-300">
                   Brandlete is building the athlete development sports operating system. We want builders, coaches, and partners ready to move the game forward.
                 </p>
               </div>
@@ -317,7 +318,7 @@ export default function Home() {
                 href="https://www.brandlete.com/playmakers"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#00ccff] px-5 py-2.5 font-[family-name:var(--font-sora)] text-sm font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40"
+                className="group inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#00ccff] px-4 py-2 font-[family-name:var(--font-sora)] text-[13px] font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40"
               >
                 Apply now
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -354,9 +355,9 @@ export default function Home() {
         </section>
 
         {/* Athletic Achievements — golf + ultra running */}
-        <section className="reveal-on-scroll flex flex-col gap-4">
+        <section className="reveal-on-scroll flex flex-col gap-3">
           <h2 className="eyebrow on-photo">Athletic Achievements</h2>
-          <div className="cascade mx-auto flex w-full max-w-xl flex-col gap-1.5">
+          <div className="cascade mx-auto flex w-full max-w-xl flex-col gap-1">
             {[
               { badge: "2020", icon: "golf" as const, logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", title: "Jack Nicklaus Doubles Golf Championship Winner" },
               { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 miles ran" },
@@ -370,7 +371,7 @@ export default function Home() {
                   const inner = (
                     <>
                       {h.logo ? (
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1 ring-1 ring-black/5">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1 ring-1 ring-black/5">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={h.logo}
@@ -385,17 +386,17 @@ export default function Home() {
                           className="h-5 w-5 shrink-0 text-[#0088cc]/70 dark:text-[#00ccff]/70"
                         />
                       )}
-                      <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-base md:text-lg" : "text-xl"}`}>
+                      <span className={`shrink-0 whitespace-nowrap font-[family-name:var(--font-sora)] font-bold text-[#0088cc] dark:text-[#00ccff] ${h.metric ? "text-sm md:text-base" : "text-lg"}`}>
                         {h.badge}
                       </span>
-                      <span className={`text-[13px] font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-sm ${h.center ? "flex-1 text-center" : ""}`}>
+                      <span className={`text-[12px] font-medium leading-snug text-zinc-800 dark:text-zinc-200 md:text-[13px] ${h.center ? "flex-1 text-center" : ""}`}>
                         {h.title}
                         {h.miles && <span className="whitespace-nowrap">{h.miles}</span>}
                         {h.line2 && <span className="block">{h.line2}</span>}
                       </span>
                     </>
                   );
-                  const cardClass = `on-photo flex items-center gap-3 rounded-lg border border-black/10 bg-white/40 px-3.5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-2" : "py-3"}`;
+                  const cardClass = `on-photo flex items-center gap-2.5 rounded-lg border border-black/10 bg-white/40 px-3 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] ${h.metric ? "py-1.5" : "py-2"}`;
                   return h.href ? (
                     <a
                       href={h.href}

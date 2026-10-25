@@ -75,7 +75,7 @@ export default function CivicGrid() {
         {visible.map((c, i) => (
           <div
             key={`${c.org}-${c.role}-${i}`}
-            className="flex basis-[calc((100%-1.5rem)/5)] lg:basis-[calc((100%-3rem)/9)] [&>*]:flex-1"
+            className="flex basis-[calc((100%-1.875rem)/6)] lg:basis-[calc((100%-3.375rem)/10)] [&>*]:flex-1"
           >
             <CivicCard c={c} />
           </div>
