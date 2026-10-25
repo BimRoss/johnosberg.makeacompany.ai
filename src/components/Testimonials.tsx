@@ -217,9 +217,13 @@ function Row({ items }: { items: Testimonial[] }) {
       {items.map((t, i) => (
         <Card key={`a-${i}`} t={t} />
       ))}
-      {items.map((t, i) => (
-        <Card key={`b-${i}`} t={t} />
-      ))}
+      {/* Second copy is the seamless-loop clone — hide it from assistive tech
+          so screen readers don't read every endorsement twice. */}
+      <div className="contents" aria-hidden>
+        {items.map((t, i) => (
+          <Card key={`b-${i}`} t={t} />
+        ))}
+      </div>
     </div>
   );
 }

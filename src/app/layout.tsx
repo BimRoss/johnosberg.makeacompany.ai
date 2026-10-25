@@ -70,9 +70,12 @@ const jsonLd = {
   "@type": "Person",
   name: SITE_NAME,
   url: SITE_URL,
-  jobTitle: "VP of Partnerships & Growth Leader",
-  address: { "@type": "PostalPlace", addressLocality: "Buffalo", addressRegion: "NY" },
-  sameAs: socials.filter((s) => s.external).map((s) => s.href),
+  jobTitle: "Founding Director, Brandlete",
+  address: { "@type": "PostalAddress", addressLocality: "Buffalo", addressRegion: "NY" },
+  sameAs: [
+    "https://www.linkedin.com/in/johnosberg",
+    ...socials.filter((s) => s.external).map((s) => s.href),
+  ],
   worksFor: [
     { "@type": "Organization", name: "Brandlete, Inc.", url: "https://brandlete.com" },
   ],

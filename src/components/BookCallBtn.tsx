@@ -90,7 +90,7 @@ export default function BookCallBtn() {
   return (
     <a
       ref={ref}
-      href="https://tinyurl.com/meet-josberg-brandlete"
+      href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0bFqo43JGcdk9kShp6SSL5J4ZZyWsuaawJnrFhsmzZTkZzmtSBEq3-DyzO9VPWQE8jKZ7KXtvN"
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}

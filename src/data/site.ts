@@ -1,6 +1,6 @@
 export const SITE_URL = "https://johnosberg.com";
 export const SITE_NAME = "John Osberg";
-export const SITE_TITLE = "John Osberg Career Portfolio";
+export const SITE_TITLE = "John Osberg | Founding Director, Brandlete · Buffalo, NY";
 
 export const HERO_LABEL = "growth · partnerships · revenue";
 
@@ -8,13 +8,13 @@ export const HERO_SUMMARY =
   "Growth and partnerships leader co-building in youth sports and sports tech, with 16+ years turning relationships into revenue and $15M+ generated and influenced.";
 
 export const LINK_PREVIEW_DESCRIPTION =
-  "John Osberg — growth and partnerships leader in Buffalo, NY. 16+ years, $15M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
+  "John Osberg — Founding Director at Brandlete, in Buffalo, NY. 16+ years, $15M+ in revenue generated and influenced, partnerships with national brands across sports, tech, and nonprofit.";
 
 // Social/link-unfurl description (LinkedIn Featured, Slack, iMessage). Weaves
 // John's three current seats, org names front-loaded so the important part
 // survives LinkedIn's ~2-line truncation.
 export const OG_DESCRIPTION =
-  "VP of Partnerships at Brandlete, the sports program operating system. 16+ years turning relationships into revenue across sports, tech, and nonprofit.";
+  "Founding Director at Brandlete, the sports program operating system. 16+ years turning relationships into revenue across sports, tech, and nonprofit.";
 
 export const PUBLIC_EMAIL = "john@brandlete.com";
 
@@ -48,11 +48,10 @@ export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "$3.1M+", label: "capital raised", icon: "capital" },
   { value: "$2.2M+", label: "501c3 funds raised", icon: "nonprofit" },
   { value: "16+ yrs", label: "growth & partnerships", icon: "growth" },
-  { value: "25K+", label: "miles ran", icon: "miles" },
+  { value: "25K+", label: "miles run", icon: "miles" },
   { value: "35M+", label: "LinkedIn impressions", icon: "impressions" },
   { value: "20M+", label: "network reach", icon: "reach" },
   { value: "30K+", label: "audience & network", icon: "network" },
-  { value: "Countless", label: "wins, intros, relationships, connections, deals done, invigorating moments, growth, smiles, laughs", icon: "countless" },
 ];
 
 // Experience — mirrors John's LinkedIn: same roles, same order (most recent
@@ -79,7 +78,7 @@ export const roles: Role[] = [
     org: "Brandlete, Inc.",
     title: "Founding Director / VP Partnerships",
     period: "Nov 2021 – Present",
-    blurb: "Building the AI-native operating system for sports organizations, connecting admins, coaches, athletes, and parents in one platform.",
+    blurb: "Building the sports program operating system for organizations, connecting admins, coaches, athletes, and parents in one platform.",
     logo: logoDev("brandlete.com"),
     mark: "B",
     accent: "#00ccff",
@@ -96,14 +95,14 @@ export const roles: Role[] = [
     url: "https://www.linkedin.com/company/stealth-startup-community/",
   },
   {
-    org: "PGA of America",
+    org: "PGA of America, WNY Section",
     title: "Director of Partnerships / Founding Trustee",
     period: "Jan 2020 – Oct 2025",
     blurb: "Drove 3X partner growth across a 60+ brand portfolio including Michelob Ultra, Oakley, and Ralph Lauren RLX.",
     logo: logoDev("pga.com"),
     mark: "PGA",
     accent: "#0b3d2e",
-    url: "https://pga.com",
+    url: "https://westernnewyork.pga.com",
   },
   {
     org: "OnCore Golf",
@@ -119,7 +118,7 @@ export const roles: Role[] = [
     org: "Bad Golf Business School",
     title: "Co-Founder",
     period: "Jan 2019 – Jul 2025",
-    blurb: "Co-founded a TechStars-backed, golf-driven networking platform convening 100+ founders and operators per event.",
+    blurb: "Co-founded a Techstars-backed, golf-driven networking platform convening 100+ founders and operators per event.",
     logo: "/logos/badgolf.png",
     mark: "BG",
     accent: "#15803d",
@@ -358,12 +357,12 @@ export type Brand = { name: string; mark: string; accent: string; logo: string; 
 export const brands: Brand[] = [
   { name: "DICK'S", mark: "D", accent: "#1c8c3b", logo: "/logos/dicks.png", url: "https://www.dickssportinggoods.com", sector: "Sports & Golf" },
   { name: "Golf Galaxy", mark: "GG", accent: "#2f7df6", logo: "/logos/golfgalaxy.png", url: "https://www.golfgalaxy.com", sector: "Sports & Golf" },
-  { name: "Wegmans", mark: "W", accent: "#e0301e", logo: logoDev("wegmans.com"), url: "https://www.wegmans.com", sector: "Beverage & CPG" },
-  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: logoDev("michelobultra.com"), url: "https://www.michelobultra.com", sector: "Beverage & CPG" },
+  { name: "Wegmans", mark: "W", accent: "#e0301e", logo: "/logos/wegmans.png", url: "https://www.wegmans.com", sector: "Beverage & CPG" },
+  { name: "Michelob Ultra", mark: "MU", accent: "#c79a3a", logo: "/logos/michelobultra.png", url: "https://www.michelobultra.com", sector: "Beverage & CPG" },
   { name: "Oakley", mark: "O", accent: "#9aa0a8", logo: logoDev("oakley.com"), url: "https://www.oakley.com", sector: "Sports & Golf", darkInvert: true },
   { name: "Ralph Lauren RLX", mark: "RLX", accent: "#3b5bdb", logo: logoDev("ralphlauren.com"), url: "https://www.ralphlauren.com/search?q=rlx+golf", sector: "Sports & Golf" },
   { name: "Tito's", mark: "T", accent: "#3aa0ff", logo: "/logos/brands/titosvodka-com.png", url: "https://www.titosvodka.com", sector: "Beverage & CPG" },
-  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: logoDev("corebridgefinancial.com"), url: "https://www.corebridgefinancial.com", sector: "Finance & Insurance" },
+  { name: "Corebridge Financial", mark: "CF", accent: "#7c4dff", logo: "/logos/corebridge.png", url: "https://www.corebridgefinancial.com", sector: "Finance & Insurance" },
   { name: "Sandals Resorts", mark: "S", accent: "#14b8a6", logo: "/logos/brands/sandals-com.png", url: "https://www.sandals.com", sector: "Media, Energy & Travel" },
   { name: "Gallagher Insurance", mark: "G", accent: "#e0a82e", logo: logoDev("ajg.com"), url: "https://www.ajg.com", sector: "Finance & Insurance" },
   { name: "National Fuel", mark: "NF", accent: "#2563eb", logo: logoDev("nationalfuel.com"), url: "https://www.nationalfuel.com", sector: "Media, Energy & Travel" },
@@ -577,7 +576,7 @@ export const awards: Award[] = [
     items: [{ title: "“Good Neighbor” Community Award", year: "2022" }],
   },
   {
-    org: "TechStars Buffalo",
+    org: "Techstars Buffalo",
     logo: logoDev("techstars.com"),
     mark: "TS",
     accent: "#16a34a",
