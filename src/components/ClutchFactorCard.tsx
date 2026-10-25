@@ -9,15 +9,12 @@ import TiltCard from "@/components/TiltCard";
 // ClutchFactor component.
 const REPORT_URL =
   "https://portal.ntangible.co/assessment/5f46156b-e07d-4f48-9fea-145bd97d8af1/report";
+const NTANGIBLE_URL = "https://ntangible.co";
 
 export default function ClutchFactorCard() {
   return (
     <TiltCard className="rounded-2xl">
-      <a
-        href={REPORT_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        title="View John's full Clutch Factor report on nTangible (opens in a new tab)"
+      <div
         className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] px-4 py-3.5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
       >
         {/* corner registration marks, like the assessment card */}
@@ -30,7 +27,16 @@ export default function ClutchFactorCard() {
           {/* Left: label + context */}
           <div className="flex flex-col items-center gap-1 sm:items-start">
             <span className="font-mono text-[9px] font-bold uppercase tracking-[0.22em] text-[#00ccff]">
-              nTangible · Clutch Factor™
+              <a
+                href={NTANGIBLE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="nTangible homepage (opens in a new tab)"
+                className="underline-offset-2 hover:underline"
+              >
+                nTangible
+              </a>{" "}
+              · Clutch Factor™
             </span>
             <span className="font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-white sm:text-lg">
               Composure under pressure
@@ -38,10 +44,16 @@ export default function ClutchFactorCard() {
             <span className="max-w-xs text-[12px] leading-snug text-zinc-400">
               Independently assessed. Top 1% globally when the stakes peak.
             </span>
-            <span className="mt-0.5 inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-[#00ccff]">
-              View full report
+            <a
+              href={REPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View John's full Clutch Factor report on nTangible (opens in a new tab)"
+              className="mt-0.5 inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors hover:text-[#00ccff]"
+            >
+              View my full report
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </span>
+            </a>
           </div>
 
           {/* Right: the circular-gauge score thumbnail */}
@@ -56,7 +68,7 @@ export default function ClutchFactorCard() {
             />
           </div>
         </div>
-      </a>
+      </div>
     </TiltCard>
   );
 }

@@ -86,11 +86,10 @@ export default function Home() {
 
             {/* Primary actions */}
             <div className="mt-4 flex w-full flex-col items-center">
-              {/* The four "features" — Let's Talk + the two links + the Clutch
-                  Factor badge — grouped inside one tinted panel so they read as a
-                  module with real structure. 803 sits at the very bottom. */}
+              {/* The two link features grouped inside one tinted panel so they
+                  read as a module with real structure. Let's Talk now lives in
+                  the footer as the closing CTA. */}
               <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-4 rounded-2xl border border-[#00ccff]/20 bg-gradient-to-b from-white/60 to-white/30 p-4 backdrop-blur-sm dark:border-[#00ccff]/20 dark:from-white/[0.06] dark:to-white/[0.02]">
-                <BookCallBtn />
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -363,7 +362,7 @@ export default function Home() {
               { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 miles ran" },
               { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
               { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", title: "Mind Over Miles Runner · 70 mi ran, 18 hours, early finish - injury" },
-              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06   ·   26.2 miles — 3:11:28", metric: true, center: true },
+              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06     26.2 miles — 3:11:28", metric: true, center: true },
               { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", line2: "5x 48 hour challenge finishes · 4x 24 hour challenge finishes", metric: true },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
@@ -527,6 +526,9 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="on-photo flex flex-col items-center gap-3 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
+          <div className="mb-3 flex justify-center">
+            <BookCallBtn />
+          </div>
           <span>© {new Date().getFullYear()} John Osberg. All rights reserved.</span>
           <p className="flex flex-wrap items-center justify-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
             Built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}

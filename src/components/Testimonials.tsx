@@ -150,7 +150,6 @@ function Row({ items }: { items: Testimonial[] }) {
 
     let holding = false;
     let holdStart = 0;
-    let hovering = false;
     let last = 0;
     let raf = 0;
 
@@ -168,7 +167,9 @@ function Row({ items }: { items: Testimonial[] }) {
       last = now;
       // Resume if a hold has outlived any plausible real touch (dropped release).
       if (holding && now - holdStart > 4000) holding = false;
-      if (!reduced && !holding && !hovering) {
+      // Drift never pauses on hover — only while a finger is actively dragging —
+      // so the row keeps moving right-to-left at all times on desktop.
+      if (!reduced && !holding) {
         el.scrollLeft += MARQUEE_SPEED * dt;
       }
       wrap();
@@ -182,19 +183,11 @@ function Row({ items }: { items: Testimonial[] }) {
     const onRelease = () => {
       holding = false;
     };
-    const onEnter = () => {
-      hovering = true;
-    };
-    const onLeave = () => {
-      hovering = false;
-    };
 
     el.addEventListener("pointerdown", onDown);
     // Window-level release so a pointerup off the strip still clears the hold.
     window.addEventListener("pointerup", onRelease);
     window.addEventListener("pointercancel", onRelease);
-    el.addEventListener("pointerenter", onEnter);
-    el.addEventListener("pointerleave", onLeave);
     raf = requestAnimationFrame(step);
 
     return () => {
@@ -202,8 +195,6 @@ function Row({ items }: { items: Testimonial[] }) {
       el.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onRelease);
       window.removeEventListener("pointercancel", onRelease);
-      el.removeEventListener("pointerenter", onEnter);
-      el.removeEventListener("pointerleave", onLeave);
     };
   }, []);
 
