@@ -152,6 +152,12 @@ function Row({ items }: { items: Testimonial[] }) {
     let holdStart = 0;
     let last = 0;
     let raf = 0;
+    // Sub-pixel accumulator. Several engines (iOS WebKit, some Chrome builds)
+    // store scrollLeft as an integer, so writing 0.5px/frame truncates straight
+    // back to the same value and the row never moves — the "stopped drifting"
+    // bug. We bank the fractional drift here and only ever push WHOLE pixels
+    // onto scrollLeft, so it advances on every engine.
+    let acc = 0;
 
     const half = () => el.scrollWidth / 2;
 
@@ -170,7 +176,12 @@ function Row({ items }: { items: Testimonial[] }) {
       // Drift never pauses on hover — only while a finger is actively dragging —
       // so the row keeps moving right-to-left at all times on desktop.
       if (!reduced && !holding) {
-        el.scrollLeft += MARQUEE_SPEED * dt;
+        acc += MARQUEE_SPEED * dt;
+        const whole = Math.trunc(acc);
+        if (whole !== 0) {
+          el.scrollLeft += whole;
+          acc -= whole;
+        }
       }
       wrap();
       raf = requestAnimationFrame(step);

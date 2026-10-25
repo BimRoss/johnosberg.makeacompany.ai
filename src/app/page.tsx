@@ -357,8 +357,7 @@ export default function Home() {
               { badge: "2020–24", logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", lines: ["Ultra Challenge Finisher", "52, 57, 63, 69 miles ran"] },
               { badge: "2023", logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", lines: ["PGA of America Medalist, Playing Ability Test", "1 of 22 to qualify"] },
               { badge: "2025", logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", lines: ["Mind Over Miles Runner", "70 mi ran · 18 hours · (injury)"] },
-              { badge: "Personal Bests", logo: "/logos/powerofozmosis.png", lines: ["13.1 miles — 1:28:06", "26.2 miles — 3:11:28"] },
-              { badge: "To Date", logo: "/logos/calendar.png", lines: ["164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", "5× 48-hour challenge finishes · 4× 24-hour challenge finishes"] },
+              { badge: "PBs/To Date", logo: "/logos/powerofozmosis.png", lines: ["13.1 — 1:28:06 · 26.2 — 3:11:28", "164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", "5× 48-hour challenge finishes · 4× 24-hour challenge finishes"] },
             ].map((h, i) => {
               const cardClass =
                 "on-photo grid grid-cols-[1.75rem_4.5rem_1fr] items-center gap-2.5 rounded-xl border border-black/10 bg-white/40 px-3.5 py-2.5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03]";
@@ -526,10 +525,6 @@ export default function Home() {
             </p>
           </div>
           <Gallery />
-          <p className="on-photo mt-10 flex items-center justify-center gap-2 text-center font-mono text-base font-bold text-zinc-900 dark:text-white">
-            <span aria-hidden>🎤</span>
-            Secret talent: impersonations of rappers &amp; singers, Lil Wayne + Akon, and Zac Brown + Green Day, to name just a few 😆
-          </p>
         </section>
 
         {/* Footer */}
