@@ -123,98 +123,54 @@ function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; t
   );
 }
 
-// A real horizontal scroll container you can swipe/drag, that ALSO auto-drifts
-// on its own so the row still looks alive. The auto-drift nudges scrollLeft each
-// frame; any touch, drag, or wheel pauses it and it resumes a beat after you let
-// go. Cards are duplicated once and the position wraps at the halfway mark, so
-// the drift loops seamlessly in either direction.
+// A pure-CSS transform marquee. The track holds two identical copies of the
+// cards and slides by exactly one copy (-50%) on an infinite linear keyframe
+// (see .animate-marquee-l / -r in globals.css), so it loops seamlessly.
 //
-// Why a scroll container is safe here (the original marquee avoided one): the
-// track sets `touch-action: pan-x`, so a vertical finger-drag passes straight
-// through to the page and only a horizontal drag scrolls the row. Paired with
-// `overscroll-behavior-x: contain`, scrolling past this section never feels
-// stuck. Don't add backdrop-blur to the cards (see Card note) — it crashes iOS.
+// Why CSS instead of a JS scroll container: the scroll-container version drove
+// scrollLeft from rAF and paused on touch events. On iOS those touch events
+// arrive unpaired (a touchstart with no matching touchend), so the pause latched
+// and the top row froze for good — twice. A compositor-run CSS animation has no
+// pause logic to latch and nothing for a dropped event to break; it physically
+// cannot get stuck. We give up finger-swipe scrubbing on mobile to buy that, a
+// trade worth making for an endorsement strip that just needs to keep drifting.
+// Desktop still pauses on hover via CSS :hover. Reduced-motion stops it via CSS.
+//
+// Duration is measured per row so both drift at one identical px/s regardless of
+// card count (MARQUEE_SPEED). Don't add backdrop-blur to the cards (see Card
+// note) — it crashes iOS.
 function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  // Single self-healing timestamp instead of a sticky paused flag. The drift
-  // runs whenever we're past this time; every interaction just pushes it
-  // forward. Nothing here can leave the row paused forever, which is the whole
-  // point: the old paused-boolean froze the top row on iOS whenever a release
-  // event got dropped (a tap firing mouseenter/pointerdown with no matching
-  // mouseleave/pointerup). Worst case now, a missed release costs ~1s of pause,
-  // then the row resumes on its own.
-  const holdUntilRef = useRef(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [duration, setDuration] = useState(800);
 
   useEffect(() => {
-    const el = scrollRef.current;
+    const el = trackRef.current;
     if (!el) return;
-
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const half = () => el.scrollWidth / 2;
-
-    // Start the right-drifting row partway in so it has room to travel toward 0.
-    if (dir === "r") el.scrollLeft = half();
-
-    let raf = 0;
-    let last = performance.now();
-    const tick = (now: number) => {
-      const dt = (now - last) / 1000;
-      last = now;
-      if (!reduce && now >= holdUntilRef.current) {
-        el.scrollLeft += (dir === "l" ? 1 : -1) * MARQUEE_SPEED * dt;
-      }
-      // Seamless wrap: one full set of cards is exactly half the scroll width.
-      const h = half();
-      if (h > 0) {
-        if (el.scrollLeft >= h) el.scrollLeft -= h;
-        else if (el.scrollLeft <= 0) el.scrollLeft += h;
-      }
-      raf = requestAnimationFrame(tick);
+    const measure = () => {
+      // The track is two copies; one copy is half the scroll width, and the
+      // keyframe travels exactly that far, so time = distance / speed.
+      const half = el.scrollWidth / 2;
+      if (half > 0) setDuration(half / MARQUEE_SPEED);
     };
-    raf = requestAnimationFrame(tick);
-
-    // Any interaction holds the drift for a short, self-expiring window. While a
-    // finger is dragging, touchmove keeps re-arming it so the swipe isn't fought
-    // by the animation; once the moves stop, the hold lapses and drift resumes
-    // even if the touchend/pointerup never arrived. We don't listen to `scroll`
-    // (our own drift fires it, which would self-hold the loop forever).
-    const hold = () => {
-      holdUntilRef.current = performance.now() + 1200;
-    };
-
-    el.addEventListener("pointerdown", hold);
-    el.addEventListener("pointermove", hold);
-    el.addEventListener("touchstart", hold, { passive: true });
-    el.addEventListener("touchmove", hold, { passive: true });
-    el.addEventListener("wheel", hold, { passive: true });
-    // Real mouse hover pauses too, via movement — a still cursor lets it drift,
-    // which is fine. We deliberately avoid mouseenter/mouseleave: on iOS those
-    // fire as unpaired synthetic events and were the source of the frozen row.
-    el.addEventListener("mousemove", hold);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      el.removeEventListener("pointerdown", hold);
-      el.removeEventListener("pointermove", hold);
-      el.removeEventListener("touchstart", hold);
-      el.removeEventListener("touchmove", hold);
-      el.removeEventListener("wheel", hold);
-      el.removeEventListener("mousemove", hold);
-    };
-  }, [dir]);
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   return (
-    <div
-      ref={scrollRef}
-      className="no-scrollbar flex gap-5 overflow-x-auto"
-      style={{ touchAction: "pan-x", overscrollBehaviorX: "contain" }}
-    >
-      {items.map((t, i) => (
-        <Card key={`a-${i}`} t={t} />
-      ))}
-      {items.map((t, i) => (
-        <Card key={`b-${i}`} t={t} />
-      ))}
+    <div className="overflow-hidden">
+      <div
+        ref={trackRef}
+        className={`flex w-max gap-5 ${dir === "l" ? "animate-marquee-l" : "animate-marquee-r"}`}
+        style={{ animationDuration: `${duration}s` }}
+      >
+        {items.map((t, i) => (
+          <Card key={`a-${i}`} t={t} />
+        ))}
+        {items.map((t, i) => (
+          <Card key={`b-${i}`} t={t} />
+        ))}
+      </div>
     </div>
   );
 }

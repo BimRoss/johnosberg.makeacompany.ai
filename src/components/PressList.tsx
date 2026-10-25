@@ -8,7 +8,7 @@ import { useState } from "react";
 import PressLogo from "@/components/PressLogo";
 import { press } from "@/data/site";
 
-const PREVIEW_COUNT = 8;
+const PREVIEW_COUNT = 5;
 
 export default function PressList() {
   const [expanded, setExpanded] = useState(false);
