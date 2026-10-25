@@ -100,12 +100,12 @@ function Highlight({ text, term }: { text: string; term: string }) {
 function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; term?: string; clamp?: boolean; fluid?: boolean }) {
   const width = fluid ? "w-full" : "w-[320px] shrink-0 sm:w-[360px]";
   return (
-    <figure className={`flex ${width} flex-col gap-3 rounded-2xl border border-black/10 bg-white/90 p-5 dark:border-white/10 dark:bg-zinc-950/85`}>
-      <span aria-hidden className="select-none font-serif text-2xl leading-none text-[#00ccff]/50 dark:text-[#00ccff]/40">&#10077;</span>
-      <blockquote className={`${clamp ? "line-clamp-5" : ""} text-[14px] leading-6 text-zinc-800 dark:text-zinc-300`}>
+    <figure className={`flex ${width} flex-col gap-2 rounded-2xl border border-black/10 bg-white/90 p-4 dark:border-white/10 dark:bg-zinc-950/85`}>
+      <span aria-hidden className="select-none font-serif text-xl leading-none text-[#00ccff]/50 dark:text-[#00ccff]/40">&#10077;</span>
+      <blockquote className={`${clamp ? "line-clamp-3" : ""} text-[13px] leading-[1.45] text-zinc-800 dark:text-zinc-300`}>
         <Highlight text={t.text} term={term} />
       </blockquote>
-      <div className="mt-auto flex flex-col gap-2.5">
+      <div className="mt-auto flex flex-col gap-2">
         <Stars />
         <figcaption className="flex items-center gap-3">
           <Avatar name={t.name} size="md" />
@@ -289,7 +289,7 @@ export default function Testimonials() {
           )}
         </div>
       ) : (
-        <div className="marquee-mask flex flex-col gap-5">
+        <div className="marquee-mask flex flex-col gap-3">
           <Row items={rowA} dir="l" />
           <Row items={rowB} dir="r" />
         </div>

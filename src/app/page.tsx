@@ -9,9 +9,9 @@ import SearchPalette from "@/components/SearchPalette";
 import Testimonials from "@/components/Testimonials";
 import PartnershipsGrid from "@/components/PartnershipsGrid";
 import CivicGrid from "@/components/CivicGrid";
-import PressLogo from "@/components/PressLogo";
+import PressList from "@/components/PressList";
 import RoleLogo from "@/components/RoleLogo";
-import AwardLogo from "@/components/AwardLogo";
+import AwardsList from "@/components/AwardsList";
 import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
@@ -21,8 +21,6 @@ import ClutchFactorCard from "@/components/ClutchFactorCard";
 import ThemeToggle from "@/components/ThemeToggle";
 import LinkedInBadge from "@/components/LinkedInBadge";
 import {
-  awards,
-  press,
   roles,
   SITE_NAME,
   stats,
@@ -465,31 +463,16 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Early career — condensed 2-up grid to save vertical space */}
-          <div className="flex flex-col gap-3 border-t border-black/10 pt-5 dark:border-white/10">
-          <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
-            Early Career
-          </h3>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
-            {roles.slice(-4).map((r) => (
-              <div key={r.org} className="on-photo flex min-w-0 items-center gap-3">
-                <RoleLogo role={r} />
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-[family-name:var(--font-sora)] text-base font-semibold text-zinc-900 dark:text-white">
-                      {r.org}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
-                      {r.period}
-                    </span>
-                  </div>
-                  <div className="truncate text-[13px] font-medium text-zinc-700 dark:text-zinc-300">
-                    {r.title}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Early career — collapsed to a single line of org names to save
+              vertical space. The detail lives in the full résumé; this is just
+              the trail of where he came up. */}
+          <div className="flex flex-col gap-2 border-t border-black/10 pt-5 dark:border-white/10 sm:flex-row sm:items-baseline sm:gap-3">
+            <h3 className="shrink-0 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+              Early Career
+            </h3>
+            <p className="on-photo text-[13px] font-medium leading-relaxed text-zinc-700 dark:text-zinc-300">
+              {roles.slice(-4).map((r) => r.org).join(" · ")}
+            </p>
           </div>
         </section>
 
@@ -525,36 +508,7 @@ export default function Home() {
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               In the press
             </h3>
-            <div className="cascade grid grid-cols-1 gap-x-10 sm:grid-cols-2">
-              {press.map((p) => (
-                <a
-                  key={p.href}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="on-photo group flex items-center gap-2.5 border-t border-black/10 py-1.5 dark:border-white/10"
-                >
-                  <span className="flex w-32 shrink-0 items-center gap-1.5 sm:w-40">
-                    <PressLogo item={p} />
-                    <span className="min-w-0 truncate font-mono text-[10px] uppercase leading-tight tracking-[0.1em] text-zinc-800 dark:text-zinc-400">
-                      {p.source}
-                    </span>
-                  </span>
-                  <span
-                    className={`flex-1 font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-tight transition-colors ${
-                      p.title.includes("Brandlete")
-                        ? "text-[#0088cc] dark:text-[#00ccff]"
-                        : "text-zinc-900 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white"
-                    }`}
-                  >
-                    {p.title}
-                  </span>
-                  <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5">
-                    ↗
-                  </span>
-                </a>
-              ))}
-            </div>
+            <PressList />
           </div>
 
           {/* Awards & honors */}
@@ -562,40 +516,7 @@ export default function Home() {
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               Awards &amp; honors
             </h3>
-            <div className="cascade grid grid-cols-1 gap-x-10 sm:grid-cols-2">
-              {awards.map((a, i) => (
-                <div
-                  key={`${a.org}-${i}`}
-                  className="on-photo flex items-start gap-3 border-t border-black/10 py-2.5 dark:border-white/10"
-                >
-                  <a href={a.url} target="_blank" rel="noopener noreferrer" aria-label={a.org} className="shrink-0">
-                    <AwardLogo award={a} />
-                  </a>
-                  <div className="min-w-0 flex-1">
-                    <a
-                      href={a.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-fit font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600 transition-colors hover:text-[#0088cc] dark:text-zinc-400 dark:hover:text-[#00ccff]"
-                    >
-                      {a.org}
-                    </a>
-                    <div className="mt-1 flex flex-col gap-1">
-                      {a.items.map((it, j) => (
-                        <div key={`${it.title}-${j}`} className="flex items-baseline justify-between gap-4">
-                          <span className="min-w-0 font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-tight text-zinc-900 dark:text-white">
-                            {it.title}
-                          </span>
-                          <span className="shrink-0 font-mono text-[11px] font-semibold text-[#0088cc] dark:text-[#00ccff]">
-                            {it.year}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <AwardsList />
           </div>
         </section>
 
