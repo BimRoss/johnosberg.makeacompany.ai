@@ -17,7 +17,7 @@ export default function CivicCard({ c }: { c: Civic }) {
       rel="noopener noreferrer"
       title={`${c.org} — ${c.role}`}
       aria-label={`${c.org} — ${c.role} (opens in new tab)`}
-      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-1 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
+      className="flex aspect-[5/4] items-center justify-center rounded-lg border border-black/10 bg-white/70 p-0.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
     >
       {failed ? (
         <span
@@ -27,7 +27,7 @@ export default function CivicCard({ c }: { c: Civic }) {
           {c.mark}
         </span>
       ) : (
-        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-black/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={c.logo}
@@ -35,7 +35,7 @@ export default function CivicCard({ c }: { c: Civic }) {
             width={96}
             height={96}
             loading="lazy"
-            className="h-[86%] w-[86%] object-contain"
+            className="h-[94%] w-[94%] object-contain"
             onError={() => setFailed(true)}
           />
         </span>

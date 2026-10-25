@@ -18,7 +18,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
       rel="noopener noreferrer"
       aria-label={`${brand.name} website`}
       title={brand.name}
-      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-1 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+      className="flex aspect-[5/4] items-center justify-center rounded-lg border border-black/10 bg-white/70 p-0.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
           className="flex h-full w-full items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-lg font-bold"
@@ -28,10 +28,10 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
         </span>
       ) : (
         /* White plate is kept so dark/transparent marks (Oakley, NYSGA) stay
-           legible on the dark theme. Logo fills 86% of the plate to trim the
+           legible on the dark theme. Logo fills 94% of the plate to trim the
            white margin, matching the civic wall's sizing (CivicCard) so both
            sections read identically. */
-        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-black/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={brand.logo}
@@ -39,7 +39,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
             width={96}
             height={96}
             loading="lazy"
-            className="h-[86%] w-[86%] object-contain"
+            className="h-[94%] w-[94%] object-contain"
             onError={() => setFailed(true)}
           />
         </span>

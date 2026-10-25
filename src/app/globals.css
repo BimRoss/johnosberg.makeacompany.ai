@@ -124,7 +124,8 @@ body::after {
 }
 
 .hero-atmos-light {
-  background-image: url("/bg-brand-light-v2.jpg");
+  /* Daytime golf hero (v4) — the bright counterpart to the twilight dark hero. */
+  background-image: url("/bg-brand-light-v4.jpg");
   opacity: 0.85;
 }
 
@@ -437,6 +438,62 @@ html.dark :is(
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll .eyebrow::before {
     transform: none;
+    transition: none;
+  }
+}
+
+/* Stat accent — the little gradient underline in each number tile grows out
+   from the left as the section reveals, so the grid feels alive on arrival
+   instead of a flat wall of figures. */
+.stat-accent {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+.reveal-on-scroll.is-visible .stat-accent {
+  transform: scaleX(1);
+}
+
+/* Experience timeline — a vertical spine that draws down the role column, with
+   a dot marking each stop. Both animate in once the section is visible. */
+.exp-spine {
+  position: absolute;
+  left: 0.625rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--brand),
+    rgba(0, 204, 255, 0.15)
+  );
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.reveal-on-scroll.is-visible .exp-spine {
+  transform: scaleY(1);
+}
+.exp-dot {
+  opacity: 0;
+  transform: translateY(-50%) scale(0.4);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.exp-dot {
+  transition-delay: 0.3s;
+}
+.reveal-on-scroll.is-visible .exp-dot {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-accent,
+  .exp-spine,
+  .exp-dot {
+    transform: none;
+    opacity: 1;
     transition: none;
   }
 }
