@@ -358,7 +358,7 @@ export default function Home() {
               { badge: "2020", logo: "/logos/jacknicklaus.png", href: "https://www.oncoregolf.com/verox1-doubleswin/", lines: ["Jack Nicklaus Doubles Golf Championship Winner"] },
               { badge: "2020–24", logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", lines: ["Ultra Challenge Finisher", "52, 57, 63, 69 miles ran"] },
               { badge: "2023", logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", lines: ["PGA of America Medalist, Playing Ability Test", "1 of 22 to qualify"] },
-              { badge: "2025", logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", lines: ["Mind Over Miles Runner", "70 mi ran · 18 hours · early finish (injury)"] },
+              { badge: "2025", logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", lines: ["Mind Over Miles Runner", "70 mi ran · 18 hours · (injury)"] },
               { badge: "Personal Bests", logo: "/logos/powerofozmosis.png", lines: ["13.1 miles — 1:28:06", "26.2 miles — 3:11:28"] },
               { badge: "To Date", logo: "/logos/calendar.png", lines: ["164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", "5× 48-hour challenge finishes · 4× 24-hour challenge finishes"] },
             ].map((h, i) => {

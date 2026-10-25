@@ -15,8 +15,19 @@ export default function ClutchFactorCard() {
   return (
     <TiltCard className="rounded-2xl">
       <div
-        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] px-4 py-3.5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
+        className="group relative block cursor-pointer overflow-hidden rounded-2xl bg-[#0a0a0a] px-4 py-3.5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
       >
+        {/* Full-card link: clicking anywhere on the card opens the report. Sits
+            as an absolute overlay (not a wrapper) so the inner nTangible link
+            stays a valid, separately-clickable sibling above it. */}
+        <a
+          href={REPORT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View John's full Clutch Factor report on nTangible (opens in a new tab)"
+          className="absolute inset-0 z-10"
+        />
+
         {/* corner registration marks, like the assessment card */}
         <span aria-hidden className="pointer-events-none absolute left-2.5 top-2.5 h-3 w-3 border-l border-t border-white/25" />
         <span aria-hidden className="pointer-events-none absolute right-2.5 top-2.5 h-3 w-3 border-r border-t border-white/25" />
@@ -32,7 +43,7 @@ export default function ClutchFactorCard() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="nTangible homepage (opens in a new tab)"
-                className="underline-offset-2 hover:underline"
+                className="relative z-20 underline-offset-2 hover:underline"
               >
                 nTangible
               </a>{" "}
@@ -44,16 +55,12 @@ export default function ClutchFactorCard() {
             <span className="max-w-xs text-[12px] leading-snug text-zinc-400">
               Independently assessed. Top 1% globally when the stakes peak.
             </span>
-            <a
-              href={REPORT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="View John's full Clutch Factor report on nTangible (opens in a new tab)"
-              className="mt-0.5 inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors hover:text-[#00ccff]"
+            <span
+              className="mt-0.5 inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-[#00ccff]"
             >
               View my full report
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </a>
+            </span>
           </div>
 
           {/* Right: the circular-gauge score thumbnail, lifted off the black
