@@ -9,7 +9,7 @@ import { useState } from "react";
 import BrandLogo from "@/components/BrandLogo";
 import { brands, SECTORS, type Sector } from "@/data/site";
 
-const PREVIEW_COUNT = 10;
+const PREVIEW_COUNT = 8;
 
 export default function PartnershipsGrid() {
   const [active, setActive] = useState<Sector | "All">("All");
@@ -68,14 +68,13 @@ export default function PartnershipsGrid() {
         })}
       </div>
 
-      {/* Flex-wrap + justify-center so any trailing partial row centers instead
-          of hanging left. Tightened to 5-up mobile / 9-up desktop with a
-          smaller gap so the wall reads as more logos in fewer, shorter rows. */}
+      {/* Flex-wrap + justify-center. 4-up at every breakpoint so the preview
+          reads as two clean rows (4 top, 4 bottom). */}
       <div className="flex flex-wrap justify-center gap-1.5">
         {visible.map((b) => (
           <div
             key={b.name}
-            className="flex basis-[calc((100%-1.875rem)/6)] lg:basis-[calc((100%-3.375rem)/10)] [&>a]:flex-1"
+            className="flex basis-[calc((100%-1.125rem)/4)] [&>a]:flex-1"
           >
             <BrandLogo brand={b} />
           </div>
