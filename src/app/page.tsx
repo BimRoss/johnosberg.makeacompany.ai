@@ -17,6 +17,7 @@ import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
 import BrandleteVideo from "@/components/BrandleteVideo";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
+import Gallery from "@/components/Gallery";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   roles,
@@ -514,6 +515,21 @@ export default function Home() {
             </h3>
             <AwardsList />
           </div>
+        </section>
+
+        {/* Moments — a drifting filmstrip of life & career photos */}
+        <section id="moments" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <h2 className="eyebrow on-photo">Moments</h2>
+            <p className="on-photo max-w-2xl text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+              A few from along the way. Tap any photo to open it, then swipe or arrow through.
+            </p>
+          </div>
+          <Gallery />
+          <p className="on-photo mt-10 flex items-center justify-center gap-2 text-center font-mono text-base font-bold text-zinc-900 dark:text-white">
+            <span aria-hidden>🎤</span>
+            Secret talent: impersonations of rappers &amp; singers, Lil Wayne + Akon, and Zac Brown + Green Day, to name just a few 😆
+          </p>
         </section>
 
         {/* Footer */}
