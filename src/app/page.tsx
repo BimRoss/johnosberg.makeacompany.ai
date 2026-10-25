@@ -90,7 +90,7 @@ export default function Home() {
               {/* The four "features" — Let's Talk + the two links + the Clutch
                   Factor badge — grouped inside one tinted panel so they read as a
                   module with real structure. 803 sits at the very bottom. */}
-              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-2.5 rounded-2xl border border-[#00ccff]/20 bg-gradient-to-b from-white/60 to-white/30 p-3 backdrop-blur-sm dark:border-[#00ccff]/20 dark:from-white/[0.06] dark:to-white/[0.02]">
+              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-4 rounded-2xl border border-[#00ccff]/20 bg-gradient-to-b from-white/60 to-white/30 p-4 backdrop-blur-sm dark:border-[#00ccff]/20 dark:from-white/[0.06] dark:to-white/[0.02]">
                 <BookCallBtn />
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
@@ -118,8 +118,6 @@ export default function Home() {
                   Newsletter
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                 </a>
-                {/* Clutch Factor — nTangible assessment, at the very bottom */}
-                <ClutchFactor />
               </div>
             </div>
           </div>
@@ -419,9 +417,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Clutch Factor — nTangible assessment */}
-        <section id="clutch" className="reveal-on-scroll scroll-mt-24">
-          <ClutchFactorCard />
+        {/* Clutch Factor — nTangible assessment. The small 803 badge thumbnail
+            now lives here, grouped with the full card. */}
+        <section id="clutch" className="reveal-on-scroll flex scroll-mt-24 flex-col items-center gap-4">
+          <ClutchFactor />
+          <div className="w-full">
+            <ClutchFactorCard />
+          </div>
         </section>
 
         {/* Experience */}
@@ -527,7 +529,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="on-photo flex flex-col items-center gap-3 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
-          <span>© {new Date().getFullYear()} John Osberg</span>
+          <span>© {new Date().getFullYear()} John Osberg. All rights reserved.</span>
           <p className="flex flex-wrap items-center justify-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
             Built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
             <a
@@ -546,6 +548,20 @@ export default function Home() {
               MakeaCompany
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
+          </p>
+          <p className="mt-2 max-w-xl px-4 text-center text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-400">
+            All content on this site, including text, images, and design, is the
+            property of John Osberg and may not be reproduced, distributed, or
+            used without prior written permission. All third-party names, logos,
+            and trademarks are the property of their respective owners and are
+            shown for identification only, without any claim of affiliation or
+            endorsement.
+          </p>
+          <p className="max-w-xl px-4 text-center text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-400">
+            This site is provided for informational purposes only, on an
+            &ldquo;as is&rdquo; basis, with no warranties of any kind. It does
+            not sell your personal information. Any details you share through the
+            contact links are used solely to respond to you.
           </p>
         </footer>
       </main>

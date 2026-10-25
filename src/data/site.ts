@@ -546,6 +546,17 @@ export const awards: Award[] = [
     ],
   },
   {
+    org: "U.S. Dept. of Veterans Affairs",
+    logo: logoDev("va.gov"),
+    mark: "VA",
+    accent: "#112e51",
+    url: "https://www.va.gov",
+    items: [
+      { title: "Community Partnership Award", year: "2022" },
+      { title: "Certificate of Pride in Public Service", year: "2021" },
+    ],
+  },
+  {
     org: "Heritage Christian Services",
     logo: "/logos/heritagechristian.png",
     mark: "HCS",
@@ -555,17 +566,6 @@ export const awards: Award[] = [
       { title: "Top Fundraiser Award", year: "2022" },
       { title: "Carol & Ernie Forth Community Service Award", year: "2021" },
       { title: "Top Fundraiser / Event Chair Award", year: "2018" },
-    ],
-  },
-  {
-    org: "U.S. Dept. of Veterans Affairs",
-    logo: logoDev("va.gov"),
-    mark: "VA",
-    accent: "#112e51",
-    url: "https://www.va.gov",
-    items: [
-      { title: "Community Partnership Award", year: "2022" },
-      { title: "Certificate of Pride in Public Service", year: "2021" },
     ],
   },
   {
