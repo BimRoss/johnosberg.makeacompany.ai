@@ -19,41 +19,41 @@ export default function ClutchFactorCard() {
         target="_blank"
         rel="noopener noreferrer"
         title="View John's full Clutch Factor report on nTangible (opens in a new tab)"
-        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] p-5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
+        className="group relative block overflow-hidden rounded-2xl bg-[#0a0a0a] px-4 py-3.5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
       >
         {/* corner registration marks, like the assessment card */}
-        <span aria-hidden className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-white/25" />
-        <span aria-hidden className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r border-t border-white/25" />
-        <span aria-hidden className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b border-l border-white/25" />
-        <span aria-hidden className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b border-r border-white/25" />
+        <span aria-hidden className="pointer-events-none absolute left-2.5 top-2.5 h-3 w-3 border-l border-t border-white/25" />
+        <span aria-hidden className="pointer-events-none absolute right-2.5 top-2.5 h-3 w-3 border-r border-t border-white/25" />
+        <span aria-hidden className="pointer-events-none absolute bottom-2.5 left-2.5 h-3 w-3 border-b border-l border-white/25" />
+        <span aria-hidden className="pointer-events-none absolute bottom-2.5 right-2.5 h-3 w-3 border-b border-r border-white/25" />
 
-        <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:text-left">
+        <div className="flex flex-col items-center gap-2.5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
           {/* Left: label + context */}
-          <div className="flex flex-col items-center gap-2 sm:items-start">
-            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#00ccff]">
+          <div className="flex flex-col items-center gap-1 sm:items-start">
+            <span className="font-mono text-[9px] font-bold uppercase tracking-[0.22em] text-[#00ccff]">
               nTangible · Clutch Factor™
             </span>
-            <span className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-white sm:text-xl">
+            <span className="font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-white sm:text-lg">
               Composure under pressure
             </span>
-            <span className="max-w-xs text-[13px] leading-6 text-zinc-400">
-              Independently assessed. Top 1% globally for composure when the stakes peak.
+            <span className="max-w-xs text-[12px] leading-snug text-zinc-400">
+              Independently assessed. Top 1% globally when the stakes peak.
             </span>
-            <span className="mt-1 inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-[#00ccff]">
+            <span className="mt-0.5 inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-zinc-500 transition-colors group-hover:text-[#00ccff]">
               View full report
               <span className="transition-transform group-hover:translate-x-0.5">↗</span>
             </span>
           </div>
 
           {/* Right: the score */}
-          <div className="flex shrink-0 flex-col items-center gap-2">
+          <div className="flex shrink-0 flex-col items-center gap-1.5">
             <div className="flex items-baseline gap-1.5">
-              <span className="font-[family-name:var(--font-sora)] text-5xl font-extrabold leading-none text-white sm:text-6xl">
+              <span className="font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-none text-white sm:text-5xl">
                 <CountUp value="803" />
               </span>
-              <span className="font-mono text-sm font-semibold text-zinc-500">/ 1000</span>
+              <span className="font-mono text-xs font-semibold text-zinc-500">/ 1000</span>
             </div>
-            <span className="rounded-full bg-[#00ccff] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a0a0a]">
+            <span className="rounded-full bg-[#00ccff] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#0a0a0a]">
               Elite
             </span>
           </div>

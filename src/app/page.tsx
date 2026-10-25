@@ -87,13 +87,11 @@ export default function Home() {
 
             {/* Primary actions */}
             <div className="mt-4 flex w-full flex-col items-center">
-              <BookCallBtn />
-              {/* The three "features" — Clutch Factor badge + the two links —
-                  grouped inside one tinted panel so they read as a module with
-                  real structure instead of three loose elements. */}
+              {/* The four "features" — Let's Talk + the two links + the Clutch
+                  Factor badge — grouped inside one tinted panel so they read as a
+                  module with real structure. 803 sits at the very bottom. */}
               <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-2.5 rounded-2xl border border-[#00ccff]/20 bg-gradient-to-b from-white/60 to-white/30 p-3 backdrop-blur-sm dark:border-[#00ccff]/20 dark:from-white/[0.06] dark:to-white/[0.02]">
-                {/* Clutch Factor — nTangible assessment */}
-                <ClutchFactor />
+                <BookCallBtn />
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -120,6 +118,8 @@ export default function Home() {
                   Newsletter
                   <span className="transition-transform group-hover:translate-x-0.5">↗</span>
                 </a>
+                {/* Clutch Factor — nTangible assessment, at the very bottom */}
+                <ClutchFactor />
               </div>
             </div>
           </div>
@@ -286,6 +286,9 @@ export default function Home() {
           </div>
 
           <figure className="flex flex-col gap-2">
+            <figcaption className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-zinc-900 dark:text-white sm:text-xl">
+              Brandlete Explainer Video
+            </figcaption>
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
               <BrandleteVideo
                 src="/brandlete.mp4"
