@@ -12,8 +12,6 @@ import CivicGrid from "@/components/CivicGrid";
 import PressLogo from "@/components/PressLogo";
 import RoleLogo from "@/components/RoleLogo";
 import AwardLogo from "@/components/AwardLogo";
-import PodcastThumb from "@/components/PodcastThumb";
-import Gallery from "@/components/Gallery";
 import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
@@ -24,7 +22,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 import LinkedInBadge from "@/components/LinkedInBadge";
 import {
   awards,
-  podcasts,
   press,
   roles,
   SITE_NAME,
@@ -42,7 +39,7 @@ export default function Home() {
       <ChromeFx />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-12 px-5 pb-8 pt-20 sm:px-8 md:gap-16 md:pb-10 md:pt-28"
+        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-9 px-5 pb-8 pt-20 sm:px-8 md:gap-11 md:pb-10 md:pt-28"
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
@@ -519,7 +516,7 @@ export default function Home() {
           <Testimonials />
         </section>
 
-        {/* Recognized — news, awards, podcasts folded into one */}
+        {/* Recognized — news & awards */}
         <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="eyebrow on-photo">Recognized</h2>
 
@@ -600,93 +597,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-
-          {/* Podcasts */}
-          <div className="flex flex-col gap-2.5">
-            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
-              Podcasts
-            </h3>
-            <div className="cascade flex flex-col">
-              {podcasts.map((pod, i) => (
-                <a
-                  key={pod.href}
-                  href={pod.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`on-photo group flex items-center gap-4 py-2 ${
-                    i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
-                  }`}
-                >
-                  <PodcastThumb pod={pod} />
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white">
-                      {pod.title}
-                    </span>
-                    <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
-                      {pod.role}
-                    </span>
-                  </span>
-                  <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5">
-                    ↗
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Moments — a drifting filmstrip of life & career photos */}
-        <section id="moments" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <h2 className="eyebrow on-photo">Moments</h2>
-            <p className="on-photo max-w-2xl text-sm leading-6 text-zinc-700 dark:text-zinc-300">
-              A few from along the way. Tap any photo to open it, then swipe or arrow through.
-            </p>
-          </div>
-          <Gallery />
-          <p className="on-photo mt-10 flex items-center justify-center gap-2 text-center font-mono text-base font-bold text-zinc-900 dark:text-white">
-            <span aria-hidden>🎤</span>
-            Secret talent: impersonations of rappers &amp; singers, Lil Wayne + Akon, and Zac Brown + Green Day, to name just a few 😆
-          </p>
         </section>
 
         {/* Connect */}
         <section id="connect" className="reveal-on-scroll flex scroll-mt-24 flex-col items-center gap-6">
           <h2 className="eyebrow on-photo">Connect</h2>
           <LinkedInBadge />
-
-          {/* Newsletter — Bigger Than Sports */}
-          <a
-            href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex w-full max-w-md items-center gap-4 rounded-2xl border border-[#00ccff]/40 bg-[#00ccff]/[0.06] p-4 transition-all hover:-translate-y-0.5 hover:border-[#00ccff]/70 hover:bg-[#00ccff]/[0.1]"
-          >
-            <Image
-              src="/bts-logo.png"
-              alt="Bigger Than Sports newsletter logo"
-              width={72}
-              height={72}
-              className="h-16 w-16 shrink-0 rounded-xl shadow-lg shadow-black/20"
-            />
-            <div className="flex flex-col gap-1 text-left">
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0088cc] dark:text-[#00ccff]">
-                Newsletter
-              </span>
-              <span className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-black dark:text-white">
-                Bigger Than Sports
-              </span>
-              <span className="text-sm leading-5 text-zinc-700 dark:text-zinc-300">
-                BTS: where sports, growth and community intersect. Follow on LinkedIn.
-              </span>
-            </div>
-            <span
-              aria-hidden
-              className="ml-auto self-center text-[#0088cc] transition-transform group-hover:translate-x-1 dark:text-[#00ccff]"
-            >
-              →
-            </span>
-          </a>
         </section>
 
         {/* Footer */}
