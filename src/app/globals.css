@@ -109,8 +109,10 @@ body::after {
   background-size: cover;
   background-position: center 24%;
   transition: opacity 0.5s ease;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 34%, transparent 96%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 34%, transparent 96%);
+  /* Keep more of the photo at full strength before it fades into the canvas, so
+     the scene reads clearly instead of dissolving in the upper third. */
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 48%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 48%, transparent 100%);
   /* Slow cinematic drift — a barely-there Ken Burns pan/zoom so the hero photo
      breathes instead of sitting dead still. Starts already scaled up so the
      drift never exposes an edge. */
@@ -126,7 +128,7 @@ body::after {
 .hero-atmos-light {
   /* Daytime golf hero (v4) — the bright counterpart to the twilight dark hero. */
   background-image: url("/bg-brand-light-v4.jpg");
-  opacity: 0.85;
+  opacity: 0.98;
 }
 
 .hero-atmos-dark {
@@ -140,7 +142,7 @@ body::after {
 }
 
 .dark .hero-atmos-dark {
-  opacity: 0.5;
+  opacity: 0.78;
 }
 
 /* Legibility scrim over the hero photo — keeps the hero text crisp while the
@@ -149,15 +151,14 @@ body::after {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(95% 62% at 26% 30%, rgba(244, 247, 251, 0.82), rgba(244, 247, 251, 0.32) 55%, transparent 78%),
-    radial-gradient(120% 90% at 50% 2%, rgba(255, 255, 255, 0.6), rgba(244, 247, 251, 0.28) 42%, transparent 74%),
-    linear-gradient(180deg, rgba(244, 247, 251, 0.36) 0%, rgba(244, 247, 251, 0.2) 45%, transparent 100%);
+    radial-gradient(70% 48% at 26% 30%, rgba(244, 247, 251, 0.6), rgba(244, 247, 251, 0.16) 58%, transparent 80%),
+    linear-gradient(180deg, rgba(244, 247, 251, 0.18) 0%, rgba(244, 247, 251, 0.08) 48%, transparent 100%);
 }
 
 .dark .hero-atmos-scrim {
   background:
-    radial-gradient(115% 70% at 50% 0%, rgba(0, 204, 255, 0.16), transparent 52%),
-    linear-gradient(180deg, rgba(4, 7, 14, 0.58) 0%, rgba(4, 7, 14, 0.42) 34%, transparent 100%);
+    radial-gradient(115% 70% at 50% 0%, rgba(0, 204, 255, 0.14), transparent 52%),
+    linear-gradient(180deg, rgba(4, 7, 14, 0.4) 0%, rgba(4, 7, 14, 0.24) 38%, transparent 100%);
 }
 
 /* Text over the hero photo band. Now that the content sits on a stable canvas,
