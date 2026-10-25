@@ -1,7 +1,33 @@
-// Auto-generated from John's LinkedIn Recommendations export (138 received).
+// Curated from John's LinkedIn Recommendations export (138 received), weak and duplicate
+// entries pruned. Strongest partner quotes (Oakley, Corebridge, LenderLogix, Ciminelli)
+// lead the array so the marquee opens on them.
 export type Testimonial = { name: string; title: string; company: string; text: string };
 
 export const testimonials: Testimonial[] = [
+  {
+    "name": "Matthew Cunha",
+    "title": "Sales Representative",
+    "company": "Oakley",
+    "text": "I began working with John in March 2024 when he was the Director of Partnerships at the Western NY PGA. From our very first day together, it was evident that we would collaborate exceptionally well. On the day we met, John mentioned he was looking for a contact at Oakley, and I expressed my eagerness to find a way to collaborate with the WNYPGA. This mutual interest set a positive tone for our relationship—our connection was instantaneous, natural, and productive. From that point onward, we quickly made a significant impact together. John's ability to transition from conversation to action is remarkable, and the work we accomplished positively affected my business. He brings clarity, initiative, and a partnership-first mindset that makes collaboration effortless and effective. What truly stands out about John is his energy. His positive outlook isn’t just something he turns on for meetings; it’s a fundamental part of who he is. John’s enthusiasm is contagious in the best way possible. He brings momentum, optimism, and a genuine passion for helping others succeed. Working with him doesn’t just push projects forward; it elevates the entire environment. John is the kind of person who produces meaningful results while inspiring everyone around him. I highly recommend him for any role that requires leadership, relationship building, and a naturally positive presence. Any organization would be fortunate to have him."
+  },
+  {
+    "name": "Jay O'Brien",
+    "title": "Senior Relationship Manager",
+    "company": "Corebridge Financial",
+    "text": "In my role with Corebridge Financial, I try to engage with the 41 sections of PGA of America to help them help their members. John saw the benefits immediately and was regularly sending ideas of ways to help WNY as a section, their PGA members, and Corebridge. He was a tremendous partner who was willing to go the extra mile to ensure everyone was more than satisfied with the result. I will miss working with him and expect he will continue growing successful relationships throughout his career. I'd work with him again in a second."
+  },
+  {
+    "name": "Patrick O'Brien",
+    "title": "Founder & CEO",
+    "company": "LenderLogix",
+    "text": "If you ever get the chance to work with John, take it. We collaborated with him on a PGA sponsorship package, and he was exceptional at every step. He took the time to really understand what we were trying to accomplish, came back with thoughtful options, and never once pushed anything we didn’t need. Instead, he crafted something that genuinely fit our goals and delivered a true win-win. He’s flexible, knowledgeable, energetic, and just flat-out enjoyable to work with. You can tell he’s genuinely interested in helping people succeed. On a personal note, he even took the time to meet with my son, show him around the PGA Section office, and talk with him about what it’s like to work in the industry. That meant a lot. John is a phenomenal relationship builder, instantly likable and the kind of person people want to do business with. Couldn’t recommend him more."
+  },
+  {
+    "name": "Kyle Ciminelli",
+    "title": "President",
+    "company": "Ciminelli Real Estate Corporation",
+    "text": "John ran two half day LinkedIn training session for my business development groups at Ciminelli and Newmark Ciminelli and exceeding our expectations. His ability to connect with the group and provide real life examples and case studies of what works (and what doesn't work) will certainty be valuable for my team moving forward. I would recommend John to any group looking to stay ahead of the curve with LinkedIn and other business development endeavors."
+  },
   {
     "name": "David Duane",
     "title": "Evans Scholar at The Ohio State University | Fisher College of Business",
@@ -19,12 +45,6 @@ export const testimonials: Testimonial[] = [
     "title": "Growth Partner at Brandlete, Inc. | Miami University Farmer School of Business, Finance Major, Wealth Management Minor",
     "company": "Brandlete, Inc.",
     "text": "If I had to write about a few defining qualities of my boss, John Osberg, it would be his ability to listen, be open-minded, and think outside the box. When I first approached him last spring, I was finishing up my freshman year of college and I was looking forward to opportunities in the world of business development. Despite the fact I had no prior experience, John was able to understand that as a goalie, I see things from a different perspective. By recognizing that I had a unique trait, he welcomed me with open arms to the Brandlete team this fall. Now we are working as a team to find solutions for each client we target and give the product team feedback for the next model's improvements and adjustments. Working with him has been an absolute pleasure as he keeps a positive attitude and always thinks about the upside of each situation. It leaves a lot for me to take away and apply to my own pursuit of eventually managing clients in the sports and entertainment space of Wealth Management."
-  },
-  {
-    "name": "Feng Zhang",
-    "title": "Sr. Application Developer",
-    "company": "HIGHMARK HOME HEALTH, INC",
-    "text": "John is excellent recruiter."
   },
   {
     "name": "Michael Jiggins",
@@ -309,12 +329,6 @@ export const testimonials: Testimonial[] = [
     "text": "John has been a fantastic person to work with at M&T because of the enthusiasm and willingness to learn about the different roles within the bank. He is always willing to pick up extra projects and consistantly produces high quality work. Additionally, he displays great communication skills and confidence, which are only two of the many qualities that make him a strong leader."
   },
   {
-    "name": "Patrick Whalen",
-    "title": "Beer and Ale Taster",
-    "company": "Beer Snobs Unlimited",
-    "text": "As a \"Guide\" in TReC, John offers his time and expertise selflessly to TReC's clients. These clients are individuals who are starting businesses. Entrepreneurs or new business owners benefit from new connections and John makes many connections. It is important to note that all of this work in TReC by John is done as a volunteer which speaks volumes about his generosity to the community."
-  },
-  {
     "name": "Christopher Glenn",
     "title": "Director of Carrier Experience",
     "company": "Great Lakes Transport Solution",
@@ -405,12 +419,6 @@ export const testimonials: Testimonial[] = [
     "text": "If I had to sum up my experience in one acronym w/John it would be “LFG!” Despite our new normal being fully remote, John was an exceptional EforAll Buffalo mentor who guided his entrepreneur towards securing grant funding from our small business accelerator program. He’s a consistent source of energy, motivation & grit to anyone he collaborates with. I sincerely look forward to continuing to have him be an integral part of the EforAll family!"
   },
   {
-    "name": "Kyle Ciminelli",
-    "title": "President",
-    "company": "Ciminelli Real Estate Corporation",
-    "text": "John ran two half day LinkedIn training session for my business development groups at Ciminelli and Newmark Ciminelli and exceeding our expectations. His ability to connect with the group and provide real life examples and case studies of what works (and what doesn't work) will certainty be valuable for my team moving forward. I would recommend John to any group looking to stay ahead of the curve with LinkedIn and other business development endeavors."
-  },
-  {
     "name": "Jake Tyno",
     "title": "Co-Founder",
     "company": "Blank Space Golf",
@@ -483,12 +491,6 @@ export const testimonials: Testimonial[] = [
     "text": "John has such an incredible ability to connect with whoever he is speaking to and make them feel heard. He can speak on a wide range of topics all while giving you confidence and clarity. His knowledge and insight speak for itself but what makes him stand apart from others is how obvious his passion is for what he is doing. John has a way of making these conversations comfortable and like you are speaking to a friend. I would highly recommend having a conversation with him whenever you get the chance to!"
   },
   {
-    "name": "Steve Coulton",
-    "title": "Founder",
-    "company": "Coulton Ventures",
-    "text": "It was awesome getting to work with John at the WNY PGA. He did an amazing job building a board of trustee network, one of the most diverse in the country and always had service at the forefront of his mind. Service to growing the game, serving fellow PGA members, juniors, veterans and countless other individuals and groups who otherwise would not have had access to the sport we love with a passion- golf. John is an all star human being, great friend, connector and energizer of all that’s good in the world."
-  },
-  {
     "name": "Joseph White",
     "title": "Owner",
     "company": "Sector Sports, LLC",
@@ -517,12 +519,6 @@ export const testimonials: Testimonial[] = [
     "title": "Founder",
     "company": "GolfDojo, LLC",
     "text": "Partnering with John has had an immediate impact on the growth and sustainability of our start-up business, GolfDojo. His ability to identify opportunities that fit our company mission through his powerful community building approach has provided immediate results, but has also created relationships that ensure GolfDojo will be successful beyond its infancy. I cannot recommend John highly enough for the passion, expertise, and integrity with which he creates and fosters relationships. You want to be part of his community."
-  },
-  {
-    "name": "Jay O'Brien",
-    "title": "Senior Relationship Manager",
-    "company": "Corebridge Financial",
-    "text": "In my role with Corebridge Financial, I try to engage with the 41 sections of PGA of America to help them help their members. John saw the benefits immediately and was regularly sending ideas of ways to help WNY as a section, their PGA members, and Corebridge. He was a tremendous partner who was willing to go the extra mile to ensure everyone was more than satisfied with the result. I will miss working with him and expect he will continue growing successful relationships throughout his career. I'd work with him again in a second."
   },
   {
     "name": "Patricia Winchester",
@@ -609,12 +605,6 @@ export const testimonials: Testimonial[] = [
     "text": "John and I met through a few initiatives with Niagara University. Whether it be a yearly golf event or case competition with high school students, I've had the privilege of getting to know John. In doing so, I've learned he has a huge passion for all things self improvement and well being. John's energy and commitment to these areas has inspired myself and many others. John is not afraid to bring his energy to all he meets. He develops valuable connections and is excited to introduce others to those connections. John is an extraordinary person to learn from and will certainly leave you feeling inspired no matter the conversation!"
   },
   {
-    "name": "Steve Coulton",
-    "title": "Founder",
-    "company": "Coulton Ventures",
-    "text": "I have had the pleasure of working with John in a number of capacities. We have run a lot of miles together in service of PGA HOPE and played a number of rounds together furthering our friendship. In these activities you get to know a person pretty well. One common theme is John's focus on building community and uplifting those around him. It has been a pleasure to see him excel with Incept and continue to expand his network in hopes of helping those around him grow and be successful. It has been a joy seeing his personal growth and I am very much appreciative for all that he does to promote and grow OnCore. A great human indeed!"
-  },
-  {
     "name": "Peter J. CIMINO",
     "title": "Senior Client Delivery Manager",
     "company": "Cotality",
@@ -625,12 +615,6 @@ export const testimonials: Testimonial[] = [
     "title": "Buiness Development Senior Account Manager",
     "company": "Coyote Promotions",
     "text": "John has guided and encouraged me to find opportunities that would give me purpose. His ability to motivate, communicate, and connect people is something that seems natural to him. Ever since my senior year at Niagara he has shown an interest in helping me get to where I want to be on a consistent basis. He has assisted in getting me to places I didn’t think were possible at this stage of my life both in terms of personal growth and opportunity. His insight, passion and gratitude are things I’ll forever be grateful for and appreciative of. I’m thankful for the relationship we’ve developed so far and look forward to more years of communication and growth."
-  },
-  {
-    "name": "Richard Lukaszewicz",
-    "title": "VP, Direct Communications",
-    "company": "M&T Bank",
-    "text": "John and his partner at \"Landscaping for Le$$\" recently completed a rock border and landscaping project that is the talk of the neighborhood. The work was completed quickly and efficiently, on time and on budget. John and his partner have a good sense of landscape design; both are extremely industrious, considerate of other people's time and courteous to all individuals they came in contact with in the neighborhood.It is refreshing to have such a positive experience with someone in the landscaping business. If you are considering a landscaping project, do yourself a favor and contact Landscaping for Le$$. I predict you will be extremely satisfied with the results!"
   },
   {
     "name": "Ryan Stang",
@@ -675,22 +659,10 @@ export const testimonials: Testimonial[] = [
     "text": "It is a pleasure to write a recommendation for John Osberg. In my many years at Niagara University, John was one of the top students despite many qualified candidates. John exhibits many admirable qualities. He is reliable, honest, a self-starter, a team player, a life-long learner, highly ethical, professional, has excellent skills and a pleasant personality. His interpersonal, written and oral skills are exceptional. John reflects the puritan work ethic, a truly valuable trait today. John is prepared to take on challenges, he has a high degree of career orientation and has the confidence to take on daunting tasks. He focuses on the future and is very mature for his age. He is an intelligent, capable, dedicated, and personable young man. He is capable of handling situations with thoughtfulness and maturity. Professor William Angus"
   },
   {
-    "name": "Talon Fee",
-    "title": "Managing Director, Dave Cantin Group",
-    "company": "Dave Cantin Group",
-    "text": "John Osberg is hands down one of the most intriguing students on campus. Although he manages to maintain a superb GPA, it is what John does outside of the classroom which makes him unlike any other student at Niagara University. John is clearly one of the most notable students in the College of business because he is always involved in the extra curricular activities which help set our school apart from the rest. John's work as a member of the Global Investment Research Team, campus ambassador for Bloomberg, President of Fianance club, and involvement in the community of Niagara Falls make him an excellent job candidate following his graduation in the spring of 2013. All of these things combined with his infectious positivity make it safe to say that John Osberg should be included in any employer's final list of potential job candidates."
-  },
-  {
     "name": "Kayla Burt",
     "title": "Data Analyst - Institutional Research",
     "company": "Massachusetts Institute of Technology",
     "text": "I first met John over five years ago at a First Tee event. It was a very brief encounter, but one that left a lasting impression. His enthusiasm and passion were immediately evident, and I’ve remembered that energy ever since. I left that encounter thinking, \"I hope we get to work together someday.\" When John later invited me to become an active member with WNYPGA REACH, he shared the mission behind their work, and it was an easy yes. His ability to be innovative, communicate the importance of giving back, and his genuine desire to make the world a better place beyond just golf is inspiring. John has a rare talent for making everyone feel included and valued despite age, background, location, etc. He is a fantastic leader, and he leads with heart, purpose, and authenticity. I’m excited to see all the great things he’ll continue to accomplish."
-  },
-  {
-    "name": "Patrick O'Brien",
-    "title": "Founder & CEO",
-    "company": "LenderLogix",
-    "text": "If you ever get the chance to work with John, take it. We collaborated with him on a PGA sponsorship package, and he was exceptional at every step. He took the time to really understand what we were trying to accomplish, came back with thoughtful options, and never once pushed anything we didn’t need. Instead, he crafted something that genuinely fit our goals and delivered a true win-win. He’s flexible, knowledgeable, energetic, and just flat-out enjoyable to work with. You can tell he’s genuinely interested in helping people succeed. On a personal note, he even took the time to meet with my son, show him around the PGA Section office, and talk with him about what it’s like to work in the industry. That meant a lot. John is a phenomenal relationship builder, instantly likable and the kind of person people want to do business with. Couldn’t recommend him more."
   },
   {
     "name": "Judd Simon",
@@ -799,12 +771,6 @@ export const testimonials: Testimonial[] = [
     "title": "Small Business Liaison Officer | Program Manager",
     "company": "Moog Inc.",
     "text": "In the fall semester of 2012, I got the chance to work with John and two others on a project for our Human Resource Management class. I pleasantly surprised by his work ethic and ability to inject humor into our meetings. I recall a moment where we were discussing the aspects of our final presentation and were hitting an intellectual wall; when John interjected and made us take a moment to admire the “Roxton Blush” oxford shoes he would be wearing presentation day. Needless to say the distraction was hilarious, but it also served the purpose of focusing the entire team and forcing us to think outside the box. Ultimately we passed our presentation with flying colors. John is an excellent team player and reliable in crisis situations. He is knowledgeable about a wide variety of subjects and incredibly engaging. I’m not sure I’ve ever met another student like him. The bottom line of this is simple: John is the epitome of leadership and charisma and without a doubt in my mind will be successful in anything he chooses to pursue. He is an intellectual enigma and yet manages to connect with anyone he meets and inspire them. He is ambition personified and I absolutely recommend him. He will be an asset to any company or organization. It was my pleasure to work with him last fall semester and my hope to be afforded the same opportunity later in our professional lives."
-  },
-  {
-    "name": "Matthew Cunha",
-    "title": "Sales Representative",
-    "company": "Oakley",
-    "text": "I began working with John in March 2024 when he was the Director of Partnerships at the Western NY PGA. From our very first day together, it was evident that we would collaborate exceptionally well. On the day we met, John mentioned he was looking for a contact at Oakley, and I expressed my eagerness to find a way to collaborate with the WNYPGA. This mutual interest set a positive tone for our relationship—our connection was instantaneous, natural, and productive. From that point onward, we quickly made a significant impact together. John's ability to transition from conversation to action is remarkable, and the work we accomplished positively affected my business. He brings clarity, initiative, and a partnership-first mindset that makes collaboration effortless and effective. What truly stands out about John is his energy. His positive outlook isn’t just something he turns on for meetings; it’s a fundamental part of who he is. John’s enthusiasm is contagious in the best way possible. He brings momentum, optimism, and a genuine passion for helping others succeed. Working with him doesn’t just push projects forward; it elevates the entire environment. John is the kind of person who produces meaningful results while inspiring everyone around him. I highly recommend him for any role that requires leadership, relationship building, and a naturally positive presence. Any organization would be fortunate to have him."
   },
   {
     "name": "Derek Henshaw",

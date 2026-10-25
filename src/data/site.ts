@@ -45,7 +45,7 @@ export type StatIconKey =
 
 export const stats: { value: string; label: string; icon: StatIconKey }[] = [
   { value: "$15M+", label: "financial impact", icon: "impact" },
-  { value: "$3.1M+", label: "capital raised", icon: "capital" },
+  { value: "$3.1M+", label: "raised across ventures", icon: "capital" },
   { value: "$2.2M+", label: "501c3 funds raised", icon: "nonprofit" },
   { value: "16+ yrs", label: "growth & partnerships", icon: "growth" },
   { value: "25K+", label: "miles run", icon: "miles" },
@@ -68,11 +68,20 @@ export type Role = {
   logo: string;
   mark: string;
   accent: string;
-  // Company site the logo links to. Omit for orgs with no public site
-  // (e.g. Stealth Startup) so <RoleLogo> renders the mark without a link.
+  // Company site the logo links to. Omit for orgs with no public site so
+  // <RoleLogo> renders the mark without a link.
   url?: string;
+  // "advisory" groups a role under the "Founder & advisory roles" subheading in
+  // the Experience list, so the overlapping side ventures read as one cluster
+  // instead of padding the main operating timeline.
+  group?: "advisory";
 };
 
+// Order: primary operating roles first (recency), then the "Founder & advisory"
+// cluster (group: "advisory") so the overlapping 2019–21 side ventures read as
+// one group, then the four early-career finance roles (rendered as the compact
+// "Early Career" logo row). The generic "Stealth Startup" placeholder was
+// dropped — it read as filler.
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
@@ -83,16 +92,6 @@ export const roles: Role[] = [
     mark: "B",
     accent: "#00ccff",
     url: "https://brandlete.com",
-  },
-  {
-    org: "Stealth Startup",
-    title: "Fractional GTM + Revenue Partnerships Advisor",
-    period: "Jun 2016 – May 2026",
-    blurb: "Fractional GTM and revenue advisor helping founders build commercial strategy, partnerships, and enterprise pipeline.",
-    logo: "/logos/stealth.png",
-    mark: "SS",
-    accent: "#64748b",
-    url: "https://www.linkedin.com/company/stealth-startup-community/",
   },
   {
     org: "PGA of America, WNY Section",
@@ -115,26 +114,6 @@ export const roles: Role[] = [
     url: "https://oncoregolf.com",
   },
   {
-    org: "Bad Golf Business School",
-    title: "Co-Founder",
-    period: "Jan 2019 – Jul 2025",
-    blurb: "Co-founded a Techstars-backed, golf-driven networking platform convening 100+ founders and operators per event.",
-    logo: "/logos/badgolf.png",
-    mark: "BG",
-    accent: "#15803d",
-    url: "https://powerofozmosis.com",
-  },
-  {
-    org: "POWER of OZmosis",
-    title: "Founder",
-    period: "Jul 2019 – Jun 2025",
-    blurb: "Drove $1.3M+ in net new deals and secured $375K+ in client venture funding through full-cycle sales and GTM consulting.",
-    logo: logoDev("powerofozmosis.com"),
-    mark: "OZ",
-    accent: "#1d4ed8",
-    url: "https://powerofozmosis.com",
-  },
-  {
     org: "EmergenceTek Group Inc.",
     title: "VP Sales / Founding Director / Consultant",
     period: "Sep 2012 – Sep 2024",
@@ -145,16 +124,6 @@ export const roles: Role[] = [
     url: "https://emergencetek.com",
   },
   {
-    org: "Oro Sports USA, Inc.",
-    title: "Strategic Advisor",
-    period: "May 2019 – Dec 2021",
-    blurb: "Advised the CEO on go-to-market and product positioning for youth-sports audiences.",
-    logo: "/logos/orosports.png",
-    mark: "OS",
-    accent: "#14b8a6",
-    url: "https://orosportsusa.com",
-  },
-  {
     org: "DataSure24",
     title: "Director of Sales / Business Development",
     period: "Aug 2018 – Jul 2019",
@@ -163,6 +132,39 @@ export const roles: Role[] = [
     mark: "DS",
     accent: "#dc2626",
     url: "https://datasure24.com",
+  },
+  {
+    org: "POWER of OZmosis",
+    title: "Founder",
+    period: "Jul 2019 – Jun 2025",
+    blurb: "Drove $1.3M+ in net new deals and secured $375K+ in client venture funding through full-cycle sales and GTM consulting.",
+    logo: logoDev("powerofozmosis.com"),
+    mark: "OZ",
+    accent: "#1d4ed8",
+    url: "https://powerofozmosis.com",
+    group: "advisory",
+  },
+  {
+    org: "Bad Golf Business School",
+    title: "Co-Founder",
+    period: "Jan 2019 – Jul 2025",
+    blurb: "Co-founded a Techstars-backed, golf-driven networking platform convening 100+ founders and operators per event.",
+    logo: "/logos/badgolf.png",
+    mark: "BG",
+    accent: "#15803d",
+    url: "https://powerofozmosis.com",
+    group: "advisory",
+  },
+  {
+    org: "Oro Sports USA, Inc.",
+    title: "Strategic Advisor",
+    period: "May 2019 – Dec 2021",
+    blurb: "Advised the CEO on go-to-market and product positioning for youth-sports audiences.",
+    logo: "/logos/orosports.png",
+    mark: "OS",
+    accent: "#14b8a6",
+    url: "https://orosportsusa.com",
+    group: "advisory",
   },
   {
     org: "Citi",

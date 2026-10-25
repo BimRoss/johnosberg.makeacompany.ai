@@ -1,7 +1,8 @@
+import { Fragment } from "react";
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
-import BookCallBtn from "@/components/BookCallBtn";
+import BookCallBtn from "@/components/BookCallBtn"; // hero CTA + footer close
 import ChromeFx from "@/components/ChromeFx";
 import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -84,10 +85,11 @@ export default function Home() {
 
             {/* Primary actions */}
             <div className="mt-4 flex w-full flex-col items-center">
-              {/* The two link features grouped inside one tinted panel so they
-                  read as a module with real structure. Let's Talk now lives in
-                  the footer as the closing CTA. */}
+              {/* Let's Talk leads as the primary hero CTA, with the two link
+                  features stacked below it. The same button also closes the
+                  page in the footer. */}
               <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-4">
+                <BookCallBtn />
                 <a
                   href="https://www.linkedin.com/in/johnosberg"
                   target="_blank"
@@ -298,7 +300,7 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2 self-center sm:self-start">
                   <span aria-hidden className="hire-dot inline-block h-2 w-2 rounded-full bg-[#00ccff] shadow-[0_0_8px_2px_rgba(0,204,255,0.8)]" />
                   <span className="font-[family-name:var(--font-sora)] text-[11px] font-bold uppercase tracking-[0.22em] text-[#0088cc] dark:text-[#00ccff]">
-                    Now Hiring
+                    Playmaker Network
                   </span>
                 </span>
                 <h3 className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-zinc-900 dark:text-white sm:text-xl">
@@ -314,7 +316,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#00ccff] px-4 py-2 font-[family-name:var(--font-sora)] text-[13px] font-bold text-zinc-950 shadow-lg shadow-[#00ccff]/25 transition-all hover:-translate-y-0.5 hover:bg-[#33d6ff] hover:shadow-xl hover:shadow-[#00ccff]/40"
               >
-                Apply now
+                Learn more
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
               </a>
             </div>
@@ -419,42 +421,57 @@ export default function Home() {
         <section id="experience" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
           <h2 className="eyebrow on-photo">Experience</h2>
           <div className="cascade flex flex-col">
-            {roles.slice(0, -4).map((r, i) => (
-              <div
-                key={r.org}
-                className={`on-photo flex flex-col gap-1 py-4 md:flex-row md:items-center md:gap-6 ${
-                  i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
-                }`}
-              >
-                <div className="flex min-w-0 items-center gap-3 md:w-72 md:shrink-0">
-                  <RoleLogo role={r} />
-                  <div className="min-w-0">
-                    <div
-                      className={`font-[family-name:var(--font-sora)] text-lg font-semibold ${
-                        r.org.includes("Brandlete")
-                          ? "text-[#0088cc] dark:text-[#00ccff]"
-                          : "text-zinc-900 dark:text-white"
-                      }`}
-                    >
-                      {r.org}
-                    </div>
-                    <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
-                      {r.period}
-                    </div>
-                  </div>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="text-[15px] font-semibold text-zinc-900 dark:text-zinc-200">
-                    {r.title}
-                  </div>
-                  {r.blurb && (
-                    <p className="mt-1 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-400">
-                      {r.blurb}
-                    </p>
+            {roles.slice(0, -4).map((r, i, list) => {
+              // Drop a one-time "Founder & advisory roles" divider at the first
+              // advisory entry so the overlapping side ventures group cleanly
+              // under the primary operating roles above.
+              const startAdvisory =
+                r.group === "advisory" && list[i - 1]?.group !== "advisory";
+              return (
+                <Fragment key={r.org}>
+                  {startAdvisory && (
+                    <h3 className="mt-6 border-t border-black/10 pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:text-zinc-400">
+                      Founder &amp; advisory roles
+                    </h3>
                   )}
-                </div>
-              </div>
-            ))}
+                  <div
+                    className={`on-photo flex flex-col gap-1 py-4 md:flex-row md:items-center md:gap-6 ${
+                      i > 0 && !startAdvisory
+                        ? "border-t border-black/10 dark:border-white/10"
+                        : ""
+                    }`}
+                  >
+                    <div className="flex min-w-0 items-center gap-3 md:w-72 md:shrink-0">
+                      <RoleLogo role={r} />
+                      <div className="min-w-0">
+                        <div
+                          className={`font-[family-name:var(--font-sora)] text-lg font-semibold ${
+                            r.org.includes("Brandlete")
+                              ? "text-[#0088cc] dark:text-[#00ccff]"
+                              : "text-zinc-900 dark:text-white"
+                          }`}
+                        >
+                          {r.org}
+                        </div>
+                        <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
+                          {r.period}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-[15px] font-semibold text-zinc-900 dark:text-zinc-200">
+                        {r.title}
+                      </div>
+                      {r.blurb && (
+                        <p className="mt-1 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                          {r.blurb}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </Fragment>
+              );
+            })}
           </div>
 
           {/* Early career — small logo row to save vertical space. The detail
@@ -469,6 +486,29 @@ export default function Home() {
                 <RoleLogo key={r.org} role={r} size="sm" />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Recognized — news & awards. Lifted up here (right after Experience)
+            so this third-party proof lands high on the page instead of near the
+            bottom. */}
+        <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
+          <h2 className="eyebrow on-photo">Recognized</h2>
+
+          {/* In the press */}
+          <div className="flex flex-col gap-2.5">
+            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+              In the press
+            </h3>
+            <PressList />
+          </div>
+
+          {/* Awards & honors */}
+          <div className="flex flex-col gap-2.5">
+            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+              Awards &amp; honors
+            </h3>
+            <AwardsList />
           </div>
         </section>
 
@@ -489,31 +529,10 @@ export default function Home() {
           <div className="flex flex-col gap-1">
             <h2 className="eyebrow on-photo">Endorsements</h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
-              Endorsed by 138+ leaders.
+              Endorsed by 130+ leaders.
             </p>
           </div>
           <Testimonials />
-        </section>
-
-        {/* Recognized — news & awards */}
-        <section id="recognized" className="reveal-on-scroll flex scroll-mt-24 flex-col gap-6">
-          <h2 className="eyebrow on-photo">Recognized</h2>
-
-          {/* In the press */}
-          <div className="flex flex-col gap-2.5">
-            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
-              In the press
-            </h3>
-            <PressList />
-          </div>
-
-          {/* Awards & honors */}
-          <div className="flex flex-col gap-2.5">
-            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
-              Awards &amp; honors
-            </h3>
-            <AwardsList />
-          </div>
         </section>
 
         {/* Moments — a drifting filmstrip of life & career photos */}
