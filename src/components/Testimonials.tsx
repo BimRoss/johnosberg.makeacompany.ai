@@ -194,9 +194,6 @@ export default function Testimonials() {
       )
     : null;
 
-  const mid = Math.ceil(testimonials.length / 2);
-  const rowA = testimonials.slice(0, mid);
-  const rowB = testimonials.slice(mid);
 
   return (
     <div className="flex flex-col gap-6">
@@ -244,8 +241,7 @@ export default function Testimonials() {
         </div>
       ) : (
         <div className="marquee-mask flex flex-col gap-3">
-          <Row items={rowA} dir="l" />
-          <Row items={rowB} dir="r" />
+          <Row items={testimonials} dir="l" />
         </div>
       )}
     </div>

@@ -549,20 +549,28 @@ export default function Home() {
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
             </a>
           </p>
-          <p className="mt-2 max-w-xl px-4 text-center text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-400">
-            All content on this site, including text, images, and design, is the
-            property of John Osberg and may not be reproduced, distributed, or
-            used without prior written permission. All third-party names, logos,
-            and trademarks are the property of their respective owners and are
-            shown for identification only, without any claim of affiliation or
-            endorsement.
-          </p>
-          <p className="max-w-xl px-4 text-center text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-400">
-            This site is provided for informational purposes only, on an
-            &ldquo;as is&rdquo; basis, with no warranties of any kind. It does
-            not sell your personal information. Any details you share through the
-            contact links are used solely to respond to you.
-          </p>
+          <details className="group mt-1 w-full max-w-xl px-4 text-center">
+            <summary className="mx-auto inline-flex cursor-pointer list-none items-center gap-1 text-[10px] text-zinc-400 transition-colors hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 [&::-webkit-details-marker]:hidden">
+              Legal &amp; privacy
+              <span aria-hidden className="transition-transform group-open:rotate-180">⌄</span>
+            </summary>
+            <div className="mx-auto mt-2 max-w-md space-y-2 text-[9px] leading-relaxed text-zinc-400 dark:text-zinc-500">
+              <p>
+                All content on this site, including text, images, and design, is
+                the property of John Osberg and may not be reproduced,
+                distributed, or used without prior written permission. All
+                third-party names, logos, and trademarks are the property of
+                their respective owners and are shown for identification only,
+                without any claim of affiliation or endorsement.
+              </p>
+              <p>
+                This site is provided for informational purposes only, on an
+                &ldquo;as is&rdquo; basis, with no warranties of any kind. It
+                does not sell your personal information. Any details you share
+                through the contact links are used solely to respond to you.
+              </p>
+            </div>
+          </details>
         </footer>
       </main>
     </>

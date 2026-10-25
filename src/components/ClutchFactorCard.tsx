@@ -1,4 +1,3 @@
-import CountUp from "@/components/CountUp";
 import TiltCard from "@/components/TiltCard";
 
 // The full nTangible Clutch Factor assessment card: an independently-scored
@@ -45,17 +44,16 @@ export default function ClutchFactorCard() {
             </span>
           </div>
 
-          {/* Right: the score */}
-          <div className="flex shrink-0 flex-col items-center gap-1.5">
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-none text-white sm:text-5xl">
-                <CountUp value="803" />
-              </span>
-              <span className="font-mono text-xs font-semibold text-zinc-500">/ 1000</span>
-            </div>
-            <span className="rounded-full bg-[#00ccff] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#0a0a0a]">
-              Elite
-            </span>
+          {/* Right: the circular-gauge score thumbnail */}
+          <div className="flex shrink-0 items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/clutch-factor-803.png"
+              alt="nTangible Clutch Factor™ score: 803 out of 1000, Elite"
+              width={660}
+              height={660}
+              className="block h-auto w-28 rounded-xl sm:w-32"
+            />
           </div>
         </div>
       </a>
