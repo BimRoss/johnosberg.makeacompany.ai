@@ -136,8 +136,14 @@ function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; t
 // stuck. Don't add backdrop-blur to the cards (see Card note) — it crashes iOS.
 function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const pausedRef = useRef(false);
-  const resumeAtRef = useRef(0);
+  // Single self-healing timestamp instead of a sticky paused flag. The drift
+  // runs whenever we're past this time; every interaction just pushes it
+  // forward. Nothing here can leave the row paused forever, which is the whole
+  // point: the old paused-boolean froze the top row on iOS whenever a release
+  // event got dropped (a tap firing mouseenter/pointerdown with no matching
+  // mouseleave/pointerup). Worst case now, a missed release costs ~1s of pause,
+  // then the row resumes on its own.
+  const holdUntilRef = useRef(0);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -154,7 +160,7 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
     const tick = (now: number) => {
       const dt = (now - last) / 1000;
       last = now;
-      if (!reduce && !pausedRef.current && now >= resumeAtRef.current) {
+      if (!reduce && now >= holdUntilRef.current) {
         el.scrollLeft += (dir === "l" ? 1 : -1) * MARQUEE_SPEED * dt;
       }
       // Seamless wrap: one full set of cards is exactly half the scroll width.
@@ -167,41 +173,33 @@ function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
     };
     raf = requestAnimationFrame(tick);
 
-    // Pause the drift while the user is interacting; resume shortly after they
-    // let go so a swipe (and its momentum) isn't fought by the animation. We
-    // never listen to the `scroll` event — our own drift fires it, which would
-    // self-pause the loop — so interaction is tracked via pointer/touch/wheel.
-    const pause = () => {
-      pausedRef.current = true;
-    };
-    const resumeSoon = () => {
-      pausedRef.current = false;
-      resumeAtRef.current = performance.now() + 1500;
+    // Any interaction holds the drift for a short, self-expiring window. While a
+    // finger is dragging, touchmove keeps re-arming it so the swipe isn't fought
+    // by the animation; once the moves stop, the hold lapses and drift resumes
+    // even if the touchend/pointerup never arrived. We don't listen to `scroll`
+    // (our own drift fires it, which would self-hold the loop forever).
+    const hold = () => {
+      holdUntilRef.current = performance.now() + 1200;
     };
 
-    el.addEventListener("pointerdown", pause);
-    el.addEventListener("pointerup", resumeSoon);
-    el.addEventListener("pointercancel", resumeSoon);
-    el.addEventListener("touchstart", pause, { passive: true });
-    el.addEventListener("touchend", resumeSoon, { passive: true });
-    // iOS fires touchcancel (not touchend) when a touch becomes a page scroll.
-    // Without this, that row stays paused forever — the "top row froze" bug.
-    el.addEventListener("touchcancel", resumeSoon, { passive: true });
-    el.addEventListener("mouseenter", pause);
-    el.addEventListener("mouseleave", resumeSoon);
-    el.addEventListener("wheel", resumeSoon, { passive: true });
+    el.addEventListener("pointerdown", hold);
+    el.addEventListener("pointermove", hold);
+    el.addEventListener("touchstart", hold, { passive: true });
+    el.addEventListener("touchmove", hold, { passive: true });
+    el.addEventListener("wheel", hold, { passive: true });
+    // Real mouse hover pauses too, via movement — a still cursor lets it drift,
+    // which is fine. We deliberately avoid mouseenter/mouseleave: on iOS those
+    // fire as unpaired synthetic events and were the source of the frozen row.
+    el.addEventListener("mousemove", hold);
 
     return () => {
       cancelAnimationFrame(raf);
-      el.removeEventListener("pointerdown", pause);
-      el.removeEventListener("pointerup", resumeSoon);
-      el.removeEventListener("pointercancel", resumeSoon);
-      el.removeEventListener("touchstart", pause);
-      el.removeEventListener("touchend", resumeSoon);
-      el.removeEventListener("touchcancel", resumeSoon);
-      el.removeEventListener("mouseenter", pause);
-      el.removeEventListener("mouseleave", resumeSoon);
-      el.removeEventListener("wheel", resumeSoon);
+      el.removeEventListener("pointerdown", hold);
+      el.removeEventListener("pointermove", hold);
+      el.removeEventListener("touchstart", hold);
+      el.removeEventListener("touchmove", hold);
+      el.removeEventListener("wheel", hold);
+      el.removeEventListener("mousemove", hold);
     };
   }, [dir]);
 
