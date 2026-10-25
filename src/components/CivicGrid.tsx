@@ -26,7 +26,7 @@ export default function CivicGrid() {
     }`;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <div className="flex flex-wrap gap-1.5">
         <button
           type="button"
@@ -58,15 +58,14 @@ export default function CivicGrid() {
         })}
       </div>
 
-      {/* Flex-wrap + justify-center so a trailing partial row (like the last two
-          tiles) centers instead of hanging left. Full rows still fill edge to
-          edge (4-up mobile, 7-up desktop) because each tile's basis matches the
-          old grid. */}
-      <div className="flex flex-wrap justify-center gap-2">
+      {/* Flex-wrap + justify-center so a trailing partial row centers instead
+          of hanging left. Tightened to 5-up mobile / 9-up desktop with a
+          smaller gap so the wall reads as more logos in fewer, shorter rows. */}
+      <div className="flex flex-wrap justify-center gap-1.5">
         {shown.map((c, i) => (
           <div
             key={`${c.org}-${c.role}-${i}`}
-            className="flex basis-[calc((100%-1.5rem)/4)] lg:basis-[calc((100%-3rem)/7)] [&>*]:flex-1"
+            className="flex basis-[calc((100%-1.5rem)/5)] lg:basis-[calc((100%-3rem)/9)] [&>*]:flex-1"
           >
             <CivicCard c={c} />
           </div>

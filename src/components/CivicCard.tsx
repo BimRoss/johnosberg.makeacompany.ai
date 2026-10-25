@@ -17,7 +17,7 @@ export default function CivicCard({ c }: { c: Civic }) {
       rel="noopener noreferrer"
       title={`${c.org} — ${c.role}`}
       aria-label={`${c.org} — ${c.role} (opens in new tab)`}
-      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-2 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
+      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-1.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20"
     >
       {failed ? (
         <span

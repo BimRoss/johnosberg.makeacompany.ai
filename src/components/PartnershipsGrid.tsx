@@ -26,7 +26,7 @@ export default function PartnershipsGrid() {
     }`;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <div className="flex flex-wrap gap-1.5">
         <button
           type="button"
@@ -59,14 +59,13 @@ export default function PartnershipsGrid() {
       </div>
 
       {/* Flex-wrap + justify-center so any trailing partial row centers instead
-          of hanging left. Full rows fill edge to edge (4-up mobile, 7-up
-          desktop) because each tile's basis matches the old grid; the logos
-          flow naturally with no forced row breaks. */}
-      <div className="flex flex-wrap justify-center gap-2">
+          of hanging left. Tightened to 5-up mobile / 9-up desktop with a
+          smaller gap so the wall reads as more logos in fewer, shorter rows. */}
+      <div className="flex flex-wrap justify-center gap-1.5">
         {shown.map((b) => (
           <div
             key={b.name}
-            className="flex basis-[calc((100%-1.5rem)/4)] lg:basis-[calc((100%-3rem)/7)] [&>a]:flex-1"
+            className="flex basis-[calc((100%-1.5rem)/5)] lg:basis-[calc((100%-3rem)/9)] [&>a]:flex-1"
           >
             <BrandLogo brand={b} />
           </div>

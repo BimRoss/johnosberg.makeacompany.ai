@@ -18,7 +18,7 @@ export default function BrandLogo({ brand }: { brand: Brand }) {
       rel="noopener noreferrer"
       aria-label={`${brand.name} website`}
       title={brand.name}
-      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-2 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
+      className="flex aspect-square items-center justify-center rounded-lg border border-black/10 bg-white/70 p-1.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-black/20 hover:shadow-md hover:shadow-black/5 dark:border-white/10 dark:bg-zinc-950/55 dark:hover:border-white/20">
       {failed ? (
         <span
           className="flex h-full w-full items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-lg font-bold"
