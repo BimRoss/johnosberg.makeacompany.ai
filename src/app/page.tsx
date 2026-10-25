@@ -16,7 +16,6 @@ import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
 import BrandleteVideo from "@/components/BrandleteVideo";
-import ClutchFactor from "@/components/ClutchFactor";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
@@ -364,7 +363,7 @@ export default function Home() {
               { badge: "2020–24", icon: "trail" as const, logo: "/logos/goggins.png", href: "https://www.runnersworld.com/training/a44831397/4x4x48-challenge/", title: "Ultra Challenge Finisher · ", miles: "52, 57, 63, 69 miles ran" },
               { badge: "2023", icon: "golf" as const, logo: "/logos/news-pga.png", href: "https://www.linkedin.com/posts/johnosberg_three-years-ago-i-was-the-1-golfer-of-22-share-7507292785624944640-khTz/", title: "PGA of America Medalist, Playing Ability Test · 1 of 22 to qualify" },
               { badge: "2025", icon: "trail" as const, logo: "/logos/mindover.png", href: "https://mindoverfoundation.com/", title: "Mind Over Miles Runner · 70 mi ran, 18 hours, early finish - injury" },
-              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06   ·   26.2 miles — 3:11:28", metric: true, center: true },
+              { badge: "Personal Bests", icon: "timer" as const, logo: "/logos/powerofozmosis.png", title: "13.1 miles — 1:28:06   ·   26.2 miles — 3:11:28", metric: true, center: true },
               { badge: "To Date", icon: "clock" as const, logo: "/logos/calendar.png", title: "164 half marathons · 8 marathons · 9 ultra events · 4 biathlons", line2: "5x 48 hour challenge finishes · 4x 24 hour challenge finishes", metric: true },
             ].map((h, i) => (
               <TiltCard key={`${h.badge}-${i}`} className="rounded-lg">
@@ -417,10 +416,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Clutch Factor — nTangible assessment. The small 803 badge thumbnail
-            now lives here, grouped with the full card. */}
+        {/* Clutch Factor — nTangible assessment. The gauge thumbnail now lives
+            inside the card itself, so no standalone badge above it. */}
         <section id="clutch" className="reveal-on-scroll flex scroll-mt-24 flex-col items-center gap-4">
-          <ClutchFactor />
           <div className="w-full">
             <ClutchFactorCard />
           </div>

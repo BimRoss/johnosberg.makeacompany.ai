@@ -123,54 +123,101 @@ function Card({ t, term = "", clamp = true, fluid = false }: { t: Testimonial; t
   );
 }
 
-// A pure-CSS transform marquee. The track holds two identical copies of the
-// cards and slides by exactly one copy (-50%) on an infinite linear keyframe
-// (see .animate-marquee-l / -r in globals.css), so it loops seamlessly.
+// A native horizontal scroll strip that the finger owns, with a gentle ambient
+// drift layered on top.
 //
-// Why CSS instead of a JS scroll container: the scroll-container version drove
-// scrollLeft from rAF and paused on touch events. On iOS those touch events
-// arrive unpaired (a touchstart with no matching touchend), so the pause latched
-// and the top row froze for good — twice. A compositor-run CSS animation has no
-// pause logic to latch and nothing for a dropped event to break; it physically
-// cannot get stuck. We give up finger-swipe scrubbing on mobile to buy that, a
-// trade worth making for an endorsement strip that just needs to keep drifting.
-// Desktop still pauses on hover via CSS :hover. Reduced-motion stops it via CSS.
+// Finger scrolling is the browser's native overflow-x scroll — no JS touch
+// handlers to drop an event on, so it physically cannot latch the way the old
+// rAF-plus-touchstart/touchend version did (that one paused on touchstart and
+// relied on a matching touchend that iOS kept dropping, freezing the row for
+// good). The only JS is the drift: a rAF loop nudges scrollLeft forward a few
+// px/sec and pauses the instant a pointer goes down, resuming on a WINDOW-level
+// pointerup/cancel so a release that lands off the strip still clears the hold.
+// A time-based safety also resumes if a hold ever outlives ~4s with no move, so
+// even a wholly dropped release can't latch it.
 //
-// Duration is measured per row so both drift at one identical px/s regardless of
-// card count (MARQUEE_SPEED). Don't add backdrop-blur to the cards (see Card
-// note) — it crashes iOS.
-function Row({ items, dir }: { items: Testimonial[]; dir: "l" | "r" }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [duration, setDuration] = useState(800);
+// The track holds two copies of the cards; scrollLeft is kept inside the first
+// copy ([0, half)) so forward drift and forward swipes wrap seamlessly. Don't
+// add backdrop-blur to the cards (see Card note) — it crashes iOS.
+function Row({ items }: { items: Testimonial[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = trackRef.current;
+    const el = scrollRef.current;
     if (!el) return;
-    const measure = () => {
-      // The track is two copies; one copy is half the scroll width, and the
-      // keyframe travels exactly that far, so time = distance / speed.
-      const half = el.scrollWidth / 2;
-      if (half > 0) setDuration(half / MARQUEE_SPEED);
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let holding = false;
+    let holdStart = 0;
+    let hovering = false;
+    let last = 0;
+    let raf = 0;
+
+    const half = () => el.scrollWidth / 2;
+
+    const wrap = () => {
+      const h = half();
+      if (h <= 0) return;
+      if (el.scrollLeft >= h) el.scrollLeft -= h;
+      else if (el.scrollLeft < 0) el.scrollLeft += h;
     };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+
+    const step = (now: number) => {
+      const dt = last ? (now - last) / 1000 : 0;
+      last = now;
+      // Resume if a hold has outlived any plausible real touch (dropped release).
+      if (holding && now - holdStart > 4000) holding = false;
+      if (!reduced && !holding && !hovering) {
+        el.scrollLeft += MARQUEE_SPEED * dt;
+      }
+      wrap();
+      raf = requestAnimationFrame(step);
+    };
+
+    const onDown = () => {
+      holding = true;
+      holdStart = performance.now();
+    };
+    const onRelease = () => {
+      holding = false;
+    };
+    const onEnter = () => {
+      hovering = true;
+    };
+    const onLeave = () => {
+      hovering = false;
+    };
+
+    el.addEventListener("pointerdown", onDown);
+    // Window-level release so a pointerup off the strip still clears the hold.
+    window.addEventListener("pointerup", onRelease);
+    window.addEventListener("pointercancel", onRelease);
+    el.addEventListener("pointerenter", onEnter);
+    el.addEventListener("pointerleave", onLeave);
+    raf = requestAnimationFrame(step);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      el.removeEventListener("pointerdown", onDown);
+      window.removeEventListener("pointerup", onRelease);
+      window.removeEventListener("pointercancel", onRelease);
+      el.removeEventListener("pointerenter", onEnter);
+      el.removeEventListener("pointerleave", onLeave);
+    };
   }, []);
 
   return (
-    <div className="overflow-hidden">
-      <div
-        ref={trackRef}
-        className={`flex w-max gap-5 ${dir === "l" ? "animate-marquee-l" : "animate-marquee-r"}`}
-        style={{ animationDuration: `${duration}s` }}
-      >
-        {items.map((t, i) => (
-          <Card key={`a-${i}`} t={t} />
-        ))}
-        {items.map((t, i) => (
-          <Card key={`b-${i}`} t={t} />
-        ))}
-      </div>
+    <div
+      ref={scrollRef}
+      className="no-scrollbar flex w-full gap-5 overflow-x-auto overscroll-x-contain [touch-action:pan-x] [-webkit-overflow-scrolling:touch]"
+    >
+      {items.map((t, i) => (
+        <Card key={`a-${i}`} t={t} />
+      ))}
+      {items.map((t, i) => (
+        <Card key={`b-${i}`} t={t} />
+      ))}
     </div>
   );
 }
@@ -241,7 +288,7 @@ export default function Testimonials() {
         </div>
       ) : (
         <div className="marquee-mask flex flex-col gap-3">
-          <Row items={testimonials} dir="l" />
+          <Row items={testimonials} />
         </div>
       )}
     </div>

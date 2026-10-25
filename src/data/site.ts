@@ -608,6 +608,7 @@ export const awards: Award[] = [
     url: "https://www.niagara.edu",
     items: [
       { title: "Top 20 Most Intriguing Student", year: "2013" },
+      { title: "Everett J. Ockerman Award Winner, Distinguished Senior Year Business Student", year: "2012" },
       { title: "Who’s Who Among Students in American Universities & Colleges", year: "2012" },
     ],
   },
