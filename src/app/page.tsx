@@ -19,7 +19,6 @@ import BrandleteVideo from "@/components/BrandleteVideo";
 import ClutchFactor from "@/components/ClutchFactor";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
 import ThemeToggle from "@/components/ThemeToggle";
-import LinkedInBadge from "@/components/LinkedInBadge";
 import {
   roles,
   SITE_NAME,
@@ -330,22 +329,22 @@ export default function Home() {
         {/* The Numbers */}
         <section className="reveal-on-scroll flex flex-col gap-4">
           <h2 className="eyebrow on-photo">The Numbers</h2>
-          <div className="cascade mx-auto flex w-full max-w-xl flex-wrap justify-center gap-2">
+          <div className="cascade mx-auto flex w-full max-w-xl flex-wrap justify-center gap-1.5">
             {stats.map((s) => (
               <TiltCard
                 key={s.label}
                 className={`rounded-lg ${
                   s.icon === "countless"
                     ? "w-full"
-                    : "w-[calc(50%-0.25rem)] md:w-[calc(25%-0.375rem)]"
+                    : "w-[calc(50%-0.1875rem)] md:w-[calc(25%-0.28125rem)]"
                 }`}
               >
-                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-2.5 py-2 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:px-2.5 md:py-2.5">
-                  <StatIcon icon={s.icon} className="mb-1 h-4 w-4 text-[#0088cc]/90 dark:text-[#00ccff]/90 md:mb-1 md:h-4 md:w-4" />
-                  <div className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0088cc] dark:text-[#00ccff] md:text-[1.35rem]">
+                <div className="flex h-full flex-col items-center justify-center rounded-lg border border-black/10 bg-white/40 px-2 py-1.5 text-center backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] md:px-2 md:py-1.5">
+                  <StatIcon icon={s.icon} className="mb-0.5 h-3.5 w-3.5 text-[#0088cc]/90 dark:text-[#00ccff]/90 md:h-3.5 md:w-3.5" />
+                  <div className="font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-[#0088cc] dark:text-[#00ccff] md:text-xl">
                     {/\d/.test(s.value) ? <CountUp value={s.value} /> : s.value}
                   </div>
-                  <div className="mt-0.5 font-mono text-[8px] font-medium uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400 md:mt-0.5 md:text-[9px]">
+                  <div className="mt-0.5 font-mono text-[8px] font-medium uppercase tracking-[0.08em] text-zinc-500 dark:text-zinc-400 md:text-[9px]">
                     {s.label}
                   </div>
                 </div>
@@ -463,16 +462,18 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Early career — collapsed to a single line of org names to save
-              vertical space. The detail lives in the full résumé; this is just
-              the trail of where he came up. */}
-          <div className="flex flex-col gap-2 border-t border-black/10 pt-5 dark:border-white/10 sm:flex-row sm:items-baseline sm:gap-3">
+          {/* Early career — small logo row to save vertical space. The detail
+              lives in the full résumé; this is just the trail of where he came
+              up. Each mark links to the company. */}
+          <div className="flex flex-col gap-2.5 border-t border-black/10 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:gap-4">
             <h3 className="shrink-0 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
               Early Career
             </h3>
-            <p className="on-photo text-[13px] font-medium leading-relaxed text-zinc-700 dark:text-zinc-300">
-              {roles.slice(-4).map((r) => r.org).join(" · ")}
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {roles.slice(-4).map((r) => (
+                <RoleLogo key={r.org} role={r} size="sm" />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -518,12 +519,6 @@ export default function Home() {
             </h3>
             <AwardsList />
           </div>
-        </section>
-
-        {/* Connect */}
-        <section id="connect" className="reveal-on-scroll flex scroll-mt-24 flex-col items-center gap-6">
-          <h2 className="eyebrow on-photo">Connect</h2>
-          <LinkedInBadge />
         </section>
 
         {/* Footer */}

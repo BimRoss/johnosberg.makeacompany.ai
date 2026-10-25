@@ -8,18 +8,28 @@ import type { Role } from "@/data/site";
 // back to a colored monogram if the logo is missing or 404s, so a row never
 // shows a broken image. When the role carries a `url`, the whole tile becomes a
 // link to that company's site (new tab); orgs with no site render unlinked.
-export default function RoleLogo({ role }: { role: Role }) {
+export default function RoleLogo({
+  role,
+  size = "md",
+}: {
+  role: Role;
+  size?: "md" | "sm";
+}) {
   const [failed, setFailed] = useState(!role.logo);
+
+  const box = size === "sm" ? "h-7 w-7" : "h-10 w-10";
+  const img = size === "sm" ? "h-5 w-5" : "h-7 w-7";
+  const markText = size === "sm" ? "text-[9px]" : "text-[11px]";
 
   const tile = failed ? (
     <span
-      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] text-[11px] font-bold"
+      className={`flex ${box} shrink-0 items-center justify-center rounded-lg font-[family-name:var(--font-sora)] ${markText} font-bold`}
       style={{ backgroundColor: `${role.accent}1f`, color: role.accent }}
     >
       {role.mark}
     </span>
   ) : (
-    <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5">
+    <span className={`flex ${box} shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={role.logo}
@@ -27,7 +37,7 @@ export default function RoleLogo({ role }: { role: Role }) {
         width={28}
         height={28}
         loading="lazy"
-        className="h-7 w-7 object-contain"
+        className={`${img} object-contain`}
         onError={() => setFailed(true)}
       />
     </span>
