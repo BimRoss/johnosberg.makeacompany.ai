@@ -73,12 +73,25 @@ function Strip({ onOpen }: { onOpen: (i: number) => void }) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf = 0;
     let last = performance.now();
+    // Sub-pixel accumulator. iOS WebKit and some Chrome builds store scrollLeft
+    // as an integer, so on a 120Hz phone the ~0.6px/frame drift truncates back
+    // to the same value and the strip never moves — the same freeze that hit the
+    // endorsements wall. Bank the fraction and only push whole pixels, so it
+    // keeps drifting right-to-left on every engine.
+    let acc = 0;
 
     const tick = (now: number) => {
       const dt = (now - last) / 1000;
       last = now;
       const idle = now >= resumeAtRef.current && !hoverRef.current && !dragRef.current;
-      if (idle && !reduce) el.scrollLeft += DRIFT_SPEED * dt;
+      if (idle && !reduce) {
+        acc += DRIFT_SPEED * dt;
+        const whole = Math.trunc(acc);
+        if (whole !== 0) {
+          el.scrollLeft += whole;
+          acc -= whole;
+        }
+      }
       wrap(el);
       raf = requestAnimationFrame(tick);
     };

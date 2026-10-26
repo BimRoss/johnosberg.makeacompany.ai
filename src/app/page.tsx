@@ -55,33 +55,6 @@ export default function Home() {
               </a>
             </h1>
             <TypeCycle />
-            <p className="on-photo mt-3 flex flex-nowrap items-center justify-center gap-x-1.5 whitespace-nowrap font-[family-name:var(--font-sora)] text-lg font-semibold leading-snug text-[#015f92] dark:text-[#00ccff] sm:gap-x-2 sm:text-2xl">
-              Founding Director
-              <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-                <span aria-hidden className="text-base font-normal text-[#0088cc]/70 dark:text-[#00ccff]/70 sm:text-lg">@</span>{" "}
-                <a
-                  href="https://www.brandlete.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Visit brandlete.com (opens in a new tab)"
-                  aria-label="Brandlete (opens in a new tab)"
-                  className="group inline-flex items-center gap-1.5 align-middle transition-opacity hover:opacity-80"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/brandlete-logo-light.png"
-                    alt="Brandlete"
-                    className="inline h-6 w-auto dark:hidden sm:h-8"
-                  />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/brandlete-logo-dark.png"
-                    alt="Brandlete"
-                    className="hidden h-6 w-auto dark:block sm:h-8"
-                  />
-                </a>
-              </span>
-            </p>
 
             {/* Primary actions */}
             <div className="mt-4 flex w-full flex-col items-center">
@@ -122,14 +95,14 @@ export default function Home() {
 
           {/* Photo column */}
           <div className="order-1 shrink-0 md:order-2">
-            <TiltCard className="w-28 rounded-2xl sm:w-36 md:w-44">
+            <TiltCard className="w-36 rounded-2xl sm:w-44 md:w-56">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15">
                 <Image
                   src="/headshot-v2.png"
                   alt={SITE_NAME}
                   fill
                   priority
-                  sizes="176px"
+                  sizes="224px"
                   className="object-cover"
                 />
                 <span
@@ -529,7 +502,7 @@ export default function Home() {
           <div className="flex flex-col gap-1">
             <h2 className="eyebrow on-photo">Endorsements</h2>
             <p className="on-photo font-[family-name:var(--font-sora)] text-lg font-bold text-zinc-950 dark:text-white sm:text-xl">
-              Endorsed by 130+ leaders.
+              Endorsed by 140+ leaders.
             </p>
           </div>
           <Testimonials />
