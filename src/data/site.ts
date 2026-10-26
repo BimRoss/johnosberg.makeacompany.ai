@@ -80,8 +80,7 @@ export type Role = {
 // Order: primary operating roles first (recency), then the "Founder & advisory"
 // cluster (group: "advisory") so the overlapping 2019–21 side ventures read as
 // one group, then the four early-career finance roles (rendered as the compact
-// "Early Career" logo row). The generic "Stealth Startup" placeholder was
-// dropped — it read as filler.
+// "Early Career" logo row). Stealth Startup sits inside the advisory cluster.
 export const roles: Role[] = [
   {
     org: "Brandlete, Inc.",
@@ -164,6 +163,17 @@ export const roles: Role[] = [
     mark: "OS",
     accent: "#14b8a6",
     url: "https://orosportsusa.com",
+    group: "advisory",
+  },
+  {
+    org: "Stealth Startup",
+    title: "Fractional GTM + Revenue Partnerships Advisor",
+    period: "Jun 2016 – May 2026",
+    blurb: "Fractional GTM and revenue advisor helping founders build commercial strategy, partnerships, and enterprise pipeline.",
+    logo: "/logos/stealth.png",
+    mark: "SS",
+    accent: "#64748b",
+    url: "https://www.linkedin.com/company/stealth-startup-community/",
     group: "advisory",
   },
   {
