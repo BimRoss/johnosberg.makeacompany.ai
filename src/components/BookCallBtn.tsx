@@ -100,7 +100,7 @@ export default function BookCallBtn() {
       style={{ willChange: "transform" }}
     >
       <span aria-hidden>⚡</span>
-      Let&apos;s Talk!
+      Let&apos;s Connect!
       <span className="transition-transform group-hover:translate-x-0.5">↗</span>
     </a>
   );

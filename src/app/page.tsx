@@ -106,7 +106,7 @@ export default function Home() {
                   fill
                   priority
                   sizes="224px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <span
                   aria-hidden
