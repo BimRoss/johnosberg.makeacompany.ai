@@ -31,13 +31,7 @@ export default function PressList() {
                 {p.source}
               </span>
             </span>
-            <span
-              className={`flex-1 font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-tight transition-colors ${
-                p.title.includes("Brandlete")
-                  ? "text-[#0088cc] dark:text-[#00ccff]"
-                  : "text-zinc-900 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white"
-              }`}
-            >
+            <span className="flex-1 font-[family-name:var(--font-sora)] text-[13px] font-semibold leading-tight text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white">
               {p.title}
             </span>
             <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5">

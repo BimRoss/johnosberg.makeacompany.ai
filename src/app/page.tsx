@@ -16,6 +16,7 @@ import AwardsList from "@/components/AwardsList";
 import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
+import BrandleteVideo from "@/components/BrandleteVideo";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
 import Gallery from "@/components/Gallery";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -57,37 +58,40 @@ export default function Home() {
 
             {/* Primary actions */}
             <div className="mt-4 flex w-full flex-col items-center">
-              {/* Let's Talk leads as the primary hero CTA, with the two link
-                  features stacked below it. The same button also closes the
-                  page in the footer. */}
-              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-4">
+              {/* Let's Talk leads as the primary hero CTA. The two link
+                  features sit as a compact side-by-side pair below it so the
+                  stack reads as two rows, not three. The same primary button
+                  also closes the page in the footer. */}
+              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-3">
                 <BookCallBtn />
-                <a
-                  href="https://www.linkedin.com/in/johnosberg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#0a66c2]/25 bg-[#0a66c2]/[0.08] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0a66c2] transition-colors hover:bg-[#0a66c2]/[0.14] dark:border-[#66b2ff]/25 dark:bg-[#66b2ff]/[0.08] dark:text-[#99ccff] dark:hover:bg-[#66b2ff]/[0.14]"
-                >
-                  <LinkedInIcon className="h-6 w-6 shrink-0" />
-                  Connect on LinkedIn
-                  <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/[0.08] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0088cc] transition-colors hover:bg-[#00ccff]/[0.16] dark:border-[#00ccff]/30 dark:text-[#00ccff] dark:hover:bg-[#00ccff]/[0.16]"
-                >
-                  <Image
-                    src="/bts-logo.png"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="h-7 w-7 shrink-0 rounded-[6px] object-contain"
-                  />
-                  Newsletter
-                  <span className="transition-transform group-hover:translate-x-0.5">↗</span>
-                </a>
+                <div className="grid w-full grid-cols-2 gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/johnosberg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect with John on LinkedIn"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#0a66c2]/25 bg-[#0a66c2]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0a66c2] transition-colors hover:bg-[#0a66c2]/[0.14] dark:border-[#66b2ff]/25 dark:bg-[#66b2ff]/[0.08] dark:text-[#99ccff] dark:hover:bg-[#66b2ff]/[0.14]"
+                  >
+                    <LinkedInIcon className="h-5 w-5 shrink-0" />
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow John's Bigger Than Sports newsletter"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0088cc] transition-colors hover:bg-[#00ccff]/[0.16] dark:border-[#00ccff]/30 dark:text-[#00ccff] dark:hover:bg-[#00ccff]/[0.16]"
+                  >
+                    <Image
+                      src="/bts-logo.png"
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="h-5 w-5 shrink-0 rounded-[5px] object-contain"
+                    />
+                    Newsletter
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -120,28 +124,28 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             title="Listen to John on Tools, Talents &amp; Techniques (opens in a new tab)"
-            className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white/50 p-3 backdrop-blur-sm transition-colors hover:border-[#00ccff]/50 hover:bg-white/70 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-[#00ccff]/40 dark:hover:bg-white/[0.07] sm:p-4"
+            className="group flex items-center gap-3 rounded-xl border border-black/[0.07] bg-white/40 px-3 py-2.5 backdrop-blur-sm transition-colors hover:border-[#00ccff]/50 hover:bg-white/60 dark:border-white/[0.07] dark:bg-white/[0.03] dark:hover:border-[#00ccff]/35 dark:hover:bg-white/[0.06]"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/podcasts/ttt-ep120.png"
               alt="Tools, Talents &amp; Techniques episode 120 cover"
-              width={112}
-              height={112}
+              width={56}
+              height={56}
               loading="lazy"
-              className="h-24 w-24 shrink-0 rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10 sm:h-28 sm:w-28"
+              className="h-14 w-14 shrink-0 rounded-lg object-cover ring-1 ring-black/10 dark:ring-white/10"
             />
-            <div className="flex min-w-0 flex-1 flex-col gap-1">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-[#0088cc] dark:text-[#00ccff] sm:text-[11px]">
-                Brandlete recent podcast feature
+            <div className="flex min-w-0 flex-1 flex-col">
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#0088cc] dark:text-[#00ccff]">
+                Brandlete podcast feature
               </span>
-              <p className="font-[family-name:var(--font-sora)] text-base font-bold leading-tight text-zinc-900 dark:text-white sm:text-lg">
+              <p className="truncate font-[family-name:var(--font-sora)] text-sm font-bold leading-snug text-zinc-900 dark:text-white sm:text-base">
                 One Platform for Youth Athlete Development
               </p>
             </div>
-            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#0088cc] px-3.5 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-transform group-hover:scale-[1.03] dark:bg-[#00ccff] dark:text-zinc-900 sm:px-4 sm:text-xs">
+            <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-[#0088cc] transition-transform group-hover:translate-x-0.5 dark:text-[#00ccff]">
               Tune in
-              <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+              <span aria-hidden>↗</span>
             </span>
           </a>
         </section>
@@ -153,6 +157,19 @@ export default function Home() {
               What we&apos;ve built at Brandlete, Inc.
             </h2>
           </div>
+
+          <figure className="flex flex-col gap-2">
+            <figcaption className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-zinc-900 dark:text-white sm:text-xl">
+              Brandlete Explainer Video
+            </figcaption>
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
+              <BrandleteVideo
+                src="/brandlete.mp4"
+                poster="/brandlete-poster.jpg"
+                title="Brandlete — the athlete development driven sports program operating system"
+              />
+            </div>
+          </figure>
 
           {/* Hiring — Playmaker Network */}
           <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-3 sm:p-4">
@@ -307,13 +324,7 @@ export default function Home() {
                     <div className="flex min-w-0 items-center gap-3 md:w-72 md:shrink-0">
                       <RoleLogo role={r} />
                       <div className="min-w-0">
-                        <div
-                          className={`font-[family-name:var(--font-sora)] text-lg font-semibold ${
-                            r.org.includes("Brandlete")
-                              ? "text-[#0088cc] dark:text-[#00ccff]"
-                              : "text-zinc-900 dark:text-white"
-                          }`}
-                        >
+                        <div className="font-[family-name:var(--font-sora)] text-lg font-semibold text-zinc-900 dark:text-white">
                           {r.org}
                         </div>
                         <div className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-zinc-700 dark:text-zinc-400">
