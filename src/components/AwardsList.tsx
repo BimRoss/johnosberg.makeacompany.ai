@@ -8,7 +8,7 @@ import { useState } from "react";
 import AwardLogo from "@/components/AwardLogo";
 import { awards } from "@/data/site";
 
-const PREVIEW_COUNT = 5;
+const PREVIEW_COUNT = 4;
 
 export default function AwardsList() {
   const [expanded, setExpanded] = useState(false);

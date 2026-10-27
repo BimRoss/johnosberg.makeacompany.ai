@@ -93,6 +93,15 @@ export const roles: Role[] = [
     url: "https://brandlete.com",
   },
   {
+    org: "Kreuz Staffing & Business Development",
+    title: "Strategic Talent Advisor",
+    period: "Jul 2026 – Present",
+    blurb: "Recruit and place top talent across sales, business development, and manufacturing.",
+    logo: "",
+    mark: "K",
+    accent: "#c2a14d",
+  },
+  {
     org: "PGA of America, WNY Section",
     title: "Director of Partnerships / Founding Trustee",
     period: "Jan 2020 – Oct 2025",
@@ -145,8 +154,8 @@ export const roles: Role[] = [
   },
   {
     org: "POWER of OZmosis",
-    title: "Founder",
-    period: "Jul 2019 – Jun 2025",
+    title: "Fractional GTM, Corporate Trainer / Coach + Revenue Partnerships Advisor",
+    period: "Jul 2019 – Present",
     blurb: "Drove $1.3M+ in net new deals and secured $375K+ in client venture funding through full-cycle sales and GTM consulting.",
     logo: logoDev("powerofozmosis.com"),
     mark: "OZ",

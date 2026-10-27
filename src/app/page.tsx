@@ -425,29 +425,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="on-photo flex flex-col items-center gap-3 border-t border-black/20 pt-8 pb-24 text-xs text-zinc-700 dark:border-white/10 dark:text-white">
-          <div className="mb-3 flex justify-center">
-            <BookCallBtn />
-          </div>
           <span>© {new Date().getFullYear()} John Osberg. All rights reserved.</span>
-          <p className="flex flex-wrap items-center justify-center gap-x-1 text-[11px] text-zinc-600 dark:text-white">
-            Built in plain language with the AI agent &ldquo;Ross&rdquo; from{" "}
-            <a
-              href="https://makeacompany.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-1.5 font-semibold text-[#0088cc] transition-colors hover:text-[#00b8e6] dark:text-[#00ccff] dark:hover:text-[#66e0ff]"
-            >
-              <Image
-                src="/logos/makeacompany.png"
-                alt=""
-                width={16}
-                height={16}
-                className="h-4 w-4 rounded-full bg-white object-contain p-[1px]"
-              />
-              MakeaCompany
-              <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
-            </a>
-          </p>
           <details className="group mt-1 w-full max-w-xl px-4 text-center">
             <summary className="mx-auto inline-flex cursor-pointer list-none items-center gap-1 text-[10px] text-zinc-400 transition-colors hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 [&::-webkit-details-marker]:hidden">
               Legal &amp; privacy
