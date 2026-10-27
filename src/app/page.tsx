@@ -16,7 +16,6 @@ import AwardsList from "@/components/AwardsList";
 import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
-import BrandleteVideo from "@/components/BrandleteVideo";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
 import Gallery from "@/components/Gallery";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -154,19 +153,6 @@ export default function Home() {
               What we&apos;ve built at Brandlete, Inc.
             </h2>
           </div>
-
-          <figure className="flex flex-col gap-2">
-            <figcaption className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-zinc-900 dark:text-white sm:text-xl">
-              Brandlete Explainer Video
-            </figcaption>
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
-              <BrandleteVideo
-                src="/brandlete.mp4"
-                poster="/brandlete-poster.jpg"
-                title="Brandlete — the athlete development driven sports program operating system"
-              />
-            </div>
-          </figure>
 
           {/* Hiring — Playmaker Network */}
           <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-3 sm:p-4">
