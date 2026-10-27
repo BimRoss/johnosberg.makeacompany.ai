@@ -159,9 +159,6 @@ export default function Home() {
           </div>
 
           <figure className="flex flex-col gap-2">
-            <figcaption className="font-[family-name:var(--font-sora)] text-lg font-bold leading-tight text-zinc-900 dark:text-white sm:text-xl">
-              Brandlete Explainer Video
-            </figcaption>
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
               <BrandleteVideo
                 src="/brandlete.mp4"
