@@ -15,7 +15,7 @@ export default function ClutchFactorCard() {
   return (
     <TiltCard className="rounded-2xl">
       <div
-        className="group relative block cursor-pointer overflow-hidden rounded-2xl bg-[#0a0a0a] px-4 py-3.5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
+        className="group relative block cursor-pointer overflow-hidden rounded-2xl bg-[#0a0a0a] px-3.5 py-2.5 ring-1 ring-white/10 transition-shadow hover:ring-[#00ccff]/40"
       >
         {/* Full-card link: clicking anywhere on the card opens the report. Sits
             as an absolute overlay (not a wrapper) so the inner nTangible link
@@ -34,7 +34,7 @@ export default function ClutchFactorCard() {
         <span aria-hidden className="pointer-events-none absolute bottom-2.5 left-2.5 h-3 w-3 border-b border-l border-white/25" />
         <span aria-hidden className="pointer-events-none absolute bottom-2.5 right-2.5 h-3 w-3 border-b border-r border-white/25" />
 
-        <div className="flex flex-col items-center gap-2.5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
+        <div className="flex flex-col items-center gap-1.5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:text-left">
           {/* Left: label + context */}
           <div className="flex flex-col items-center gap-1 sm:items-start">
             <span className="font-mono text-[9px] font-bold uppercase tracking-[0.22em] text-[#00ccff]">
@@ -72,14 +72,14 @@ export default function ClutchFactorCard() {
                 aria-hidden
                 className="pointer-events-none absolute -inset-2 rounded-2xl bg-[#00ccff]/20 blur-xl"
               />
-              <div className="relative rounded-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-1.5 ring-1 ring-[#00ccff]/30 shadow-[0_8px_30px_-6px_rgba(0,204,255,0.45)]">
+              <div className="relative rounded-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-1 ring-1 ring-[#00ccff]/30 shadow-[0_8px_30px_-6px_rgba(0,204,255,0.45)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/clutch-factor-803.png"
                   alt="nTangible Clutch Factor™ score: 803 out of 1000, Elite"
                   width={660}
                   height={660}
-                  className="block h-auto w-28 rounded-xl sm:w-32"
+                  className="block h-auto w-20 rounded-xl sm:w-24"
                 />
               </div>
             </div>

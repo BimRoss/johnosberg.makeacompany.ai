@@ -98,8 +98,8 @@ export default function Home() {
 
           {/* Photo column */}
           <div className="order-1 shrink-0 md:order-2">
-            <TiltCard className="w-36 rounded-2xl sm:w-44 md:w-56">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15">
+            <TiltCard className="w-36 rounded-full sm:w-44 md:w-56">
+              <div className="relative aspect-square w-full overflow-hidden rounded-full shadow-2xl shadow-black/40 ring-1 ring-black/10 dark:ring-white/15">
                 <Image
                   src="/headshot-v2.png"
                   alt={SITE_NAME}
@@ -110,7 +110,7 @@ export default function Home() {
                 />
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#00ccff]/25"
+                  className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-[#00ccff]/25"
                 />
               </div>
             </TiltCard>
