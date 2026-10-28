@@ -20,6 +20,7 @@ import BrandleteVideo from "@/components/BrandleteVideo";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
 import Gallery from "@/components/Gallery";
 import ThemeToggle from "@/components/ThemeToggle";
+import OzmosisLink from "@/components/OzmosisLink";
 import {
   roles,
   SITE_NAME,
@@ -32,6 +33,7 @@ export default function Home() {
     <>
       <Backdrop />
       <ThemeToggle />
+      <OzmosisLink />
       <SearchPalette />
       <ScrollReveal />
       <ChromeFx />
