@@ -16,7 +16,7 @@ import AwardsList from "@/components/AwardsList";
 import StatIcon from "@/components/StatIcon";
 import TiltCard from "@/components/TiltCard";
 import TypeCycle from "@/components/TypeCycle";
-import BrandleteVideo from "@/components/BrandleteVideo";
+import BrandleteReel from "@/components/BrandleteReel";
 import ClutchFactorCard from "@/components/ClutchFactorCard";
 import Gallery from "@/components/Gallery";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -43,8 +43,10 @@ export default function Home() {
       >
         {/* Hero */}
         <section className="reveal flex flex-col items-center gap-5 md:flex-row md:items-center md:gap-8">
-          {/* Text column */}
-          <div className="order-2 flex min-w-0 flex-col items-center text-center md:order-1 md:flex-1">
+          {/* Text column — nudged right toward the headshot so the name, type
+              line and buttons sit centered above the three videos below, which
+              carry the same md:pl-[16%] nudge in BrandleteReel. */}
+          <div className="order-2 flex min-w-0 flex-col items-center text-center md:order-1 md:flex-1 md:pl-[16%]">
             <h1 className="on-photo font-[family-name:var(--font-sora)] text-4xl font-extrabold leading-[0.9] tracking-tight text-zinc-900 dark:text-white sm:text-5xl md:text-[3rem]">
               <a
                 href="https://www.linkedin.com/in/johnosberg"
@@ -94,6 +96,52 @@ export default function Home() {
                     Newsletter
                   </a>
                 </div>
+                {/* Second quiet pair: OZmosis + Courses. Demoted from solid
+                    glowing bars to tinted pills matching the LinkedIn/Newsletter
+                    row, so Let's Connect stays the only bright button. Each keeps
+                    its own brand hue (OZmosis navy/gold, Courses cyan). */}
+                <div className="grid w-full grid-cols-2 gap-3">
+                  <a
+                    href="https://powerofozmosis.makeacompany.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit POWER of OZmosis, John's coaching and consulting brand"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#1b3b6f]/30 bg-[#1b3b6f]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1b3b6f] transition-colors hover:bg-[#1b3b6f]/[0.14] dark:border-[#f5c518]/30 dark:bg-[#1b3b6f]/25 dark:text-[#f5c518] dark:hover:bg-[#1b3b6f]/40"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-5 w-5 shrink-0 text-[#caa206] dark:text-[#f5c518]"
+                      fill="currentColor"
+                      aria-hidden
+                    >
+                      <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
+                    </svg>
+                    OZmosis
+                  </a>
+                  <a
+                    href="https://johnosberg.gumroad.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Shop John's courses and digital products on Gumroad"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0088cc] transition-colors hover:bg-[#00ccff]/[0.16] dark:border-[#00ccff]/30 dark:text-[#00ccff] dark:hover:bg-[#00ccff]/[0.16]"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-5 w-5 shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden
+                    >
+                      <path d="M3 9h18l-1.5 10.5a2 2 0 0 1-2 1.5H6.5a2 2 0 0 1-2-1.5L3 9Z" />
+                      <path d="M3 9l2-5h14l2 5" />
+                      <path d="M9 13a3 3 0 0 0 6 0" />
+                    </svg>
+                    Courses
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -117,6 +165,46 @@ export default function Home() {
               </div>
             </TiltCard>
           </div>
+        </section>
+
+        {/* Brandlete commercials — swipeable reel */}
+        <section className="reveal-on-scroll">
+          <BrandleteReel />
+        </section>
+
+        {/* Featured course — The Starting Point (Gumroad) */}
+        <section className="reveal-on-scroll">
+          <a
+            href="https://johnosberg.gumroad.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get The Starting Point, John's digital course, on Gumroad"
+            className="group relative flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-[#f5c518]/30 bg-gradient-to-br from-[#1b3b6f]/[0.08] via-transparent to-transparent p-4 backdrop-blur-sm transition-all hover:border-[#f5c518]/55 sm:flex-row sm:gap-5 sm:p-5 dark:border-[#f5c518]/25 dark:from-[#1b3b6f]/25 dark:hover:border-[#f5c518]/45"
+          >
+            <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f5c518]/10 blur-3xl" />
+            <Image
+              src="/starting-point.png"
+              alt="The Starting Point — a digital course by John Osberg"
+              width={698}
+              height={901}
+              className="relative w-20 shrink-0 drop-shadow-xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-1 sm:w-24"
+            />
+            <div className="relative flex min-w-0 flex-1 flex-col items-center text-center sm:items-start sm:text-left">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#caa206] dark:text-[#f5c518]">
+                New · Digital course
+              </span>
+              <h2 className="mt-1 font-[family-name:var(--font-sora)] text-xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-2xl">
+                The Starting Point
+              </h2>
+              <p className="mt-1.5 max-w-md text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+                Turn relationships into revenue. Serve first in 7 days. The exact playbook I run to open doors and build trust that comes back around.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1b3b6f] to-[#13325f] px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-[#1b3b6f]/30 ring-1 ring-[#f5c518]/40 transition-all group-hover:from-[#234a86] group-hover:to-[#1b3b6f] group-hover:shadow-xl group-hover:shadow-[#f5c518]/20">
+                Get the course
+                <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>↗</span>
+              </span>
+            </div>
+          </a>
         </section>
 
         {/* Latest podcast — tune in */}
@@ -159,16 +247,6 @@ export default function Home() {
               What we&apos;ve built at Brandlete, Inc.
             </h2>
           </div>
-
-          <figure className="flex flex-col gap-2">
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-black/10 shadow-xl shadow-black/10 dark:border-white/10 dark:shadow-black/40">
-              <BrandleteVideo
-                src="/brandlete.mp4"
-                poster="/brandlete-poster.jpg"
-                title="Brandlete — the athlete development driven sports program operating system"
-              />
-            </div>
-          </figure>
 
           {/* Hiring — Playmaker Network */}
           <div className="hire-glow relative overflow-hidden rounded-2xl border border-[#00ccff]/40 bg-gradient-to-br from-[#00ccff]/[0.14] via-[#00ccff]/[0.05] to-transparent p-3 sm:p-4">
