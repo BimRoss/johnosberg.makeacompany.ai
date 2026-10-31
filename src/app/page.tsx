@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import Image from "next/image";
 
 import Backdrop from "@/components/Backdrop";
-import BookCallBtn from "@/components/BookCallBtn"; // hero CTA + footer close
 import ChromeFx from "@/components/ChromeFx";
 import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -21,12 +20,14 @@ import ClutchFactorCard from "@/components/ClutchFactorCard";
 import Gallery from "@/components/Gallery";
 import ThemeToggle from "@/components/ThemeToggle";
 import OzmosisLink from "@/components/OzmosisLink";
+import LinkHub from "@/components/LinkHub";
+import PodcastThumb from "@/components/PodcastThumb";
 import {
+  podcasts,
   roles,
   SITE_NAME,
   stats,
 } from "@/data/site";
-import { LinkedInIcon } from "@/data/socials";
 
 export default function Home() {
   return (
@@ -60,89 +61,12 @@ export default function Home() {
             </h1>
             <TypeCycle />
 
-            {/* Primary actions */}
+            {/* Primary actions — one bright button that drops down to every
+                link (Schedule a call, LinkedIn, Newsletter, OZmosis, Courses),
+                so the hero shows a single thing to tap instead of a button
+                stack. */}
             <div className="mt-4 flex w-full flex-col items-center">
-              {/* Let's Talk leads as the primary hero CTA. The two link
-                  features sit as a compact side-by-side pair below it so the
-                  stack reads as two rows, not three. The same primary button
-                  also closes the page in the footer. */}
-              <div className="mt-4 flex w-full max-w-sm flex-col items-center gap-3">
-                <BookCallBtn />
-                <div className="grid w-full grid-cols-2 gap-3">
-                  <a
-                    href="https://www.linkedin.com/in/johnosberg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Connect with John on LinkedIn"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#0a66c2]/25 bg-[#0a66c2]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0a66c2] transition-colors hover:bg-[#0a66c2]/[0.14] dark:border-[#66b2ff]/25 dark:bg-[#66b2ff]/[0.08] dark:text-[#99ccff] dark:hover:bg-[#66b2ff]/[0.14]"
-                  >
-                    <LinkedInIcon className="h-5 w-5 shrink-0" />
-                    LinkedIn
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow John's Bigger Than Sports newsletter"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0088cc] transition-colors hover:bg-[#00ccff]/[0.16] dark:border-[#00ccff]/30 dark:text-[#00ccff] dark:hover:bg-[#00ccff]/[0.16]"
-                  >
-                    <Image
-                      src="/bts-logo.png"
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="h-5 w-5 shrink-0 rounded-[5px] object-contain"
-                    />
-                    Newsletter
-                  </a>
-                </div>
-                {/* Second quiet pair: OZmosis + Courses. Demoted from solid
-                    glowing bars to tinted pills matching the LinkedIn/Newsletter
-                    row, so Let's Connect stays the only bright button. Each keeps
-                    its own brand hue (OZmosis navy/gold, Courses cyan). */}
-                <div className="grid w-full grid-cols-2 gap-3">
-                  <a
-                    href="https://powerofozmosis.makeacompany.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visit POWER of OZmosis, John's coaching and consulting brand"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#1b3b6f]/30 bg-[#1b3b6f]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1b3b6f] transition-colors hover:bg-[#1b3b6f]/[0.14] dark:border-[#f5c518]/30 dark:bg-[#1b3b6f]/25 dark:text-[#f5c518] dark:hover:bg-[#1b3b6f]/40"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-5 w-5 shrink-0 text-[#caa206] dark:text-[#f5c518]"
-                      fill="currentColor"
-                      aria-hidden
-                    >
-                      <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
-                    </svg>
-                    OZmosis
-                  </a>
-                  <a
-                    href="https://johnosberg.gumroad.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Shop John's courses and digital products on Gumroad"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#00ccff]/30 bg-[#00ccff]/[0.08] px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0088cc] transition-colors hover:bg-[#00ccff]/[0.16] dark:border-[#00ccff]/30 dark:text-[#00ccff] dark:hover:bg-[#00ccff]/[0.16]"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-5 w-5 shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden
-                    >
-                      <path d="M3 9h18l-1.5 10.5a2 2 0 0 1-2 1.5H6.5a2 2 0 0 1-2-1.5L3 9Z" />
-                      <path d="M3 9l2-5h14l2 5" />
-                      <path d="M9 13a3 3 0 0 0 6 0" />
-                    </svg>
-                    Courses
-                  </a>
-                </div>
-              </div>
+              <LinkHub />
             </div>
           </div>
 
@@ -460,6 +384,39 @@ export default function Home() {
               Awards &amp; honors
             </h3>
             <AwardsList />
+          </div>
+
+          {/* Podcasts — hosted & featured */}
+          <div id="podcasts" className="flex scroll-mt-24 flex-col gap-2.5">
+            <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+              Podcasts hosted &amp; featured on
+            </h3>
+            <div className="cascade flex flex-col">
+              {podcasts.map((pod, i) => (
+                <a
+                  key={pod.href}
+                  href={pod.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`on-photo group flex items-center gap-4 py-2 ${
+                    i > 0 ? "border-t border-black/10 dark:border-white/10" : ""
+                  }`}
+                >
+                  <PodcastThumb pod={pod} />
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-[family-name:var(--font-sora)] text-[13px] font-semibold text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white">
+                      {pod.title}
+                    </span>
+                    <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-400">
+                      {pod.role}
+                    </span>
+                  </span>
+                  <span className="shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5">
+                    ↗
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
