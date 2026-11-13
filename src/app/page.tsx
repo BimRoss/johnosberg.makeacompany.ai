@@ -96,41 +96,6 @@ export default function Home() {
           <BrandleteReel />
         </section>
 
-        {/* Featured course — The Starting Point (Gumroad) */}
-        <section className="reveal-on-scroll">
-          <a
-            href="https://johnosberg.gumroad.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Get The Starting Point, John's digital course, on Gumroad"
-            className="group relative flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-[#f5c518]/30 bg-gradient-to-br from-[#1b3b6f]/[0.08] via-transparent to-transparent p-4 backdrop-blur-sm transition-all hover:border-[#f5c518]/55 sm:flex-row sm:gap-5 sm:p-5 dark:border-[#f5c518]/25 dark:from-[#1b3b6f]/25 dark:hover:border-[#f5c518]/45"
-          >
-            <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f5c518]/10 blur-3xl" />
-            <Image
-              src="/starting-point.png"
-              alt="The Starting Point — a digital course by John Osberg"
-              width={698}
-              height={901}
-              className="relative w-20 shrink-0 drop-shadow-xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-1 sm:w-24"
-            />
-            <div className="relative flex min-w-0 flex-1 flex-col items-center text-center sm:items-start sm:text-left">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#caa206] dark:text-[#f5c518]">
-                New · Digital course
-              </span>
-              <h2 className="mt-1 font-[family-name:var(--font-sora)] text-xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-2xl">
-                The Starting Point
-              </h2>
-              <p className="mt-1.5 max-w-md text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
-                Turn relationships into revenue. Serve first in 7 days. The exact playbook I run to open doors and build trust that comes back around.
-              </p>
-              <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1b3b6f] to-[#13325f] px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-[#1b3b6f]/30 ring-1 ring-[#f5c518]/40 transition-all group-hover:from-[#234a86] group-hover:to-[#1b3b6f] group-hover:shadow-xl group-hover:shadow-[#f5c518]/20">
-                Get the course
-                <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>↗</span>
-              </span>
-            </div>
-          </a>
-        </section>
-
         {/* Latest podcast — tune in */}
         <section className="reveal-on-scroll">
           <a
@@ -202,6 +167,41 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </section>
+
+        {/* Featured course — The Starting Point (Gumroad) */}
+        <section className="reveal-on-scroll">
+          <a
+            href="https://johnosberg.gumroad.com/l/onywa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get The Starting Point, John's digital course, on Gumroad"
+            className="group relative flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-[#f5c518]/30 bg-gradient-to-br from-[#1b3b6f]/[0.08] via-transparent to-transparent p-4 backdrop-blur-sm transition-all hover:border-[#f5c518]/55 sm:flex-row sm:gap-5 sm:p-5 dark:border-[#f5c518]/25 dark:from-[#1b3b6f]/25 dark:hover:border-[#f5c518]/45"
+          >
+            <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f5c518]/10 blur-3xl" />
+            <Image
+              src="/starting-point.png"
+              alt="The Starting Point — a digital course by John Osberg"
+              width={698}
+              height={901}
+              className="relative w-20 shrink-0 drop-shadow-xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-1 sm:w-24"
+            />
+            <div className="relative flex min-w-0 flex-1 flex-col items-center text-center sm:items-start sm:text-left">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#caa206] dark:text-[#f5c518]">
+                New · Digital course
+              </span>
+              <h2 className="mt-1 font-[family-name:var(--font-sora)] text-xl font-bold leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-2xl">
+                The Starting Point
+              </h2>
+              <p className="mt-1.5 max-w-md text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+                Turn relationships into revenue. Serve first in 7 days. The exact playbook I run to open doors and build trust that comes back around.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1b3b6f] to-[#13325f] px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-[#1b3b6f]/30 ring-1 ring-[#f5c518]/40 transition-all group-hover:from-[#234a86] group-hover:to-[#1b3b6f] group-hover:shadow-xl group-hover:shadow-[#f5c518]/20">
+                Get the course
+                <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>↗</span>
+              </span>
+            </div>
+          </a>
         </section>
 
         {/* The Numbers */}

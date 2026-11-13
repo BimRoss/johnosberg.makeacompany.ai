@@ -1,7 +1,7 @@
 export default function OzmosisLink() {
   return (
     <a
-      href="https://powerofozmosis.makeacompany.ai"
+      href="https://www.powerofozmosis.com"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="POWER of OZmosis (opens in a new tab)"

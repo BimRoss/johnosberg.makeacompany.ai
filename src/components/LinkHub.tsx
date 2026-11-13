@@ -75,7 +75,7 @@ const ITEMS: Item[] = [
     cls: "text-[#0088cc] border-[#00ccff]/25 hover:bg-[#00ccff]/[0.12] dark:text-[#00ccff] dark:border-[#00ccff]/25 dark:hover:bg-[#00ccff]/[0.14]",
   },
   {
-    label: "Courses",
+    label: "Digital Courses",
     href: "https://johnosberg.gumroad.com/",
     icon: (
       <svg
@@ -96,8 +96,42 @@ const ITEMS: Item[] = [
     cls: "text-[#0088cc] border-[#00ccff]/30 hover:bg-[#00ccff]/[0.12] dark:text-[#00ccff] dark:border-[#00ccff]/30 dark:hover:bg-[#00ccff]/[0.14]",
   },
   {
-    label: "OZmosis",
-    href: "https://powerofozmosis.makeacompany.ai",
+    label: "LinkedIn Profile",
+    href: "https://www.linkedin.com/in/johnosberg",
+    icon: <LinkedInIcon className="h-5 w-5 shrink-0" />,
+    cls: "text-[#0a66c2] border-[#0a66c2]/25 hover:bg-[#0a66c2]/[0.12] dark:text-[#99ccff] dark:border-[#66b2ff]/25 dark:hover:bg-[#66b2ff]/[0.12]",
+  },
+  {
+    label: "Bigger Than Sports Newsletter",
+    href: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553",
+    icon: (
+      <Image
+        src="/bts-logo.png"
+        alt=""
+        width={24}
+        height={24}
+        className="h-5 w-5 shrink-0 rounded-[5px] object-contain"
+      />
+    ),
+    cls: "text-[#0088cc] border-[#00ccff]/30 hover:bg-[#00ccff]/[0.12] dark:text-[#00ccff] dark:border-[#00ccff]/30 dark:hover:bg-[#00ccff]/[0.14]",
+  },
+  {
+    label: "Brandlete, Inc.",
+    href: "https://www.brandlete.com",
+    icon: (
+      <Image
+        src="/brandlete-mark.png"
+        alt=""
+        width={24}
+        height={24}
+        className="h-5 w-5 shrink-0 object-contain"
+      />
+    ),
+    cls: "text-[#0088cc] border-[#00ccff]/30 hover:bg-[#00ccff]/[0.12] dark:text-[#00ccff] dark:border-[#00ccff]/30 dark:hover:bg-[#00ccff]/[0.14]",
+  },
+  {
+    label: "POWER of OZmosis",
+    href: "https://www.powerofozmosis.com",
     icon: (
       <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-[5px] bg-white ring-1 ring-black/5">
         <Image
@@ -110,30 +144,6 @@ const ITEMS: Item[] = [
       </span>
     ),
     cls: "text-[#1b3b6f] border-[#1b3b6f]/30 hover:bg-[#1b3b6f]/[0.10] dark:text-[#f5c518] dark:border-[#f5c518]/30 dark:hover:bg-[#1b3b6f]/40",
-  },
-];
-
-// Standalone buttons that sit below the dropdown, side by side.
-const SOCIALS: Item[] = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/johnosberg",
-    icon: <LinkedInIcon className="h-5 w-5 shrink-0" />,
-    cls: "text-[#0a66c2] border-[#0a66c2]/25 hover:bg-[#0a66c2]/[0.12] dark:text-[#99ccff] dark:border-[#66b2ff]/25 dark:hover:bg-[#66b2ff]/[0.12]",
-  },
-  {
-    label: "Newsletter",
-    href: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7495912172493975553",
-    icon: (
-      <Image
-        src="/bts-logo.png"
-        alt=""
-        width={24}
-        height={24}
-        className="h-5 w-5 shrink-0 rounded-[5px] object-contain"
-      />
-    ),
-    cls: "text-[#0088cc] border-[#00ccff]/30 hover:bg-[#00ccff]/[0.12] dark:text-[#00ccff] dark:border-[#00ccff]/30 dark:hover:bg-[#00ccff]/[0.14]",
   },
 ];
 
@@ -171,7 +181,7 @@ export default function LinkHub() {
   }
 
   return (
-    <div className="mt-4 flex w-full max-w-xs flex-col items-center gap-2.5">
+    <div className="mt-4 flex w-80 max-w-full flex-col items-center gap-2.5">
       <div ref={wrapRef} className="relative w-full">
       <button
         ref={btnRef}
@@ -220,29 +230,13 @@ export default function LinkHub() {
                 className={`group flex w-full items-center gap-3 rounded-lg border border-transparent px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${it.cls}`}
               >
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center">{it.icon}</span>
-                {it.label}
-                <span className="ml-auto opacity-50 transition-transform group-hover:translate-x-0.5">↗</span>
+                <span className="flex-1 text-center leading-tight">{it.label}</span>
+                <span className="opacity-50 transition-transform group-hover:translate-x-0.5">↗</span>
               </a>
             ))}
           </div>
         </div>
       </div>
-      </div>
-
-      {/* Separate LinkedIn + Newsletter buttons, side by side. */}
-      <div className="grid w-full grid-cols-2 gap-2.5">
-        {SOCIALS.map((it) => (
-          <a
-            key={it.label}
-            href={it.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`group flex w-full items-center justify-center gap-2 rounded-sm border bg-white/60 px-3 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.12em] backdrop-blur-sm transition-colors dark:bg-white/[0.04] ${it.cls}`}
-          >
-            <span className="flex h-5 w-5 shrink-0 items-center justify-center">{it.icon}</span>
-            {it.label}
-          </a>
-        ))}
       </div>
     </div>
   );
