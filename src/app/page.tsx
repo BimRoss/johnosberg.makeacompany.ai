@@ -40,10 +40,10 @@ export default function Home() {
       <ChromeFx />
       <main
         id="main"
-        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-8 px-5 pb-8 pt-20 sm:px-8 md:gap-9 md:pb-10 md:pt-28"
+        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-8 px-5 pb-8 pt-24 sm:px-8 md:gap-9 md:pb-10 md:pt-28"
       >
         {/* Hero */}
-        <section className="reveal flex flex-col items-center gap-5 md:flex-row md:items-center md:gap-8">
+        <section className="reveal flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-8">
           {/* Text column — nudged right toward the headshot so the name, type
               line and buttons sit centered above the three videos below, which
               carry the same md:pl-[16%] nudge in BrandleteReel. */}
